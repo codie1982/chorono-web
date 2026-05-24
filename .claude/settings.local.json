@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof -i :__TRACKED_VAR__)",
+      "Bash(kill -9 4303 77960 80369 81971 82108 82348)",
+      "Bash(npm install *)"
+    ]
+  }
+}

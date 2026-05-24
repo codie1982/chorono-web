@@ -31,12 +31,18 @@ const ACCENT = "#B55233";
 const ACCENT_DARK = "#8F3D27";
 const DARK = "#120D0B";
 
-function CodeBlock({ title, subtitle, children }) {
+interface CodeBlockProps {
+  title: string;
+  subtitle?: string;
+  children: string;
+}
+
+function CodeBlock({ title, subtitle, children }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(children as string);
+      await navigator.clipboard.writeText(children);
       trackCodeCopy(title);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -73,7 +79,13 @@ function CodeBlock({ title, subtitle, children }) {
   );
 }
 
-function FeatureCard({ icon: Icon, title, text }) {
+interface FeatureCardProps {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  text: string;
+}
+
+function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
   return (
     <div className="rounded-2xl border border-[#eadbd2] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
       <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#fff0e9] text-[#B55233]">
@@ -166,7 +178,13 @@ function TimelineMockup() {
   );
 }
 
-function ResourceLink({ icon: Icon, label, href }) {
+interface ResourceLinkProps {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  href: string;
+}
+
+function ResourceLink({ icon: Icon, label, href }: ResourceLinkProps) {
   return (
     <a href={href} className="inline-flex items-center gap-2 text-sm font-medium text-[#4a332b] hover:text-[#B55233]">
       <Icon className="h-4 w-4" />
@@ -176,13 +194,13 @@ function ResourceLink({ icon: Icon, label, href }) {
 }
 
 function GitHubStarButton() {
-  const [stars, setStars] = useState(null);
+  const [stars, setStars] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://api.github.com/repos/codie1982/chorono-editor')
       .then(res => res.json())
-      .then(data => {
+      .then((data: { stargazers_count: number }) => {
         setStars(data.stargazers_count);
         setLoading(false);
       })

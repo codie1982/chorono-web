@@ -17,7 +17,13 @@ import {
   Zap,
   Star,
 } from "lucide-react";
-import { trackCodeCopy, trackButtonClick } from "@/lib/analytics";
+import {
+  trackCodeCopy,
+  trackButtonClick,
+  trackHeroEditorClick,
+  trackHeroNpmClick,
+  trackGitHubStarView
+} from "@/lib/analytics";
 
 const LINKS = {
   github: "https://github.com/codie1982/chorono-editor",
@@ -203,6 +209,8 @@ function GitHubStarButton() {
       .then((data: { stargazers_count: number }) => {
         setStars(data.stargazers_count);
         setLoading(false);
+        // Track GitHub star count
+        trackGitHubStarView(data.stargazers_count);
       })
       .catch(err => {
         console.error('Failed to fetch stars:', err);
@@ -277,16 +285,20 @@ export default function ChoronoLandingPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={LINKS.github}
-                  onClick={() => trackButtonClick('hero_editor_button')}
+                  onClick={trackHeroEditorClick}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(181,82,51,0.35)] transition hover:bg-[#8F3D27]"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Github className="h-4 w-4" />
                   Get Chorono Editor
                 </a>
                 <a
                   href={LINKS.npm}
-                  onClick={() => trackButtonClick('hero_npm_button')}
+                  onClick={trackHeroNpmClick}
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Package className="h-4 w-4" />
                   View on NPM

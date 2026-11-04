@@ -75,4 +75,23 @@ const card = h('div', { style: { display: 'flex', width: '100%', height: '100%',
 )
 const response = new ImageResponse(card, { width: 1200, height: 630 })
 await writeFile(path.join(root, 'public/opengraph-image.png'), Buffer.from(await response.arrayBuffer()))
-console.log('Built favicon (16/32/48/64), Apple icon, app icons, maskable icon and 1200×630 sharing image.')
+
+await mkdir(path.join(root, 'public/guides'), { recursive: true })
+for (const guide of [
+  { file: 'getting-started', lines: ['Your first', 'editable animation'], subtitle: 'A local workspace. Every layer and keyframe stays editable.', steps: ['1. Install the editor', '2. Connect MCP', '3. Create and save'] },
+  { file: 'agent-skills', lines: ['Build with', 'your AI agent'], subtitle: 'Setup and authoring skills for Claude Code and Codex.', steps: ['chorono-setup', 'chorono', 'Editable project'] },
+]) {
+  const cover = h('div', { style: { display: 'flex', flexDirection: 'column', width: '100%', height: '100%', padding: 64, background: '#120D0B', color: '#fffaf7', fontFamily: 'sans-serif' } },
+    h('div', { style: { display: 'flex', alignItems: 'center', gap: 18 } }, h('img', { src: iconSource, width: 54, height: 54 }), h('span', { style: { fontSize: 24, letterSpacing: 5 } }, 'CHORONO GUIDES')),
+    h('div', { style: { display: 'flex', flex: 1, alignItems: 'center', gap: 46 } },
+      h('div', { style: { display: 'flex', flexDirection: 'column', width: 630, gap: 26 } },
+        h('div', { style: { display: 'flex', flexDirection: 'column', fontSize: 64, lineHeight: 1.12, letterSpacing: -2 } }, ...guide.lines.map((line, i) => h('span', { key: line, style: { color: i ? '#d96f45' : '#fffaf7' } }, line))),
+        h('div', { style: { fontSize: 26, lineHeight: 1.5, color: '#d7bbb0', maxWidth: 570 } }, guide.subtitle)),
+      h('div', { style: { display: 'flex', flexDirection: 'column', width: 380, gap: 24 } }, ...guide.steps.map((step, i) =>
+        h('div', { key: step, style: { display: 'flex', alignItems: 'center', gap: 18, padding: '26px 22px', borderRadius: 16, border: '2px solid #694537', background: '#211612', fontSize: 23 } },
+          h('div', { style: { width: 12, height: 12, background: i === 2 ? '#f3d5ca' : '#d96f45', transform: 'rotate(45deg)' } }), step)))),
+    h('div', { style: { display: 'flex', fontSize: 20, color: '#d7bbb0' } }, `chorono.com/${guide.file}`),
+  )
+  await writeFile(path.join(root, 'public/guides', `${guide.file}.png`), Buffer.from(await new ImageResponse(cover, { width: 1200, height: 675 }).arrayBuffer()))
+}
+console.log('Built favicon, app icons, homepage sharing image and two 1200×675 guide covers.')

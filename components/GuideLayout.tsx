@@ -30,6 +30,7 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
         </nav>
         <h1 className="text-4xl font-black tracking-tight md:text-5xl">{page.headline}</h1>
         <p className="mt-5 text-lg leading-8 text-[#6d5a52]">{page.intro}</p>
+        <img src={page.image} alt={page.imageAlt} width={1200} height={675} className="mt-8 h-auto w-full rounded-2xl border border-[#e7d8cf]" />
         <div className="mt-12 space-y-10">{children}</div>
       </article>
       <footer className="border-t border-[#e7d8cf] px-6 py-8 text-center text-sm text-[#6d5a52]">

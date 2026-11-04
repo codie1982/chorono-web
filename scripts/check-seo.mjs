@@ -18,10 +18,11 @@ for (const path of pages) {
   const metas = [...html.matchAll(/<meta\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const expected = new URL(path, canonicalOrigin).href
+  const guideImage = path === '/' ? '/opengraph-image.png' : `/guides${path}.png`
   assert.equal(new URL(links.find(link => link.rel === 'canonical')?.href).href, expected, `${path}: canonical`)
   assert.equal(new URL(metas.find(meta => meta.property === 'og:url')?.content).href, expected, `${path}: Open Graph URL`)
-  assert.equal(metas.find(meta => meta.property === 'og:image')?.content, `${canonicalOrigin}/opengraph-image.png`)
-  assert.equal(metas.find(meta => meta.name === 'twitter:image')?.content, `${canonicalOrigin}/opengraph-image.png`)
+  assert.equal(metas.find(meta => meta.property === 'og:image')?.content, `${canonicalOrigin}${guideImage}`)
+  assert.equal(metas.find(meta => meta.name === 'twitter:image')?.content, `${canonicalOrigin}${guideImage}`)
   assert.ok(metas.find(meta => meta.name === 'description')?.content.length > 80, `${path}: description`)
   assert.ok(!metas.some(meta => meta.name === 'robots' && meta.content.includes('noindex')), `${path}: unexpectedly noindex`)
   assert.equal([...html.matchAll(/<h1\b/g)].length, 1, `${path}: expected one main heading`)
@@ -59,6 +60,8 @@ for (const path of pages) {
     assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
     assert.deepEqual(article.articleSection, [...html.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
     assert.ok(article.dependencies.length > 20)
+    assert.equal(entities.get(article.image['@id']).url, `${canonicalOrigin}${guideImage}`)
+    assert.ok(html.includes(`src="${guideImage}"`), `${path}: article image must be visible`)
     assert.equal(article.mainEntityOfPage['@id'], webpage['@id'])
     const breadcrumb = entities.get(webpage.breadcrumb['@id'])
     assert.equal(breadcrumb['@type'], 'BreadcrumbList')
@@ -86,7 +89,7 @@ console.log('PASS robots.txt and sitemap.xml: public pages only, correct origin 
 
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

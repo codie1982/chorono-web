@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "node --test scripts/github-stars.test.mjs",
     "brand:build": "node scripts/build-brand-assets.mjs",
     "seo:check": "node scripts/check-seo.mjs"
   },

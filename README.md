@@ -32,10 +32,12 @@ The canonical site is `https://www.chorono.com/`. The homepage focuses on the an
 - `lib/site.ts` centralizes the site identity, canonical URLs, Open Graph/Twitter cards and page-specific JSON-LD. See the [JSON-LD field map](docs/structured-data.md) for entities, fields and relationships.
 - `app/robots.ts` serves `/robots.txt`; `app/sitemap.ts` lists only the three public pages.
 - `app/manifest.ts` supplies app icons and theme information. Vercel preview deployments use `noindex` metadata.
-- `public/icon.svg` is the editable source for the existing copper C brand. Run `npm run brand:build` after changing it to regenerate the favicon, Apple/app icons and sharing image.
+- `public/icon.svg` is the editable source for the existing copper C brand. Run `npm run brand:build` to regenerate the favicon, Apple/app icons, sharing image and article-specific guide covers.
 - After building and starting the site, run `npm run seo:check`. Pass a different origin with `npm run seo:check -- https://www.chorono.com` to validate the deployment.
 
 The software markup describes the public project without inventing ratings or reviews. Structured data does not guarantee Google rich results; eligibility and appearance require separate validation after deployment.
+
+`npm test` checks that unavailable, rate-limited or malformed GitHub API responses cannot crash the landing page's star counter. Homepage structured data is rendered on the server before the interactive component.
 
 ## Project Structure
 

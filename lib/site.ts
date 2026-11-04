@@ -8,7 +8,9 @@ export const THEME_COLOR = '#B55233'
 
 export function pageMetadata(title: string, description: string, path = '/'): Metadata {
   const url = new URL(path, SITE_URL).href
-  const image = `${SITE_URL}/opengraph-image.png`
+  const guide = path === '/getting-started' || path === '/agent-skills' ? SITE_PAGES[path] : undefined
+  const image = `${SITE_URL}${guide?.image ?? '/opengraph-image.png'}`
+  const imageAlt = guide?.imageAlt ?? 'Chorono: create editable 2D animations with your AI agent'
   return {
     title,
     description,
@@ -20,13 +22,13 @@ export function pageMetadata(title: string, description: string, path = '/'): Me
       title,
       description,
       url,
-      images: [{ url: image, width: 1200, height: 630, alt: 'Chorono: create editable 2D animations with your AI agent' }],
+      images: [{ url: image, width: 1200, height: guide ? 675 : 630, alt: imageAlt }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [{ url: image, alt: 'Chorono: create editable 2D animations with your AI agent' }],
+      images: [{ url: image, alt: imageAlt }],
     },
   }
 }
@@ -43,6 +45,8 @@ export const SITE_PAGES = {
     description: 'Install the open-source Chorono editor, connect Claude or Codex through MCP, and create your first editable 2D animation on your computer.',
     intro: 'Run Chorono on your computer, connect your AI agent, and keep every layer and keyframe available for editing.',
     breadcrumb: 'Getting started',
+    image: '/guides/getting-started.png',
+    imageAlt: 'Chorono setup workflow: install the editor, connect MCP, then create and save an animation.',
     sections: ['1. Install the editor', '2. Start and connect', '3. Ask your agent to animate', 'Keep and reopen your work'],
     dependencies: 'Node.js 20 or later, npm, Git, a modern browser and a separately installed agent client.',
   },
@@ -52,6 +56,8 @@ export const SITE_PAGES = {
     description: 'Learn how chorono-setup and chorono skills help Claude and Codex install the editor, create editable animations, inspect previews and save projects.',
     intro: 'Two skills teach Claude Code and Codex how to connect to Chorono and create animations that stay editable.',
     breadcrumb: 'Agent skills',
+    image: '/guides/agent-skills.png',
+    imageAlt: 'Chorono agent workflow: use chorono-setup, create with chorono, then save an editable project.',
     sections: ['Two skills, one workflow', 'Install the bundled skills', 'What the agent reads', 'Create, inspect, refine'],
     dependencies: 'An editor checkout and a Claude Code or Codex client; follow the setup guide to connect MCP.',
   },
@@ -72,6 +78,7 @@ export function pageStructuredData(path: PagePath) {
   const url = new URL(path, SITE_URL).href
   const pageId = `${url}#webpage`
   const guide = path !== '/' ? SITE_PAGES[path] : undefined
+  const guideImageId = guide ? `${url}#guide-image` : entityIds.image
 
   return {
     '@context': 'https://schema.org',
@@ -107,6 +114,16 @@ export function pageStructuredData(path: PagePath) {
         caption: 'Chorono: create editable 2D animations with your AI agent',
         encodingFormat: 'image/png',
       },
+      ...(guide ? [{
+        '@type': 'ImageObject',
+        '@id': guideImageId,
+        url: `${SITE_URL}${guide.image}`,
+        contentUrl: `${SITE_URL}${guide.image}`,
+        width: 1200,
+        height: 675,
+        caption: guide.imageAlt,
+        encodingFormat: 'image/png',
+      }] : []),
       {
         '@type': 'SoftwareApplication',
         '@id': entityIds.software,
@@ -134,7 +151,7 @@ export function pageStructuredData(path: PagePath) {
         inLanguage: 'en',
         isPartOf: { '@id': entityIds.website },
         about: { '@id': entityIds.software },
-        primaryImageOfPage: { '@id': entityIds.image },
+        primaryImageOfPage: { '@id': guideImageId },
         mainEntity: { '@id': guide ? `${url}#article` : entityIds.software },
         ...(guide ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
       },
@@ -144,6 +161,7 @@ export function pageStructuredData(path: PagePath) {
           '@id': `${url}#article`,
           url,
           headline: guide.headline,
+          image: { '@id': guideImageId },
           description: guide.description,
           articleSection: [...guide.sections],
           dependencies: guide.dependencies,

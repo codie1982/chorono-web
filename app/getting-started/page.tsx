@@ -1,16 +1,17 @@
 import Link from 'next/link'
 import GuideLayout from '@/components/GuideLayout'
-import { pageMetadata, REPOSITORY_URL } from '@/lib/site'
+import { pageMetadata, REPOSITORY_URL, SITE_PAGES } from '@/lib/site'
 
+const page = SITE_PAGES['/getting-started']
 export const metadata = pageMetadata(
-  'Set Up the Chorono Animation Editor | Chorono',
-  'Install the open-source Chorono editor, connect Claude or Codex through MCP, and create your first editable 2D animation on your computer.',
+  page.title,
+  page.description,
   '/getting-started',
 )
 
 export default function GettingStarted() {
   return (
-    <GuideLayout title="Your first editable animation" description="Run Chorono on your computer, connect your AI agent, and keep every layer and keyframe available for editing.">
+    <GuideLayout path="/getting-started">
       <section>
         <h2>1. Install the editor</h2>
         <p>You need Node.js 20 or later, npm, Git and a modern browser. Open Terminal on macOS/Linux or PowerShell on Windows. Install your chosen agent client separately.</p>

@@ -29,12 +29,43 @@ for (const path of pages) {
   assert.ok(links.some(link => link.rel === 'icon' && link.href === '/icon.svg'), `${path}: SVG link`)
   assert.ok(links.some(link => link.rel === 'apple-touch-icon'), `${path}: Apple icon link`)
   assert.ok(links.some(link => link.rel === 'manifest'), `${path}: manifest link`)
-  const match = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)
-  assert.ok(match, `${path}: missing structured data`)
-  const schema = JSON.parse(match[1])
+  const scripts = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)]
+  assert.equal(scripts.length, 1, `${path}: expected one page-specific JSON-LD graph`)
+  const schema = JSON.parse(scripts[0][1])
   assert.equal(schema['@context'], 'https://schema.org')
   assert.ok(schema['@graph'].some(item => item['@type'] === 'WebSite'))
   assert.ok(schema['@graph'].some(item => item['@type'] === 'SoftwareApplication'))
+  const entities = new Map(schema['@graph'].map(item => [item['@id'], item]))
+  assert.equal(entities.size, schema['@graph'].length, `${path}: duplicate entity IDs`)
+  function checkReferences(value) {
+    if (!value || typeof value !== 'object') return
+    if (value['@id']) assert.ok(entities.has(value['@id']), `${path}: unresolved entity ${value['@id']}`)
+    for (const child of Object.values(value)) {
+      if (Array.isArray(child)) child.forEach(checkReferences)
+      else checkReferences(child)
+    }
+  }
+  schema['@graph'].forEach(checkReferences)
+  const webpage = entities.get(`${expected}#webpage`)
+  assert.equal(webpage?.url, expected, `${path}: page-specific URL`)
+  assert.equal(webpage.description, metas.find(meta => meta.name === 'description')?.content)
+  assert.equal(entities.get(webpage.isPartOf['@id'])['@type'], 'WebSite')
+  if (path === '/') {
+    assert.equal(entities.get(webpage.mainEntity['@id'])['@type'], 'SoftwareApplication')
+    assert.ok(!schema['@graph'].some(item => item['@type'] === 'TechArticle'))
+  } else {
+    const article = entities.get(webpage.mainEntity['@id'])
+    assert.equal(article['@type'], 'TechArticle')
+    assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
+    assert.deepEqual(article.articleSection, [...html.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
+    assert.ok(article.dependencies.length > 20)
+    assert.equal(article.mainEntityOfPage['@id'], webpage['@id'])
+    const breadcrumb = entities.get(webpage.breadcrumb['@id'])
+    assert.equal(breadcrumb['@type'], 'BreadcrumbList')
+    assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), [1, 2])
+    assert.equal(breadcrumb.itemListElement[1].item, expected)
+    assert.ok(html.includes('aria-label="Breadcrumb"'), `${path}: breadcrumb must be visible`)
+  }
   assert.ok(!JSON.stringify(schema).includes('aggregateRating'), 'Do not invent reviews')
   for (const target of ['/getting-started', '/agent-skills']) {
     assert.ok(html.includes(`href="${target}"`), `${path}: missing guide navigation ${target}`)

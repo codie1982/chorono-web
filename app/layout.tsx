@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { pageMetadata, SITE_URL, SITE_TITLE, SITE_DESCRIPTION, THEME_COLOR, structuredData } from '@/lib/site'
+import { pageMetadata, SITE_URL, SITE_TITLE, SITE_DESCRIPTION, THEME_COLOR } from '@/lib/site'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -27,14 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <script
-          id="chorono-structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
-        />
-        {children}
-      </body>
+      <body>{children}</body>
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
       )}

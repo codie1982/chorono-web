@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
+import StructuredData from '@/components/StructuredData';
 import {
   ArrowRight,
   BookOpen,
@@ -242,6 +243,7 @@ function GitHubStarButton() {
 export default function ChoronoLandingPage() {
   return (
     <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
+      <StructuredData path="/" />
       <section className="relative overflow-hidden bg-[#120D0B] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(181,82,51,0.35),transparent_34%),radial-gradient(circle_at_80%_8%,rgba(217,111,69,0.2),transparent_28%)]" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#f7f1ed] to-transparent" />

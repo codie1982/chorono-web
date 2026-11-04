@@ -1,16 +1,17 @@
 import Link from 'next/link'
 import GuideLayout from '@/components/GuideLayout'
-import { pageMetadata, REPOSITORY_URL } from '@/lib/site'
+import { pageMetadata, REPOSITORY_URL, SITE_PAGES } from '@/lib/site'
 
+const page = SITE_PAGES['/agent-skills']
 export const metadata = pageMetadata(
-  'Chorono Skills for Claude and Codex | Chorono',
-  'Learn how chorono-setup and chorono skills help Claude and Codex install the editor, create editable animations, inspect previews and save projects.',
+  page.title,
+  page.description,
   '/agent-skills',
 )
 
 export default function AgentSkills() {
   return (
-    <GuideLayout title="Build animations with your agent" description="Two skills teach Claude Code and Codex how to connect to Chorono and create animations that stay editable.">
+    <GuideLayout path="/agent-skills">
       <section>
         <h2>Two skills, one workflow</h2>
         <dl>

@@ -29,7 +29,7 @@ npm start
 
 The canonical site is `https://www.chorono.com/`. The homepage focuses on the animation editor and creation with AI agents. `/getting-started` and `/agent-skills` explain installation, MCP connection and editable animation workflows.
 
-- `lib/site.ts` centralizes the site identity, canonical URLs, Open Graph/Twitter cards and WebSite/SoftwareApplication structured data.
+- `lib/site.ts` centralizes the site identity, canonical URLs, Open Graph/Twitter cards and page-specific JSON-LD. See the [JSON-LD field map](docs/structured-data.md) for entities, fields and relationships.
 - `app/robots.ts` serves `/robots.txt`; `app/sitemap.ts` lists only the three public pages.
 - `app/manifest.ts` supplies app icons and theme information. Vercel preview deployments use `noindex` metadata.
 - `public/icon.svg` is the editable source for the existing copper C brand. Run `npm run brand:build` after changing it to regenerate the favicon, Apple/app icons and sharing image.

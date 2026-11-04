@@ -6,8 +6,10 @@ The site embeds one page-specific JSON-LD graph in each rendered HTML page. `lib
 | --- | --- | --- |
 | `WebSite` | `@id`, `name`, `alternateName`, `url`, `description`, `inLanguage`, `image`, `about` | Chorono site identity, logo and relationship to the application |
 | `SoftwareApplication` | `@id`, `name`, `alternateName`, `url`, `description`, `applicationCategory`, `operatingSystem`, `image`, `isAccessibleForFree`, `license`, `sameAs`, `installUrl`, `softwareHelp`, `offers`, `featureList` | The open-source editor, supported platforms, license, free source access, setup guide and features visible on the site |
+| `SoftwareApplication` (runtime) | `@id`, `name`, `softwareVersion`, `applicationCategory`, `applicationSubCategory`, `applicationSuite`, `operatingSystem`, `softwareRequirements`, `license`, `sameAs`, `installUrl`, `softwareHelp`, `offers`, `featureList` | A separate `/#runtime` entity for the published `@chorono/runtime` package; npm 0.1.0 and MIT license verified on 2026-11-04 |
+| `Organization` (guide author) | `@id`, `name`, `url`, `logo` | User-confirmed author “Chorono ekibi”, linked to the visible `/#team` attribution |
 | `WebPage` | `@id`, `url`, `name`, `description`, `inLanguage`, `isPartOf`, `about`, `primaryImageOfPage`, `mainEntity`, `breadcrumb` on guides | This exact canonical page and its primary subject |
-| `TechArticle` | `@id`, `url`, `headline`, `image`, `description`, `articleSection`, `dependencies`, `proficiencyLevel`, `inLanguage`, `isAccessibleForFree`, `mainEntityOfPage`, `isPartOf`, `about` | Guide H1, visible guide cover and H2 sections, stated prerequisites and beginner level |
+| `TechArticle` | `@id`, `url`, `headline`, `author`, `image`, `description`, `articleSection`, `dependencies`, `proficiencyLevel`, `inLanguage`, `isAccessibleForFree`, `mainEntityOfPage`, `isPartOf`, `about` | Guide H1, confirmed author, visible guide cover and H2 sections, stated prerequisites and beginner level |
 | `BreadcrumbList` | `@id`, `itemListElement` with `@type`, `position`, `name`, `item` | The visible two-step trail from Chorono to the current guide |
 | `ImageObject` | `@id`, `url`, `contentUrl`, `width`, `height`, `caption`, `encodingFormat` | The 512×512 logo, 1200×630 homepage image, and each guide's visible 1200×675 cover |
 
@@ -17,11 +19,13 @@ The site embeds one page-specific JSON-LD graph in each rendered HTML page. `lib
 - `/getting-started`: its `WebPage.mainEntity` points to `/getting-started#article`; the article is about `/#software`.
 - `/agent-skills`: its `WebPage.mainEntity` points to `/agent-skills#article`; the article is about `/#software`.
 - Every page belongs to `/#website`. Entity references resolve inside the same graph.
+- The editor is `/#software`; the separately installable npm runtime is `/#runtime`. The runtime is defined on the homepage, where its installation and usage are visible. Guide main entities remain articles about the editor.
+- Guide `author` points to `/#team`; the user confirmed the author name “Chorono ekibi”.
 - Guide `BreadcrumbList` data matches the visible trail. All canonical URLs use `https://www.chorono.com`.
 - Guide `TechArticle.image`, page metadata and the visible cover reference the same article-specific image.
 - The homepage JSON-LD is server-rendered outside the interactive landing page. Optional GitHub star data is validated before rendering; failed or rate-limited responses preserve the page and link.
 
-`offers.price: 0` describes free access to the public source; it does not assert a paid service or subscription. No ratings, reviews, contact details, organization ownership, author attribution or publication dates are inferred. Add those only when the site has verified, visible supporting information.
+`offers.price: 0` describes free access to the public source/package; it does not assert a paid service or subscription. The guide author was confirmed by the user and is visible on the pages. Ratings, reviews, contact details and publication dates still require verified supporting information.
 
 ## Verification
 

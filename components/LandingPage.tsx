@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { loadGitHubStars } from '@/lib/github-stars.mjs';
+import { GUIDE_AUTHOR, RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
 import {
   ArrowRight,
   BookOpen,
@@ -27,7 +28,7 @@ import {
 
 const LINKS = {
   github: "https://github.com/codie1982/chorono-editor",
-  npm: "https://www.npmjs.com/package/@chorono/runtime",
+  npm: RUNTIME_URL,
   docs: "/getting-started",
   examples: "/agent-skills",
   androidImplementation: "https://github.com/codie1982/chorono-android-sdk",
@@ -326,7 +327,7 @@ export default function ChoronoLandingPage() {
           </a>
         </div>
         <h2 className="mb-3 text-2xl font-bold">Bring your animation into an app</h2>
-        <p className="mb-6 max-w-2xl leading-7 text-[#6d5a52]">Alongside editor workflows, Chorono provides runtime tooling for playing portable animation data in web and Android projects.</p>
+        <p className="mb-6 max-w-2xl leading-7 text-[#6d5a52]">Create and export scenes with the editor, then play them in a web application with the separate <code>@chorono/runtime</code> package. The Android SDK provides its own native integration.</p>
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-3xl border border-[#e7d8cf] bg-white p-6 shadow-sm">
             <div className="mb-5 flex items-center gap-3">
@@ -334,8 +335,8 @@ export default function ChoronoLandingPage() {
                 <Terminal className="h-5 w-5" />
               </div>
               <div>
-                <h2 className="text-lg font-bold">Install via NPM</h2>
-                <p className="text-sm text-[#6d5a52]">Add Chorono runtime to your web project in seconds.</p>
+                <h2 className="text-lg font-bold">Chorono Runtime</h2>
+                <p className="text-sm text-[#6d5a52]">A framework-free player for exported scenes. npm version 0.1.0.</p>
               </div>
             </div>
             <CodeBlock title="terminal">$ npm i @chorono/runtime</CodeBlock>
@@ -345,12 +346,20 @@ export default function ChoronoLandingPage() {
                 <Code2 className="h-5 w-5 text-[#B55233]" />
                 <h3 className="font-semibold">Use in Web</h3>
               </div>
-              <CodeBlock title="hero-motion.jsx">{`import { ChoronoPlayer } from "@chorono/runtime";
-import animation from "./hero.chorono.json";
+              <p className="mb-3 text-sm leading-6 text-[#6d5a52]">In your bundled web app, add a canvas and import the scene JSON exported from the editor.</p>
+              <CodeBlock title="index.html">{`<canvas id="animation" width="1024" height="768"></canvas>`}</CodeBlock>
+              <div className="mt-4">
+                <CodeBlock title="player.js">{`import { ChronoPlayer, CanvasRenderAdapter } from "@chorono/runtime";
+import scene from "./hero.chorono.json";
 
-export function HeroMotion() {
-  return <ChoronoPlayer data={animation} autoplay loop />;
-}`}</CodeBlock>
+const canvas = document.querySelector("#animation");
+const ctx = canvas.getContext("2d");
+const adapter = new CanvasRenderAdapter(ctx);
+const player = new ChronoPlayer(scene, adapter, { loop: true });
+
+player.play();`}</CodeBlock>
+              </div>
+              <a href={`${RUNTIME_REPOSITORY_URL}/blob/main/docs/en/01-getting-started.md`} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#8F3D27]">Read runtime documentation <ArrowRight className="h-4 w-4" /></a>
             </div>
           </div>
 
@@ -410,6 +419,7 @@ root.addView(view)`}</CodeBlock>
             <div>
               <div className="font-bold">Chorono Animator</div>
               <div className="text-sm text-[#6d5a52]">Editable animation, with your AI agent.</div>
+              <p id="team" className="mt-2 text-sm text-[#6d5a52]">Guides by {GUIDE_AUTHOR.name}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-5">

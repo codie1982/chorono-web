@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { REPOSITORY_URL, SITE_PAGES, type GuidePath } from '@/lib/site'
+import { GUIDE_AUTHOR, REPOSITORY_URL, SITE_PAGES, type GuidePath } from '@/lib/site'
 import StructuredData from './StructuredData'
 
 export default function GuideLayout({ path, children }: { path: GuidePath; children: React.ReactNode }) {
@@ -29,6 +29,7 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
           </ol>
         </nav>
         <h1 className="text-4xl font-black tracking-tight md:text-5xl">{page.headline}</h1>
+        <p className="mt-4 text-sm">By <Link href="/#team" rel="author">{GUIDE_AUTHOR.name}</Link></p>
         <p className="mt-5 text-lg leading-8 text-[#6d5a52]">{page.intro}</p>
         <img src={page.image} alt={page.imageAlt} width={1200} height={675} className="mt-8 h-auto w-full rounded-2xl border border-[#e7d8cf]" />
         <div className="mt-12 space-y-10">{children}</div>

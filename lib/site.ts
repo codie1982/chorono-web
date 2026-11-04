@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 
 export const SITE_URL = 'https://www.chorono.com'
 export const REPOSITORY_URL = 'https://github.com/codie1982/chorono-editor'
+export const RUNTIME_URL = 'https://www.npmjs.com/package/@chorono/runtime'
+export const RUNTIME_REPOSITORY_URL = 'https://github.com/codie1982/chorono-runtime'
+export const GUIDE_AUTHOR = { name: 'Chorono ekibi', url: `${SITE_URL}/#team` }
 export const SITE_TITLE = 'Chorono | Open-Source Animation Editor for AI Agents'
 export const SITE_DESCRIPTION = 'Create editable 2D animations with Chorono. Use timelines, keyframes and particles, or connect Claude and Codex through MCP to build in your browser.'
 export const THEME_COLOR = '#B55233'
@@ -69,6 +72,8 @@ export type GuidePath = Exclude<PagePath, '/'>
 const entityIds = {
   website: `${SITE_URL}/#website`,
   software: `${SITE_URL}/#software`,
+  runtime: `${SITE_URL}/#runtime`,
+  team: `${SITE_URL}/#team`,
   logo: `${SITE_URL}/#logo`,
   image: `${SITE_URL}/#sharing-image`,
 }
@@ -92,7 +97,14 @@ export function pageStructuredData(path: PagePath) {
         description: SITE_DESCRIPTION,
         inLanguage: 'en',
         image: { '@id': entityIds.logo },
-        about: { '@id': entityIds.software },
+        about: guide ? { '@id': entityIds.software } : [{ '@id': entityIds.software }, { '@id': entityIds.runtime }],
+      },
+      {
+        '@type': 'Organization',
+        '@id': entityIds.team,
+        name: GUIDE_AUTHOR.name,
+        url: GUIDE_AUTHOR.url,
+        logo: { '@id': entityIds.logo },
       },
       {
         '@type': 'ImageObject',
@@ -142,6 +154,28 @@ export function pageStructuredData(path: PagePath) {
         offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD', url: REPOSITORY_URL },
         featureList: ['Editable 2D animation', 'Timelines and keyframes', 'Particle effects', 'MCP connection for AI agents', 'Preview and portable project saving'],
       },
+      ...(!guide ? [{
+        '@type': 'SoftwareApplication',
+        '@id': entityIds.runtime,
+        name: '@chorono/runtime',
+        alternateName: 'Chorono Runtime',
+        url: RUNTIME_URL,
+        description: 'A framework-free JavaScript runtime for playing exported Chorono scenes in web applications using the editor’s evaluation engine.',
+        applicationCategory: 'DeveloperApplication',
+        applicationSubCategory: 'JavaScript animation runtime',
+        applicationSuite: 'Chorono',
+        operatingSystem: 'Any operating system with a JavaScript-enabled web browser',
+        softwareVersion: '0.1.0',
+        softwareRequirements: 'A JavaScript-enabled browser with Canvas 2D support',
+        image: { '@id': entityIds.image },
+        isAccessibleForFree: true,
+        license: `${RUNTIME_REPOSITORY_URL}/blob/main/LICENSE`,
+        sameAs: [RUNTIME_URL, RUNTIME_REPOSITORY_URL],
+        installUrl: RUNTIME_URL,
+        softwareHelp: { '@type': 'CreativeWork', url: `${RUNTIME_REPOSITORY_URL}/blob/main/docs/en/01-getting-started.md` },
+        offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD', url: RUNTIME_URL },
+        featureList: ['Framework-free playback', 'Canvas 2D rendering', 'Timeline evaluation', 'State machines and events', 'Scene parameters'],
+      }] : []),
       {
         '@type': 'WebPage',
         '@id': pageId,
@@ -150,7 +184,7 @@ export function pageStructuredData(path: PagePath) {
         description: page.description,
         inLanguage: 'en',
         isPartOf: { '@id': entityIds.website },
-        about: { '@id': entityIds.software },
+        about: guide ? { '@id': entityIds.software } : [{ '@id': entityIds.software }, { '@id': entityIds.runtime }],
         primaryImageOfPage: { '@id': guideImageId },
         mainEntity: { '@id': guide ? `${url}#article` : entityIds.software },
         ...(guide ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
@@ -161,6 +195,7 @@ export function pageStructuredData(path: PagePath) {
           '@id': `${url}#article`,
           url,
           headline: guide.headline,
+          author: { '@id': entityIds.team },
           image: { '@id': guideImageId },
           description: guide.description,
           articleSection: [...guide.sections],

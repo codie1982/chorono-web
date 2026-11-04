@@ -81,7 +81,8 @@ for (const path of pages) {
     assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
     assert.deepEqual(article.articleSection, [...html.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
     if (isPost) {
-      assert.equal(article.datePublished, '2026-11-04')
+      assert.match(article.datePublished, /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
+      assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Publication timestamp must be valid')
       assert.equal(article.dateModified, article.datePublished)
       assert.ok(html.includes(`<time dateTime="${article.datePublished}">`) || html.includes(`<time datetime="${article.datePublished}">`), `${path}: visible publication date`)
       assert.equal(metas.find(meta => meta.property === 'og:type')?.content, 'article')

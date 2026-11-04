@@ -21,16 +21,15 @@ import {
   trackCodeCopy,
   trackButtonClick,
   trackHeroEditorClick,
-  trackHeroNpmClick,
   trackGitHubStarView
 } from "@/lib/analytics";
 
 const LINKS = {
   github: "https://github.com/codie1982/chorono-editor",
   npm: "https://www.npmjs.com/package/@chorono/runtime",
-  docs: "https://github.com/codie1982/chorono-editor/tree/main/docs",
-  examples: "https://github.com/codie1982/chorono-editor",
-  androidImplementation: "https://github.com/codie1982/chorono-editor",
+  docs: "/getting-started",
+  examples: "/agent-skills",
+  androidImplementation: "https://github.com/codie1982/chorono-android-sdk",
 };
 
 const ACCENT = "#B55233";
@@ -260,8 +259,8 @@ export default function ChoronoLandingPage() {
             </a>
 
             <div className="hidden items-center gap-6 text-sm font-medium text-zinc-300 md:flex">
-              <a href={LINKS.docs} className="hover:text-white">Docs</a>
-              <a href={LINKS.examples} className="hover:text-white">Examples</a>
+              <a href={LINKS.docs} className="hover:text-white">Getting started</a>
+              <a href={LINKS.examples} className="hover:text-white">Agent skills</a>
               <GitHubStarButton />
             </div>
           </nav>
@@ -270,43 +269,39 @@ export default function ChoronoLandingPage() {
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 backdrop-blur">
                 <Zap className="h-4 w-4 text-[#ffb397]" />
-                Open-source animation runtime
+                Open-source animation editor
               </div>
 
               <h1 className="max-w-xl text-5xl font-black leading-[0.98] tracking-tight md:text-6xl">
-                Professional animation.
-                <span className="block text-[#d96f45]">Perfect timing.</span>
+                Create editable
+                <span className="block text-[#d96f45]">2D animations.</span>
               </h1>
 
               <p className="mt-6 max-w-lg text-base leading-8 text-zinc-400">
-                Chorono brings timeline-based animation, portable runtime data, and SDK-friendly playback to web and mobile applications.
+                Build in your browser with timelines, keyframes and particles. Connect Claude or Codex through MCP to create, preview and save projects you can keep editing.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={LINKS.github}
+                  href={LINKS.docs}
                   onClick={trackHeroEditorClick}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(181,82,51,0.35)] transition hover:bg-[#8F3D27]"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <Github className="h-4 w-4" />
                   Get Chorono Editor
                 </a>
                 <a
-                  href={LINKS.npm}
-                  onClick={trackHeroNpmClick}
+                  href={LINKS.examples}
+                  onClick={() => trackButtonClick('hero_agent_skills')}
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  <Package className="h-4 w-4" />
-                  View on NPM
+                  <BookOpen className="h-4 w-4" />
+                  Explore agent skills
                 </a>
               </div>
 
               <div className="mt-9 grid grid-cols-2 gap-4 text-sm text-zinc-400 sm:grid-cols-4">
-                {['Open Source', 'Lightweight', 'High Performance', 'Cross Platform'].map((item) => (
+                {['Open Source', 'Editable Projects', 'Agent Control', 'Local Setup'].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-[#d96f45]" />
                     {item}
@@ -321,6 +316,20 @@ export default function ChoronoLandingPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-10">
+        <div className="mb-10 grid gap-5 md:grid-cols-2">
+          <a href="/getting-started" className="rounded-3xl border border-[#e7d8cf] bg-white p-7 shadow-sm transition hover:border-[#B55233]">
+            <h2 className="text-xl font-bold">Set up your animation workspace</h2>
+            <p className="mt-3 leading-7 text-[#6d5a52]">Install Chorono, start the editor and connect your agent. Follow the steps from a fresh checkout to your first saved project.</p>
+            <span className="mt-5 inline-flex items-center gap-2 font-semibold text-[#8F3D27]">Read the setup guide <ArrowRight className="h-4 w-4" /></span>
+          </a>
+          <a href="/agent-skills" className="rounded-3xl border border-[#e7d8cf] bg-white p-7 shadow-sm transition hover:border-[#B55233]">
+            <h2 className="text-xl font-bold">Create with Claude or Codex</h2>
+            <p className="mt-3 leading-7 text-[#6d5a52]">Learn what the setup and authoring skills do, how to install them, and how an agent inspects previews while keeping your scene editable.</p>
+            <span className="mt-5 inline-flex items-center gap-2 font-semibold text-[#8F3D27]">Explore the skills <ArrowRight className="h-4 w-4" /></span>
+          </a>
+        </div>
+        <h2 className="mb-3 text-2xl font-bold">Bring your animation into an app</h2>
+        <p className="mb-6 max-w-2xl leading-7 text-[#6d5a52]">Alongside editor workflows, Chorono provides runtime tooling for playing portable animation data in web and Android projects.</p>
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-3xl border border-[#e7d8cf] bg-white p-6 shadow-sm">
             <div className="mb-5 flex items-center gap-3">
@@ -391,9 +400,9 @@ root.addView(view)`}</CodeBlock>
 
         <div className="mt-6 grid gap-4 md:grid-cols-4">
           <FeatureCard icon={Layers} title="Editor-first" text="Timeline, dope sheet, curve editor and modifiers in one animation workflow." />
-          <FeatureCard icon={Box} title="Portable Runtime" text="Render the same animation on web, Android and future runtimes." />
-          <FeatureCard icon={Zap} title="Interactive" text="Events, expressions and runtime API for rich interactions." />
-          <FeatureCard icon={Play} title="Performance" text="Small runtime, optimized playback and mobile-friendly rendering." />
+          <FeatureCard icon={Box} title="Editable Projects" text="Keep layers, keyframes and animation settings available for the next revision." />
+          <FeatureCard icon={Zap} title="Agent Control" text="Connect Claude or Codex through MCP to create, inspect and refine scenes." />
+          <FeatureCard icon={Play} title="Preview and Refine" text="Inspect animation frames, adjust timing and save a portable project." />
         </div>
       </section>
 
@@ -403,13 +412,12 @@ root.addView(view)`}</CodeBlock>
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#B55233] text-xl font-black text-white">C</div>
             <div>
               <div className="font-bold">Chorono Animator</div>
-              <div className="text-sm text-[#6d5a52]">Open-source motion tooling for modern platforms.</div>
+              <div className="text-sm text-[#6d5a52]">Editable animation, with your AI agent.</div>
             </div>
           </div>
           <div className="flex flex-wrap gap-5">
-            <div className="inline-flex">
-              <GitHubStarButton />
-            </div>
+            <ResourceLink icon={Github} label="GitHub" href={LINKS.github} />
+            <ResourceLink icon={Zap} label="Agent skills" href="/agent-skills" />
             <ResourceLink icon={Package} label="NPM" href={LINKS.npm} />
             <ResourceLink icon={BookOpen} label="Docs" href={LINKS.docs} />
           </div>

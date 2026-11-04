@@ -9,9 +9,9 @@ export const SITE_TITLE = 'Chorono | Open-Source Animation Editor for AI Agents'
 export const SITE_DESCRIPTION = 'Create editable 2D animations with Chorono. Use timelines, keyframes and particles, or connect Claude and Codex through MCP to build in your browser.'
 export const THEME_COLOR = '#B55233'
 
-export function pageMetadata(title: string, description: string, path = '/'): Metadata {
+export function pageMetadata(title: string, description: string, path = '/', cover?: { image: string; imageAlt: string }): Metadata {
   const url = new URL(path, SITE_URL).href
-  const guide = path === '/getting-started' || path === '/agent-skills' ? SITE_PAGES[path] : undefined
+  const guide = cover ?? (path === '/getting-started' || path === '/agent-skills' ? SITE_PAGES[path] : undefined)
   const image = `${SITE_URL}${guide?.image ?? '/opengraph-image.png'}`
   const imageAlt = guide?.imageAlt ?? 'Chorono: create editable 2D animations with your AI agent'
   return {
@@ -34,6 +34,12 @@ export function pageMetadata(title: string, description: string, path = '/'): Me
       images: [{ url: image, alt: imageAlt }],
     },
   }
+}
+
+// Shared identities for editorial pages; each page adds its own visible content.
+export function editorialSiteEntities() {
+  const ids = new Set([entityIds.website, entityIds.team, entityIds.logo, entityIds.image, entityIds.software])
+  return pageStructuredData('/getting-started')['@graph'].filter(entity => ids.has(entity['@id']))
 }
 
 export const SITE_PAGES = {

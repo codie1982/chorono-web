@@ -13,6 +13,7 @@
   .guide p { @apply mb-4 leading-8 text-[#6d5a52]; }
   .guide a { @apply text-[#8F3D27] underline decoration-[#d9a08b] underline-offset-4 hover:decoration-current; }
   .guide pre { @apply my-5 overflow-x-auto rounded-2xl bg-[#15100d] p-5 text-sm leading-7 text-[#fff0e9]; }
+  .guide pre.prompt-block { @apply whitespace-pre-wrap break-words border border-[#dcc0ad] bg-[#ede0d7] font-sans text-base leading-8 text-[#4a332b]; }
   .guide p code { @apply rounded bg-[#eadbd2] px-1.5 py-0.5 text-sm text-[#4a332b]; }
   .guide blockquote { @apply my-5 border-l-4 border-[#B55233] bg-white p-5 leading-8 text-[#4a332b]; }
   .guide dt { @apply mt-5 font-semibold; }

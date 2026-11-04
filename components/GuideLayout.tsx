@@ -16,6 +16,7 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
           <div className="flex flex-wrap gap-5 text-sm text-[#e8c9ba]">
             <Link href="/getting-started">Getting started</Link>
             <Link href="/agent-skills">Agent skills</Link>
+            <Link href="/blog">Blog</Link>
             <a href={REPOSITORY_URL}>GitHub</a>
           </div>
         </nav>

@@ -2,7 +2,8 @@ import assert from 'node:assert/strict'
 
 const origin = (process.argv[2] ?? 'http://127.0.0.1:3000').replace(/\/$/, '')
 const canonicalOrigin = 'https://www.chorono.com'
-const pages = ['/', '/getting-started', '/agent-skills']
+const blogSlugs = ['make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex']
+const pages = ['/', '/getting-started', '/agent-skills', '/blog', ...blogSlugs.map(slug => `/blog/${slug}`)]
 const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'")
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, decode(value)]))
 
@@ -18,7 +19,9 @@ for (const path of pages) {
   const metas = [...html.matchAll(/<meta\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const expected = new URL(path, canonicalOrigin).href
-  const guideImage = path === '/' ? '/opengraph-image.png' : `/guides${path}.png`
+  const isPost = path.startsWith('/blog/')
+  const isHub = path === '/blog'
+  const guideImage = path === '/' || isHub ? '/opengraph-image.png' : isPost ? `${path}.png` : `/guides${path}.png`
   assert.equal(new URL(links.find(link => link.rel === 'canonical')?.href).href, expected, `${path}: canonical`)
   assert.equal(new URL(metas.find(meta => meta.property === 'og:url')?.content).href, expected, `${path}: Open Graph URL`)
   assert.equal(metas.find(meta => meta.property === 'og:image')?.content, `${canonicalOrigin}${guideImage}`)
@@ -63,13 +66,29 @@ for (const path of pages) {
     assert.ok(!schema['@graph'].some(item => item['@type'] === 'TechArticle'))
     assert.ok(html.includes('ChronoPlayer, CanvasRenderAdapter') && !html.includes('ChoronoPlayer'), 'Runtime example must use the actual package API')
     assert.ok(html.includes('id="team"'), 'Author profile anchor must exist')
+  } else if (isHub) {
+    assert.equal(webpage['@type'], 'CollectionPage')
+    assert.equal(runtime, undefined)
+    const index = entities.get(webpage.mainEntity['@id'])
+    assert.equal(index['@type'], 'ItemList')
+    assert.equal(index.itemListElement.length, 3)
+    assert.ok(!schema['@graph'].some(item => item['@type'] === 'BlogPosting'), 'Hub must describe its collection')
+    for (const slug of blogSlugs) assert.ok(html.includes(`href="/blog/${slug}"`), `Hub must link to ${slug}`)
   } else {
     assert.equal(runtime, undefined, 'Runtime product belongs to its visible homepage section')
     const article = entities.get(webpage.mainEntity['@id'])
-    assert.equal(article['@type'], 'TechArticle')
+    assert.equal(article['@type'], isPost ? 'BlogPosting' : 'TechArticle')
     assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
     assert.deepEqual(article.articleSection, [...html.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
-    assert.ok(article.dependencies.length > 20)
+    if (isPost) {
+      assert.equal(article.datePublished, '2026-11-04')
+      assert.equal(article.dateModified, article.datePublished)
+      assert.ok(html.includes(`<time dateTime="${article.datePublished}">`) || html.includes(`<time datetime="${article.datePublished}">`), `${path}: visible publication date`)
+      assert.equal(metas.find(meta => meta.property === 'og:type')?.content, 'article')
+      assert.equal(entities.get(article.isPartOf['@id'])['@type'], 'Blog')
+      assert.ok(html.includes('aria-label="In this article"'))
+      for (const slug of blogSlugs) if (path !== `/blog/${slug}`) assert.ok(html.includes(`href="/blog/${slug}"`), `${path}: related article ${slug}`)
+    } else assert.ok(article.dependencies.length > 20)
     const author = entities.get(article.author['@id'])
     assert.equal(author['@type'], 'Organization')
     assert.equal(author.name, 'Chorono ekibi')
@@ -80,12 +99,12 @@ for (const path of pages) {
     assert.equal(article.mainEntityOfPage['@id'], webpage['@id'])
     const breadcrumb = entities.get(webpage.breadcrumb['@id'])
     assert.equal(breadcrumb['@type'], 'BreadcrumbList')
-    assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), [1, 2])
-    assert.equal(breadcrumb.itemListElement[1].item, expected)
+    assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), isPost ? [1, 2, 3] : [1, 2])
+    assert.equal(breadcrumb.itemListElement.at(-1).item, expected)
     assert.ok(html.includes('aria-label="Breadcrumb"'), `${path}: breadcrumb must be visible`)
   }
   assert.ok(!JSON.stringify(schema).includes('aggregateRating'), 'Do not invent reviews')
-  for (const target of ['/getting-started', '/agent-skills']) {
+  for (const target of ['/getting-started', '/agent-skills', '/blog']) {
     assert.ok(html.includes(`href="${target}"`), `${path}: missing guide navigation ${target}`)
   }
   console.log(`PASS ${path}: metadata, canonical, JSON-LD, heading, icons and navigation`)
@@ -104,7 +123,7 @@ console.log('PASS robots.txt and sitemap.xml: public pages only, correct origin 
 
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

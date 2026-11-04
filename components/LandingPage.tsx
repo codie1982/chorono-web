@@ -259,6 +259,7 @@ export default function ChoronoLandingPage() {
             <div className="hidden items-center gap-6 text-sm font-medium text-zinc-300 md:flex">
               <a href={LINKS.docs} className="hover:text-white">Getting started</a>
               <a href={LINKS.examples} className="hover:text-white">Agent skills</a>
+              <a href="/blog" className="hover:text-white">Blog</a>
               <GitHubStarButton />
             </div>
           </nav>
@@ -412,6 +413,20 @@ root.addView(view)`}</CodeBlock>
         </div>
       </section>
 
+      <section aria-labelledby="blog-heading" className="mx-auto max-w-7xl px-6 pb-14 pt-2">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+          <div><p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#8F3D27]">From the Chorono blog</p><h2 id="blog-heading" className="text-3xl font-bold tracking-tight">Start with a prompt.</h2></div>
+          <a href="/blog" className="text-sm font-semibold text-[#8F3D27] hover:underline">All animation guides →</a>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            { href: '/blog/make-animations-with-claude', label: 'Claude Code', title: 'Make animations with Claude', text: 'Install Chorono, connect MCP and create your first editable title card.' },
+            { href: '/blog/make-animations-with-codex', label: 'Codex', title: 'Animate with Codex', text: 'Set up the editor and turn a clear brief into editable layers and keyframes.' },
+            { href: '/blog/animation-prompts-for-claude-and-codex', label: 'Prompt recipes', title: 'Six prompts to try', text: 'Title cards, loading loops, wordmark reveals and focused revisions.' },
+          ].map(post => <a key={post.href} href={post.href} className="rounded-2xl border border-[#e7d8cf] bg-white p-6 hover:border-[#B55233]"><span className="text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">{post.label}</span><h3 className="mt-3 text-xl font-bold">{post.title}</h3><p className="mt-3 text-sm leading-7 text-[#6d5a52]">{post.text}</p><span className="mt-5 block text-sm font-semibold text-[#8F3D27]">Read the guide →</span></a>)}
+        </div>
+      </section>
+
       <footer className="border-t border-[#e7d8cf] bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
@@ -425,6 +440,7 @@ root.addView(view)`}</CodeBlock>
           <div className="flex flex-wrap gap-5">
             <ResourceLink icon={Github} label="GitHub" href={LINKS.github} />
             <ResourceLink icon={Zap} label="Agent skills" href="/agent-skills" />
+            <ResourceLink icon={BookOpen} label="Blog" href="/blog" />
             <ResourceLink icon={Package} label="NPM" href={LINKS.npm} />
             <ResourceLink icon={BookOpen} label="Docs" href={LINKS.docs} />
           </div>

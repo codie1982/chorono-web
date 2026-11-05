@@ -1,0 +1,135 @@
+'use client'
+
+import { useEffect, useId, useRef, useState } from 'react'
+import { Download, Pause, Play, RotateCcw } from 'lucide-react'
+import type { ChronoPlayer } from '@chorono/runtime'
+
+const DURATION = 6000
+const BASE = '/examples/ideas-in-motion'
+
+export default function AnimationExample() {
+  const labelId = useId()
+  const canvas = useRef<HTMLCanvasElement>(null)
+  const player = useRef<ChronoPlayer | null>(null)
+  const pending = useRef<Promise<ChronoPlayer> | null>(null)
+  const mounted = useRef(false)
+  const started = useRef(false)
+  const position = useRef(3600)
+  const [status, setStatus] = useState<'poster' | 'loading' | 'ready' | 'error'>('poster')
+  const [playing, setPlaying] = useState(false)
+  const [time, setTime] = useState(3600)
+
+  useEffect(() => {
+    mounted.current = true
+    return () => {
+      mounted.current = false
+      player.current?.destroy()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!playing) return
+    let previous = performance.now()
+    let displayed = previous
+    let frame: number
+    const advance = (now: number) => {
+      position.current = Math.min(DURATION, position.current + now - previous)
+      previous = now
+      // Host-driven timing keeps the controls and the runtime on the same clock.
+      player.current?.tick(position.current)
+      if (now - displayed >= 80 || position.current === DURATION) {
+        setTime(position.current)
+        displayed = now
+      }
+      if (position.current === DURATION) setPlaying(false)
+      else frame = requestAnimationFrame(advance)
+    }
+    frame = requestAnimationFrame(advance)
+    return () => cancelAnimationFrame(frame)
+  }, [playing])
+
+  async function getPlayer() {
+    if (player.current) return player.current
+    if (pending.current) return pending.current
+    setStatus('loading')
+    pending.current = (async () => {
+      const [runtime, response] = await Promise.all([
+        import('@chorono/runtime'),
+        fetch(`${BASE}.runtime.json`),
+      ])
+      if (!response.ok) throw new Error('Example unavailable')
+      const exported = await response.json()
+      if (!mounted.current || !canvas.current) throw new Error('Preview closed')
+      const context = canvas.current.getContext('2d')
+      if (!context) throw new Error('Canvas unavailable')
+      const instance = new runtime.ChronoPlayer(exported.runtime, new runtime.CanvasRenderAdapter(context), { loop: false })
+      player.current = instance
+      instance.seek(3600)
+      setStatus('ready')
+      return instance
+    })()
+    try {
+      return await pending.current
+    } catch (error) {
+      if (mounted.current) setStatus('error')
+      throw error
+    } finally {
+      pending.current = null
+    }
+  }
+
+  async function togglePlayback(restart = false) {
+    try {
+      const instance = await getPlayer()
+      if (playing && !restart) {
+        setPlaying(false)
+        setTime(position.current)
+        return
+      }
+      if (restart || !started.current || position.current >= DURATION) {
+        position.current = 0
+        instance.seek(0)
+        setTime(0)
+      }
+      started.current = true
+      setPlaying(true)
+    } catch { /* The poster and project download remain available. */ }
+  }
+
+  async function seek(value: number) {
+    setTime(value)
+    position.current = value
+    setPlaying(false)
+    started.current = true
+    try {
+      const instance = await getPlayer()
+      instance.pause()
+      instance.seek(value)
+    } catch { /* Show the download fallback if playback is unavailable. */ }
+  }
+
+  return <figure className="animation-example my-7 overflow-hidden rounded-2xl border border-[#d9bca9] bg-white" aria-labelledby={labelId}>
+    <div className="flex flex-wrap justify-between gap-2 border-b border-[#e7d8cf] px-5 py-4 text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">
+      <span id={labelId}>Ideas in motion</span><span>6 seconds · 7 editable layers</span>
+    </div>
+    <div className="relative aspect-video bg-[#F7F1ED]">
+      <img src={`${BASE}.png`} alt="Ideas in motion title card: dark brown lettering, a rust underline and a moving circle on a cream canvas." width={1200} height={675} loading="lazy" className="absolute inset-0 h-full w-full" />
+      <canvas ref={canvas} width={1200} height={675} role="img" aria-label="Animated preview of the Ideas in motion title card" className={`absolute inset-0 h-full w-full ${status === 'ready' ? '' : 'invisible'}`} />
+    </div>
+    <div className="border-t border-[#e7d8cf] p-4 sm:p-5">
+      <div className="flex flex-wrap items-center gap-3">
+        <button type="button" onClick={() => void togglePlayback()} disabled={status === 'loading'} className="inline-flex min-h-[44px] min-w-[112px] items-center justify-center gap-2 rounded-lg bg-[#8F3D27] px-4 text-sm font-semibold text-white disabled:opacity-60" aria-label={playing ? 'Pause animation' : 'Play animation'}>
+          {playing ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}{status === 'loading' ? 'Loading…' : playing ? 'Pause' : 'Play'}
+        </button>
+        <button type="button" onClick={() => void togglePlayback(true)} disabled={status === 'loading'} className="inline-flex min-h-[44px] items-center gap-2 rounded-lg px-3 text-sm font-medium text-[#8F3D27] hover:bg-[#f7f1ed] disabled:opacity-60"><RotateCcw size={16} aria-hidden="true" />Replay</button>
+        <span className="ml-auto text-sm tabular-nums text-[#6d5a52]" aria-hidden="true">{(time / 1000).toFixed(1)} / 6.0 s</span>
+      </div>
+      <label className="mt-3 flex flex-wrap items-center gap-x-3 text-sm text-[#6d5a52]">Preview time
+        <input type="range" min={0} max={DURATION} step={100} value={time} onChange={event => void seek(Number(event.target.value))} disabled={status === 'loading'} aria-valuetext={`${(time / 1000).toFixed(1)} seconds of 6 seconds`} className="min-h-[44px] min-w-0 flex-1 accent-[#8F3D27] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F3D27]" />
+      </label>
+      {status === 'error' && <div role="status" className="mt-3 text-sm text-[#8F3D27]">The preview could not load. Download the project below to open it in Chorono.</div>}
+      <a href={`${BASE}.chorono.json`} download="ideas-in-motion.chorono.json" className="mt-3 inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold"><Download size={17} aria-hidden="true" />Download editable Chorono project <span className="font-normal">· 12 KB JSON</span></a>
+    </div>
+    <figcaption className="border-t border-[#e7d8cf] bg-[#faf7f4] px-5 py-4 text-sm leading-6 text-[#6d5a52]">A real Chorono scene, played with @chorono/runtime. Playback starts when you choose Play. Text, shapes and keyframes remain editable in the downloaded project.</figcaption>
+  </figure>
+}

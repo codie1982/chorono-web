@@ -83,7 +83,8 @@ for (const path of pages) {
     if (isPost) {
       assert.match(article.datePublished, /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
       assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Publication timestamp must be valid')
-      assert.equal(article.dateModified, article.datePublished)
+      assert.ok(Number.isFinite(Date.parse(article.dateModified)) && Date.parse(article.dateModified) >= Date.parse(article.datePublished), 'Modification date must follow publication')
+      if (article.dateModified !== article.datePublished) assert.ok(html.includes(`dateTime="${article.dateModified}"`) || html.includes(`datetime="${article.dateModified}"`), 'Updated date must be visible')
       assert.ok(html.includes(`<time dateTime="${article.datePublished}">`) || html.includes(`<time datetime="${article.datePublished}">`), `${path}: visible publication date`)
       assert.equal(metas.find(meta => meta.property === 'og:type')?.content, 'article')
       assert.equal(entities.get(article.isPartOf['@id'])['@type'], 'Blog')
@@ -103,6 +104,16 @@ for (const path of pages) {
     assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), isPost ? [1, 2, 3] : [1, 2])
     assert.equal(breadcrumb.itemListElement.at(-1).item, expected)
     assert.ok(html.includes('aria-label="Breadcrumb"'), `${path}: breadcrumb must be visible`)
+    if (path === '/agent-skills' || path === '/blog/make-animations-with-claude') {
+      const example = entities.get(article.hasPart?.['@id'])
+      assert.equal(example?.['@type'], 'CreativeWork')
+      const project = entities.get(example.encoding['@id'])
+      assert.equal(project.encodingFormat, 'application/json')
+      assert.equal(project.contentUrl, `${canonicalOrigin}/examples/ideas-in-motion.chorono.json`)
+      assert.ok(html.includes('href="/examples/ideas-in-motion.chorono.json"') && html.includes('download="ideas-in-motion.chorono.json"'), 'Editable project must be downloadable without JavaScript')
+      assert.ok(html.includes('src="/examples/ideas-in-motion.png"') && html.includes('aria-label="Play animation"'), 'Example must have a visible poster and explicit playback control')
+      assert.ok(!schema['@graph'].some(item => item['@type'] === 'VideoObject'), 'Canvas playback must not claim a video file')
+    }
   }
   assert.ok(!JSON.stringify(schema).includes('aggregateRating'), 'Do not invent reviews')
   for (const target of ['/getting-started', '/agent-skills', '/blog']) {
@@ -122,9 +133,28 @@ assert.ok(xml.includes('http://www.sitemaps.org/schemas/sitemap/0.9'))
 assert.deepEqual([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]).sort(), pages.map(path => new URL(path, canonicalOrigin).href).sort())
 console.log('PASS robots.txt and sitemap.xml: public pages only, correct origin and content types')
 
+const project = await (await fetchChecked('/examples/ideas-in-motion.chorono.json', /application\/json/)).json()
+const exported = await (await fetchChecked('/examples/ideas-in-motion.runtime.json', /application\/json/)).json()
+assert.deepEqual(exported.warnings, [], 'Runtime export must have no unresolved diagnostics')
+assert.equal(project.composition.width, 1200)
+assert.equal(project.composition.height, 675)
+assert.equal(project.composition.durationMs, 6000)
+assert.equal(project.layers.length, 7)
+assert.equal(project.timelines.length, 1)
+assert.equal(project.timelines[0].tracks.length, 9)
+assert.deepEqual(exported.runtime.composition, project.composition)
+assert.deepEqual(exported.runtime.timelines, project.timelines, 'Preview must play the downloadable project timeline')
+const layerIds = new Set(project.layers.map(layer => layer.id))
+for (const track of project.timelines[0].tracks) {
+  assert.ok(layerIds.has(track.target.split('.')[1]), 'Every animation track must target an existing editable layer')
+  assert.ok(track.keyframes.every((key, index, all) => key.timeMs >= 0 && key.timeMs <= 6000 && (!index || key.timeMs >= all[index - 1].timeMs)), 'Keyframes must remain within the scene and in order')
+}
+assert.ok(!JSON.stringify(project).includes('blob:'), 'Portable example must not depend on local blob URLs')
+console.log('PASS real example: portable project, matching runtime timeline, editable layers and valid keyframes')
+
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

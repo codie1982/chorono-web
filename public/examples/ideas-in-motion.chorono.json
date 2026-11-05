@@ -1,0 +1,519 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "scene",
+    "width": 1200,
+    "height": 675,
+    "durationMs": 6000,
+    "frameRate": 30,
+    "backgroundColor": "#F7F1ED"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "rect_1885",
+      "name": "Warm paper background",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#F7F1ED"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 1200,
+        "height": 675
+      }
+    },
+    {
+      "id": "text_1886",
+      "name": "Chorono example label",
+      "type": "text",
+      "transform": {
+        "x": 96,
+        "y": 70,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 950,
+        "height": 36
+      },
+      "text": {
+        "value": "CHORONO / ANIMATION EXAMPLE",
+        "fontSize": 16,
+        "color": "#8F3D27",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left",
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "text_1887",
+      "name": "Title — Ideas",
+      "type": "text",
+      "transform": {
+        "x": 90,
+        "y": 164,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 960,
+        "height": 160
+      },
+      "text": {
+        "value": "Ideas",
+        "fontSize": 140,
+        "color": "#211612",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "text_1888",
+      "name": "Title — in motion",
+      "type": "text",
+      "transform": {
+        "x": 90,
+        "y": 302,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 960,
+        "height": 160
+      },
+      "text": {
+        "value": "in motion",
+        "fontSize": 140,
+        "color": "#211612",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "rect_1889",
+      "name": "Rust underline",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 96,
+        "y": 526,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        },
+        "cornerRadius": 3
+      },
+      "size": {
+        "width": 710,
+        "height": 7
+      }
+    },
+    {
+      "id": "circle_1890",
+      "name": "Orbiting rust circle",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 800,
+        "y": 488,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 30,
+        "anchorY": 30
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        }
+      },
+      "size": {
+        "width": 92,
+        "height": 92
+      }
+    },
+    {
+      "id": "text_1891",
+      "name": "Editable project caption",
+      "type": "text",
+      "transform": {
+        "x": 96,
+        "y": 590,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1010,
+        "height": 36
+      },
+      "text": {
+        "value": "MADE FROM A PROMPT. STILL YOURS TO EDIT.",
+        "fontSize": 17,
+        "color": "#6D5A52",
+        "fontFamily": "Arial",
+        "fontWeight": "400",
+        "textAlign": "left",
+        "letterSpacing": 1
+      }
+    }
+  ],
+  "timelines": [
+    {
+      "id": "ideas-in-motion",
+      "durationMs": 6000,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.text_1887.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793876436547_5914",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436547_5915",
+              "timeMs": 1200,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_1887.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1793876436547_5917",
+              "timeMs": 0,
+              "value": 192,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436547_5918",
+              "timeMs": 1200,
+              "value": 164,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_1888.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793876436547_5919",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436547_5920",
+              "timeMs": 160,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436547_5921",
+              "timeMs": 1200,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_1888.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1793876436547_5922",
+              "timeMs": 0,
+              "value": 330,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436547_5923",
+              "timeMs": 160,
+              "value": 330,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436547_5924",
+              "timeMs": 1200,
+              "value": 302,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_1889.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1793876436547_5925",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436548_5926",
+              "timeMs": 1200,
+              "value": 0,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793876436548_5927",
+              "timeMs": 3000,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_1890.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793876436548_5928",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436548_5929",
+              "timeMs": 1100,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436548_5930",
+              "timeMs": 1400,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_1890.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1793876436548_5931",
+              "timeMs": 0,
+              "value": 800,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436548_5933",
+              "timeMs": 1200,
+              "value": 800,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793876436549_5935",
+              "timeMs": 2000,
+              "value": 896,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793876436549_5937",
+              "timeMs": 2600,
+              "value": 984,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436549_5939",
+              "timeMs": 3000,
+              "value": 1012,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436549_5941",
+              "timeMs": 6000,
+              "value": 1012,
+              "easing": {
+                "type": "hold"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_1890.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1793876436548_5932",
+              "timeMs": 0,
+              "value": 488,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436548_5934",
+              "timeMs": 1200,
+              "value": 488,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793876436549_5936",
+              "timeMs": 2000,
+              "value": 390,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793876436549_5938",
+              "timeMs": 2600,
+              "value": 430,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436549_5940",
+              "timeMs": 3000,
+              "value": 488,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436550_5942",
+              "timeMs": 6000,
+              "value": 488,
+              "easing": {
+                "type": "hold"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_1891.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793876436550_5943",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793876436550_5944",
+              "timeMs": 2400,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793876436550_5945",
+              "timeMs": 3200,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "text_1887",
+        "text_1888",
+        "rect_1889",
+        "circle_1890",
+        "text_1891"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {}
+}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { animationExampleEntities, EXAMPLE_ID_PATH, EXAMPLE_MODIFIED } from './animation-example'
 
 export const SITE_URL = 'https://www.chorono.com'
 export const REPOSITORY_URL = 'https://github.com/codie1982/chorono-editor'
@@ -60,14 +61,14 @@ export const SITE_PAGES = {
     dependencies: 'Node.js 20 or later, npm, Git, a modern browser and a separately installed agent client.',
   },
   '/agent-skills': {
-    title: 'Chorono Skills for Claude and Codex | Chorono',
-    headline: 'Build animations with your agent',
-    description: 'Learn how chorono-setup and chorono skills help Claude and Codex install the editor, create editable animations, inspect previews and save projects.',
-    intro: 'Two skills teach Claude Code and Codex how to connect to Chorono and create animations that stay editable.',
+    title: 'Animation Skills for Claude Code & Codex | Chorono',
+    headline: 'Animation skills for Claude Code and Codex',
+    description: 'Install Chorono animation skills for Claude Code and Codex. Create editable text animation and 2D motion graphics from prompts, and download a real project.',
+    intro: 'Use the chorono-setup and chorono agent skills to create editable text animation and 2D motion graphics from a prompt. Claude Code or Codex works in a real Chorono editor, where you can inspect and change the layers and keyframes.',
     breadcrumb: 'Agent skills',
     image: '/guides/agent-skills.png',
     imageAlt: 'Chorono agent workflow: use chorono-setup, create with chorono, then save an editable project.',
-    sections: ['Two skills, one workflow', 'Install the bundled skills', 'What the agent reads', 'Create, inspect, refine'],
+    sections: ['Two skills, one workflow', 'Try an editable text animation', 'Install the bundled skills', 'What the agent reads', 'Create, inspect, refine'],
     dependencies: 'An editor checkout and a Claude Code or Codex client; follow the setup guide to connect MCP.',
   },
 } as const
@@ -212,6 +213,7 @@ export function pageStructuredData(path: PagePath) {
           mainEntityOfPage: { '@id': pageId },
           isPartOf: { '@id': entityIds.website },
           about: { '@id': entityIds.software },
+          ...(path === '/agent-skills' ? { dateModified: EXAMPLE_MODIFIED, hasPart: { '@id': `${SITE_URL}${EXAMPLE_ID_PATH}` } } : {}),
         },
         {
           '@type': 'BreadcrumbList',
@@ -222,6 +224,7 @@ export function pageStructuredData(path: PagePath) {
           ],
         },
       ] : []),
+      ...(path === '/agent-skills' ? animationExampleEntities(SITE_URL) : []),
     ],
   }
 }

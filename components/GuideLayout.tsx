@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { GUIDE_AUTHOR, REPOSITORY_URL, SITE_PAGES, type GuidePath } from '@/lib/site'
 import StructuredData from './StructuredData'
+import { EXAMPLE_MODIFIED } from '@/lib/animation-example'
 
 export default function GuideLayout({ path, children }: { path: GuidePath; children: React.ReactNode }) {
   const page = SITE_PAGES[path]
@@ -31,6 +32,7 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
         </nav>
         <h1 className="text-4xl font-black tracking-tight md:text-5xl">{page.headline}</h1>
         <p className="mt-4 text-sm">By <Link href="/#team" rel="author">{GUIDE_AUTHOR.name}</Link></p>
+        {path === '/agent-skills' && <p className="text-sm">Updated <time dateTime={EXAMPLE_MODIFIED}>November 5, 2026</time></p>}
         <p className="mt-5 text-lg leading-8 text-[#6d5a52]">{page.intro}</p>
         <img src={page.image} alt={page.imageAlt} width={1200} height={675} className="mt-8 h-auto w-full rounded-2xl border border-[#e7d8cf]" />
         <div className="mt-12 space-y-10">{children}</div>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import GuideLayout from '@/components/GuideLayout'
+import AnimationExample from '@/components/AnimationExample'
 import { pageMetadata, REPOSITORY_URL, SITE_PAGES } from '@/lib/site'
 
 const page = SITE_PAGES['/agent-skills']
@@ -21,6 +22,14 @@ export default function AgentSkills() {
           <dd>Creates and edits scenes, layers, keyframes and independent animations. It guides the agent to inspect real preview images, validate the scene and save a portable project.</dd>
         </dl>
         <p>A skill provides instructions. MCP, the connection between the agent client and the editor, supplies the tools. Installing instructions alone does not install an editor or load tools into an open chat.</p>
+        <p>Chorono is the motion graphics software in this workflow. The agent skills help you build animated titles, kinetic typography, shape transitions and small 2D illustrations while keeping the source editable. A precise prompt describes both the design and its timing.</p>
+      </section>
+      <section id="animation-example">
+        <h2>Try an editable text animation</h2>
+        <p>This six-second example combines a title entrance, an extending underline and a moving circle. Play it here, then download the same project to change the copy, colors or keyframes in Chorono.</p>
+        <AnimationExample />
+        <p>In the editor menu, choose <strong>Open Scene JSON</strong> and select the downloaded <code>.chorono.json</code> file. Use a separate editor tab if you already have a project open. Connect that tab through MCP before asking an agent to revise it.</p>
+        <p>Follow the <Link href="/blog/make-animations-with-claude#first-prompt">Claude Code text animation tutorial and example prompt</Link>, or use the <Link href="/blog/make-animations-with-codex">Codex setup guide</Link> with the same two skills.</p>
       </section>
       <section>
         <h2>Install the bundled skills</h2>

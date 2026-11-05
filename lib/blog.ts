@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { editorialSiteEntities, GUIDE_AUTHOR, pageMetadata, SITE_URL } from './site'
+import { animationExampleEntities, EXAMPLE_ID_PATH, EXAMPLE_MODIFIED } from './animation-example'
 
 export type ContentBlock =
   | { type: 'text'; text: string }
   | { type: 'code' | 'prompt'; text: string; label: string }
   | { type: 'list'; items: string[] }
   | { type: 'links'; items: { label: string; href: string }[] }
+  | { type: 'animation-example' }
 
 export type BlogPost = {
   slug: string
@@ -14,6 +16,7 @@ export type BlogPost = {
   description: string
   category: string
   published: string
+  modified?: string
   image: string
   imageAlt: string
   intro: string
@@ -32,19 +35,26 @@ export const BLOG_DESCRIPTION = 'Learn to make editable 2D animations with Claud
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'make-animations-with-claude',
-    title: 'How to Make Animations with Claude Code & Chorono',
-    headline: 'How to make animations with Claude Code',
-    description: 'Make editable 2D animations with Claude Code and Chorono. Install the editor, connect MCP, write your first animation prompt and refine the timeline.',
+    title: 'Claude Code Animation: Text & Motion Graphics Tutorial | Chorono',
+    headline: 'Make text animation and motion graphics with Claude Code',
+    description: 'Create editable text animation and 2D motion graphics with Claude Code and Chorono. Follow the setup, play a real example and download its project.',
     category: 'Claude Code',
     published: '2026-11-04T12:50:46Z',
+    modified: EXAMPLE_MODIFIED,
     image: '/blog/make-animations-with-claude.png',
     imageAlt: 'Claude Code animation workflow in Chorono: connect the editor, describe motion, then refine editable keyframes.',
-    intro: 'You can make an animation with Claude Code by connecting it to Chorono, describing the motion in a prompt and reviewing the result in the browser editor. The scene stays editable: text, objects, keyframes and timelines remain available for the next revision.',
+    intro: 'Make text animation, kinetic typography and simple 2D motion graphics with Claude Code in a connected Chorono editor. Describe the scene in a prompt, review the actual animation and refine its editable layers and keyframes. This tutorial includes a working six-second example and the project file you can open yourself.',
     sections: [
       { id: 'what-you-create', heading: 'What can Claude animate in Chorono?', blocks: [
         text('Chorono gives Claude Code tools to work with an actual 2D animation scene through the Model Context Protocol (MCP). You can ask for a title entrance, a looping product illustration, moving shapes or particle effects. Claude uses the connected editor to create and adjust the scene, and you can inspect it on the canvas and timeline.'),
-        text('A useful first project is a short title card with one moving object. It gives you a clear way to judge spacing, timing and readability before adding more elements. This guide uses Claude Code running on your computer, with a local Chorono editor and its bundled setup and authoring skills.'),
+        text('A useful first project is a short title card with one moving object. This is a small kinetic typography exercise: the words move into place while a shape and underline support the message. Chorono supplies the motion graphics editor; Claude Code interprets your prompt and operates it through MCP. This guide uses Claude Code running on your computer, with a local editor and its bundled setup and animation skills.'),
         list('You describe the composition and motion in plain language.', 'Claude creates scene objects and animation tracks through MCP.', 'You preview representative frames and request specific changes.', 'You save a portable project that can be reopened and edited.'),
+      ] },
+      { id: 'animation-example', heading: 'Play the text animation and download its project', blocks: [
+        text('“Ideas in motion” is a real Chorono scene with seven named layers, nine animation tracks and a six-second timeline. The title fades upward, the underline extends and the rust circle travels below the words before the final hold. Use Play or scrub the preview to inspect the timing.'),
+        { type: 'animation-example' },
+        text('Download the portable Chorono JSON, open a separate editor tab and choose Open Scene JSON from the editor menu. Select the downloaded file to inspect or edit the text, circle and keyframes. The scene uses Arial and native shapes, so it needs no external images or media files.'),
+        links({ label: 'Jump to the animation prompt', href: '#first-prompt' }, { label: 'Install the Chorono animation skills', href: '/agent-skills' }),
       ] },
       { id: 'install', heading: '1. Install Chorono for Claude Code', blocks: [
         text('Start with Node.js 20 or later, npm, Git, a modern browser and a separately installed Claude Code client. In a terminal, clone the editor and build the local CLI. These commands assume a fresh checkout; use your existing checkout if Chorono is already installed.'),
@@ -58,15 +68,17 @@ export const BLOG_POSTS: BlogPost[] = [
         text('The doctor command reports setup and connection problems. Ask Claude to list connected Chorono sessions and read the editor capabilities before creating anything. If several editor tabs are connected, tell it which scene to use. After reloading the browser, connect the editor again.'),
         prompt('Connection prompt', 'Use the chorono-setup skill to check my local Chorono connection. List the connected editor sessions, read the available capabilities and confirm which scene you will use. If the editor is not connected, explain the next setup step before creating objects.'),
       ] },
-      { id: 'first-prompt', heading: '3. Give Claude a concrete animation prompt', blocks: [
+      { id: 'first-prompt', heading: '3. Prompt Claude to create the text animation', blocks: [
         text('Specify the canvas, duration, text, colors and order of movement. Exact copy helps Claude keep your message intact. A short sequence is easier to review than a request for a complete promotional film with several unrelated scenes.'),
-        prompt('First animation · title card', 'Use the chorono skill in the connected editor. Create a 6-second, 1024 × 768 title card on a warm cream background. Keep the exact text “Ideas in motion” on two lines. Use dark brown text and one rust-colored circle. From 0 to 1.2 seconds, fade and move the title gently upward into place. From 1.2 to 3 seconds, move the circle along a simple arc below the title. Hold the final composition until 6 seconds. Keep the text and circle as named, editable objects. Inspect previews at 0, 1.2, 3 and 6 seconds, validate the project and save a portable Chorono JSON file. Report the saved path.'),
+        prompt('Text animation prompt · Ideas in motion', 'Use the chorono skill in the connected editor. Create a 6-second, 1200 × 675 title card at 30 fps with a warm cream background (#F7F1ED). Keep the exact title “Ideas” and “in motion” on two lines in dark brown (#211612), using bold Arial. Add the small label “CHORONO / ANIMATION EXAMPLE” at the top, a thin rust underline (#B55233) below the title, and one rust circle to its right. From 0 to 1.2 seconds, fade and move the two title lines gently upward into place with a small stagger. Between 1.2 and 3 seconds, extend the underline and move the circle along an arc below the title without covering the words. Fade in the footer “MADE FROM A PROMPT. STILL YOURS TO EDIT.” from 2.4 to 3.2 seconds. Hold the final layout until 6 seconds. Keep all seven layers named and editable on an explicit timeline. Preserve unrelated existing work. Inspect actual previews at 0.6, 2.2 and 3.6 seconds, validate and save a portable Chorono JSON project. Report the saved path.'),
         text('Review the actual previews. Check that the headline fits, the moving circle does not cover the text and the final hold is long enough to read. You can also scrub the timeline in Chorono and select the objects yourself.'),
       ] },
       { id: 'refine', heading: '4. Refine timing and save the editable scene', blocks: [
         prompt('Follow-up · one controlled revision', 'Keep the composition, text and colors. Make the circle arrive at 3.8 seconds instead of 3 seconds, and soften its final movement. Preserve all unrelated objects and animation tracks. Show previews just before and after the arrival, then save the revised project and report its path.'),
         text('Describe the outcome you want to change and the parts you want to preserve. A targeted request keeps the revision easy to compare. Ask for the saved file path at the end, then reopen that project to continue editing later.'),
         text('For playback in a web application, the separate @chorono/runtime npm package can play exported Chorono scenes. Installing that runtime alone does not install the editor or connect Claude. Complete the editor and MCP setup first.'),
+        code('Web application · runtime install', 'npm install @chorono/runtime'),
+        text('The preview above uses this runtime with the exported scene. Keep the portable project as your editable source and use the runtime export for playback in your application. For a new text animation, change the message and timing in the prompt, then review the output again.'),
         links({ label: 'How the two Chorono agent skills work', href: '/agent-skills' }, { label: 'Six animation prompts for Claude and Codex', href: '/blog/animation-prompts-for-claude-and-codex' }, { label: 'Chorono runtime on npm', href: 'https://www.npmjs.com/package/@chorono/runtime' }),
       ] },
       { id: 'questions', heading: 'Common questions about Claude animations', blocks: [
@@ -182,11 +194,11 @@ export const BLOG_POSTS: BlogPost[] = [
 
 export const blogPath = (post: BlogPost) => `/blog/${post.slug}`
 export const getPost = (slug: string) => BLOG_POSTS.find(post => post.slug === slug)
-export const readingMinutes = (post: BlogPost) => Math.max(1, Math.ceil(post.sections.flatMap(section => section.blocks.map(block => 'text' in block ? block.text : block.items.map(item => typeof item === 'string' ? item : item.label).join(' '))).join(' ').split(/\s+/).length / 200))
+export const readingMinutes = (post: BlogPost) => Math.max(1, Math.ceil(post.sections.flatMap(section => section.blocks.map(block => 'text' in block ? block.text : 'items' in block ? block.items.map(item => typeof item === 'string' ? item : item.label).join(' ') : '')).join(' ').split(/\s+/).length / 200))
 
 export function blogPostMetadata(post: BlogPost): Metadata {
   const metadata = pageMetadata(post.title, post.description, blogPath(post), post)
-  return { ...metadata, authors: [GUIDE_AUTHOR], openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.published, modifiedTime: post.published, authors: [GUIDE_AUTHOR.name], section: post.category } }
+  return { ...metadata, authors: [GUIDE_AUTHOR], openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.published, modifiedTime: post.modified ?? post.published, authors: [GUIDE_AUTHOR.name], section: post.category } }
 }
 
 export function blogStructuredData(post?: BlogPost) {
@@ -207,8 +219,9 @@ export function blogStructuredData(post?: BlogPost) {
       ] },
       ...(post ? [
         { '@type': 'ImageObject', '@id': imageId, url: `${SITE_URL}${post.image}`, contentUrl: `${SITE_URL}${post.image}`, width: 1200, height: 675, caption: post.imageAlt, encodingFormat: 'image/png' },
-        { '@type': 'BlogPosting', '@id': `${url}#article`, url, headline: post.headline, description: post.description, image: { '@id': imageId }, author: { '@id': `${SITE_URL}/#team` }, publisher: { '@id': `${SITE_URL}/#team` }, datePublished: post.published, dateModified: post.published, articleSection: post.sections.map(section => section.heading), inLanguage: 'en', isAccessibleForFree: true, mainEntityOfPage: { '@id': `${url}#webpage` }, isPartOf: { '@id': `${blogUrl}#blog` }, about: { '@id': `${SITE_URL}/#software` } },
+        { '@type': 'BlogPosting', '@id': `${url}#article`, url, headline: post.headline, description: post.description, image: { '@id': imageId }, author: { '@id': `${SITE_URL}/#team` }, publisher: { '@id': `${SITE_URL}/#team` }, datePublished: post.published, dateModified: post.modified ?? post.published, articleSection: post.sections.map(section => section.heading), inLanguage: 'en', isAccessibleForFree: true, mainEntityOfPage: { '@id': `${url}#webpage` }, isPartOf: { '@id': `${blogUrl}#blog` }, about: { '@id': `${SITE_URL}/#software` }, ...(post.sections.some(section => section.blocks.some(block => block.type === 'animation-example')) ? { hasPart: { '@id': `${SITE_URL}${EXAMPLE_ID_PATH}` } } : {}) },
       ] : [{ '@type': 'ItemList', '@id': `${url}#posts`, name: 'Animation setup and prompt guides', itemListElement: BLOG_POSTS.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.headline, url: `${SITE_URL}${blogPath(item)}` })) }]),
+      ...(post?.sections.some(section => section.blocks.some(block => block.type === 'animation-example')) ? animationExampleEntities(SITE_URL) : []),
     ],
   }
 }

@@ -1,6 +1,7 @@
 export const EXAMPLE_MODIFIED = '2026-11-05T11:09:14Z'
 export const EXAMPLE_ID_PATH = '/examples/ideas-in-motion#work'
 export const USE_CASE_PUBLISHED = '2026-11-05T11:38:33Z'
+export const USE_CASE_UPDATED = '2026-11-05T12:14:37Z'
 
 export const ANIMATION_EXAMPLES = {
   'ideas-in-motion': {

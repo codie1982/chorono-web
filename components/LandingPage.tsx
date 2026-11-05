@@ -270,7 +270,7 @@ export default function ChoronoLandingPage() {
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 backdrop-blur">
                 <Zap className="h-4 w-4 text-[#ffb397]" />
-                Open-source animation editor
+                Free and open-source animation editor
               </div>
 
               <h1 className="max-w-xl text-5xl font-black leading-[0.98] tracking-tight md:text-6xl">
@@ -279,7 +279,7 @@ export default function ChoronoLandingPage() {
               </h1>
 
               <p className="mt-6 max-w-lg text-base leading-8 text-zinc-400">
-                Build in your browser with timelines, keyframes and particles. Connect Claude or Codex through MCP to create, preview and save projects you can keep editing.
+                Create with Chorono’s free, open-source editor. Build in your browser with timelines, keyframes and particles, or connect Claude or Codex through MCP to create, preview and save projects you can keep editing.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -289,7 +289,7 @@ export default function ChoronoLandingPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(181,82,51,0.35)] transition hover:bg-[#8F3D27]"
                 >
                   <Github className="h-4 w-4" />
-                  Get Chorono Editor
+                  Get the free editor
                 </a>
                 <a
                   href={LINKS.examples}
@@ -302,7 +302,7 @@ export default function ChoronoLandingPage() {
               </div>
 
               <div className="mt-9 grid grid-cols-2 gap-4 text-sm text-zinc-400 sm:grid-cols-4">
-                {['Open Source', 'Editable Projects', 'Agent Control', 'Local Setup'].map((item) => (
+                {['Free & Open Source', 'Editable Projects', 'Agent Control', 'Local Setup'].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-[#d96f45]" />
                     {item}

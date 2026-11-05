@@ -6,8 +6,8 @@ export const REPOSITORY_URL = 'https://github.com/codie1982/chorono-editor'
 export const RUNTIME_URL = 'https://www.npmjs.com/package/@chorono/runtime'
 export const RUNTIME_REPOSITORY_URL = 'https://github.com/codie1982/chorono-runtime'
 export const GUIDE_AUTHOR = { name: 'Chorono ekibi', url: `${SITE_URL}/#team` }
-export const SITE_TITLE = 'Chorono | Open-Source Animation Editor for AI Agents'
-export const SITE_DESCRIPTION = 'Create editable 2D animations with Chorono. Use timelines, keyframes and particles, or connect Claude and Codex through MCP to build in your browser.'
+export const SITE_TITLE = 'Chorono | Free, Open-Source 2D Animation Editor'
+export const SITE_DESCRIPTION = 'Create editable 2D animations with Chorono’s free, open-source editor. Use keyframes and timelines, or connect Claude and Codex through MCP to build from prompts.'
 export const THEME_COLOR = '#B55233'
 
 export function pageMetadata(title: string, description: string, path = '/', cover?: { image: string; imageAlt: string }): Metadata {

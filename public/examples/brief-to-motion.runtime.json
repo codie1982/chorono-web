@@ -1,0 +1,1304 @@
+{
+  "version": "1.0",
+  "runtime": {
+    "formatVersion": "1.0.0",
+    "composition": {
+      "id": "scene",
+      "width": 1200,
+      "height": 675,
+      "durationMs": 8000,
+      "frameRate": 30,
+      "backgroundColor": "#F7F1ED"
+    },
+    "layers": [
+      {
+        "id": "card",
+        "name": "Warm paper background",
+        "type": "shape",
+        "shape": "rect",
+        "transform": {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#F7F1ED"
+          },
+          "cornerRadius": 0
+        },
+        "size": {
+          "width": 1200,
+          "height": 675
+        }
+      },
+      {
+        "id": "label",
+        "name": "Motion graphics example label",
+        "type": "text",
+        "transform": {
+          "x": 88,
+          "y": 60,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 1024,
+          "height": 40
+        },
+        "text": {
+          "value": "MOTION GRAPHICS / EXAMPLE 01",
+          "fontSize": 16,
+          "color": "#8F3D27",
+          "fontFamily": "Arial",
+          "fontWeight": "700",
+          "letterSpacing": 2
+        }
+      },
+      {
+        "id": "text_2150",
+        "name": "Headline",
+        "type": "text",
+        "transform": {
+          "x": 88,
+          "y": 142,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 1040,
+          "height": 100
+        },
+        "text": {
+          "value": "A brief. A build. A better result.",
+          "fontSize": 57,
+          "color": "#211612",
+          "fontFamily": "Arial",
+          "fontWeight": "700"
+        }
+      },
+      {
+        "id": "rect_2151",
+        "name": "Brief card",
+        "type": "shape",
+        "shape": "rect",
+        "transform": {
+          "x": 88,
+          "y": 294,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#FFFCFA"
+          },
+          "cornerRadius": 16,
+          "stroke": {
+            "color": "#D9BCA9",
+            "width": 2,
+            "opacity": 1
+          }
+        },
+        "size": {
+          "width": 312,
+          "height": 182
+        }
+      },
+      {
+        "id": "text_2152",
+        "name": "Brief step number",
+        "type": "text",
+        "transform": {
+          "x": 112,
+          "y": 316,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 28
+        },
+        "text": {
+          "value": "01",
+          "fontSize": 16,
+          "color": "#8F3D27",
+          "fontFamily": "Arial",
+          "fontWeight": "700"
+        }
+      },
+      {
+        "id": "text_2153",
+        "name": "Brief title",
+        "type": "text",
+        "transform": {
+          "x": 112,
+          "y": 356,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 60
+        },
+        "text": {
+          "value": "Brief",
+          "fontSize": 42,
+          "color": "#211612",
+          "fontFamily": "Arial",
+          "fontWeight": "700"
+        }
+      },
+      {
+        "id": "text_2154",
+        "name": "Brief explanation",
+        "type": "text",
+        "transform": {
+          "x": 112,
+          "y": 425,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 32
+        },
+        "text": {
+          "value": "Decide what to say.",
+          "fontSize": 18,
+          "color": "#6D5A52",
+          "fontFamily": "Arial",
+          "fontWeight": "400"
+        }
+      },
+      {
+        "id": "rect_2155",
+        "name": "Build card",
+        "type": "shape",
+        "shape": "rect",
+        "transform": {
+          "x": 444,
+          "y": 294,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#FFFCFA"
+          },
+          "cornerRadius": 16,
+          "stroke": {
+            "color": "#D9BCA9",
+            "width": 2,
+            "opacity": 1
+          }
+        },
+        "size": {
+          "width": 312,
+          "height": 182
+        }
+      },
+      {
+        "id": "text_2156",
+        "name": "Build step number",
+        "type": "text",
+        "transform": {
+          "x": 468,
+          "y": 316,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 28
+        },
+        "text": {
+          "value": "02",
+          "fontSize": 16,
+          "color": "#8F3D27",
+          "fontFamily": "Arial",
+          "fontWeight": "700"
+        }
+      },
+      {
+        "id": "text_2157",
+        "name": "Build title",
+        "type": "text",
+        "transform": {
+          "x": 468,
+          "y": 356,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 60
+        },
+        "text": {
+          "value": "Build",
+          "fontSize": 42,
+          "color": "#211612",
+          "fontFamily": "Arial",
+          "fontWeight": "700"
+        }
+      },
+      {
+        "id": "text_2158",
+        "name": "Build explanation",
+        "type": "text",
+        "transform": {
+          "x": 468,
+          "y": 425,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 32
+        },
+        "text": {
+          "value": "Create the first draft.",
+          "fontSize": 18,
+          "color": "#6D5A52",
+          "fontFamily": "Arial",
+          "fontWeight": "400"
+        }
+      },
+      {
+        "id": "rect_2159",
+        "name": "Refine card",
+        "type": "shape",
+        "shape": "rect",
+        "transform": {
+          "x": 800,
+          "y": 294,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#FFFCFA"
+          },
+          "cornerRadius": 16,
+          "stroke": {
+            "color": "#D9BCA9",
+            "width": 2,
+            "opacity": 1
+          }
+        },
+        "size": {
+          "width": 312,
+          "height": 182
+        }
+      },
+      {
+        "id": "text_2160",
+        "name": "Refine step number",
+        "type": "text",
+        "transform": {
+          "x": 824,
+          "y": 316,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 28
+        },
+        "text": {
+          "value": "03",
+          "fontSize": 16,
+          "color": "#8F3D27",
+          "fontFamily": "Arial",
+          "fontWeight": "700"
+        }
+      },
+      {
+        "id": "text_2161",
+        "name": "Refine title",
+        "type": "text",
+        "transform": {
+          "x": 824,
+          "y": 356,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 60
+        },
+        "text": {
+          "value": "Refine",
+          "fontSize": 42,
+          "color": "#211612",
+          "fontFamily": "Arial",
+          "fontWeight": "700"
+        }
+      },
+      {
+        "id": "text_2162",
+        "name": "Refine explanation",
+        "type": "text",
+        "transform": {
+          "x": 824,
+          "y": 425,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 264,
+          "height": 32
+        },
+        "text": {
+          "value": "Make the timing work.",
+          "fontSize": 18,
+          "color": "#6D5A52",
+          "fontFamily": "Arial",
+          "fontWeight": "400"
+        }
+      },
+      {
+        "id": "rect_2163",
+        "name": "Process connector",
+        "type": "shape",
+        "shape": "rect",
+        "transform": {
+          "x": 244,
+          "y": 524,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#D9BCA9"
+          },
+          "cornerRadius": 0
+        },
+        "size": {
+          "width": 712,
+          "height": 3
+        }
+      },
+      {
+        "id": "circle_2164",
+        "name": "Moving process marker",
+        "type": "shape",
+        "shape": "circle",
+        "transform": {
+          "x": 230,
+          "y": 511,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#B55233"
+          }
+        },
+        "size": {
+          "width": 28,
+          "height": 28
+        }
+      },
+      {
+        "id": "text_2165",
+        "name": "Editable project caption",
+        "type": "text",
+        "transform": {
+          "x": 88,
+          "y": 590,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "size": {
+          "width": 1040,
+          "height": 36
+        },
+        "text": {
+          "value": "ONE PROJECT. TEXT, SHAPES AND TIMING YOU CAN EDIT.",
+          "fontSize": 17,
+          "color": "#6D5A52",
+          "fontFamily": "Arial",
+          "fontWeight": "400"
+        }
+      }
+    ],
+    "timelines": [
+      {
+        "id": "brief-to-motion",
+        "durationMs": 8000,
+        "loop": false,
+        "autoplay": false,
+        "tracks": [
+          {
+            "target": "layers.rect_2151.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543165_8004",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543165_8005",
+                "timeMs": 400,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8006",
+                "timeMs": 1100,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.rect_2151.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543166_8007",
+                "timeMs": 0,
+                "value": 318,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8008",
+                "timeMs": 400,
+                "value": 318,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8009",
+                "timeMs": 1100,
+                "value": 294,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2152.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543166_8010",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8011",
+                "timeMs": 400,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8012",
+                "timeMs": 1100,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2152.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543166_8013",
+                "timeMs": 0,
+                "value": 340,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8014",
+                "timeMs": 400,
+                "value": 340,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8015",
+                "timeMs": 1100,
+                "value": 316,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2153.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543166_8016",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543166_8017",
+                "timeMs": 400,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543169_8018",
+                "timeMs": 1100,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2153.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543169_8019",
+                "timeMs": 0,
+                "value": 380,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543169_8020",
+                "timeMs": 400,
+                "value": 380,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543169_8021",
+                "timeMs": 1100,
+                "value": 356,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2154.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543169_8022",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543169_8023",
+                "timeMs": 400,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543169_8024",
+                "timeMs": 1100,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2154.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543169_8025",
+                "timeMs": 0,
+                "value": 449,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543169_8026",
+                "timeMs": 400,
+                "value": 449,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543169_8027",
+                "timeMs": 1100,
+                "value": 425,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.rect_2155.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543170_8028",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8029",
+                "timeMs": 1500,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8030",
+                "timeMs": 2200,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.rect_2155.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543170_8031",
+                "timeMs": 0,
+                "value": 318,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8032",
+                "timeMs": 1500,
+                "value": 318,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8033",
+                "timeMs": 2200,
+                "value": 294,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2156.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543170_8034",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8035",
+                "timeMs": 1500,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8036",
+                "timeMs": 2200,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2156.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543170_8037",
+                "timeMs": 0,
+                "value": 340,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8038",
+                "timeMs": 1500,
+                "value": 340,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543170_8039",
+                "timeMs": 2200,
+                "value": 316,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2157.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543170_8040",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8041",
+                "timeMs": 1500,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8042",
+                "timeMs": 2200,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2157.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543171_8043",
+                "timeMs": 0,
+                "value": 380,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8044",
+                "timeMs": 1500,
+                "value": 380,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8045",
+                "timeMs": 2200,
+                "value": 356,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2158.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543171_8046",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8047",
+                "timeMs": 1500,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8048",
+                "timeMs": 2200,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2158.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543171_8049",
+                "timeMs": 0,
+                "value": 449,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8050",
+                "timeMs": 1500,
+                "value": 449,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543171_8051",
+                "timeMs": 2200,
+                "value": 425,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.rect_2159.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543172_8052",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543172_8053",
+                "timeMs": 2600,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543172_8054",
+                "timeMs": 3300,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.rect_2159.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543173_8055",
+                "timeMs": 0,
+                "value": 318,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543173_8056",
+                "timeMs": 2600,
+                "value": 318,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543173_8057",
+                "timeMs": 3300,
+                "value": 294,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2160.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543173_8058",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543173_8059",
+                "timeMs": 2600,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543173_8060",
+                "timeMs": 3300,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2160.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543174_8061",
+                "timeMs": 0,
+                "value": 340,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543174_8062",
+                "timeMs": 2600,
+                "value": 340,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543174_8063",
+                "timeMs": 3300,
+                "value": 316,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2161.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543174_8064",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543174_8065",
+                "timeMs": 2600,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543174_8066",
+                "timeMs": 3300,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2161.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543174_8067",
+                "timeMs": 0,
+                "value": 380,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543174_8068",
+                "timeMs": 2600,
+                "value": 380,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543174_8069",
+                "timeMs": 3300,
+                "value": 356,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2162.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543175_8070",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543175_8071",
+                "timeMs": 2600,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543175_8072",
+                "timeMs": 3300,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_2162.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1793878543175_8073",
+                "timeMs": 0,
+                "value": 449,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543175_8074",
+                "timeMs": 2600,
+                "value": 449,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543175_8075",
+                "timeMs": 3300,
+                "value": 425,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.circle_2164.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1793878543178_8076",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543178_8077",
+                "timeMs": 1100,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1793878543178_8078",
+                "timeMs": 1500,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.circle_2164.transform.x",
+            "keyframes": [
+              {
+                "id": "kf_1793878543178_8079",
+                "timeMs": 0,
+                "value": 230,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543179_8080",
+                "timeMs": 1500,
+                "value": 230,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1793878543179_8081",
+                "timeMs": 2700,
+                "value": 586,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1793878543179_8082",
+                "timeMs": 3900,
+                "value": 942,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1793878543179_8083",
+                "timeMs": 8000,
+                "value": 942,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          }
+        ],
+        "layerIds": [
+          "rect_2151",
+          "text_2152",
+          "text_2153",
+          "text_2154",
+          "rect_2155",
+          "text_2156",
+          "text_2157",
+          "text_2158",
+          "rect_2159",
+          "text_2160",
+          "text_2161",
+          "text_2162",
+          "circle_2164"
+        ]
+      }
+    ],
+    "parameters": [],
+    "triggers": [],
+    "bindings": []
+  },
+  "warnings": []
+}

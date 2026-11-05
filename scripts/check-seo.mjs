@@ -3,7 +3,12 @@ import assert from 'node:assert/strict'
 const origin = (process.argv[2] ?? 'http://127.0.0.1:3000').replace(/\/$/, '')
 const canonicalOrigin = 'https://www.chorono.com'
 const blogSlugs = ['make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex']
-const pages = ['/', '/getting-started', '/agent-skills', '/blog', ...blogSlugs.map(slug => `/blog/${slug}`)]
+const useCases = {
+  '/motion-graphics-software': { id: 'brief-to-motion', duration: 8000, layers: 18, tracks: 26 },
+  '/text-animation': { id: 'make-it-clear', duration: 6000, layers: 7, tracks: 8 },
+  '/kinetic-typography': { id: 'pause-then-move', duration: 8000, layers: 8, tracks: 10 },
+}
+const pages = ['/', '/getting-started', '/agent-skills', '/blog', ...blogSlugs.map(slug => `/blog/${slug}`), ...Object.keys(useCases)]
 const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'")
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, decode(value)]))
 
@@ -21,7 +26,7 @@ for (const path of pages) {
   const expected = new URL(path, canonicalOrigin).href
   const isPost = path.startsWith('/blog/')
   const isHub = path === '/blog'
-  const guideImage = path === '/' || isHub ? '/opengraph-image.png' : isPost ? `${path}.png` : `/guides${path}.png`
+  const guideImage = useCases[path] ? `/examples/${useCases[path].id}.png` : path === '/' || isHub ? '/opengraph-image.png' : isPost ? `${path}.png` : `/guides${path}.png`
   assert.equal(new URL(links.find(link => link.rel === 'canonical')?.href).href, expected, `${path}: canonical`)
   assert.equal(new URL(metas.find(meta => meta.property === 'og:url')?.content).href, expected, `${path}: Open Graph URL`)
   assert.equal(metas.find(meta => meta.property === 'og:image')?.content, `${canonicalOrigin}${guideImage}`)
@@ -66,6 +71,7 @@ for (const path of pages) {
     assert.ok(!schema['@graph'].some(item => item['@type'] === 'TechArticle'))
     assert.ok(html.includes('ChronoPlayer, CanvasRenderAdapter') && !html.includes('ChoronoPlayer'), 'Runtime example must use the actual package API')
     assert.ok(html.includes('id="team"'), 'Author profile anchor must exist')
+    for (const topic of Object.keys(useCases)) assert.ok(html.includes(`href="${topic}"`), `Homepage must expose ${topic}`)
   } else if (isHub) {
     assert.equal(webpage['@type'], 'CollectionPage')
     assert.equal(runtime, undefined)
@@ -104,15 +110,22 @@ for (const path of pages) {
     assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), isPost ? [1, 2, 3] : [1, 2])
     assert.equal(breadcrumb.itemListElement.at(-1).item, expected)
     assert.ok(html.includes('aria-label="Breadcrumb"'), `${path}: breadcrumb must be visible`)
-    if (path === '/agent-skills' || path === '/blog/make-animations-with-claude') {
+    if (path === '/agent-skills' || path === '/blog/make-animations-with-claude' || useCases[path]) {
+      const exampleId = useCases[path]?.id ?? 'ideas-in-motion'
       const example = entities.get(article.hasPart?.['@id'])
       assert.equal(example?.['@type'], 'CreativeWork')
       const project = entities.get(example.encoding['@id'])
       assert.equal(project.encodingFormat, 'application/json')
-      assert.equal(project.contentUrl, `${canonicalOrigin}/examples/ideas-in-motion.chorono.json`)
-      assert.ok(html.includes('href="/examples/ideas-in-motion.chorono.json"') && html.includes('download="ideas-in-motion.chorono.json"'), 'Editable project must be downloadable without JavaScript')
-      assert.ok(html.includes('src="/examples/ideas-in-motion.png"') && html.includes('aria-label="Play animation"'), 'Example must have a visible poster and explicit playback control')
+      assert.equal(project.contentUrl, `${canonicalOrigin}/examples/${exampleId}.chorono.json`)
+      assert.ok(html.includes(`href="/examples/${exampleId}.chorono.json"`) && html.includes(`download="${exampleId}.chorono.json"`), 'Editable project must be downloadable without JavaScript')
+      assert.ok(html.includes(`src="/examples/${exampleId}.png"`) && html.includes('aria-label="Play animation"'), 'Example must have a visible poster and explicit playback control')
       assert.ok(!schema['@graph'].some(item => item['@type'] === 'VideoObject'), 'Canvas playback must not claim a video file')
+      if (useCases[path]) {
+        assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Example article needs a valid publication time')
+        assert.ok(html.includes(`dateTime="${article.datePublished}"`) || html.includes(`datetime="${article.datePublished}"`), 'Publication date must be visible')
+        assert.ok(html.includes('aria-label="Inspect animation moments"'), 'Case study needs inspectable timing cues')
+        for (const topic of Object.keys(useCases)) assert.ok(html.includes(`href="${topic}"`), 'Related topic navigation must be available without JavaScript')
+      }
     }
   }
   assert.ok(!JSON.stringify(schema).includes('aggregateRating'), 'Do not invent reviews')
@@ -133,28 +146,33 @@ assert.ok(xml.includes('http://www.sitemaps.org/schemas/sitemap/0.9'))
 assert.deepEqual([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]).sort(), pages.map(path => new URL(path, canonicalOrigin).href).sort())
 console.log('PASS robots.txt and sitemap.xml: public pages only, correct origin and content types')
 
-const project = await (await fetchChecked('/examples/ideas-in-motion.chorono.json', /application\/json/)).json()
-const exported = await (await fetchChecked('/examples/ideas-in-motion.runtime.json', /application\/json/)).json()
+for (const expected of [{ id: 'ideas-in-motion', duration: 6000, layers: 7, tracks: 9 }, ...Object.values(useCases)]) {
+const projectResponse = await fetchChecked(`/examples/${expected.id}.chorono.json`, /application\/json/)
+const project = await projectResponse.json()
+const exported = await (await fetchChecked(`/examples/${expected.id}.runtime.json`, /application\/json/)).json()
 assert.deepEqual(exported.warnings, [], 'Runtime export must have no unresolved diagnostics')
 assert.equal(project.composition.width, 1200)
 assert.equal(project.composition.height, 675)
-assert.equal(project.composition.durationMs, 6000)
-assert.equal(project.layers.length, 7)
+assert.equal(project.composition.durationMs, expected.duration)
+assert.equal(project.layers.length, expected.layers)
 assert.equal(project.timelines.length, 1)
-assert.equal(project.timelines[0].tracks.length, 9)
+assert.equal(project.timelines[0].tracks.length, expected.tracks)
 assert.deepEqual(exported.runtime.composition, project.composition)
 assert.deepEqual(exported.runtime.timelines, project.timelines, 'Preview must play the downloadable project timeline')
 const layerIds = new Set(project.layers.map(layer => layer.id))
+assert.equal(layerIds.size, project.layers.length, 'Editable layers must have unique IDs')
+assert.ok(project.layers.every(layer => layer.name?.length > 3), 'Editable layers need meaningful names')
 for (const track of project.timelines[0].tracks) {
   assert.ok(layerIds.has(track.target.split('.')[1]), 'Every animation track must target an existing editable layer')
-  assert.ok(track.keyframes.every((key, index, all) => key.timeMs >= 0 && key.timeMs <= 6000 && (!index || key.timeMs >= all[index - 1].timeMs)), 'Keyframes must remain within the scene and in order')
+  assert.ok(track.keyframes.every((key, index, all) => key.timeMs >= 0 && key.timeMs <= expected.duration && (!index || key.timeMs >= all[index - 1].timeMs)), 'Keyframes must remain within the scene and in order')
 }
 assert.ok(!JSON.stringify(project).includes('blob:'), 'Portable example must not depend on local blob URLs')
-console.log('PASS real example: portable project, matching runtime timeline, editable layers and valid keyframes')
+console.log(`PASS ${expected.id}: portable project, matching runtime timeline, editable layers and valid keyframes`)
+}
 
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

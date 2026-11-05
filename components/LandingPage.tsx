@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { loadGitHubStars } from '@/lib/github-stars.mjs';
 import { GUIDE_AUTHOR, RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
+import { USE_CASES } from '@/lib/use-cases';
+import { ANIMATION_EXAMPLES } from '@/lib/animation-example';
 import {
   ArrowRight,
   BookOpen,
@@ -411,6 +413,11 @@ root.addView(view)`}</CodeBlock>
           <FeatureCard icon={Zap} title="Agent Control" text="Connect Claude or Codex through MCP to create, inspect and refine scenes." />
           <FeatureCard icon={Play} title="Preview and Refine" text="Inspect animation frames, adjust timing and save a portable project." />
         </div>
+      </section>
+
+      <section aria-labelledby="examples-heading" className="mx-auto max-w-7xl px-6 pb-14 pt-2">
+        <div className="mb-6"><p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#8F3D27]">Real scenes. Editable source.</p><h2 id="examples-heading" className="text-3xl font-bold tracking-tight">See the motion. Open the project.</h2><p className="mt-3 max-w-2xl leading-7 text-[#6d5a52]">Explore a process graphic, a readable title and a kinetic typography study. Each includes playback, timing notes and a project you can download.</p></div>
+        <div className="grid gap-5 md:grid-cols-3">{Object.entries(USE_CASES).map(([href, item]) => <a key={href} href={href} className="group overflow-hidden rounded-2xl border border-[#e7d8cf] bg-white hover:border-[#B55233]"><img src={`/examples/${item.exampleId}.png`} alt={ANIMATION_EXAMPLES[item.exampleId].alt} width={1200} height={675} loading="lazy" className="aspect-video w-full object-cover" /><div className="p-6"><h3 className="text-xl font-bold">{item.label}</h3><p className="mt-3 text-sm leading-7 text-[#6d5a52]">{item.description}</p><span className="mt-5 block text-sm font-semibold text-[#8F3D27]">Explore the example →</span></div></a>)}</div>
       </section>
 
       <section aria-labelledby="blog-heading" className="mx-auto max-w-7xl px-6 pb-14 pt-2">

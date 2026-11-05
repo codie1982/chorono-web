@@ -1,0 +1,552 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "scene",
+    "width": 1200,
+    "height": 675,
+    "durationMs": 8000,
+    "frameRate": 30,
+    "backgroundColor": "#B55233"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "rect_2173",
+      "name": "Rust background",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        },
+        "cornerRadius": 0
+      },
+      "size": {
+        "width": 1200,
+        "height": 675
+      }
+    },
+    {
+      "id": "text_2174",
+      "name": "Kinetic typography example label",
+      "type": "text",
+      "transform": {
+        "x": 88,
+        "y": 60,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1024,
+        "height": 40
+      },
+      "text": {
+        "value": "KINETIC TYPOGRAPHY / EXAMPLE 03",
+        "fontSize": 16,
+        "color": "#F7F1ED",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "rect_2175",
+      "name": "Reading rhythm rail",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1072,
+        "y": 180,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D8977E"
+        },
+        "cornerRadius": 0
+      },
+      "size": {
+        "width": 3,
+        "height": 306
+      }
+    },
+    {
+      "id": "circle_2176",
+      "name": "Word beat marker",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 1056,
+        "y": 178,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#F7F1ED"
+        }
+      },
+      "size": {
+        "width": 36,
+        "height": 36
+      }
+    },
+    {
+      "id": "text_2177",
+      "name": "Word one — PAUSE",
+      "type": "text",
+      "transform": {
+        "x": 88,
+        "y": 155,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 900,
+        "height": 100
+      },
+      "text": {
+        "value": "PAUSE.",
+        "fontSize": 76,
+        "color": "#F7F1ED",
+        "fontFamily": "Arial",
+        "fontWeight": "700"
+      }
+    },
+    {
+      "id": "text_2178",
+      "name": "Word two — THEN",
+      "type": "text",
+      "transform": {
+        "x": 88,
+        "y": 265,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 900,
+        "height": 100
+      },
+      "text": {
+        "value": "THEN",
+        "fontSize": 76,
+        "color": "#F7F1ED",
+        "fontFamily": "Arial",
+        "fontWeight": "700"
+      }
+    },
+    {
+      "id": "text_2179",
+      "name": "Emphasis word — MOVE",
+      "type": "text",
+      "transform": {
+        "x": 80,
+        "y": 365,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 900,
+        "height": 180
+      },
+      "text": {
+        "value": "MOVE.",
+        "fontSize": 150,
+        "color": "#F7F1ED",
+        "fontFamily": "Arial",
+        "fontWeight": "700"
+      }
+    },
+    {
+      "id": "text_2180",
+      "name": "Reading rhythm caption",
+      "type": "text",
+      "transform": {
+        "x": 88,
+        "y": 590,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1024,
+        "height": 36
+      },
+      "text": {
+        "value": "A PAUSE. A TURN. AN EMPHASIS.",
+        "fontSize": 17,
+        "color": "#F7F1ED",
+        "fontFamily": "Arial",
+        "fontWeight": "700"
+      }
+    }
+  ],
+  "timelines": [
+    {
+      "id": "pause-then-move",
+      "durationMs": 8000,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.text_2177.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793878683647_8107",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8108",
+              "timeMs": 400,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2177.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1793878683647_8110",
+              "timeMs": 0,
+              "value": 116,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8111",
+              "timeMs": 400,
+              "value": 88,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2178.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793878683647_8112",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8113",
+              "timeMs": 1200,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8114",
+              "timeMs": 1600,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2178.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1793878683647_8115",
+              "timeMs": 0,
+              "value": 116,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8116",
+              "timeMs": 1200,
+              "value": 116,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8117",
+              "timeMs": 1600,
+              "value": 88,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2179.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793878683647_8118",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8119",
+              "timeMs": 2400,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683647_8120",
+              "timeMs": 2800,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2179.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1793878683648_8121",
+              "timeMs": 0,
+              "value": 108,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8122",
+              "timeMs": 2400,
+              "value": 108,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8123",
+              "timeMs": 2800,
+              "value": 80,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2179.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1793878683648_8124",
+              "timeMs": 0,
+              "value": 0.86,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8125",
+              "timeMs": 2400,
+              "value": 0.86,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8126",
+              "timeMs": 2820,
+              "value": 1.06,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8127",
+              "timeMs": 3300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2179.transform.scaleY",
+          "keyframes": [
+            {
+              "id": "kf_1793878683648_8128",
+              "timeMs": 0,
+              "value": 0.86,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8129",
+              "timeMs": 2400,
+              "value": 0.86,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8130",
+              "timeMs": 2820,
+              "value": 1.06,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8131",
+              "timeMs": 3300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_2176.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793878683648_8132",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8133",
+              "timeMs": 400,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_2176.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1793878683648_8134",
+              "timeMs": 0,
+              "value": 178,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8135",
+              "timeMs": 1200,
+              "value": 178,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8136",
+              "timeMs": 1600,
+              "value": 288,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8137",
+              "timeMs": 2400,
+              "value": 288,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8138",
+              "timeMs": 2820,
+              "value": 430,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878683648_8139",
+              "timeMs": 8000,
+              "value": 430,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "text_2177",
+        "text_2178",
+        "text_2179",
+        "circle_2176"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {}
+}

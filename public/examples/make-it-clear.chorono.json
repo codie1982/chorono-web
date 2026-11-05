@@ -1,0 +1,436 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "scene",
+    "width": 1200,
+    "height": 675,
+    "durationMs": 6000,
+    "frameRate": 30,
+    "backgroundColor": "#211612"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "rect_2166",
+      "name": "Dark brown background",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#211612"
+        },
+        "cornerRadius": 0
+      },
+      "size": {
+        "width": 1200,
+        "height": 675
+      }
+    },
+    {
+      "id": "text_2167",
+      "name": "Text animation example label",
+      "type": "text",
+      "transform": {
+        "x": 88,
+        "y": 60,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1024,
+        "height": 40
+      },
+      "text": {
+        "value": "TEXT ANIMATION / EXAMPLE 02",
+        "fontSize": 16,
+        "color": "#E8B29B",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "text_2168",
+      "name": "First line — Make it",
+      "type": "text",
+      "transform": {
+        "x": 88,
+        "y": 172,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1010,
+        "height": 160
+      },
+      "text": {
+        "value": "Make it",
+        "fontSize": 132,
+        "color": "#F7F1ED",
+        "fontFamily": "Arial",
+        "fontWeight": "700"
+      }
+    },
+    {
+      "id": "text_2169",
+      "name": "Second line — clear",
+      "type": "text",
+      "transform": {
+        "x": 88,
+        "y": 310,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1010,
+        "height": 160
+      },
+      "text": {
+        "value": "clear.",
+        "fontSize": 132,
+        "color": "#F7F1ED",
+        "fontFamily": "Arial",
+        "fontWeight": "700"
+      }
+    },
+    {
+      "id": "rect_2170",
+      "name": "Extending underline",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 92,
+        "y": 512,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D46A43"
+        },
+        "cornerRadius": 0
+      },
+      "size": {
+        "width": 620,
+        "height": 7
+      }
+    },
+    {
+      "id": "circle_2171",
+      "name": "Rust punctuation accent",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 1000,
+        "y": 362,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 38,
+        "anchorY": 38
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D46A43"
+        }
+      },
+      "size": {
+        "width": 76,
+        "height": 76
+      }
+    },
+    {
+      "id": "text_2172",
+      "name": "Reading time caption",
+      "type": "text",
+      "transform": {
+        "x": 92,
+        "y": 590,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1020,
+        "height": 36
+      },
+      "text": {
+        "value": "A SHORT ENTRANCE. A LONG ENOUGH READ.",
+        "fontSize": 17,
+        "color": "#E8B29B",
+        "fontFamily": "Arial",
+        "fontWeight": "400"
+      }
+    }
+  ],
+  "timelines": [
+    {
+      "id": "make-it-clear",
+      "durationMs": 6000,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.text_2168.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793878623540_8084",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878623540_8085",
+              "timeMs": 900,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2168.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1793878623540_8086",
+              "timeMs": 0,
+              "value": 204,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878623540_8087",
+              "timeMs": 900,
+              "value": 172,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2169.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793878623540_8088",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878623540_8089",
+              "timeMs": 300,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878623540_8090",
+              "timeMs": 1200,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_2169.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1793878623540_8091",
+              "timeMs": 0,
+              "value": 120,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878623540_8092",
+              "timeMs": 300,
+              "value": 120,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878623540_8093",
+              "timeMs": 1200,
+              "value": 88,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_2170.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1793878623540_8094",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8095",
+              "timeMs": 1200,
+              "value": 0,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8096",
+              "timeMs": 2100,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_2171.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1793878623541_8097",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8098",
+              "timeMs": 1200,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8099",
+              "timeMs": 1800,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_2171.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1793878623541_8100",
+              "timeMs": 0,
+              "value": 0.75,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8101",
+              "timeMs": 1200,
+              "value": 0.75,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8102",
+              "timeMs": 1800,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_2171.transform.scaleY",
+          "keyframes": [
+            {
+              "id": "kf_1793878623541_8103",
+              "timeMs": 0,
+              "value": 0.75,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8104",
+              "timeMs": 1200,
+              "value": 0.75,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1793878623541_8105",
+              "timeMs": 1800,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "text_2168",
+        "text_2169",
+        "rect_2170",
+        "circle_2171"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {}
+}

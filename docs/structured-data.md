@@ -39,3 +39,5 @@ Schema references: [WebSite](https://schema.org/WebSite), [SoftwareApplication](
 ## Animation fundamentals
 
 `/keyframe-animation` and `/animation-easing` are distinct English TechArticles with visible Chorono team authorship, publication date, matching section headings and BreadcrumbList entities. Both reference the existing Ideas in motion CreativeWork and its portable JSON download. Reusing that example does not create a new animation or change its asset modification date. The easing explorer is an interactive SVG teaching aid, not a VideoObject or a separate software product. No review, FAQ rich-result or instant-generator claims are added.
+
+Use-case editorial revisions are tracked per URL in `USE_CASE_CONTENT_UPDATED`. The visible update date, TechArticle `dateModified` and sitemap `lastModified` use that same value. Updating the motion graphics and text animation articles preserves their original publication dates, the kinetic typography article date and all downloadable scene modification dates.

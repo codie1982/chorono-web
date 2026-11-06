@@ -125,8 +125,16 @@ for (const path of pages) {
       if (useCases[path]) {
         assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Example article needs a valid publication time')
         assert.ok(html.includes(`dateTime="${article.datePublished}"`) || html.includes(`datetime="${article.datePublished}"`), 'Publication date must be visible')
+        assert.ok(Number.isFinite(Date.parse(article.dateModified)) && Date.parse(article.dateModified) >= Date.parse(article.datePublished), 'Editorial update must follow publication')
+        assert.ok(html.includes(`dateTime="${article.dateModified}"`) || html.includes(`datetime="${article.dateModified}"`), 'Editorial update must match the visible date')
         assert.ok(html.includes('aria-label="Inspect animation moments"'), 'Case study needs inspectable timing cues')
         for (const topic of Object.keys(useCases)) assert.ok(html.includes(`href="${topic}"`), 'Related topic navigation must be available without JavaScript')
+        const contents = html.match(/<nav\b[^>]*aria-label="On this page"[^>]*>(.*?)<\/nav>/s)
+        if (contents) {
+          const sectionIds = [...contents[1].matchAll(/href="#([^"]+)"/g)].map(match => match[1])
+          assert.equal(sectionIds.length, article.articleSection.length, 'Contents must cover the article sections')
+          for (const id of sectionIds) assert.ok(html.includes(`id="${id}"`), `Contents target #${id} must exist`)
+        }
       }
     }
   }

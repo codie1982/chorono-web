@@ -8,7 +8,8 @@ const useCases = {
   '/text-animation': { id: 'make-it-clear', duration: 6000, layers: 7, tracks: 8 },
   '/kinetic-typography': { id: 'pause-then-move', duration: 8000, layers: 8, tracks: 10 },
 }
-const pages = ['/', '/getting-started', '/agent-skills', '/blog', ...blogSlugs.map(slug => `/blog/${slug}`), ...Object.keys(useCases)]
+const fundamentals = ['/keyframe-animation', '/animation-easing']
+const pages = ['/', '/getting-started', '/agent-skills', '/blog', ...blogSlugs.map(slug => `/blog/${slug}`), ...Object.keys(useCases), ...fundamentals]
 const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'")
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, decode(value)]))
 
@@ -26,7 +27,7 @@ for (const path of pages) {
   const expected = new URL(path, canonicalOrigin).href
   const isPost = path.startsWith('/blog/')
   const isHub = path === '/blog'
-  const guideImage = useCases[path] ? `/examples/${useCases[path].id}.png` : path === '/' || isHub ? '/opengraph-image.png' : isPost ? `${path}.png` : `/guides${path}.png`
+  const guideImage = fundamentals.includes(path) ? '/examples/ideas-in-motion.png' : useCases[path] ? `/examples/${useCases[path].id}.png` : path === '/' || isHub ? '/opengraph-image.png' : isPost ? `${path}.png` : `/guides${path}.png`
   assert.equal(new URL(links.find(link => link.rel === 'canonical')?.href).href, expected, `${path}: canonical`)
   assert.equal(new URL(metas.find(meta => meta.property === 'og:url')?.content).href, expected, `${path}: Open Graph URL`)
   assert.equal(metas.find(meta => meta.property === 'og:image')?.content, `${canonicalOrigin}${guideImage}`)
@@ -72,6 +73,7 @@ for (const path of pages) {
     assert.ok(html.includes('ChronoPlayer, CanvasRenderAdapter') && !html.includes('ChoronoPlayer'), 'Runtime example must use the actual package API')
     assert.ok(html.includes('id="team"'), 'Author profile anchor must exist')
     for (const topic of Object.keys(useCases)) assert.ok(html.includes(`href="${topic}"`), `Homepage must expose ${topic}`)
+    for (const topic of fundamentals) assert.ok(html.includes(`href="${topic}"`), `Homepage must expose ${topic}`)
   } else if (isHub) {
     assert.equal(webpage['@type'], 'CollectionPage')
     assert.equal(runtime, undefined)
@@ -110,7 +112,7 @@ for (const path of pages) {
     assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), isPost ? [1, 2, 3] : [1, 2])
     assert.equal(breadcrumb.itemListElement.at(-1).item, expected)
     assert.ok(html.includes('aria-label="Breadcrumb"'), `${path}: breadcrumb must be visible`)
-    if (path === '/agent-skills' || path === '/blog/make-animations-with-claude' || useCases[path]) {
+    if (path === '/agent-skills' || path === '/blog/make-animations-with-claude' || useCases[path] || fundamentals.includes(path)) {
       const exampleId = useCases[path]?.id ?? 'ideas-in-motion'
       const example = entities.get(article.hasPart?.['@id'])
       assert.equal(example?.['@type'], 'CreativeWork')

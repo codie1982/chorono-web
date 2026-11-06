@@ -36,3 +36,6 @@ The check parses the actual HTML and verifies unique IDs, resolved entity refere
 Run `npm test` for GitHub API failure regressions. Use the [Google Rich Results Test](https://search.google.com/test/rich-results) separately to inspect Google's rendered output and eligibility warnings. Optional author and aggregate-rating data must come from real, verifiable information; their absence must not be hidden with fabricated data.
 
 Schema references: [WebSite](https://schema.org/WebSite), [SoftwareApplication](https://schema.org/SoftwareApplication), [WebPage](https://schema.org/WebPage), [TechArticle](https://schema.org/TechArticle), [BreadcrumbList](https://schema.org/BreadcrumbList), [ImageObject](https://schema.org/ImageObject).
+## Animation fundamentals
+
+`/keyframe-animation` and `/animation-easing` are distinct English TechArticles with visible Chorono team authorship, publication date, matching section headings and BreadcrumbList entities. Both reference the existing Ideas in motion CreativeWork and its portable JSON download. Reusing that example does not create a new animation or change its asset modification date. The easing explorer is an interactive SVG teaching aid, not a VideoObject or a separate software product. No review, FAQ rich-result or instant-generator claims are added.

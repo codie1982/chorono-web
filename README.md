@@ -30,7 +30,8 @@ npm start
 The canonical site is `https://www.chorono.com/`. The homepage focuses on the animation editor and creation with AI agents. `/getting-started` and `/agent-skills` explain installation, MCP connection and editable animation workflows.
 
 - `lib/site.ts` centralizes the site identity, canonical URLs, Open Graph/Twitter cards and page-specific JSON-LD. See the [JSON-LD field map](docs/structured-data.md) for entities, fields and relationships.
-- `app/robots.ts` serves `/robots.txt`; `app/sitemap.ts` lists only the three public pages.
+- `app/robots.ts` serves `/robots.txt`; `app/sitemap.ts` lists the public editor, setup, blog, example and animation fundamentals pages.
+- `/keyframe-animation` explains real values in the existing Ideas in motion project; `/animation-easing` adds an accessible, manually scrubbed comparison of the cubic runtime presets. Both preserve the existing example files and link to editor setup.
 - `app/manifest.ts` supplies app icons and theme information. Vercel preview deployments use `noindex` metadata.
 - `public/icon.svg` is the editable source for the existing copper C brand. Run `npm run brand:build` to regenerate the favicon, Apple/app icons, sharing image and article-specific guide covers.
 - After building and starting the site, run `npm run seo:check`. Pass a different origin with `npm run seo:check -- https://www.chorono.com` to validate the deployment.

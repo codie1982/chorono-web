@@ -1,0 +1,336 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "Progress bar example",
+    "width": 1200,
+    "height": 675,
+    "durationMs": 4000,
+    "frameRate": 30,
+    "backgroundColor": "#F7F1ED"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "circle_6",
+      "name": "Success badge",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 510,
+        "y": 175,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 30,
+        "anchorY": 30
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        }
+      },
+      "size": {
+        "width": 180,
+        "height": 180
+      }
+    },
+    {
+      "id": "rect_7",
+      "name": "Check — short stroke",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 552,
+        "y": 258,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 45,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "cornerRadius": 7
+      },
+      "size": {
+        "width": 55,
+        "height": 14
+      }
+    },
+    {
+      "id": "rect_8",
+      "name": "Check — long stroke",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 581,
+        "y": 297,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": -45,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "cornerRadius": 7
+      },
+      "size": {
+        "width": 92,
+        "height": 14
+      }
+    },
+    {
+      "id": "text_9",
+      "name": "Title — All done",
+      "type": "text",
+      "transform": {
+        "x": 600,
+        "y": 405,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 93,
+        "height": 29
+      },
+      "text": {
+        "value": "All done.",
+        "fontSize": 54,
+        "color": "#211612",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "text_10",
+      "name": "Caption — Your next step starts here",
+      "type": "text",
+      "transform": {
+        "x": 600,
+        "y": 485,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 93,
+        "height": 29
+      },
+      "text": {
+        "value": "Your next step starts here.",
+        "fontSize": 24,
+        "color": "#6D5A52",
+        "fontFamily": "Arial",
+        "fontWeight": "400",
+        "textAlign": "center"
+      }
+    }
+  ],
+  "timelines": [
+    {
+      "id": "success_confirmation",
+      "durationMs": 4000,
+      "loop": false,
+      "autoplay": true,
+      "tracks": [
+        {
+          "target": "layers.circle_6.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794142365613_11",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1794142365614_12",
+              "timeMs": 400,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_7.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1794142365616_13",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794142365616_14",
+              "timeMs": 350,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1794142365616_15",
+              "timeMs": 650,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_8.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1794142365616_16",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794142365617_17",
+              "timeMs": 620,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1794142365617_18",
+              "timeMs": 1100,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_9.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794142365617_19",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794142365617_20",
+              "timeMs": 900,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1794142365617_21",
+              "timeMs": 1400,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_9.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1794142365617_22",
+              "timeMs": 0,
+              "value": 421,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794142365617_23",
+              "timeMs": 900,
+              "value": 421,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1794142365617_24",
+              "timeMs": 1400,
+              "value": 405,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_10.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794142365618_25",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794142365618_26",
+              "timeMs": 1200,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1794142365618_27",
+              "timeMs": 1700,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "circle_6",
+        "rect_7",
+        "rect_8",
+        "text_9",
+        "text_10"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {}
+}

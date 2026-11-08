@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 
 const origin = (process.argv[2] ?? 'http://127.0.0.1:3000').replace(/\/$/, '')
 const canonicalOrigin = 'https://www.chorono.com'
-const blogSlugs = ['make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex']
+const blogSlugs = ['make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex', 'progress-bar-and-success-animation']
 const useCases = {
   '/motion-graphics-software': { id: 'brief-to-motion', duration: 8000, layers: 18, tracks: 26 },
   '/text-animation': { id: 'make-it-clear', duration: 6000, layers: 7, tracks: 8 },
@@ -56,6 +56,16 @@ for (const path of pages) {
     }
   }
   schema['@graph'].forEach(checkReferences)
+  if (path === '/blog/progress-bar-and-success-animation') {
+    const article = entities.get(`${expected}#article`)
+    assert.deepEqual(article.hasPart.map(part => part['@id']), ['progress-bar', 'success-confirmation'].map(id => `${canonicalOrigin}/examples/${id}#work`))
+    for (const id of ['progress-bar', 'success-confirmation']) {
+      assert.ok(html.includes(`href="/examples/${id}.chorono.json"`) && html.includes(`download="${id}.chorono.json"`))
+      assert.ok(html.includes(`src="/examples/${id}.png"`))
+    }
+    for (const label of ['Creation prompt · progress bar animation', 'Revision prompt · slower progress', 'Creation prompt · success checkmark animation', 'Revision prompt · a quieter confirmation']) assert.ok(html.includes(label))
+    assert.ok(html.includes('November 8, 2026'), 'New guide must show its actual publication date')
+  }
   const editor = entities.get(`${canonicalOrigin}/#software`)
   const runtime = entities.get(`${canonicalOrigin}/#runtime`)
   assert.ok(editor, 'Editor entity must exist')
@@ -79,7 +89,7 @@ for (const path of pages) {
     assert.equal(runtime, undefined)
     const index = entities.get(webpage.mainEntity['@id'])
     assert.equal(index['@type'], 'ItemList')
-    assert.equal(index.itemListElement.length, 3)
+    assert.equal(index.itemListElement.length, blogSlugs.length)
     assert.ok(!schema['@graph'].some(item => item['@type'] === 'BlogPosting'), 'Hub must describe its collection')
     for (const slug of blogSlugs) assert.ok(html.includes(`href="/blog/${slug}"`), `Hub must link to ${slug}`)
   } else {
@@ -89,7 +99,7 @@ for (const path of pages) {
     assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
     assert.deepEqual(article.articleSection, [...html.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
     if (isPost) {
-      assert.match(article.datePublished, /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
+      assert.match(article.datePublished, path === '/blog/progress-bar-and-success-animation' ? /^2026-11-08T\d{2}:\d{2}:\d{2}Z$/ : /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
       assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Publication timestamp must be valid')
       assert.ok(Number.isFinite(Date.parse(article.dateModified)) && Date.parse(article.dateModified) >= Date.parse(article.datePublished), 'Modification date must follow publication')
       if (article.dateModified !== article.datePublished) assert.ok(html.includes(`dateTime="${article.dateModified}"`) || html.includes(`datetime="${article.dateModified}"`), 'Updated date must be visible')
@@ -156,7 +166,7 @@ assert.ok(xml.includes('http://www.sitemaps.org/schemas/sitemap/0.9'))
 assert.deepEqual([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]).sort(), pages.map(path => new URL(path, canonicalOrigin).href).sort())
 console.log('PASS robots.txt and sitemap.xml: public pages only, correct origin and content types')
 
-for (const expected of [{ id: 'ideas-in-motion', duration: 6000, layers: 7, tracks: 9 }, ...Object.values(useCases), { id: 'codex-loading-loop', duration: 4000, layers: 4, tracks: 3, width: 1024, height: 768 }]) {
+for (const expected of [{ id: 'ideas-in-motion', duration: 6000, layers: 7, tracks: 9 }, ...Object.values(useCases), { id: 'progress-bar', duration: 6000, layers: 5, tracks: 3 }, { id: 'success-confirmation', duration: 4000, layers: 5, tracks: 6 }, { id: 'codex-loading-loop', duration: 4000, layers: 4, tracks: 3, width: 1024, height: 768 }]) {
 const projectResponse = await fetchChecked(`/examples/${expected.id}.chorono.json`, /application\/json/)
 const project = await projectResponse.json()
 const exported = await (await fetchChecked(`/examples/${expected.id}.runtime.json`, /application\/json/)).json()
@@ -176,6 +186,22 @@ for (const track of project.timelines[0].tracks) {
   assert.ok(layerIds.has(track.target.split('.')[1]), 'Every animation track must target an existing editable layer')
   assert.ok(track.keyframes.every((key, index, all) => key.timeMs >= 0 && key.timeMs <= expected.duration && (!index || key.timeMs >= all[index - 1].timeMs)), 'Keyframes must remain within the scene and in order')
 }
+if (expected.id === 'progress-bar') {
+  const fill = project.layers.find(layer => layer.name === 'Progress fill')
+  const track = project.timelines[0].tracks.find(track => track.target === `layers.${fill.id}.transform.scaleX`)
+  assert.equal(fill.transform.anchorX, 0, 'Fill must grow from the left edge')
+  assert.equal(track.keyframes[0].value, 0)
+  assert.equal(track.keyframes.at(-1).value, 1)
+  assert.equal(project.timelines[0].loop, false)
+}
+if (expected.id === 'success-confirmation') {
+  assert.equal(project.timelines[0].loop, false)
+  for (const layer of project.layers.filter(layer => layer.name.startsWith('Check —'))) {
+    const track = project.timelines[0].tracks.find(track => track.target === `layers.${layer.id}.transform.scaleX`)
+    assert.equal(track.keyframes.at(-1).value, 1, 'Both checkmark strokes must finish')
+    assert.ok(track.keyframes.at(-1).timeMs <= 1100, 'Checkmark must hold before the final caption')
+  }
+}
 if (expected.id === 'codex-loading-loop') {
   assert.equal(project.timelines[0].loop, true)
   for (const track of project.timelines[0].tracks) assert.equal(track.keyframes[0].value, track.keyframes.at(-1).value, 'Loop endpoints must match')
@@ -186,7 +212,7 @@ console.log(`PASS ${expected.id}: portable project, matching runtime timeline, e
 
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, { src: '/examples/codex-loading-loop.png', sizes: '1024x768' }, ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, { src: '/examples/codex-loading-loop.png', sizes: '1024x768' }, ...['progress-bar', 'success-confirmation'].map(id => ({ src: `/examples/${id}.png`, sizes: '1200x675' })), ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

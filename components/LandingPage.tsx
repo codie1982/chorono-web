@@ -23,9 +23,7 @@ import {
 } from "lucide-react";
 import {
   trackCodeCopy,
-  trackButtonClick,
-  trackHeroEditorClick,
-  trackGitHubStarView
+  trackAction
 } from "@/lib/analytics";
 
 const LINKS = {
@@ -214,7 +212,6 @@ function GitHubStarButton() {
       if (!active) return;
       setStars(count);
       setLoading(false);
-      if (count !== null) trackGitHubStarView(count);
     });
     return () => { active = false; };
   }, []);
@@ -224,7 +221,7 @@ function GitHubStarButton() {
       href={LINKS.github}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackButtonClick('github_star_intent')}
+      onClick={() => trackAction('githubStar', 'header')}
       aria-label="Star Chorono on GitHub (opens in a new tab)"
       className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 backdrop-blur"
     >
@@ -291,7 +288,7 @@ export default function ChoronoLandingPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={LINKS.docs}
-                  onClick={trackHeroEditorClick}
+                  onClick={() => trackAction('editorSetup', 'hero')}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(181,82,51,0.35)] transition hover:bg-[#8F3D27]"
                 >
                   <Github className="h-4 w-4" />
@@ -299,7 +296,7 @@ export default function ChoronoLandingPage() {
                 </a>
                 <a
                   href={LINKS.examples}
-                  onClick={() => trackButtonClick('hero_agent_skills')}
+                  onClick={() => trackAction('agentSkills', 'hero')}
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
                 >
                   <BookOpen className="h-4 w-4" />
@@ -404,7 +401,7 @@ root.addView(view)`}</CodeBlock>
 
               <a
                 href={LINKS.androidImplementation}
-                onClick={() => trackButtonClick('android_implementation_link')}
+                onClick={() => trackAction('androidSdk', 'integration')}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#B55233] hover:text-[#8F3D27]"
               >
                 View Android implementation <ArrowRight className="h-4 w-4" />

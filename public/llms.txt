@@ -1,0 +1,29 @@
+# Chorono
+
+> Chorono is a free, open-source 2D animation editor with editable layers, timelines and keyframes. It runs locally in a browser and supports animation authoring by Claude Code and Codex through MCP.
+
+The editor and the framework-free JavaScript playback package, @chorono/runtime, are separate components. The runtime plays exported scenes; it is not the visual editor. AI provider access is managed separately from the free editor. Public guides describe setup requirements and supported workflows.
+
+## Start here
+
+- [Chorono overview](https://www.chorono.com/): Editor capabilities, open-source project and runtime overview.
+- [Getting started](https://www.chorono.com/getting-started): Install the local editor and connect an AI agent through MCP.
+- [Agent skills](https://www.chorono.com/agent-skills): Setup and authoring skills for Claude Code and Codex.
+
+## Agent animation workflows
+
+- [Create animations with Claude](https://www.chorono.com/blog/make-animations-with-claude): Create and refine editable animation with Claude Code.
+- [Create animations with Codex](https://www.chorono.com/blog/make-animations-with-codex): Work with the local editor through Codex and MCP.
+- [Animation prompt examples](https://www.chorono.com/blog/animation-prompts-for-claude-and-codex): Prompt recipes for agent-assisted animation.
+
+## Examples and fundamentals
+
+- [Motion graphics software](https://www.chorono.com/motion-graphics-software): Workflow selection and an editable motion graphics example.
+- [Text animation](https://www.chorono.com/text-animation): Text effects, timing and editable source examples.
+- [Kinetic typography](https://www.chorono.com/kinetic-typography): An example of animated type and visual rhythm.
+- [Keyframe animation](https://www.chorono.com/keyframe-animation): Layers, keyframes and timing using a real project.
+- [Animation easing](https://www.chorono.com/animation-easing): Easing curves and interactive timing comparisons.
+
+## Optional
+
+- [XML sitemap](https://www.chorono.com/sitemap.xml): Public URL inventory; inclusion does not establish search indexing.

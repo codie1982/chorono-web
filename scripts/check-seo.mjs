@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 
 const origin = (process.argv[2] ?? 'http://127.0.0.1:3000').replace(/\/$/, '')
 const canonicalOrigin = 'https://www.chorono.com'
-const blogSlugs = ['make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex', 'progress-bar-and-success-animation']
+const blogSlugs = ['make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex', 'progress-bar-and-success-animation', 'heart-like-and-hamburger-menu-animation']
 const useCases = {
   '/motion-graphics-software': { id: 'brief-to-motion', duration: 8000, layers: 18, tracks: 26 },
   '/text-animation': { id: 'make-it-clear', duration: 6000, layers: 7, tracks: 8 },
@@ -66,6 +66,24 @@ for (const path of pages) {
     for (const label of ['Creation prompt · progress bar animation', 'Revision prompt · slower progress', 'Creation prompt · success checkmark animation', 'Revision prompt · a quieter confirmation']) assert.ok(html.includes(label))
     assert.ok(html.includes('November 8, 2026'), 'New guide must show its actual publication date')
   }
+  if (path === '/blog/heart-like-and-hamburger-menu-animation') {
+    const ids = ['heart-like', 'hamburger-menu']
+    assert.deepEqual(entities.get(`${expected}#article`).hasPart.map(part => part['@id']), ids.map(id => `${canonicalOrigin}/examples/${id}#work`))
+    for (const id of ids) {
+      assert.ok(html.includes(`download="${id}.chorono.json"`))
+      const response = await fetchChecked(`/examples/${id}.chorono.json`, /application\/json/)
+      const bytes = await response.arrayBuffer()
+      const project = JSON.parse(new TextDecoder().decode(bytes))
+      assert.equal(entities.get(`${canonicalOrigin}/examples/${id}.chorono.json#download`).contentSize, `${bytes.byteLength} bytes`)
+      assert.equal(project.stateMachines.length, 1)
+      assert.equal(project.stateMachines[0].states.length, 2)
+      assert.equal(project.stateMachines[0].transitions.length, 2)
+      assert.ok(project.triggers.some(trigger => trigger.event.type === 'click'))
+      assert.ok(!JSON.stringify(project).includes('blob:'))
+    }
+    assert.ok(html.includes('aria-pressed="false"') && html.includes('aria-expanded="false"'))
+    for (const label of ['Creation prompt · interactive heart', 'Revision prompt · a quieter heart', 'Creation prompt · interactive hamburger', 'Revision prompt · compact menu']) assert.ok(html.includes(label))
+  }
   const editor = entities.get(`${canonicalOrigin}/#software`)
   const runtime = entities.get(`${canonicalOrigin}/#runtime`)
   assert.ok(editor, 'Editor entity must exist')
@@ -99,7 +117,7 @@ for (const path of pages) {
     assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
     assert.deepEqual(article.articleSection, [...html.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
     if (isPost) {
-      assert.match(article.datePublished, path === '/blog/progress-bar-and-success-animation' ? /^2026-11-08T\d{2}:\d{2}:\d{2}Z$/ : /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
+      assert.match(article.datePublished, ['/blog/progress-bar-and-success-animation', '/blog/heart-like-and-hamburger-menu-animation'].includes(path) ? /^2026-11-08T\d{2}:\d{2}:\d{2}Z$/ : /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
       assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Publication timestamp must be valid')
       assert.ok(Number.isFinite(Date.parse(article.dateModified)) && Date.parse(article.dateModified) >= Date.parse(article.datePublished), 'Modification date must follow publication')
       if (article.dateModified !== article.datePublished) assert.ok(html.includes(`dateTime="${article.dateModified}"`) || html.includes(`datetime="${article.dateModified}"`), 'Updated date must be visible')
@@ -212,7 +230,7 @@ console.log(`PASS ${expected.id}: portable project, matching runtime timeline, e
 
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, { src: '/examples/codex-loading-loop.png', sizes: '1024x768' }, ...['progress-bar', 'success-confirmation'].map(id => ({ src: `/examples/${id}.png`, sizes: '1200x675' })), ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, { src: '/examples/codex-loading-loop.png', sizes: '1024x768' }, ...['progress-bar', 'success-confirmation', 'heart-like', 'hamburger-menu'].map(id => ({ src: `/examples/${id}.png`, sizes: '1200x675' })), ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

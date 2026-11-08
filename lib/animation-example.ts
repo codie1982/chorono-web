@@ -7,7 +7,21 @@ export const CODEX_EXAMPLE_MODIFIED = '2026-11-08T12:37:18Z'
 
 export const UI_EXAMPLES_PUBLISHED = '2026-11-08T12:54:22Z'
 
+export const INTERACTIVE_EXAMPLES_PUBLISHED = '2026-11-08T13:10:00Z'
+
 export const ANIMATION_EXAMPLES = {
+  'heart-like': {
+    title: 'Heart like — A little love', durationMs: 300, posterTimeMs: 0, layers: 3, tracks: 6, bytes: 19925,
+    alt: 'An outlined rust heart below A little love on a cream canvas.',
+    description: 'An editable click-to-toggle heart with outlined and filled states, a subtle scale change and reversible state transitions.',
+    cues: [],
+  },
+  'hamburger-menu': {
+    title: 'Hamburger menu — Open to explore', durationMs: 300, posterTimeMs: 0, layers: 6, tracks: 18, bytes: 14331,
+    alt: 'Three rust hamburger menu bars below Open to explore on a cream canvas.',
+    description: 'An editable click-to-toggle hamburger icon with closed and open states, rotating outer bars and a fading middle bar.',
+    cues: [],
+  },
   'progress-bar': {
     title: 'Progress bar — A little closer', durationMs: 6000, posterTimeMs: 2000, layers: 5, tracks: 3, bytes: 5661,
     alt: 'A little closer headline above a rust progress bar filling from the left on a cream canvas.',
@@ -62,7 +76,7 @@ export function animationExampleEntities(SITE_URL: string, id: AnimationExampleI
     {
       '@type': 'CreativeWork', '@id': `${SITE_URL}/examples/${id}#work`, name: `${example.title} — editable Chorono animation`,
       description: example.description,
-      author: { '@id': `${SITE_URL}/#team` }, dateModified: id === 'progress-bar' || id === 'success-confirmation' ? UI_EXAMPLES_PUBLISHED : id === 'codex-loading-loop' ? CODEX_EXAMPLE_MODIFIED : id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED,
+      author: { '@id': `${SITE_URL}/#team` }, dateModified: id === 'heart-like' || id === 'hamburger-menu' ? INTERACTIVE_EXAMPLES_PUBLISHED : id === 'progress-bar' || id === 'success-confirmation' ? UI_EXAMPLES_PUBLISHED : id === 'codex-loading-loop' ? CODEX_EXAMPLE_MODIFIED : id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED,
       thumbnailUrl: `${SITE_URL}/examples/${id}.png`,
       isAccessibleForFree: true, encoding: { '@id': `${file}#download` }, inLanguage: 'en',
     },

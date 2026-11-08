@@ -4,6 +4,7 @@ import { BLOG_POSTS, blogPostMetadata, blogStructuredData, getPost, readingMinut
 import { GUIDE_AUTHOR } from '@/lib/site'
 import { BlogFooter, BlogHeader, RelatedPosts } from '@/components/BlogLayout'
 import AnimationExample from '@/components/AnimationExample'
+import InteractiveAnimationExample from '@/components/InteractiveAnimationExample'
 
 export const dynamicParams = false
 export function generateStaticParams() { return BLOG_POSTS.map(post => ({ slug: post.slug })) }
@@ -14,6 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 }
 
 function Block({ block }: { block: ContentBlock }) {
+  if (block.type === 'animation-example' && (block.exampleId === 'heart-like' || block.exampleId === 'hamburger-menu')) return <InteractiveAnimationExample exampleId={block.exampleId} />
   if (block.type === 'animation-example') return <AnimationExample exampleId={block.exampleId} />
   if (block.type === 'text') return <p>{block.text}</p>
   if (block.type === 'code' || block.type === 'prompt') return <div className="my-6 min-w-0"><div className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">{block.label}</div><pre className={block.type === 'prompt' ? 'prompt-block' : ''}><code>{block.text}</code></pre></div>

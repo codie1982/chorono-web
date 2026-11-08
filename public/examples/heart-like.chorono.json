@@ -1,0 +1,806 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "Heart like interaction",
+    "width": 1200,
+    "height": 675,
+    "durationMs": 300,
+    "frameRate": 60,
+    "backgroundColor": "#F7F1ED"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "text_1",
+      "name": "Title — A little love",
+      "type": "text",
+      "transform": {
+        "x": 600,
+        "y": 125,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 93,
+        "height": 29
+      },
+      "text": {
+        "value": "A little love.",
+        "fontSize": 50,
+        "color": "#211612",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "path_2",
+      "name": "Heart — tap to toggle",
+      "type": "path",
+      "pathRole": "visual",
+      "transform": {
+        "x": 600,
+        "y": 325,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "stroke": {
+          "color": "#B55233",
+          "width": 6,
+          "lineCap": "round",
+          "lineJoin": "round"
+        },
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        }
+      },
+      "path": {
+        "closed": true,
+        "anchors": [
+          {
+            "x": 0,
+            "y": -25,
+            "pointType": "corner"
+          },
+          {
+            "x": 0.019804880044309955,
+            "y": -25.40308150204566,
+            "pointType": "corner"
+          },
+          {
+            "x": 0.1575029601646956,
+            "y": -26.59357829812345,
+            "pointType": "corner"
+          },
+          {
+            "x": 0.5263429755635453,
+            "y": -28.516136758031273,
+            "pointType": "corner"
+          },
+          {
+            "x": 1.2304511113175138,
+            "y": -31.081418223155328,
+            "pointType": "corner"
+          },
+          {
+            "x": 2.3606797749978963,
+            "y": -34.170311205011814,
+            "pointType": "corner"
+          },
+          {
+            "x": 3.990932111760286,
+            "y": -37.639510383903755,
+            "pointType": "corner"
+          },
+          {
+            "x": 6.175094271331737,
+            "y": -41.3281663678541,
+            "pointType": "corner"
+          },
+          {
+            "x": 8.944685877537488,
+            "y": -45.06525559090845,
+            "pointType": "corner"
+          },
+          {
+            "x": 12.307313672450242,
+            "y": -48.677285152890654,
+            "pointType": "corner"
+          },
+          {
+            "x": 16.245984811645318,
+            "y": -51.99593469062211,
+            "pointType": "corner"
+          },
+          {
+            "x": 20.719305784044103,
+            "y": -54.86524708624159,
+            "pointType": "corner"
+          },
+          {
+            "x": 25.66256150020553,
+            "y": -57.1480111982182,
+            "pointType": "corner"
+          },
+          {
+            "x": 30.989637850310903,
+            "y": -58.73103080792788,
+            "pointType": "corner"
+          },
+          {
+            "x": 36.59572108451305,
+            "y": -59.52904142818784,
+            "pointType": "corner"
+          },
+          {
+            "x": 42.36067977499788,
+            "y": -59.48711639321071,
+            "pointType": "corner"
+          },
+          {
+            "x": 48.15301085883482,
+            "y": -58.58149092464983,
+            "pointType": "corner"
+          },
+          {
+            "x": 53.8342111932181,
+            "y": -56.81882243319449,
+            "pointType": "corner"
+          },
+          {
+            "x": 59.26342089125828,
+            "y": -54.2339918796619,
+            "pointType": "corner"
+          },
+          {
+            "x": 64.30217498459653,
+            "y": -50.88662953705299,
+            "pointType": "corner"
+          },
+          {
+            "x": 68.81909602355867,
+            "y": -46.856614465620005,
+            "pointType": "corner"
+          },
+          {
+            "x": 72.69436221614609,
+            "y": -42.23884675120405,
+            "pointType": "corner"
+          },
+          {
+            "x": 75.8237935537616,
+            "y": -37.1376224079613,
+            "pointType": "corner"
+          },
+          {
+            "x": 78.12241179663368,
+            "y": -31.660951336523034,
+            "pointType": "corner"
+          },
+          {
+            "x": 79.52734872027007,
+            "y": -25.915148642481427,
+            "pointType": "corner"
+          },
+          {
+            "x": 80,
+            "y": -20.000000000000004,
+            "pointType": "corner"
+          },
+          {
+            "x": 79.52734872027007,
+            "y": -14.00475481195617,
+            "pointType": "corner"
+          },
+          {
+            "x": 78.12241179663371,
+            "y": -8.005139919469917,
+            "pointType": "corner"
+          },
+          {
+            "x": 75.82379355376163,
+            "y": -2.0615156122371605,
+            "pointType": "corner"
+          },
+          {
+            "x": 72.69436221614609,
+            "y": 3.7817806988008433,
+            "pointType": "corner"
+          },
+          {
+            "x": 68.8190960235587,
+            "y": 9.495934690622077,
+            "pointType": "corner"
+          },
+          {
+            "x": 64.30217498459655,
+            "y": 15.066103361275523,
+            "pointType": "corner"
+          },
+          {
+            "x": 59.26342089125825,
+            "y": 20.488979246370178,
+            "pointType": "corner"
+          },
+          {
+            "x": 53.83421119321806,
+            "y": 25.769689768593942,
+            "pointType": "corner"
+          },
+          {
+            "x": 48.1530108588348,
+            "y": 30.91828644890932,
+            "pointType": "corner"
+          },
+          {
+            "x": 42.3606797749979,
+            "y": 35.94609673071386,
+            "pointType": "corner"
+          },
+          {
+            "x": 36.59572108451305,
+            "y": 40.862210840019095,
+            "pointType": "corner"
+          },
+          {
+            "x": 30.989637850310885,
+            "y": 45.67035781831744,
+            "pointType": "corner"
+          },
+          {
+            "x": 25.662561500205552,
+            "y": 50.366390161539066,
+            "pointType": "corner"
+          },
+          {
+            "x": 20.719305784044124,
+            "y": 54.9365479566453,
+            "pointType": "corner"
+          },
+          {
+            "x": 16.245984811645325,
+            "y": 59.35661446562,
+            "pointType": "corner"
+          },
+          {
+            "x": 12.307313672450267,
+            "y": 63.59200983365737,
+            "pointType": "corner"
+          },
+          {
+            "x": 8.94468587753748,
+            "y": 67.59880242420755,
+            "pointType": "corner"
+          },
+          {
+            "x": 6.175094271331747,
+            "y": 71.3255527094313,
+            "pointType": "corner"
+          },
+          {
+            "x": 3.990932111760293,
+            "y": 74.71584695026746,
+            "pointType": "corner"
+          },
+          {
+            "x": 2.360679774997899,
+            "y": 77.71133086750866,
+            "pointType": "corner"
+          },
+          {
+            "x": 1.2304511113175205,
+            "y": 80.25502017513845,
+            "pointType": "corner"
+          },
+          {
+            "x": 0.526342975563545,
+            "y": 82.29464732665797,
+            "pointType": "corner"
+          },
+          {
+            "x": 0.15750296016469661,
+            "y": 83.78580315499364,
+            "pointType": "corner"
+          },
+          {
+            "x": 0.01980488004431015,
+            "y": 84.69464817905586,
+            "pointType": "corner"
+          },
+          {
+            "x": 1.4693408138614191e-46,
+            "y": 85,
+            "pointType": "corner"
+          },
+          {
+            "x": -0.019804880044309924,
+            "y": 84.69464817905587,
+            "pointType": "corner"
+          },
+          {
+            "x": -0.1575029601646957,
+            "y": 83.78580315499364,
+            "pointType": "corner"
+          },
+          {
+            "x": -0.5263429755635466,
+            "y": 82.29464732665792,
+            "pointType": "corner"
+          },
+          {
+            "x": -1.2304511113175107,
+            "y": 80.2550201751385,
+            "pointType": "corner"
+          },
+          {
+            "x": -2.360679774997894,
+            "y": 77.71133086750868,
+            "pointType": "corner"
+          },
+          {
+            "x": -3.990932111760286,
+            "y": 74.71584695026748,
+            "pointType": "corner"
+          },
+          {
+            "x": -6.17509427133172,
+            "y": 71.32555270943136,
+            "pointType": "corner"
+          },
+          {
+            "x": -8.944685877537491,
+            "y": 67.59880242420755,
+            "pointType": "corner"
+          },
+          {
+            "x": -12.307313672450228,
+            "y": 63.592009833657414,
+            "pointType": "corner"
+          },
+          {
+            "x": -16.24598481164528,
+            "y": 59.35661446562005,
+            "pointType": "corner"
+          },
+          {
+            "x": -20.719305784044103,
+            "y": 54.93654795664532,
+            "pointType": "corner"
+          },
+          {
+            "x": -25.662561500205502,
+            "y": 50.36639016153913,
+            "pointType": "corner"
+          },
+          {
+            "x": -30.989637850310903,
+            "y": 45.67035781831742,
+            "pointType": "corner"
+          },
+          {
+            "x": -36.595721084513066,
+            "y": 40.862210840019074,
+            "pointType": "corner"
+          },
+          {
+            "x": -42.36067977499788,
+            "y": 35.946096730713876,
+            "pointType": "corner"
+          },
+          {
+            "x": -48.15301085883486,
+            "y": 30.918286448909264,
+            "pointType": "corner"
+          },
+          {
+            "x": -53.83421119321808,
+            "y": 25.769689768593928,
+            "pointType": "corner"
+          },
+          {
+            "x": -59.26342089125832,
+            "y": 20.48897924637012,
+            "pointType": "corner"
+          },
+          {
+            "x": -64.30217498459655,
+            "y": 15.066103361275525,
+            "pointType": "corner"
+          },
+          {
+            "x": -68.81909602355867,
+            "y": 9.495934690622123,
+            "pointType": "corner"
+          },
+          {
+            "x": -72.69436221614612,
+            "y": 3.7817806988008,
+            "pointType": "corner"
+          },
+          {
+            "x": -75.82379355376163,
+            "y": -2.0615156122371694,
+            "pointType": "corner"
+          },
+          {
+            "x": -78.12241179663368,
+            "y": -8.005139919469876,
+            "pointType": "corner"
+          },
+          {
+            "x": -79.52734872027007,
+            "y": -14.00475481195619,
+            "pointType": "corner"
+          },
+          {
+            "x": -80,
+            "y": -19.999999999999982,
+            "pointType": "corner"
+          },
+          {
+            "x": -79.52734872027007,
+            "y": -25.915148642481356,
+            "pointType": "corner"
+          },
+          {
+            "x": -78.12241179663371,
+            "y": -31.660951336523002,
+            "pointType": "corner"
+          },
+          {
+            "x": -75.82379355376163,
+            "y": -37.13762240796125,
+            "pointType": "corner"
+          },
+          {
+            "x": -72.69436221614609,
+            "y": -42.238846751204065,
+            "pointType": "corner"
+          },
+          {
+            "x": -68.8190960235587,
+            "y": -46.85661446562,
+            "pointType": "corner"
+          },
+          {
+            "x": -64.30217498459658,
+            "y": -50.886629537052954,
+            "pointType": "corner"
+          },
+          {
+            "x": -59.263420891258335,
+            "y": -54.23399187966186,
+            "pointType": "corner"
+          },
+          {
+            "x": -53.83421119321804,
+            "y": -56.818822433194505,
+            "pointType": "corner"
+          },
+          {
+            "x": -48.1530108588348,
+            "y": -58.58149092464983,
+            "pointType": "corner"
+          },
+          {
+            "x": -42.36067977499792,
+            "y": -59.48711639321072,
+            "pointType": "corner"
+          },
+          {
+            "x": -36.5957210845131,
+            "y": -59.529041428187845,
+            "pointType": "corner"
+          },
+          {
+            "x": -30.989637850310974,
+            "y": -58.731030807927915,
+            "pointType": "corner"
+          },
+          {
+            "x": -25.662561500205566,
+            "y": -57.14801119821821,
+            "pointType": "corner"
+          },
+          {
+            "x": -20.719305784044103,
+            "y": -54.865247086241595,
+            "pointType": "corner"
+          },
+          {
+            "x": -16.245984811645336,
+            "y": -51.995934690622136,
+            "pointType": "corner"
+          },
+          {
+            "x": -12.307313672450274,
+            "y": -48.677285152890676,
+            "pointType": "corner"
+          },
+          {
+            "x": -8.944685877537532,
+            "y": -45.0652555909085,
+            "pointType": "corner"
+          },
+          {
+            "x": -6.175094271331751,
+            "y": -41.328166367854124,
+            "pointType": "corner"
+          },
+          {
+            "x": -3.9909321117602836,
+            "y": -37.63951038390377,
+            "pointType": "corner"
+          },
+          {
+            "x": -2.3606797749979016,
+            "y": -34.17031120501183,
+            "pointType": "corner"
+          },
+          {
+            "x": -1.2304511113175223,
+            "y": -31.081418223155374,
+            "pointType": "corner"
+          },
+          {
+            "x": -0.5263429755635459,
+            "y": -28.51613675803128,
+            "pointType": "corner"
+          },
+          {
+            "x": -0.15750296016469706,
+            "y": -26.593578298123465,
+            "pointType": "corner"
+          },
+          {
+            "x": -0.019804880044309844,
+            "y": -25.40308150204566,
+            "pointType": "corner"
+          }
+        ]
+      },
+      "tappable": true
+    },
+    {
+      "id": "text_3",
+      "name": "Hint — Tap to like",
+      "type": "text",
+      "transform": {
+        "x": 600,
+        "y": 495,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 93,
+        "height": 29
+      },
+      "text": {
+        "value": "Tap to like. Tap again to undo.",
+        "fontSize": 24,
+        "color": "#6D5A52",
+        "fontFamily": "Arial",
+        "fontWeight": "400",
+        "textAlign": "center"
+      }
+    }
+  ],
+  "timelines": [
+    {
+      "id": "unliked",
+      "durationMs": 300,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.path_2.style.fill.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143062129_1",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143062130_2",
+              "timeMs": 300,
+              "value": 0,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.path_2.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1794143062130_3",
+              "timeMs": 0,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143062130_4",
+              "timeMs": 300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.path_2.transform.scaleY",
+          "keyframes": [
+            {
+              "id": "kf_1794143062130_5",
+              "timeMs": 0,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143062130_6",
+              "timeMs": 300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "path_2"
+      ]
+    },
+    {
+      "id": "liked",
+      "durationMs": 300,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.path_2.style.fill.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143148286_13",
+              "timeMs": 0,
+              "value": 100,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143148287_14",
+              "timeMs": 300,
+              "value": 100,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.path_2.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1794143062131_9",
+              "timeMs": 0,
+              "value": 1.08,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143062131_10",
+              "timeMs": 300,
+              "value": 1.08,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.path_2.transform.scaleY",
+          "keyframes": [
+            {
+              "id": "kf_1794143062131_11",
+              "timeMs": 0,
+              "value": 1.08,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143062131_12",
+              "timeMs": 300,
+              "value": 1.08,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "path_2"
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "id": "heart_click",
+      "event": {
+        "type": "click",
+        "layerId": "path_2"
+      },
+      "actions": [
+        {
+          "type": "emitEvent",
+          "eventName": "toggle"
+        }
+      ]
+    }
+  ],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {},
+  "stateMachines": [
+    {
+      "id": "sm_1794143062131_1",
+      "name": "Heart toggle",
+      "initialStateId": "smstate_1794143062131_1",
+      "states": [
+        {
+          "id": "smstate_1794143062131_1",
+          "name": "Unliked",
+          "timelineId": "unliked"
+        },
+        {
+          "id": "smstate_1794143062131_2",
+          "name": "Liked",
+          "timelineId": "liked"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "smtrans_1794143062131_1",
+          "from": "smstate_1794143062131_1",
+          "to": "smstate_1794143062131_2",
+          "trigger": "toggle",
+          "blendMs": 280
+        },
+        {
+          "id": "smtrans_1794143062131_2",
+          "from": "smstate_1794143062131_2",
+          "to": "smstate_1794143062131_1",
+          "trigger": "toggle",
+          "blendMs": 220
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,16 @@ export const EXAMPLE_ID_PATH = '/examples/ideas-in-motion#work'
 export const USE_CASE_PUBLISHED = '2026-11-05T11:38:33Z'
 export const USE_CASE_UPDATED = '2026-11-05T12:14:37Z'
 
+export const CODEX_EXAMPLE_MODIFIED = '2026-11-08T12:37:18Z'
+
 export const ANIMATION_EXAMPLES = {
+  'codex-loading-loop': {
+    title: 'Three-dot loading loop', durationMs: 4000, posterTimeMs: 1000, layers: 4, tracks: 3, bytes: 7956,
+    width: 1024, height: 768, loop: true,
+    alt: 'A little progress, every day above three staggered rust circles on a cream canvas.',
+    description: 'A four-second seamless loading loop created with Codex and Chorono, with a static headline and three editable animated circles.',
+    cues: [{ timeMs: 0, label: 'Starting positions' }, { timeMs: 1000, label: 'Staggered movement' }, { timeMs: 4000, label: 'Loop seam' }],
+  },
   'ideas-in-motion': {
     title: 'Ideas in motion', durationMs: 6000, posterTimeMs: 3600, layers: 7, tracks: 9, bytes: 11856,
     alt: 'Ideas in motion title card: dark brown lettering, a rust underline and a moving circle on a cream canvas.',
@@ -39,7 +48,7 @@ export function animationExampleEntities(SITE_URL: string, id: AnimationExampleI
     {
       '@type': 'CreativeWork', '@id': `${SITE_URL}/examples/${id}#work`, name: `${example.title} — editable Chorono animation`,
       description: example.description,
-      author: { '@id': `${SITE_URL}/#team` }, dateModified: id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED,
+      author: { '@id': `${SITE_URL}/#team` }, dateModified: id === 'codex-loading-loop' ? CODEX_EXAMPLE_MODIFIED : id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED,
       thumbnailUrl: `${SITE_URL}/examples/${id}.png`,
       isAccessibleForFree: true, encoding: { '@id': `${file}#download` }, inLanguage: 'en',
     },

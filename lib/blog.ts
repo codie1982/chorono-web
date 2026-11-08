@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import { editorialSiteEntities, GUIDE_AUTHOR, pageMetadata, SITE_URL } from './site'
-import { animationExampleEntities, EXAMPLE_ID_PATH, EXAMPLE_MODIFIED } from './animation-example'
+import { animationExampleEntities, CODEX_EXAMPLE_MODIFIED, EXAMPLE_MODIFIED, type AnimationExampleId } from './animation-example'
 
 export type ContentBlock =
   | { type: 'text'; text: string }
   | { type: 'code' | 'prompt'; text: string; label: string }
   | { type: 'list'; items: string[] }
   | { type: 'links'; items: { label: string; href: string }[] }
-  | { type: 'animation-example' }
+  | { type: 'animation-example'; exampleId?: AnimationExampleId }
 
 export type BlogPost = {
   slug: string
@@ -93,9 +93,10 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'make-animations-with-codex',
     title: 'Make Animations with Codex: Chorono Setup & Prompts',
     headline: 'Make editable animations with Codex and Chorono',
-    description: 'Set up Chorono for Codex, connect the local editor through MCP and create a prompt-driven 2D animation with editable layers, keyframes and timelines.',
+    description: 'Create animations with Codex and Chorono. Play a three-dot loading loop, download its editable project and copy the creation and revision prompts.',
     category: 'Codex',
     published: '2026-11-04T12:50:46Z',
+    modified: CODEX_EXAMPLE_MODIFIED,
     image: '/blog/make-animations-with-codex.png',
     imageAlt: 'Codex animation workflow: install Chorono skills, connect MCP and revise a saved editable scene.',
     intro: 'Codex can create and revise 2D animations in a connected Chorono editor. Set up the local tools once, give Codex a clear motion brief and keep the resulting objects and keyframes available for editing in your browser.',
@@ -104,6 +105,12 @@ export const BLOG_POSTS: BlogPost[] = [
         text('Codex is the agent you give instructions to. Chorono is the animation editor that holds the canvas, scene objects and timelines. MCP connects the two, while the bundled Chorono skills explain setup and animation authoring. Together they let you move from a written brief to a scene you can inspect and revise.'),
         text('This workflow suits small interface illustrations, animated titles, loading loops and visual explanations made from text and shapes. Start with one clear motion idea. Keep the editor visible so you can judge the result yourself and use precise follow-up prompts.'),
         list('Install and register the local editor for Codex.', 'Connect the browser scene and confirm that Codex can read it.', 'Describe the layout, timing and motion in a prompt.', 'Review previews, request a focused revision and save the project.'),
+      ] },
+      { id: 'animation-example', heading: 'Play the three-dot loading loop and download the project', blocks: [
+        text('This four-second example was created in the connected Chorono editor with Codex. It has four named layers, three animation tracks and 24 keyframes. The headline stays still while the circles rise 40 pixels in two waves, with a 180-millisecond stagger. Every circle returns to its starting position before the loop repeats.'),
+        { type: 'animation-example', exampleId: 'codex-loading-loop' },
+        text('Download the portable project and choose Open Scene JSON in a separate Chorono editor tab. The 1024 × 768 scene uses Arial and native shapes, with no external media. Change the text, colors or keyframes manually, or use the prompts below. The revision prompt is an optional next step; the download contains the original 40-pixel movement.'),
+        links({ label: 'Copy the creation prompt', href: '#brief' }, { label: 'Copy the revision prompt', href: '#iterate' }),
       ] },
       { id: 'setup', heading: '1. Set up Chorono for Codex', blocks: [
         text('You need Node.js 20 or later, npm, Git, a modern browser and a separately installed Codex client. Run the following commands in a terminal for a fresh editor checkout. If you already have a checkout, use it instead of creating a second copy.'),
@@ -201,7 +208,9 @@ export function blogPostMetadata(post: BlogPost): Metadata {
   return { ...metadata, authors: [GUIDE_AUTHOR], openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.published, modifiedTime: post.modified ?? post.published, authors: [GUIDE_AUTHOR.name], section: post.category } }
 }
 
+/** Builds article entities and links each embedded example to its own downloadable source. */
 export function blogStructuredData(post?: BlogPost) {
+  const exampleIds = [...new Set(post?.sections.flatMap(section => section.blocks.flatMap(block => block.type === 'animation-example' ? [block.exampleId ?? 'ideas-in-motion'] : [])) ?? [])]
   const path = post ? blogPath(post) : '/blog'
   const url = `${SITE_URL}${path}`
   const blogUrl = `${SITE_URL}/blog`
@@ -219,9 +228,9 @@ export function blogStructuredData(post?: BlogPost) {
       ] },
       ...(post ? [
         { '@type': 'ImageObject', '@id': imageId, url: `${SITE_URL}${post.image}`, contentUrl: `${SITE_URL}${post.image}`, width: 1200, height: 675, caption: post.imageAlt, encodingFormat: 'image/png' },
-        { '@type': 'BlogPosting', '@id': `${url}#article`, url, headline: post.headline, description: post.description, image: { '@id': imageId }, author: { '@id': `${SITE_URL}/#team` }, publisher: { '@id': `${SITE_URL}/#team` }, datePublished: post.published, dateModified: post.modified ?? post.published, articleSection: post.sections.map(section => section.heading), inLanguage: 'en', isAccessibleForFree: true, mainEntityOfPage: { '@id': `${url}#webpage` }, isPartOf: { '@id': `${blogUrl}#blog` }, about: { '@id': `${SITE_URL}/#software` }, ...(post.sections.some(section => section.blocks.some(block => block.type === 'animation-example')) ? { hasPart: { '@id': `${SITE_URL}${EXAMPLE_ID_PATH}` } } : {}) },
+        { '@type': 'BlogPosting', '@id': `${url}#article`, url, headline: post.headline, description: post.description, image: { '@id': imageId }, author: { '@id': `${SITE_URL}/#team` }, publisher: { '@id': `${SITE_URL}/#team` }, datePublished: post.published, dateModified: post.modified ?? post.published, articleSection: post.sections.map(section => section.heading), inLanguage: 'en', isAccessibleForFree: true, mainEntityOfPage: { '@id': `${url}#webpage` }, isPartOf: { '@id': `${blogUrl}#blog` }, about: { '@id': `${SITE_URL}/#software` }, ...(exampleIds.length ? { hasPart: exampleIds.map(id => ({ '@id': `${SITE_URL}/examples/${id}#work` })) } : {}) },
       ] : [{ '@type': 'ItemList', '@id': `${url}#posts`, name: 'Animation setup and prompt guides', itemListElement: BLOG_POSTS.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.headline, url: `${SITE_URL}${blogPath(item)}` })) }]),
-      ...(post?.sections.some(section => section.blocks.some(block => block.type === 'animation-example')) ? animationExampleEntities(SITE_URL) : []),
+      ...exampleIds.flatMap(id => animationExampleEntities(SITE_URL, id)),
     ],
   }
 }

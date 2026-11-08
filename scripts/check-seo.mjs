@@ -112,9 +112,9 @@ for (const path of pages) {
     assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), isPost ? [1, 2, 3] : [1, 2])
     assert.equal(breadcrumb.itemListElement.at(-1).item, expected)
     assert.ok(html.includes('aria-label="Breadcrumb"'), `${path}: breadcrumb must be visible`)
-    if (path === '/agent-skills' || path === '/blog/make-animations-with-claude' || useCases[path] || fundamentals.includes(path)) {
-      const exampleId = useCases[path]?.id ?? 'ideas-in-motion'
-      const example = entities.get(article.hasPart?.['@id'])
+    if (path === '/agent-skills' || path === '/blog/make-animations-with-claude' || path === '/blog/make-animations-with-codex' || useCases[path] || fundamentals.includes(path)) {
+      const exampleId = path === '/blog/make-animations-with-codex' ? 'codex-loading-loop' : useCases[path]?.id ?? 'ideas-in-motion'
+      const example = entities.get((Array.isArray(article.hasPart) ? article.hasPart[0] : article.hasPart)?.['@id'])
       assert.equal(example?.['@type'], 'CreativeWork')
       const project = entities.get(example.encoding['@id'])
       assert.equal(project.encodingFormat, 'application/json')
@@ -156,13 +156,13 @@ assert.ok(xml.includes('http://www.sitemaps.org/schemas/sitemap/0.9'))
 assert.deepEqual([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]).sort(), pages.map(path => new URL(path, canonicalOrigin).href).sort())
 console.log('PASS robots.txt and sitemap.xml: public pages only, correct origin and content types')
 
-for (const expected of [{ id: 'ideas-in-motion', duration: 6000, layers: 7, tracks: 9 }, ...Object.values(useCases)]) {
+for (const expected of [{ id: 'ideas-in-motion', duration: 6000, layers: 7, tracks: 9 }, ...Object.values(useCases), { id: 'codex-loading-loop', duration: 4000, layers: 4, tracks: 3, width: 1024, height: 768 }]) {
 const projectResponse = await fetchChecked(`/examples/${expected.id}.chorono.json`, /application\/json/)
 const project = await projectResponse.json()
 const exported = await (await fetchChecked(`/examples/${expected.id}.runtime.json`, /application\/json/)).json()
 assert.deepEqual(exported.warnings, [], 'Runtime export must have no unresolved diagnostics')
-assert.equal(project.composition.width, 1200)
-assert.equal(project.composition.height, 675)
+assert.equal(project.composition.width, expected.width ?? 1200)
+assert.equal(project.composition.height, expected.height ?? 675)
 assert.equal(project.composition.durationMs, expected.duration)
 assert.equal(project.layers.length, expected.layers)
 assert.equal(project.timelines.length, 1)
@@ -176,13 +176,17 @@ for (const track of project.timelines[0].tracks) {
   assert.ok(layerIds.has(track.target.split('.')[1]), 'Every animation track must target an existing editable layer')
   assert.ok(track.keyframes.every((key, index, all) => key.timeMs >= 0 && key.timeMs <= expected.duration && (!index || key.timeMs >= all[index - 1].timeMs)), 'Keyframes must remain within the scene and in order')
 }
+if (expected.id === 'codex-loading-loop') {
+  assert.equal(project.timelines[0].loop, true)
+  for (const track of project.timelines[0].tracks) assert.equal(track.keyframes[0].value, track.keyframes.at(-1).value, 'Loop endpoints must match')
+}
 assert.ok(!JSON.stringify(project).includes('blob:'), 'Portable example must not depend on local blob URLs')
 console.log(`PASS ${expected.id}: portable project, matching runtime timeline, editable layers and valid keyframes`)
 }
 
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, { src: '/examples/codex-loading-loop.png', sizes: '1024x768' }, ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

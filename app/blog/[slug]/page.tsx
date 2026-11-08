@@ -14,7 +14,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 }
 
 function Block({ block }: { block: ContentBlock }) {
-  if (block.type === 'animation-example') return <AnimationExample />
+  if (block.type === 'animation-example') return <AnimationExample exampleId={block.exampleId} />
   if (block.type === 'text') return <p>{block.text}</p>
   if (block.type === 'code' || block.type === 'prompt') return <div className="my-6 min-w-0"><div className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">{block.label}</div><pre className={block.type === 'prompt' ? 'prompt-block' : ''}><code>{block.text}</code></pre></div>
   if (block.type === 'list') return <ul className="mb-5 list-disc space-y-2 pl-6 leading-8 text-[#6d5a52]">{block.items.map(item => <li key={item}>{item}</li>)}</ul>

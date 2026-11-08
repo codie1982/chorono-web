@@ -1,0 +1,638 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "Hamburger menu interaction",
+    "width": 1200,
+    "height": 675,
+    "durationMs": 300,
+    "frameRate": 60,
+    "backgroundColor": "#F7F1ED"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "text_4",
+      "name": "Title — Open to explore",
+      "type": "text",
+      "transform": {
+        "x": 600,
+        "y": 125,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 93,
+        "height": 29
+      },
+      "text": {
+        "value": "Open to explore.",
+        "fontSize": 50,
+        "color": "#211612",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "rect_5",
+      "name": "Top menu bar",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 530,
+        "y": 260,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 70,
+        "anchorY": 6
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        },
+        "cornerRadius": 6
+      },
+      "size": {
+        "width": 140,
+        "height": 12
+      }
+    },
+    {
+      "id": "rect_6",
+      "name": "Middle menu bar",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 530,
+        "y": 300,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 70,
+        "anchorY": 6
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        },
+        "cornerRadius": 6
+      },
+      "size": {
+        "width": 140,
+        "height": 12
+      }
+    },
+    {
+      "id": "rect_7",
+      "name": "Bottom menu bar",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 530,
+        "y": 340,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 70,
+        "anchorY": 6
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B55233"
+        },
+        "cornerRadius": 6
+      },
+      "size": {
+        "width": 140,
+        "height": 12
+      }
+    },
+    {
+      "id": "text_8",
+      "name": "Hint — Tap to open",
+      "type": "text",
+      "transform": {
+        "x": 600,
+        "y": 495,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 93,
+        "height": 29
+      },
+      "text": {
+        "value": "Tap to open. Tap again to close.",
+        "fontSize": 24,
+        "color": "#6D5A52",
+        "fontFamily": "Arial",
+        "fontWeight": "400",
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "rect_9",
+      "name": "Menu tap area",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 490,
+        "y": 220,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#F7F1ED",
+          "opacity": 0
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 220,
+        "height": 200
+      },
+      "tappable": true
+    }
+  ],
+  "timelines": [
+    {
+      "id": "closed",
+      "durationMs": 300,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.rect_5.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1794143184537_15",
+              "timeMs": 0,
+              "value": 260,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184537_16",
+              "timeMs": 300,
+              "value": 260,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_5.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1794143184538_17",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184538_18",
+              "timeMs": 300,
+              "value": 0,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_5.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143184538_19",
+              "timeMs": 0,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184538_20",
+              "timeMs": 300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_6.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1794143184539_21",
+              "timeMs": 0,
+              "value": 300,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184539_22",
+              "timeMs": 300,
+              "value": 300,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_6.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1794143184539_23",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184539_24",
+              "timeMs": 300,
+              "value": 0,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_6.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143184539_25",
+              "timeMs": 0,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184539_26",
+              "timeMs": 300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_7.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1794143184539_27",
+              "timeMs": 0,
+              "value": 340,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_28",
+              "timeMs": 300,
+              "value": 340,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_7.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_29",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_30",
+              "timeMs": 300,
+              "value": 0,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_7.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_31",
+              "timeMs": 0,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_32",
+              "timeMs": 300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "rect_5",
+        "rect_6",
+        "rect_7"
+      ]
+    },
+    {
+      "id": "open",
+      "durationMs": 300,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.rect_5.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_33",
+              "timeMs": 0,
+              "value": 300,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_34",
+              "timeMs": 300,
+              "value": 300,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_5.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_35",
+              "timeMs": 0,
+              "value": 45,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_36",
+              "timeMs": 300,
+              "value": 45,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_5.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_37",
+              "timeMs": 0,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_38",
+              "timeMs": 300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_6.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_39",
+              "timeMs": 0,
+              "value": 300,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_40",
+              "timeMs": 300,
+              "value": 300,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_6.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_41",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_42",
+              "timeMs": 300,
+              "value": 0,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_6.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_43",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_44",
+              "timeMs": 300,
+              "value": 0,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_7.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_45",
+              "timeMs": 0,
+              "value": 300,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_46",
+              "timeMs": 300,
+              "value": 300,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_7.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_47",
+              "timeMs": 0,
+              "value": -45,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_48",
+              "timeMs": 300,
+              "value": -45,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_7.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1794143184540_49",
+              "timeMs": 0,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1794143184540_50",
+              "timeMs": 300,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "rect_5",
+        "rect_6",
+        "rect_7"
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "id": "menu_click",
+      "event": {
+        "type": "click",
+        "layerId": "rect_9"
+      },
+      "actions": [
+        {
+          "type": "emitEvent",
+          "eventName": "toggle"
+        }
+      ]
+    }
+  ],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {},
+  "stateMachines": [
+    {
+      "id": "sm_1794143184540_2",
+      "name": "Menu toggle",
+      "initialStateId": "smstate_1794143184540_3",
+      "states": [
+        {
+          "id": "smstate_1794143184540_3",
+          "name": "Closed",
+          "timelineId": "closed"
+        },
+        {
+          "id": "smstate_1794143184540_4",
+          "name": "Open",
+          "timelineId": "open"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "smtrans_1794143184541_3",
+          "from": "smstate_1794143184540_3",
+          "to": "smstate_1794143184540_4",
+          "trigger": "toggle",
+          "blendMs": 280
+        },
+        {
+          "id": "smtrans_1794143184541_4",
+          "from": "smstate_1794143184540_4",
+          "to": "smstate_1794143184540_3",
+          "trigger": "toggle",
+          "blendMs": 220
+        }
+      ]
+    }
+  ]
+}

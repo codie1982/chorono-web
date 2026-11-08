@@ -1,0 +1,265 @@
+{
+  "version": "1.0",
+  "runtime": {
+    "formatVersion": "1.0.0",
+    "composition": {
+      "id": "Progress bar example",
+      "width": 1200,
+      "height": 675,
+      "durationMs": 6000,
+      "frameRate": 30,
+      "backgroundColor": "#F7F1ED"
+    },
+    "layers": [
+      {
+        "id": "text_1",
+        "name": "Title — A little closer",
+        "type": "text",
+        "transform": {
+          "x": 600,
+          "y": 190,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 46.5,
+          "anchorY": 14.5
+        },
+        "opacity": 1,
+        "size": {
+          "width": 93,
+          "height": 29
+        },
+        "text": {
+          "value": "A little closer.",
+          "fontSize": 54,
+          "color": "#211612",
+          "fontFamily": "Arial",
+          "fontWeight": "700",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "rect_2",
+        "name": "Progress track",
+        "type": "shape",
+        "shape": "rect",
+        "transform": {
+          "x": 280,
+          "y": 330,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 80,
+          "anchorY": 40
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#E7D8CF"
+          },
+          "cornerRadius": 12
+        },
+        "size": {
+          "width": 640,
+          "height": 24
+        }
+      },
+      {
+        "id": "rect_3",
+        "name": "Progress fill",
+        "type": "shape",
+        "shape": "rect",
+        "transform": {
+          "x": 280,
+          "y": 330,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 0,
+          "anchorY": 0
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#B55233"
+          },
+          "cornerRadius": 12
+        },
+        "size": {
+          "width": 640,
+          "height": 24
+        }
+      },
+      {
+        "id": "text_4",
+        "name": "Caption — One step at a time",
+        "type": "text",
+        "transform": {
+          "x": 600,
+          "y": 410,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 46.5,
+          "anchorY": 14.5
+        },
+        "opacity": 1,
+        "size": {
+          "width": 93,
+          "height": 29
+        },
+        "text": {
+          "value": "One step at a time.",
+          "fontSize": 24,
+          "color": "#6D5A52",
+          "fontFamily": "Arial",
+          "fontWeight": "400",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "text_5",
+        "name": "Completion — Ready to go",
+        "type": "text",
+        "transform": {
+          "x": 600,
+          "y": 410,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 46.5,
+          "anchorY": 14.5
+        },
+        "opacity": 1,
+        "size": {
+          "width": 93,
+          "height": 29
+        },
+        "text": {
+          "value": "Ready to go.",
+          "fontSize": 24,
+          "color": "#8F3D27",
+          "fontFamily": "Arial",
+          "fontWeight": "700",
+          "textAlign": "center"
+        }
+      }
+    ],
+    "timelines": [
+      {
+        "id": "progress_bar",
+        "durationMs": 6000,
+        "loop": false,
+        "autoplay": true,
+        "tracks": [
+          {
+            "target": "layers.rect_3.transform.scaleX",
+            "keyframes": [
+              {
+                "id": "kf_1794142295718_1",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1794142295719_2",
+                "timeMs": 500,
+                "value": 0,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794142295719_3",
+                "timeMs": 3800,
+                "value": 1,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1794142295719_4",
+                "timeMs": 6000,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_4.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1794142295720_5",
+                "timeMs": 0,
+                "value": 1,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1794142295720_6",
+                "timeMs": 3500,
+                "value": 1,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794142295720_7",
+                "timeMs": 3800,
+                "value": 0,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.text_5.opacity",
+            "keyframes": [
+              {
+                "id": "kf_1794142295721_8",
+                "timeMs": 0,
+                "value": 0,
+                "easing": {
+                  "type": "hold"
+                }
+              },
+              {
+                "id": "kf_1794142295721_9",
+                "timeMs": 3800,
+                "value": 0,
+                "easing": {
+                  "type": "easeOut"
+                }
+              },
+              {
+                "id": "kf_1794142295721_10",
+                "timeMs": 4200,
+                "value": 1,
+                "easing": {
+                  "type": "linear"
+                }
+              }
+            ]
+          }
+        ],
+        "layerIds": [
+          "rect_3",
+          "text_4",
+          "text_5"
+        ]
+      }
+    ],
+    "parameters": [],
+    "triggers": [],
+    "bindings": []
+  },
+  "warnings": []
+}

@@ -5,7 +5,21 @@ export const USE_CASE_UPDATED = '2026-11-05T12:14:37Z'
 
 export const CODEX_EXAMPLE_MODIFIED = '2026-11-08T12:37:18Z'
 
+export const UI_EXAMPLES_PUBLISHED = '2026-11-08T12:54:22Z'
+
 export const ANIMATION_EXAMPLES = {
+  'progress-bar': {
+    title: 'Progress bar — A little closer', durationMs: 6000, posterTimeMs: 2000, layers: 5, tracks: 3, bytes: 5661,
+    alt: 'A little closer headline above a rust progress bar filling from the left on a cream canvas.',
+    description: 'A six-second editable progress bar animation with a left-anchored fill and a completion message.',
+    cues: [{ timeMs: 500, label: 'Empty track' }, { timeMs: 2000, label: 'Filling' }, { timeMs: 4500, label: 'Complete' }],
+  },
+  'success-confirmation': {
+    title: 'Success — All done', durationMs: 4000, posterTimeMs: 2000, layers: 5, tracks: 6, bytes: 7388,
+    alt: 'A white checkmark on a rust badge above All done and Your next step starts here.',
+    description: 'A four-second editable success animation with a two-stroke checkmark reveal and a readable confirmation hold.',
+    cues: [{ timeMs: 500, label: 'First stroke' }, { timeMs: 900, label: 'Checkmark reveal' }, { timeMs: 2000, label: 'Confirmation hold' }],
+  },
   'codex-loading-loop': {
     title: 'Three-dot loading loop', durationMs: 4000, posterTimeMs: 1000, layers: 4, tracks: 3, bytes: 7956,
     width: 1024, height: 768, loop: true,
@@ -48,7 +62,7 @@ export function animationExampleEntities(SITE_URL: string, id: AnimationExampleI
     {
       '@type': 'CreativeWork', '@id': `${SITE_URL}/examples/${id}#work`, name: `${example.title} — editable Chorono animation`,
       description: example.description,
-      author: { '@id': `${SITE_URL}/#team` }, dateModified: id === 'codex-loading-loop' ? CODEX_EXAMPLE_MODIFIED : id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED,
+      author: { '@id': `${SITE_URL}/#team` }, dateModified: id === 'progress-bar' || id === 'success-confirmation' ? UI_EXAMPLES_PUBLISHED : id === 'codex-loading-loop' ? CODEX_EXAMPLE_MODIFIED : id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED,
       thumbnailUrl: `${SITE_URL}/examples/${id}.png`,
       isAccessibleForFree: true, encoding: { '@id': `${file}#download` }, inLanguage: 'en',
     },

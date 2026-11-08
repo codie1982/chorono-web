@@ -19,7 +19,7 @@ export default function BlogPage() {
       </div>
     </div>
     <section aria-label="Animation guides" className="mx-auto max-w-6xl px-6 py-12 md:py-16">
-      <div className="mb-7 flex flex-wrap items-center justify-between gap-3"><p className="text-sm font-semibold uppercase tracking-widest text-[#8F3D27]">Start here · 3 practical guides</p><p className="text-sm text-[#6d5a52]">By Chorono ekibi</p></div>
+      <div className="mb-7 flex flex-wrap items-center justify-between gap-3"><p className="text-sm font-semibold uppercase tracking-widest text-[#8F3D27]">Start here · {BLOG_POSTS.length} practical guides</p><p className="text-sm text-[#6d5a52]">By Chorono ekibi</p></div>
       <div className="grid gap-6 md:grid-cols-3">{BLOG_POSTS.map(post => <PostCard key={post.slug} post={post} />)}</div>
       <div className="mt-12 flex flex-col gap-5 rounded-2xl border border-[#e7d8cf] bg-[#ede0d7] p-7 sm:flex-row sm:items-center sm:justify-between">
         <div><h2 className="text-2xl font-bold tracking-tight">Get your editor ready.</h2><p className="mt-2 max-w-xl leading-7 text-[#6d5a52]">Install Chorono locally and connect your agent through MCP. Keep every layer and keyframe available for the next idea.</p></div>

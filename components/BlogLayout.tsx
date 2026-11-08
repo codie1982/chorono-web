@@ -23,7 +23,7 @@ export function BlogFooter() {
       <Link href="/" className="font-semibold text-[#211612]">Chorono · Editable animation, with your AI agent.</Link>
       <div className="flex flex-wrap gap-5"><Link href="/blog">Blog</Link><Link href="/getting-started">Install Chorono</Link><a href={REPOSITORY_URL}>Source on GitHub</a></div>
     </div>
-    <nav aria-label="Animation examples and guides" className="mx-auto mt-5 flex max-w-6xl flex-wrap gap-x-5 gap-y-3 border-t border-[#e7d8cf] pt-5"><Link href="/motion-graphics-software">Motion graphics software</Link><Link href="/text-animation">Text animation</Link><Link href="/kinetic-typography">Kinetic typography</Link><Link href="/keyframe-animation">Keyframe animation</Link><Link href="/animation-easing">Animation easing</Link></nav>
+    <nav aria-label="Animation examples and guides" className="mx-auto mt-5 flex max-w-6xl flex-wrap gap-x-5 gap-y-3 border-t border-[#e7d8cf] pt-5"><Link href="/motion-graphics-software">Motion graphics software</Link><Link href="/text-animation">Text animation</Link><Link href="/kinetic-typography">Kinetic typography</Link><Link href="/keyframe-animation">Keyframe animation</Link><Link href="/animation-easing">Animation easing</Link><Link href="/blog/progress-bar-and-success-animation">Progress &amp; success animation</Link></nav>
   </footer>
 }
 

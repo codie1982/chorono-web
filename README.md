@@ -52,3 +52,15 @@ chorono-web/
 ├── tsconfig.json
 └── next.config.js
 ```
+
+## Mobile landing page and GitHub support
+
+`components/LandingPage.tsx` constrains runtime/Android grid cards with a zero minimum width and a single explicit mobile column. Code samples retain their own horizontal scrolling; the page is not globally clipped. The decorative timeline uses a narrower mobile layer column and a shrinkable track.
+
+The existing GitHub button is visible on mobile and labeled “Star on GitHub”. It reuses the public star loader and `trackButtonClick` with `github_star_intent`. This event measures outbound intent, not a completed star. Actual starring still happens on GitHub; no user authorization or automatic starring is added.
+
+Validation: `npm test` (4 passing), `npm run build`, browser width checks at 320/375/390/768/1440px, and visual inspection of the 320px hero and 390px runtime cards. Getting started, agent skills, blog, text animation and animation easing were also checked at 390px. The production site requires deployment of these changes.
+
+## Landing page copy consistency
+
+The hero states that Chorono is installed on the visitor’s computer and opened in a browser. Its installation CTA continues to use `/getting-started` and the existing analytics event, with the displayed label reflected in the event payload. Runtime/Android integration examples and editor feature cards have separate sections; editor features do not imply SDK support. The Android dependency example consistently names `app/build.gradle.kts` and identifies Kotlin DSL. These copy changes do not change installation behavior or SDK compatibility.

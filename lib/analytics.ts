@@ -32,7 +32,7 @@ export const events = {
 export const trackHeroEditorClick = () => {
   trackEvent(events.HERO_EDITOR_CLICK, {
     button_location: 'hero_section',
-    button_text: 'Get Chorono Editor',
+    button_text: 'Install the free editor',
     section: 'hero',
     timestamp: new Date().toISOString(),
   })

@@ -46,6 +46,7 @@ interface CodeBlockProps {
   children: string;
 }
 
+/** Keeps copyable source scrollable within the available panel width. */
 function CodeBlock({ title, subtitle, children }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
@@ -61,7 +62,7 @@ function CodeBlock({ title, subtitle, children }: CodeBlockProps) {
   };
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#e7d8cf] bg-[#15100d] shadow-[0_24px_70px_rgba(66,31,19,0.18)]">
+    <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-[#e7d8cf] bg-[#15100d] shadow-[0_24px_70px_rgba(66,31,19,0.18)]">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="flex gap-1.5">
@@ -118,7 +119,7 @@ function TimelineMockup() {
   return (
     <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-3 shadow-[0_36px_110px_rgba(0,0,0,0.36)] backdrop-blur">
       <div className="overflow-hidden rounded-[1.45rem] border border-white/10 bg-[#16110e]">
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 px-3 py-4 sm:px-5">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#B55233]/20 text-[#ffb397]">
               <Play className="h-4 w-4" />
@@ -131,7 +132,7 @@ function TimelineMockup() {
           <div className="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-400">00:01:23</div>
         </div>
 
-        <div className="grid grid-cols-[160px_1fr]">
+        <div className="grid grid-cols-[100px_minmax(0,1fr)] sm:grid-cols-[160px_minmax(0,1fr)]">
           <aside className="border-r border-white/10 bg-black/10 px-4 py-5">
             <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
               <Layers className="h-3.5 w-3.5" /> Scene
@@ -147,8 +148,8 @@ function TimelineMockup() {
             ))}
           </aside>
 
-          <section className="relative px-5 py-5">
-            <div className="mb-4 grid grid-cols-7 text-center text-xs text-zinc-600">
+          <section className="relative min-w-0 px-2 py-5 sm:px-5">
+            <div className="mb-4 grid grid-cols-7 text-center text-[9px] text-zinc-600 sm:text-xs">
               <span>0f</span>
               <span>10f</span>
               <span>20f</span>
@@ -202,6 +203,7 @@ function ResourceLink({ icon: Icon, label, href }: ResourceLinkProps) {
   );
 }
 
+/** Links to GitHub; the public count does not confirm a visitor starring. */
 function GitHubStarButton() {
   const [stars, setStars] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -222,10 +224,12 @@ function GitHubStarButton() {
       href={LINKS.github}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 backdrop-blur"
+      onClick={() => trackButtonClick('github_star_intent')}
+      aria-label="Star Chorono on GitHub (opens in a new tab)"
+      className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 backdrop-blur"
     >
       <Github className="h-4 w-4" />
-      <span>GitHub</span>
+      <span>Star on GitHub</span>
       {!loading && stars !== null && (
         <>
           <span className="h-4 w-px bg-white/20" />
@@ -247,7 +251,7 @@ export default function ChoronoLandingPage() {
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#f7f1ed] to-transparent" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-6">
-          <nav className="flex items-center justify-between">
+          <nav className="flex flex-wrap items-center justify-between gap-4">
             <a href="#" className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#B55233] text-xl font-black shadow-[0_0_36px_rgba(181,82,51,0.5)]">
                 C
@@ -258,10 +262,12 @@ export default function ChoronoLandingPage() {
               </div>
             </a>
 
-            <div className="hidden items-center gap-6 text-sm font-medium text-zinc-300 md:flex">
+            <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-zinc-300">
+              <div className="hidden items-center gap-6 md:flex">
               <a href={LINKS.docs} className="hover:text-white">Getting started</a>
               <a href={LINKS.examples} className="hover:text-white">Agent skills</a>
               <a href="/blog" className="hover:text-white">Blog</a>
+              </div>
               <GitHubStarButton />
             </div>
           </nav>
@@ -273,13 +279,13 @@ export default function ChoronoLandingPage() {
                 Free and open-source animation editor
               </div>
 
-              <h1 className="max-w-xl text-5xl font-black leading-[0.98] tracking-tight md:text-6xl">
+              <h1 className="max-w-xl text-[clamp(2.25rem,12vw,3rem)] font-black leading-[0.98] tracking-tight md:text-6xl">
                 Create editable
                 <span className="block text-[#d96f45]">2D animations.</span>
               </h1>
 
               <p className="mt-6 max-w-lg text-base leading-8 text-zinc-400">
-                Create with Chorono’s free, open-source editor. Build in your browser with timelines, keyframes and particles, or connect Claude or Codex through MCP to create, preview and save projects you can keep editing.
+                Install Chorono on your computer, then open the free, open-source editor in your browser. Create with timelines, keyframes and particles, or connect Claude or Codex through MCP to create, preview and save editable projects.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -289,7 +295,7 @@ export default function ChoronoLandingPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(181,82,51,0.35)] transition hover:bg-[#8F3D27]"
                 >
                   <Github className="h-4 w-4" />
-                  Get the free editor
+                  Install the free editor
                 </a>
                 <a
                   href={LINKS.examples}
@@ -331,8 +337,8 @@ export default function ChoronoLandingPage() {
         </div>
         <h2 className="mb-3 text-2xl font-bold">Bring your animation into an app</h2>
         <p className="mb-6 max-w-2xl leading-7 text-[#6d5a52]">Create and export scenes with the editor, then play them in a web application with the separate <code>@chorono/runtime</code> package. The Android SDK provides its own native integration.</p>
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-[#e7d8cf] bg-white p-6 shadow-sm">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="min-w-0 rounded-3xl border border-[#e7d8cf] bg-white p-6 shadow-sm">
             <div className="mb-5 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#fff0e9] text-[#B55233]">
                 <Terminal className="h-5 w-5" />
@@ -366,7 +372,7 @@ player.play();`}</CodeBlock>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-[#e7d8cf] bg-white p-6 shadow-sm">
+          <div className="min-w-0 rounded-3xl border border-[#e7d8cf] bg-white p-6 shadow-sm">
             <div className="mb-5 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#fff0e9] text-[#B55233]">
                 <Smartphone className="h-5 w-5" />
@@ -380,8 +386,8 @@ player.play();`}</CodeBlock>
             <div className="space-y-6">
               <div>
                 <h3 className="mb-2 text-sm font-bold">1. Add the dependency</h3>
-                <p className="mb-3 text-sm text-[#6d5a52]">Add the following to your app/build.gradle file.</p>
-                <CodeBlock title="build.gradle.kts">{`dependencies {
+                <p className="mb-3 text-sm text-[#6d5a52]">Add the following to your app module’s Kotlin DSL file, <code>app/build.gradle.kts</code>.</p>
+                <CodeBlock title="app/build.gradle.kts">{`dependencies {
     implementation("com.chorono:chorono-android:1.0.0")
 }`}</CodeBlock>
               </div>
@@ -407,7 +413,12 @@ root.addView(view)`}</CodeBlock>
           </div>
         </div>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-4">
+      </section>
+
+      <section aria-labelledby="editor-features-heading" className="mx-auto max-w-7xl px-6 pb-14 pt-2">
+        <h2 id="editor-features-heading" className="mb-3 text-2xl font-bold">Create and refine in the editor</h2>
+        <p className="mb-6 max-w-2xl leading-7 text-[#6d5a52]">Use these tools in your local Chorono editor to build and revise your animation before exporting it for an app.</p>
+        <div className="grid gap-4 md:grid-cols-4">
           <FeatureCard icon={Layers} title="Editor-first" text="Timeline, dope sheet, curve editor and modifiers in one animation workflow." />
           <FeatureCard icon={Box} title="Editable Projects" text="Keep layers, keyframes and animation settings available for the next revision." />
           <FeatureCard icon={Zap} title="Agent Control" text="Connect Claude or Codex through MCP to create, inspect and refine scenes." />

@@ -1,0 +1,347 @@
+{
+  "version": "1.0",
+  "runtime": {
+    "formatVersion": "1.0.0",
+    "composition": {
+      "id": "Codex three-dot loading loop",
+      "width": 1024,
+      "height": 768,
+      "durationMs": 4000,
+      "frameRate": 30,
+      "backgroundColor": "#F7F1ED"
+    },
+    "layers": [
+      {
+        "id": "text_2",
+        "name": "Headline — A little progress, every day",
+        "type": "text",
+        "transform": {
+          "x": 512,
+          "y": 270,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 46.5,
+          "anchorY": 14.5
+        },
+        "opacity": 1,
+        "size": {
+          "width": 800,
+          "height": 70
+        },
+        "text": {
+          "value": "A little progress, every day",
+          "fontSize": 44,
+          "color": "#211612",
+          "fontFamily": "Arial",
+          "fontWeight": "700",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "circle_3",
+        "name": "Left dot",
+        "type": "shape",
+        "shape": "circle",
+        "transform": {
+          "x": 408,
+          "y": 438,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 30,
+          "anchorY": 30
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#B55233"
+          }
+        },
+        "size": {
+          "width": 48,
+          "height": 48
+        }
+      },
+      {
+        "id": "circle_4",
+        "name": "Middle dot",
+        "type": "shape",
+        "shape": "circle",
+        "transform": {
+          "x": 488,
+          "y": 438,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 30,
+          "anchorY": 30
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#B55233"
+          }
+        },
+        "size": {
+          "width": 48,
+          "height": 48
+        }
+      },
+      {
+        "id": "circle_5",
+        "name": "Right dot",
+        "type": "shape",
+        "shape": "circle",
+        "transform": {
+          "x": 568,
+          "y": 438,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotationDeg": 0,
+          "anchorX": 30,
+          "anchorY": 30
+        },
+        "opacity": 1,
+        "style": {
+          "fill": {
+            "type": "solid",
+            "color": "#B55233"
+          }
+        },
+        "size": {
+          "width": 48,
+          "height": 48
+        }
+      }
+    ],
+    "timelines": [
+      {
+        "id": "codex_loading_loop",
+        "durationMs": 4000,
+        "loop": true,
+        "autoplay": true,
+        "tracks": [
+          {
+            "target": "layers.circle_3.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1794141346309_1",
+                "timeMs": 0,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346309_2",
+                "timeMs": 200,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346309_3",
+                "timeMs": 650,
+                "value": 398,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346309_4",
+                "timeMs": 1100,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346310_5",
+                "timeMs": 2000,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346310_6",
+                "timeMs": 2450,
+                "value": 398,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346310_7",
+                "timeMs": 2900,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346310_8",
+                "timeMs": 4000,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.circle_4.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1794141346312_9",
+                "timeMs": 0,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_10",
+                "timeMs": 380,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_11",
+                "timeMs": 830,
+                "value": 398,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_12",
+                "timeMs": 1280,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_13",
+                "timeMs": 2180,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_14",
+                "timeMs": 2630,
+                "value": 398,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_15",
+                "timeMs": 3080,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_16",
+                "timeMs": 4000,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              }
+            ]
+          },
+          {
+            "target": "layers.circle_5.transform.y",
+            "keyframes": [
+              {
+                "id": "kf_1794141346312_17",
+                "timeMs": 0,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_18",
+                "timeMs": 560,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_19",
+                "timeMs": 1010,
+                "value": 398,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_20",
+                "timeMs": 1460,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_21",
+                "timeMs": 2360,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_22",
+                "timeMs": 2810,
+                "value": 398,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_23",
+                "timeMs": 3260,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              },
+              {
+                "id": "kf_1794141346312_24",
+                "timeMs": 4000,
+                "value": 438,
+                "easing": {
+                  "type": "easeInOut"
+                }
+              }
+            ]
+          }
+        ],
+        "layerIds": [
+          "circle_3",
+          "circle_4",
+          "circle_5"
+        ]
+      }
+    ],
+    "parameters": [],
+    "triggers": [],
+    "bindings": []
+  },
+  "warnings": []
+}

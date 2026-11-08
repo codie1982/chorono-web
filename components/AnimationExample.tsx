@@ -5,8 +5,12 @@ import { Download, Pause, Play, RotateCcw } from 'lucide-react'
 import type { ChronoPlayer } from '@chorono/runtime'
 import { ANIMATION_EXAMPLES, type AnimationExampleId } from '@/lib/animation-example'
 
+/** Plays a lazily loaded editable example at its native aspect ratio; user controls start motion. */
 export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { exampleId?: AnimationExampleId }) {
   const example = ANIMATION_EXAMPLES[exampleId]
+  const width = 'width' in example ? example.width : 1200
+  const height = 'height' in example ? example.height : 675
+  const loop = 'loop' in example && example.loop
   const DURATION = example.durationMs
   const BASE = `/examples/${exampleId}`
   const labelId = useId()
@@ -34,7 +38,8 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { ex
     let displayed = previous
     let frame: number
     const advance = (now: number) => {
-      position.current = Math.min(DURATION, position.current + now - previous)
+      const next = position.current + now - previous
+      position.current = loop ? next % DURATION : Math.min(DURATION, next)
       previous = now
       // Host-driven timing keeps the controls and the runtime on the same clock.
       player.current?.tick(position.current)
@@ -47,7 +52,7 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { ex
     }
     frame = requestAnimationFrame(advance)
     return () => cancelAnimationFrame(frame)
-  }, [playing, DURATION])
+  }, [playing, DURATION, loop])
 
   async function getPlayer() {
     if (player.current) return player.current
@@ -113,9 +118,9 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { ex
     <div className="flex flex-wrap justify-between gap-2 border-b border-[#e7d8cf] px-5 py-4 text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">
       <span id={labelId}>{example.title}</span><span>{DURATION / 1000} seconds · {example.layers} editable layers</span>
     </div>
-    <div className="relative aspect-video bg-[#F7F1ED]">
-      <img src={`${BASE}.png`} alt={example.alt} aria-hidden={status === 'ready' ? true : undefined} width={1200} height={675} loading="lazy" className="absolute inset-0 h-full w-full" />
-      <canvas ref={canvas} width={1200} height={675} role="img" aria-label={`Animated preview: ${example.title}`} className={`absolute inset-0 h-full w-full ${status === 'ready' ? '' : 'invisible'}`} />
+    <div className="relative bg-[#F7F1ED]" style={{ aspectRatio: `${width} / ${height}` }}>
+      <img src={`${BASE}.png`} alt={example.alt} aria-hidden={status === 'ready' ? true : undefined} width={width} height={height} loading="lazy" className="absolute inset-0 h-full w-full" />
+      <canvas ref={canvas} width={width} height={height} role="img" aria-label={`Animated preview: ${example.title}`} className={`absolute inset-0 h-full w-full ${status === 'ready' ? '' : 'invisible'}`} />
     </div>
     <div className="border-t border-[#e7d8cf] p-4 sm:p-5">
       <div className="flex flex-wrap items-center gap-3">
@@ -132,6 +137,6 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { ex
       {status === 'error' && <div role="status" className="mt-3 text-sm text-[#8F3D27]">The preview could not load. Download the project below to open it in Chorono.</div>}
       <a href={`${BASE}.chorono.json`} download={`${exampleId}.chorono.json`} className="mt-3 inline-flex min-h-[44px] flex-wrap items-center gap-2 text-sm font-semibold"><Download size={17} aria-hidden="true" />Download editable Chorono project <span className="whitespace-nowrap font-normal">· {Math.ceil(example.bytes / 1024)} KB JSON</span></a>
     </div>
-    <figcaption className="border-t border-[#e7d8cf] bg-[#faf7f4] px-5 py-4 text-sm leading-6 text-[#6d5a52]">A real Chorono scene, played with @chorono/runtime. Playback starts when you choose Play. Text, shapes and keyframes remain editable in the downloaded project.</figcaption>
+    <figcaption className="border-t border-[#e7d8cf] bg-[#faf7f4] px-5 py-4 text-sm leading-6 text-[#6d5a52]">A real Chorono scene, played with @chorono/runtime. Playback starts when you choose Play. {loop && 'This preview repeats until paused. '}Text, shapes and keyframes remain editable in the downloaded project.</figcaption>
   </figure>
 }

@@ -10,7 +10,9 @@ export function BlogHeader({ section = 'blog' }: { section?: 'blog' | 'examples'
         <Link href="/getting-started" className="py-2 hover:text-white">Getting started</Link>
         <Link href="/agent-skills" className="py-2 hover:text-white">Agent skills</Link>
         <Link href="/motion-graphics-software" className={`py-2 hover:text-white ${section === 'examples' ? 'font-semibold text-white' : ''}`}>Examples</Link>
-        <Link href="/blog" className={`py-2 hover:text-white ${section === 'blog' ? 'font-semibold text-white' : ''}`}>Blog</Link>
+        <Link href="/docs">Docs</Link>
+            <Link href="/animations">Animations</Link>
+            <Link href="/blog" className={`py-2 hover:text-white ${section === 'blog' ? 'font-semibold text-white' : ''}`}>Blog</Link>
         <a href={REPOSITORY_URL} className="py-2 hover:text-white">GitHub ↗</a>
       </div>
     </nav>

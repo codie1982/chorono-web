@@ -10,6 +10,13 @@ export const UI_EXAMPLES_PUBLISHED = '2026-11-08T12:54:22Z'
 export const INTERACTIVE_EXAMPLES_PUBLISHED = '2026-11-08T13:10:00Z'
 
 export const ANIMATION_EXAMPLES = {
+  'first-animation': {
+    title: 'Make it yours', durationMs: 4000, posterTimeMs: 1800, layers: 8, tracks: 13, bytes: 16656,
+    width: 960, height: 540, loop: false,
+    alt: 'An editable title card with a headline, caption and three colorful circles on a dark canvas.',
+    description: 'A four-second title entrance with eight editable layers, thirteen tracks and fifty-one keyframes.',
+    cues: [{ timeMs: 0, label: 'Start' }, { timeMs: 1800, label: 'Visible layout' }, { timeMs: 4000, label: 'End' }],
+  },
   'heart-like': {
     title: 'Heart like — A little love', durationMs: 300, posterTimeMs: 0, layers: 3, tracks: 6, bytes: 19925,
     alt: 'An outlined rust heart below A little love on a cream canvas.',
@@ -76,7 +83,7 @@ export function animationExampleEntities(SITE_URL: string, id: AnimationExampleI
     {
       '@type': 'CreativeWork', '@id': `${SITE_URL}/examples/${id}#work`, name: `${example.title} — editable Chorono animation`,
       description: example.description,
-      author: { '@id': `${SITE_URL}/#team` }, dateModified: id === 'heart-like' || id === 'hamburger-menu' ? INTERACTIVE_EXAMPLES_PUBLISHED : id === 'progress-bar' || id === 'success-confirmation' ? UI_EXAMPLES_PUBLISHED : id === 'codex-loading-loop' ? CODEX_EXAMPLE_MODIFIED : id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED,
+      author: { '@id': `${SITE_URL}/#team` }, ...id === 'first-animation' ? {} : { dateModified: id === 'heart-like' || id === 'hamburger-menu' ? INTERACTIVE_EXAMPLES_PUBLISHED : id === 'progress-bar' || id === 'success-confirmation' ? UI_EXAMPLES_PUBLISHED : id === 'codex-loading-loop' ? CODEX_EXAMPLE_MODIFIED : id === 'ideas-in-motion' ? EXAMPLE_MODIFIED : USE_CASE_PUBLISHED },
       thumbnailUrl: `${SITE_URL}/examples/${id}.png`,
       isAccessibleForFree: true, encoding: { '@id': `${file}#download` }, inLanguage: 'en',
     },

@@ -18,6 +18,8 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
             <Link href="/getting-started">Getting started</Link>
             <Link href="/agent-skills">Agent skills</Link>
             <Link href="/motion-graphics-software">Examples</Link>
+            <Link href="/docs">Docs</Link>
+            <Link href="/animations">Animations</Link>
             <Link href="/blog">Blog</Link>
             <a href={REPOSITORY_URL}>GitHub</a>
           </div>
@@ -39,7 +41,7 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
         <div className="mt-12 space-y-10">{children}</div>
       </article>
       <footer className="border-t border-[#e7d8cf] px-6 py-8 text-center text-sm text-[#6d5a52]">
-        <Link href="/">Chorono</Link> · <a href={`${REPOSITORY_URL}/blob/main/docs/README.md`}>Full documentation</a>
+        <Link href="/">Chorono</Link> · <Link href="/docs">Full documentation</Link>
       </footer>
     </main>
   )

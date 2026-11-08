@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
+import HeroCharacters from '@/components/hero/HeroCharacters';
+import HeroProjectBridge from '@/components/hero/HeroProjectBridge';
+import { useHeroCrew } from '@/components/hero/useHeroCrew';
 import { loadGitHubStars } from '@/lib/github-stars.mjs';
 import { GUIDE_AUTHOR, RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
 import { USE_CASES } from '@/lib/use-cases';
@@ -105,87 +108,6 @@ function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
   );
 }
 
-function TimelineMockup() {
-  const rows = [
-    { name: "Camera", dots: [16, 54, 72], color: "#d96f45" },
-    { name: "Shape_01", dots: [22, 34, 38, 48, 66], color: "#e6a15f" },
-    { name: "Position", dots: [18, 32, 45, 70, 76], color: "#c45535" },
-    { name: "Scale", dots: [26, 56, 82], color: "#9f6d4e" },
-    { name: "Opacity", dots: [14, 44, 62], color: "#d96f45" },
-  ];
-
-  return (
-    <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-3 shadow-[0_36px_110px_rgba(0,0,0,0.36)] backdrop-blur">
-      <div className="overflow-hidden rounded-[1.45rem] border border-white/10 bg-[#16110e]">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 px-3 py-4 sm:px-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#B55233]/20 text-[#ffb397]">
-              <Play className="h-4 w-4" />
-            </div>
-            <div>
-              <div className="text-sm font-semibold text-white">Chorono Preview</div>
-              <div className="text-xs text-zinc-500">timeline.runtime</div>
-            </div>
-          </div>
-          <div className="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-400">00:01:23</div>
-        </div>
-
-        <div className="grid grid-cols-[100px_minmax(0,1fr)] sm:grid-cols-[160px_minmax(0,1fr)]">
-          <aside className="border-r border-white/10 bg-black/10 px-4 py-5">
-            <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
-              <Layers className="h-3.5 w-3.5" /> Scene
-            </div>
-            {rows.map((row, index) => (
-              <div key={row.name} className="mb-4 flex items-center justify-between text-xs text-zinc-400">
-                <span className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: row.color }} />
-                  {index > 1 ? <span className="pl-4">{row.name}</span> : row.name}
-                </span>
-                <span className="h-1.5 w-1.5 rounded-full bg-zinc-700" />
-              </div>
-            ))}
-          </aside>
-
-          <section className="relative min-w-0 px-2 py-5 sm:px-5">
-            <div className="mb-4 grid grid-cols-7 text-center text-[9px] text-zinc-600 sm:text-xs">
-              <span>0f</span>
-              <span>10f</span>
-              <span>20f</span>
-              <span>30f</span>
-              <span>40f</span>
-              <span>50f</span>
-              <span>60f</span>
-            </div>
-
-            <div className="absolute bottom-0 left-[58%] top-10 w-px bg-[#f3d5ca] shadow-[0_0_22px_rgba(181,82,51,0.9)]" />
-
-            <div className="space-y-4">
-              {rows.map((row, rowIndex) => (
-                <div key={row.name} className="relative h-8 rounded-lg bg-white/[0.035]">
-                  <div className="absolute inset-y-0 left-[8%] right-[6%] rounded-lg bg-white/[0.025]" />
-                  {rowIndex === 3 && (
-                    <div className="absolute left-[42%] top-1/2 h-4 w-[42%] -translate-y-1/2 rounded-full bg-[#B55233]/55" />
-                  )}
-                  {rowIndex === 4 && (
-                    <div className="absolute left-[52%] top-1/2 h-4 w-[34%] -translate-y-1/2 rounded-full bg-[#d88a68]/40" />
-                  )}
-                  {row.dots.map((left) => (
-                    <span
-                      key={left}
-                      className="absolute top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 rounded-[2px]"
-                      style={{ left: `${left}%`, background: row.color }}
-                    />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 interface ResourceLinkProps {
   icon: React.ComponentType<{ className?: string }>;
   label: string;
@@ -241,11 +163,11 @@ function GitHubStarButton() {
 }
 
 export default function ChoronoLandingPage() {
+  const crew = useHeroCrew();
   return (
     <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
-      <section className="relative overflow-hidden bg-[#120D0B] text-white">
+      <section ref={crew.section} className="relative overflow-hidden bg-[#120D0B] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(181,82,51,0.35),transparent_34%),radial-gradient(circle_at_80%_8%,rgba(217,111,69,0.2),transparent_28%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#f7f1ed] to-transparent" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-6">
           <nav className="flex flex-wrap items-center justify-between gap-4">
@@ -263,13 +185,15 @@ export default function ChoronoLandingPage() {
               <div className="hidden items-center gap-6 md:flex">
               <a href={LINKS.docs} className="hover:text-white">Getting started</a>
               <a href={LINKS.examples} className="hover:text-white">Agent skills</a>
+              <a href="/docs" className="hover:text-white">Docs</a>
+              <a href="/animations" className="hover:text-white">Animations</a>
               <a href="/blog" className="hover:text-white">Blog</a>
               </div>
               <GitHubStarButton />
             </div>
           </nav>
 
-          <div className="grid items-center gap-12 py-20 lg:grid-cols-[0.9fr_1.35fr] lg:py-24">
+          <div className="grid items-center gap-12 pb-12 pt-20 lg:grid-cols-[0.9fr_1.35fr] lg:pb-16 lg:pt-24">
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 backdrop-blur">
                 <Zap className="h-4 w-4 text-[#ffb397]" />
@@ -288,7 +212,8 @@ export default function ChoronoLandingPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={LINKS.docs}
-                  onClick={() => trackAction('editorSetup', 'hero')}
+                  {...crew.cta('install')}
+                  onClick={event => { trackAction('editorSetup', 'hero'); crew.navigate(event, 'celebrate'); }}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(181,82,51,0.35)] transition hover:bg-[#8F3D27]"
                 >
                   <Github className="h-4 w-4" />
@@ -296,7 +221,8 @@ export default function ChoronoLandingPage() {
                 </a>
                 <a
                   href={LINKS.examples}
-                  onClick={() => trackAction('agentSkills', 'hero')}
+                  {...crew.cta('skills')}
+                  onClick={event => { trackAction('agentSkills', 'hero'); crew.navigate(event, 'highfive'); }}
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
                 >
                   <BookOpen className="h-4 w-4" />
@@ -314,24 +240,14 @@ export default function ChoronoLandingPage() {
               </div>
             </div>
 
-            <TimelineMockup />
+            <HeroCharacters crew={crew} />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-10">
-        <div className="mb-10 grid gap-5 md:grid-cols-2">
-          <a href="/getting-started" className="rounded-3xl border border-[#e7d8cf] bg-white p-7 shadow-sm transition hover:border-[#B55233]">
-            <h2 className="text-xl font-bold">Set up your animation workspace</h2>
-            <p className="mt-3 leading-7 text-[#6d5a52]">Install Chorono, start the editor and connect your agent. Follow the steps from a fresh checkout to your first saved project.</p>
-            <span className="mt-5 inline-flex items-center gap-2 font-semibold text-[#8F3D27]">Read the setup guide <ArrowRight className="h-4 w-4" /></span>
-          </a>
-          <a href="/agent-skills" className="rounded-3xl border border-[#e7d8cf] bg-white p-7 shadow-sm transition hover:border-[#B55233]">
-            <h2 className="text-xl font-bold">Create with Claude or Codex</h2>
-            <p className="mt-3 leading-7 text-[#6d5a52]">Learn what the setup and authoring skills do, how to install them, and how an agent inspects previews while keeping your scene editable.</p>
-            <span className="mt-5 inline-flex items-center gap-2 font-semibold text-[#8F3D27]">Explore the skills <ArrowRight className="h-4 w-4" /></span>
-          </a>
-        </div>
+      <HeroProjectBridge />
+
+      <section id="runtime" className="mx-auto max-w-7xl scroll-mt-8 px-6 py-10 sm:py-12">
         <h2 className="mb-3 text-2xl font-bold">Bring your animation into an app</h2>
         <p className="mb-6 max-w-2xl leading-7 text-[#6d5a52]">Create and export scenes with the editor, then play them in a web application with the separate <code>@chorono/runtime</code> package. The Android SDK provides its own native integration.</p>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -465,7 +381,8 @@ root.addView(view)`}</CodeBlock>
             <ResourceLink icon={Zap} label="Agent skills" href="/agent-skills" />
             <ResourceLink icon={BookOpen} label="Blog" href="/blog" />
             <ResourceLink icon={Package} label="NPM" href={LINKS.npm} />
-            <ResourceLink icon={BookOpen} label="Docs" href={LINKS.docs} />
+            <ResourceLink icon={BookOpen} label="Docs" href="/docs" />
+            <ResourceLink icon={Play} label="Animation library" href="/animations" />
           </div>
         </div>
       </footer>

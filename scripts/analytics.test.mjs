@@ -41,5 +41,12 @@ test('SSR, missing tag and failed transport cannot break user actions', () => {
     const analytics = load(window)
     assert.doesNotThrow(() => analytics.trackAction('githubStar', 'header'))
     assert.doesNotThrow(() => analytics.trackCodeCopy('terminal'))
+    assert.doesNotThrow(() => analytics.trackAnimationEvent({name:'animation_engagement',params:{hover_ms:1250}}))
   }
+})
+
+test('animation metrics keep numeric durations on the existing Google tag', () => {
+  const calls=[]
+  load({gtag:(...args)=>calls.push(args)}).trackAnimationEvent({name:'animation_engagement',params:{hover_ms:1250,placement:'hero'}})
+  assert.equal(JSON.stringify(calls),JSON.stringify([['event','animation_engagement',{hover_ms:1250,placement:'hero'}]]))
 })

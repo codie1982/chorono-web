@@ -5,9 +5,16 @@ import { Download, Pause, Play, RotateCcw } from 'lucide-react'
 import type { ChronoPlayer } from '@chorono/runtime'
 import { ANIMATION_EXAMPLES, type AnimationExampleId } from '@/lib/animation-example'
 
-/** Plays a lazily loaded editable example at its native aspect ratio; user controls start motion. */
-export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { exampleId?: AnimationExampleId }) {
+/**
+ * Play one reviewed scene through @chorono/runtime, lazily on user interaction.
+ * Full and compact presentations share loading, timing and resource ownership.
+ * The host owns one frame clock; unmount destroys the adapter and hidden tabs
+ * pause. Pending loads check ownership before allocating a player. Times are
+ * milliseconds and dimensions are native composition pixels. No autoplay.
+ */
+export default function AnimationExample({ exampleId = 'ideas-in-motion', compact = false, title, initialTimeMs }: { exampleId?: AnimationExampleId; compact?: boolean; title?: string; initialTimeMs?: number }) {
   const example = ANIMATION_EXAMPLES[exampleId]
+  const posterTime = initialTimeMs ?? example.posterTimeMs
   const width = 'width' in example ? example.width : 1200
   const height = 'height' in example ? example.height : 675
   const loop = 'loop' in example && example.loop
@@ -19,14 +26,17 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { ex
   const pending = useRef<Promise<ChronoPlayer> | null>(null)
   const mounted = useRef(false)
   const started = useRef(false)
-  const position = useRef<number>(example.posterTimeMs)
+  const position = useRef<number>(posterTime)
   const [status, setStatus] = useState<'poster' | 'loading' | 'ready' | 'error'>('poster')
   const [playing, setPlaying] = useState(false)
-  const [time, setTime] = useState<number>(example.posterTimeMs)
+  const [time, setTime] = useState<number>(posterTime)
 
   useEffect(() => {
     mounted.current = true
+    const visibility = () => { if (document.hidden) setPlaying(false) }
+    document.addEventListener('visibilitychange', visibility)
     return () => {
+      document.removeEventListener('visibilitychange', visibility)
       mounted.current = false
       player.current?.destroy()
     }
@@ -70,7 +80,7 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { ex
       if (!context) throw new Error('Canvas unavailable')
       const instance = new runtime.ChronoPlayer(exported.runtime, new runtime.CanvasRenderAdapter(context), { loop: false })
       player.current = instance
-      instance.seek(example.posterTimeMs)
+      instance.seek(posterTime)
       setStatus('ready')
       return instance
     })()
@@ -113,6 +123,21 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion' }: { ex
       instance.seek(value)
     } catch { /* Show the download fallback if playback is unavailable. */ }
   }
+
+  if (compact) return <figure className="cd-scene-example">
+    <div className="cd-scene-heading"><span className="cd-status-dot" /><span>EDITABLE EXAMPLE</span><span>{example.layers} layers · {DURATION / 1000}s</span></div>
+    <div className="cd-scene-stage relative" style={{ aspectRatio: `${width} / ${height}` }}>
+      <img src={`${BASE}.png`} alt={example.alt} aria-hidden={status === 'ready' ? true : undefined} width={width} height={height} loading="lazy" className="absolute inset-0 h-full w-full" />
+      <canvas ref={canvas} width={width} height={height} role="img" aria-label={title ?? example.title} className={`absolute inset-0 h-full w-full ${status === 'ready' ? '' : 'invisible'}`} />
+    </div>
+    {status === 'error' && <p role="alert">The preview could not load. Download the project to open it in Chorono.</p>}
+    <div className="cd-scene-controls">
+      <button type="button" disabled={status === 'loading'} onClick={() => void togglePlayback()} aria-label={playing ? 'Pause example' : 'Play example'}>{playing ? <Pause size={15} aria-hidden="true" /> : <Play size={15} aria-hidden="true" />}<span>{status === 'loading' ? 'Loading' : playing ? 'Pause' : 'Play'}</span></button>
+      <input type="range" min={0} max={DURATION} step={1} value={Math.round(time)} onChange={event => void seek(Number(event.target.value))} disabled={status === 'loading'} aria-label="Example preview time" aria-valuetext={`${(time / 1000).toFixed(1)} seconds`} />
+      <output>{(time / 1000).toFixed(1)} <span>/ {DURATION / 1000}s</span></output>
+    </div>
+    <figcaption>{title ?? example.title}. Native Chorono playback. {loop ? 'Repeats until paused.' : 'Plays once.'}</figcaption>
+  </figure>
 
   return <figure className="animation-example my-7 overflow-hidden rounded-2xl border border-[#d9bca9] bg-white" aria-labelledby={labelId}>
     <div className="flex flex-wrap justify-between gap-2 border-b border-[#e7d8cf] px-5 py-4 text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">

@@ -181,7 +181,31 @@ assert.ok(!/^Disallow: \/$/m.test(robots), 'Public pages must remain crawlable')
 
 const xml = await (await fetchChecked('/sitemap.xml', /(?:application|text)\/xml/)).text()
 assert.ok(xml.includes('http://www.sitemaps.org/schemas/sitemap/0.9'))
-assert.deepEqual([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]).sort(), pages.map(path => new URL(path, canonicalOrigin).href).sort())
+const sitemapFiles = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => new URL(match[1]))
+assert.ok(xml.includes('<sitemapindex'), 'Root sitemap must be an index')
+const publicUrls = []
+for (const file of sitemapFiles) {
+  assert.equal(file.origin, canonicalOrigin)
+  assert.match(file.pathname, /^\/sitemap-[a-z-]+\.xml$/)
+  const child = await (await fetchChecked(file.pathname, /(?:application|text)\/xml/)).text()
+  publicUrls.push(...[...child.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]))
+}
+assert.equal(new Set(publicUrls).size, publicUrls.length, 'Each public HTML URL occurs once')
+const existingUrls = pages.map(path => new URL(path, canonicalOrigin).href)
+assert.ok(existingUrls.every(url => publicUrls.includes(url)), 'Existing public URL coverage must survive the feature release')
+const addedUrls = publicUrls.filter(url => !existingUrls.includes(url))
+const featureReleased = sitemapFiles.some(file => file.pathname === '/sitemap-docs-start.xml')
+assert.equal(addedUrls.length, featureReleased ? 15 : 0, 'Only reviewed, released docs/library pages enter the live index')
+for (const url of addedUrls) {
+  const location = new URL(url)
+  assert.equal(location.origin, canonicalOrigin)
+  assert.ok(location.pathname.startsWith('/docs') || location.pathname.startsWith('/animations'))
+  assert.ok(!location.search && !location.pathname.endsWith('/download'))
+  const html = await (await fetchChecked(location.pathname, /text\/html/)).text()
+  const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
+  assert.equal(links.find(link => link.rel === 'canonical')?.href, url)
+  assert.ok(!/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/.test(html), `${url}: released URL is noindex`)
+}
 console.log('PASS robots.txt and sitemap.xml: public pages only, correct origin and content types')
 
 for (const expected of [{ id: 'ideas-in-motion', duration: 6000, layers: 7, tracks: 9 }, ...Object.values(useCases), { id: 'progress-bar', duration: 6000, layers: 5, tracks: 3 }, { id: 'success-confirmation', duration: 4000, layers: 5, tracks: 6 }, { id: 'codex-loading-loop', duration: 4000, layers: 4, tracks: 3, width: 1024, height: 768 }]) {

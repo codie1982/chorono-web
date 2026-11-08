@@ -64,3 +64,19 @@ Validation: `npm test` (4 passing), `npm run build`, browser width checks at 320
 ## Landing page copy consistency
 
 The hero states that Chorono is installed on the visitor’s computer and opened in a browser. Its installation CTA continues to use `/getting-started` and records `editor_setup_click` with the hero placement. Runtime/Android integration examples and editor feature cards have separate sections; editor features do not imply SDK support. The Android dependency example consistently names `app/build.gradle.kts` and identifies Kotlin DSL. These copy changes do not change installation behavior or SDK compatibility.
+
+
+## English docs and animation library
+
+The website owns `/docs`, `/animations` and topic sitemaps. The animation editor stays in its separate repository. See [migration, local preview and validation](docs/plans/docs-library-migration.md), [docs architecture](docs/plans/english-docs-interface.md) and [library/sitemap ownership](docs/plans/animation-library-and-sitemaps.md). The new content remains noindex during local review; no deployment is performed by these commands.
+
+Run `npm test`, `npm run build`, then `npm run start -- --hostname 127.0.0.1 --port 2011`. Open `/docs`, `/animations` and `/sitemap-preview.xml`. Stop the owned server before building again.
+
+## Interactive homepage crew
+
+The homepage plays an editable, transparent Chorono scene with four distinct characters, curved limbs, squash/stretch and mouse/keyboard/touch responses. Hover the characters or the two existing hero CTAs; click a CTA for short feedback before navigation. Reduced motion starts paused. See [native scene sources, lifecycle and re-authoring](docs/plans/hero-crew.md). The public scene and alpha poster are in `public/hero/`; authoring recipes live in `scene-source/hero-crew/` and run only through MCP.
+
+The hero has [a project detail/download page](docs/plans/hero-project-discovery.md) and
+[interaction events](docs/plans/hero-analytics.md). Open `/?crewDebug=1` locally to inspect
+character dwell, non-overlapping engagement and actual native motion events. The latest idle
+loop gives Pip a wave, Milo a stretch, Fig a jelly-like breath and Dot a lens/antenna scan.

@@ -12,7 +12,7 @@ export const events = {
  * analytics is unavailable. Transport failure must never block the user action.
  * GA supplies timestamps; no visitor identifiers or code contents are included.
  */
-function trackEvent(eventName: string, params: Record<string, string>) {
+function trackEvent(eventName: string, params: Record<string, string | number>) {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
   try {
     window.gtag('event', eventName, params)
@@ -29,4 +29,14 @@ export function trackAction(action: Exclude<keyof typeof events, 'codeCopy'>, lo
 /** Records a successful clipboard write; the parameter is the snippet label only. */
 export function trackCodeCopy(snippetName: string) {
   trackEvent(events.codeCopy, { snippet_name: snippetName })
+}
+
+/** Sends fixed animation metrics to the existing tag and a local integration event.
+ * No queue/storage is created when the Google tag is absent. DOM listeners may inspect
+ * the same payload via chorono:animation. Transport/listener failures do not block input.
+ */
+export function trackAnimationEvent(event: { name: string; params: Record<string, string | number> }) {
+  if (typeof window === 'undefined') return
+  trackEvent(event.name, event.params)
+  try { window.dispatchEvent(new CustomEvent('chorono:animation', { detail: event })) } catch { /* Optional integration. */ }
 }

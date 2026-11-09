@@ -34,44 +34,63 @@ describe("publication and topic sitemap contract", () => {
     ).toBeNull();
   });
 
-  it("keeps new noindex pages outside the live sitemap while preserving public routes", async () => {
-    vi.stubEnv("CHORONO_PUBLISH_CONTENT", "");
+  it.each([undefined, "development", "preview"])("keeps docs/library noindex outside production (%s), even with legacy release flags", async (environment) => {
+    vi.stubEnv("VERCEL_ENV", environment);
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("CHORONO_PUBLISH_CONTENT", "true");
+    vi.stubEnv("CHORONO_CONTENT_ORIGIN", "https://www.chorono.com");
     expect(publicContentOrigin()).toBeNull();
-    expect(contentPublicationMetadata("/docs").robots).toEqual({
-      index: false,
-      follow: false,
-    });
+    for (const path of sitemapTopics.filter(topic => topic.unpublished).flatMap(topic => topic.paths)) {
+      expect(contentPublicationMetadata(path)).toMatchObject({
+        robots: { index: false, follow: false },
+        alternates: { canonical: `https://www.chorono.com${path}` },
+      });
+    }
     expect(publishedSitemapResponse().status).toBe(200)
-    expect(await publishedSitemapResponse().text()).toContain('sitemap-site.xml')
-    expect(await publishedSitemapResponse().text()).not.toContain('sitemap-docs-start.xml')
-    expect(publishedSitemapResponse('sitemap-docs-start.xml').status).toBe(404)
+    const index = await publishedSitemapResponse().text();
+    expect(index.match(/<sitemap>/g)).toHaveLength(3);
+    for (const topic of sitemapTopics) {
+      expect(publishedSitemapResponse(topic.file).status).toBe(topic.unpublished ? 404 : 200);
+      expect(index.includes(topic.file)).toBe(!topic.unpublished);
+    }
     expect(
       serializeSitemap("http://127.0.0.1:2000", "sitemap.xml", true),
     ).toContain("sitemap-preview.xml?topic=sitemap-docs-start.xml");
   });
 
-  it("uses one validated origin for public canonicals and sitemap URLs and fails invalid release configuration", async () => {
-    vi.stubEnv("CHORONO_PUBLISH_CONTENT", "true");
-    vi.stubEnv("CHORONO_CONTENT_ORIGIN", "https://www.chorono.com/");
-    expect(
-      contentPublicationMetadata("/animations/three-dot-loading"),
-    ).toMatchObject({
-      robots: { index: true, follow: true },
-      alternates: {
-        canonical: "https://www.chorono.com/animations/three-dot-loading",
-      },
-    });
-    expect(await publishedSitemapResponse().text()).toContain(
-      "https://www.chorono.com/sitemap-docs-ai.xml",
-    );
-    vi.stubEnv('VERCEL_ENV', 'preview')
-    expect(publicContentOrigin()).toBeNull()
-    expect(contentPublicationMetadata('/docs').robots).toEqual({ index: false, follow: false })
-    expect(await publishedSitemapResponse().text()).not.toContain('sitemap-docs-start.xml')
-    vi.stubEnv('VERCEL_ENV', '')
-    vi.stubEnv("CHORONO_CONTENT_ORIGIN", "http://localhost:2000");
-    expect(() => publicContentOrigin()).toThrow();
-    vi.stubEnv("CHORONO_CONTENT_ORIGIN", "https://www.chorono.com/private");
-    expect(() => publicContentOrigin()).toThrow();
+  it.each([undefined, "false"])("publishes 15 reviewed pages and all 8 sitemaps in production without a legacy opt-in (%s)", async (legacyFlag) => {
+    vi.stubEnv("VERCEL_ENV", "production");
+    vi.stubEnv("CHORONO_PUBLISH_CONTENT", legacyFlag);
+    vi.stubEnv("CHORONO_CONTENT_ORIGIN", undefined);
+    expect(publicContentOrigin()).toBe("https://www.chorono.com");
+    const releasedPaths = sitemapTopics.filter(topic => topic.unpublished).flatMap(topic => topic.paths);
+    expect(releasedPaths).toHaveLength(15);
+    for (const path of releasedPaths) {
+      expect(contentPublicationMetadata(path)).toMatchObject({
+        robots: { index: true, follow: true },
+        alternates: { canonical: `https://www.chorono.com${path}` },
+      });
+    }
+    const index = await publishedSitemapResponse().text();
+    expect(index.match(/<sitemap>/g)).toHaveLength(8);
+    const urls: string[] = [];
+    for (const topic of sitemapTopics) {
+      expect(index).toContain(`<loc>https://www.chorono.com/${topic.file}</loc>`);
+      const response = publishedSitemapResponse(topic.file);
+      expect(response.status).toBe(200);
+      urls.push(...[...((await response.text()).matchAll(/<loc>(.*?)<\/loc>/g))].map(match => match[1]));
+    }
+    expect(urls).toHaveLength(29);
+    expect(new Set(urls).size).toBe(29);
+    expect(urls.sort()).toEqual(sitemapTopics.flatMap(topic => topic.paths).map(path => `https://www.chorono.com${path}`).sort());
+    expect(urls.every(url => !url.includes("?") && !url.includes("/download"))).toBe(true);
+  });
+
+  it("keeps the production canonical origin independent of legacy and deployment hostnames", () => {
+    vi.stubEnv("VERCEL_ENV", "production");
+    vi.stubEnv("CHORONO_CONTENT_ORIGIN", "https://preview.example/private");
+    vi.stubEnv("VERCEL_URL", "preview.example");
+    expect(publicContentOrigin()).toBe("https://www.chorono.com");
+    expect(contentPublicationMetadata("/docs").alternates).toEqual({ canonical: "https://www.chorono.com/docs" });
   });
 });

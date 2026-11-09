@@ -30,6 +30,8 @@ The following values come from the downloadable project's first wave:
 
 Each dot follows the preceding dot by 180 ms. The second wave reaches its highest points at 2450, 2630 and 2810 ms. All three position tracks begin and end at `y = 438`; their last keyframes are at 4000 ms. The timeline has `loop: true`.
 
+![The three-dot loading project in Chorono with three staggered vertical-position tracks across a four-second timeline](../../public/docs/screenshots/loop-timeline-v2.jpg "Compare the three rows: each peak is offset from the row above it. The first Left dot peak is at 650 ms; the Middle dot and Right dot peaks follow at 830 and 1010 ms.")
+
 The movement uses `easeInOut`. In Chorono, a keyframe's easing controls the interval leaving that keyframe. The equal resting values create still intervals before, between and after the waves. See the [easing comparison](https://www.chorono.com/animation-easing) for how curves change progress between two values.
 
 ## Reduce the movement

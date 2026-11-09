@@ -22,6 +22,8 @@ Open the printed address and choose **MCP → Connect this editor**. Keep the br
 
 Refreshing the browser tab requires connecting it again. Installing a skill alone does not connect the tab.
 
+![Chorono Claude and Codex connection dialog in its Disconnected state, with the Connect this editor button](../../public/docs/screenshots/mcp-connect-v2.jpg "Open MCP in the editor header, then choose Connect this editor. This screenshot shows the state before connection; afterward the dialog reports Connected. Keep that editor tab open while your agent works.")
+
 ## Check the connection
 
 Use the same client selector that you used during setup:

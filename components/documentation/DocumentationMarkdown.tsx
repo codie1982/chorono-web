@@ -6,8 +6,14 @@ import {
 } from '@/lib/documentation/content'
 import firstAnimationPreview from '@/public/examples/first-animation.png'
 import { CodeBlock } from './CodeBlock'
+import { DocumentationScreenshot } from './DocumentationScreenshot'
+import { findDocumentationScreenshot } from '@/lib/documentation/screenshots'
 
-/** Render repository GFM safely; local docs/assets resolve to real preview URLs. */
+/** Safely renders repository GFM with local documentation and reviewed asset URLs.
+ * Standalone captures become captioned figures; inline images remain phrasing content.
+ * Article Markdown owns descriptions, while the screenshot allowlist supplies dimensions.
+ * Existing scene previews remain supported and raw HTML/script execution stays disabled.
+ */
 export function DocumentationMarkdown({
   markdown,
   source,
@@ -30,17 +36,27 @@ export function DocumentationMarkdown({
             <table>{children}</table>
           </div>
         ),
-        img: ({ src = '', alt = '' }) => (
-          <img
-            src={
-              src.includes('examples/first-animation/preview.png')
-                ? firstAnimationPreview.src
-                : src
-            }
+        // Only standalone images become figures. Inline images remain valid phrasing content.
+        p: ({ node, children }) => {
+          const child = node?.children.length === 1 ? node.children[0] : undefined
+          if (child?.type === 'element' && child.tagName === 'img') {
+            const { src, alt, title } = child.properties
+            const screenshot = typeof src === 'string' ? findDocumentationScreenshot(resolveDocumentationLink(src, source)) : undefined
+            if (screenshot) return <DocumentationScreenshot image={screenshot} alt={typeof alt === 'string' ? alt : ''} caption={typeof title === 'string' ? title : undefined} />
+          }
+          return <p>{children}</p>
+        },
+        img: ({ src = '', alt = '', title }) => {
+          const screenshot = findDocumentationScreenshot(resolveDocumentationLink(src, source))
+          return <img
+            src={screenshot?.href ?? (src.includes('examples/first-animation/preview.png') ? firstAnimationPreview.src : src)}
             alt={alt}
+            title={title}
+            width={screenshot?.width}
+            height={screenshot?.height}
             loading="lazy"
           />
-        ),
+        },
         h2: ({ children, id }) => (
           <h2 id={id}>
             {children}

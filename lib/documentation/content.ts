@@ -1,4 +1,5 @@
 import GithubSlugger from 'github-slugger'
+import { findDocumentationScreenshot } from './screenshots'
 import { toString } from 'mdast-util-to-string'
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
@@ -125,7 +126,7 @@ export function documentationHeadingIds() {
 
 /**
  * Resolve Markdown-relative references against their source location. Known
- * docs stay local; non-curated repository files use a precise GitHub source
+ * docs and reviewed screenshots stay local; non-curated repository files use a precise GitHub source
  * link. Hashes are preserved. External protocols are left to react-markdown's
  * default safe URL policy; this function never enables raw HTML.
  */
@@ -133,6 +134,8 @@ export function resolveDocumentationLink(href: string, source: string): string {
   if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(href)) return href
   const resolved = new URL(href, `https://documentation.invalid/${source}`)
   const path = decodeURIComponent(resolved.pathname.slice(1))
+  const screenshot = findDocumentationScreenshot(path) ?? findDocumentationScreenshot(resolved.pathname)
+  if (screenshot) return screenshot.href + resolved.hash
   const local = documentationPages.find((page) => page.source === path)
   if (local) return documentationHref(local.slug) + resolved.hash
   return `https://github.com/codie1982/chorono-editor/blob/main/${path}${resolved.hash}`

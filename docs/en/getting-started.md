@@ -28,13 +28,15 @@ A layer is one scene object, such as a title, circle or background. A track stor
 
 In the layer list, find **Editable headline**, **Workflow caption** and **Motion dot 1**. Select one layer and inspect its properties. Then inspect its tracks in the timeline and move the playhead, the marker showing the current time.
 
+![The first-animation project at 1800 ms, with Editable headline selected in Layers and its Content field visible in Properties](../../public/docs/screenshots/first-animation-editor.jpg "The same downloadable project in the editor: named layers on the left, the selected headline on the canvas, text controls on the right and the first-animation timeline below.")
+
 A position track changes where the layer appears. An opacity track changes how visible it is. Selecting a different layer changes the properties you are inspecting.
 
 For a separate explanation of these concepts, see the [keyframe animation guide](https://www.chorono.com/keyframe-animation). This exercise focuses on editing the supplied Chorono project.
 
 ## 3. Change the title and one color
 
-Select **Editable headline** and change **Text Content** to a short phrase of your own. Keep the text inside the card; shorten the phrase or adjust its font size if it does not fit.
+Select **Editable headline**. In the **Text** section of Properties, change **Content** to a short phrase of your own. Keep the text inside the card; shorten the phrase or adjust its font size if it does not fit.
 
 Select **Motion dot 1** and change **Fill Color**. Play the scene again to see the new color in motion. Keep the layer names so you can refer to the same objects in a later revision.
 

@@ -44,7 +44,11 @@ Run only the alternative for your client. Codex and Claude Code receive filesyst
 npm run chorono -- start --background --open
 ```
 
-Open the URL printed by the command, normally `http://127.0.0.1:2000`. In the editor choose **MCP → Connect this editor**. Reload MCP connections in your agent client, or start a new agent session after setup changes the configuration. A refreshed browser tab must be connected again.
+Open the URL printed by the command, normally `http://127.0.0.1:2000`. The welcome screen lets you choose a canvas preset or open an existing project.
+
+![Chorono welcome screen with landscape, square and portrait canvas presets and the Create animation button](../../public/docs/screenshots/welcome.jpg "The local editor opens with canvas presets and a frame-rate selector. Choose Create animation for a new scene, or open a saved project from the same screen.")
+
+In the editor choose **MCP → Connect this editor**. Reload MCP connections in your agent client, or start a new agent session after setup changes the configuration. A refreshed browser tab must be connected again.
 
 ```sh
 npm run chorono -- doctor

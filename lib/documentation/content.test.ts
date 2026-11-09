@@ -38,6 +38,8 @@ describe('documentation reader and discovery contract', () => {
         page.source
       )
     ).toBe('/docs/installation#2-start-and-connect')
+    expect(resolveDocumentationLink('../../public/docs/screenshots/keyframe-inspector-v2.jpg', page.source)).toBe('/docs/screenshots/keyframe-inspector-v2.jpg')
+    expect(resolveDocumentationLink('/docs/screenshots/mcp-connect-v2.jpg', page.source)).toBe('/docs/screenshots/mcp-connect-v2.jpg')
     expect(resolveDocumentationLink('../../LICENSE', page.source)).toBe(
       'https://github.com/codie1982/chorono-editor/blob/main/LICENSE'
     )

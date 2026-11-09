@@ -106,6 +106,15 @@ def fetch_page(url):
         return response.status, body.decode('utf-8'), {'ttfbMs': round((first_byte-start)*1000, 2), 'htmlCompleteMs': round((finished-start)*1000, 2), 'transferredBytes': len(encoded), 'htmlBytes': len(body)}
 
 
+def is_documentation_page(path):
+    """Keep the HTML crawl separate from the public screenshot namespace.
+
+    Release slugs can contain dots, so a generic filename-extension filter would
+    incorrectly discard /docs/releases/0.2.0. Screenshot HTTP checks are separate.
+    """
+    return (path == '/docs' or path.startswith('/docs/')) and not path.startswith('/docs/screenshots/')
+
+
 def audit(base, samples):
     """Crawl the bounded docs graph, then measure each warmed HTML endpoint."""
     queue = deque(['/docs'])
@@ -121,14 +130,14 @@ def audit(base, samples):
         pages[route] = page
         for link in page['links']:
             target = urlsplit(urljoin(base + route, link['href']))
-            if target.netloc == urlsplit(base).netloc and (target.path == '/docs' or target.path.startswith('/docs/')):
+            if target.netloc == urlsplit(base).netloc and is_documentation_page(target.path):
                 queue.append(target.path.rstrip('/'))
     broken = []
     for route, page in pages.items():
         contextual, related = set(), set()
         for link in page['links']:
             target = urlsplit(urljoin(base + route, link['href']))
-            if target.netloc != urlsplit(base).netloc or not target.path.startswith('/docs'):
+            if target.netloc != urlsplit(base).netloc or not is_documentation_page(target.path):
                 continue
             path = target.path.rstrip('/')
             if path not in pages or (target.fragment and unquote(target.fragment) not in pages[path]['ids']):
@@ -150,7 +159,7 @@ def audit(base, samples):
 def main():
     """Write the evidence JSON and fail on broken links or core HTML regressions."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--base-url', default='http://127.0.0.1:2000')
+    parser.add_argument('--base-url', default='http://127.0.0.1:2011')
     parser.add_argument('--samples', type=int, default=5)
     parser.add_argument('--output', required=True, type=Path)
     args = parser.parse_args()

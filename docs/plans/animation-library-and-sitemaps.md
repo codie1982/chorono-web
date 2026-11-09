@@ -1,6 +1,6 @@
 # Animation library and topic sitemaps
 
-`chorono-web` owns the library at `/animations`, the two detail routes and the root sitemap index. `chorono-editor` owns the authoring application and its existing technical documentation. Website code does not import files from an editor checkout.
+`chorono-web` owns the library at `/animations`, the three detail routes and the root sitemap index. `chorono-editor` owns the authoring application and its existing technical documentation. Website code does not import files from an editor checkout.
 
 ## Data, playback and downloads
 
@@ -18,7 +18,7 @@ All XML files are at the root so directory scope covers the linked pages. The in
 
 | File | Topic | Routes |
 | --- | --- | ---: |
-| `/sitemap.xml` | Index of eligible topic files | 3 now; 8 after feature release |
+| `/sitemap.xml` | Index of eligible topic files | 8 in production; 3 locally/in previews |
 | `/sitemap-site.xml` | Existing homepage, setup, skills | 3 |
 | `/sitemap-blog.xml` | Existing blog hub and articles | 6 |
 | `/sitemap-guides.xml` | Existing product/use-case/fundamental guides | 5 |
@@ -26,22 +26,22 @@ All XML files are at the root so directory scope covers the linked pages. The in
 | `/sitemap-docs-editor.xml` | New keyframes, timeline, loops | 3 |
 | `/sitemap-docs-ai.xml` | New MCP, skills, scripting | 3 |
 | `/sitemap-docs-resources.xml` | New troubleshooting and releases | 2 |
-| `/sitemap-animations.xml` | New library hub and two details | 3 |
+| `/sitemap-animations.xml` | New library hub and three details | 4 |
 
-`lib/site-index/existing.ts` preserves all 14 existing public addresses and their actual modification dates from the former `app/sitemap.ts`. That flat metadata route is replaced by `app/sitemap.xml/route.ts`. `sitemap.ts` combines existing inventories with 14 new routes, escapes XML and returns absolute URLs. Each HTML URL occurs once. New pages have no invented modification dates; build time is not an editorial update. Search/filter/debug URLs and attachment routes are excluded.
+`lib/site-index/existing.ts` preserves all 14 existing public addresses and their actual modification dates from the former `app/sitemap.ts`. That flat metadata route is replaced by `app/sitemap.xml/route.ts`. `sitemap.ts` combines existing inventories with 15 new routes (11 docs and 4 library pages), escapes XML and returns absolute URLs. Each HTML URL occurs once. New pages have no invented modification dates; build time is not an editorial update. Search/filter/debug URLs and attachment routes are excluded.
 
-`/sitemap-preview.xml` includes all eight topics and 28 real local HTML routes for inspection, uses the local origin and returns noindex/nofollow. Never submit that inspection endpoint to search engines.
+`/sitemap-preview.xml` includes all eight topics and 29 real local HTML routes for inspection, uses the local origin and returns noindex/nofollow. Never submit that inspection endpoint to search engines.
 
 ## Publication lifecycle
 
 During local review new docs/library HTML is noindex and its five public XML endpoints return 404. Existing public pages, their three sitemap groups, the root index and robots.txt continue to work. Canonicals and release origin use the website's existing `SITE_URL`, `https://www.chorono.com`.
 
-An intentional release sets `CHORONO_PUBLISH_CONTENT=true` and `CHORONO_CONTENT_ORIGIN=https://www.chorono.com`, then rebuilds. The helper rejects other origins so new canonicals cannot disagree with existing site metadata. Static metadata and dynamic sitemap eligibility must be rebuilt/restarted together. This task neither sets the release flag nor pushes/deploys/submits a sitemap.
+`lib/site-index/publication.ts` enables these reviewed routes only when `VERCEL_ENV=production`. Production HTML emits `index, follow` and the root index lists all eight topics containing 29 unique HTML URLs. An unset environment, `development` and `preview` keep the new routes noindex and omit their five topic files, even for a local production-mode build. `NODE_ENV=production` and the former `CHORONO_PUBLISH_CONTENT` / `CHORONO_CONTENT_ORIGIN` flags do not enable indexing. All canonicals and published sitemap URLs use `SITE_URL`; deployment hostnames cannot override it. Static metadata and dynamic sitemap eligibility must be rebuilt/restarted together. These helpers do not deploy or submit sitemaps themselves.
 
 Add a reviewed source, runtime export, poster and example ID to the existing website asset inventory, then one library record with a real docs handoff. Validate playback, dimensions, original download, save/reopen and ownership. Extend categories only when there are real additional assets; there is no bulk page generation. Protocol limits are 50,000 URLs or 50 MB uncompressed per sitemap.
 
 ## Checks and references
 
-`npm test` runs existing Node tests plus documentation/library/sitemap contract tests. The original SEO checker now follows the index and verifies the same existing public URL set. New tests cover exact portable downloads, source/runtime timeline equality, native playback, unknown slugs, unique 28-route preview coverage and release gating.
+`npm test` runs existing Node tests plus documentation/library/sitemap contract tests. The original SEO checker now follows the index and verifies the same existing public URL set. New tests cover exact portable downloads, source/runtime timeline equality, native playback, unknown slugs, unique 29-route preview coverage and production/preview/local publication gating.
 
 [LottieFiles detail reference](https://lottiefiles.com/free-animation/the-evil-halloween-pumpkin-PmL1A2wAha) and [its 13-part index](https://lottiefiles.com/sitemap/free-animations-index.xml) informed the small per-asset structure, not a ranking claim or asset count. [Google sitemap construction](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) and [index guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/large-sitemaps) describe location, absolute URLs and limits.

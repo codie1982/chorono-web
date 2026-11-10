@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowRight } from 'lucide-react'
+import ExampleDownload from '@/components/ExampleDownload'
 
 const projectHref = '/animations/interactive-motion-crew'
 const steps = [
@@ -25,7 +26,7 @@ export default function HeroProjectBridge() {
           </div>
           <div className="flex shrink-0 flex-col items-start gap-2">
             <a href={projectHref} className="inline-flex min-h-[48px] items-center justify-center gap-6 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#8F3D27] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8F3D27]">Explore this animation <ArrowRight size={17} aria-hidden="true" /></a>
-            <a href={`${projectHref}/download`} download className="inline-flex min-h-[44px] items-center gap-2 px-1 text-sm font-semibold text-[#8F3D27] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F3D27]"><ArrowDown size={15} aria-hidden="true" />Download the project</a>
+            <ExampleDownload exampleId="motion-crew" href={`${projectHref}/download`} download className="inline-flex min-h-[44px] items-center gap-2 px-1 text-sm font-semibold text-[#8F3D27] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F3D27]"><ArrowDown size={15} aria-hidden="true" />Download the project</ExampleDownload>
           </div>
         </div>
         <div className="mt-8 grid border-y border-[#e3d5cb] md:grid-cols-3">

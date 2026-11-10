@@ -77,3 +77,25 @@ test('successful copy telemetry is limited per snippet, without exposing content
   assert.equal(calls.length, 3)
   assert.deepEqual(JSON.parse(JSON.stringify(calls[0])), ['event', 'code_copy', {snippet_name: 'install'}])
 })
+
+test('example play, replay and download have distinct fixed payloads without URL queries', () => {
+  const calls = []
+  const analytics = load({ location: { hostname: 'www.chorono.com', pathname: '/blog/make-animations-with-codex', search: '?email=private@example.com' }, gtag: (...args) => calls.push(args) })
+  for (const action of ['play', 'replay', 'download', 'like']) analytics.trackExampleAction('codex-loading-loop', action)
+  assert.deepEqual(calls.map(call => call[1]), ['example_play', 'example_play', 'example_download_click', 'example_interaction'])
+  assert.equal(calls[2][2].asset_path, '/examples/codex-loading-loop.chorono.json')
+  assert.equal(calls[0][2].example_action, 'play')
+  assert.equal(calls[0][2].page_path, '/blog/make-animations-with-codex')
+  assert.equal(JSON.stringify(calls).includes('private@'), false)
+})
+
+test('example analytics cannot block interactions and never sends from preview hosts', () => {
+  for (const gtag of [undefined, () => { throw Error('blocked') }]) {
+    const analytics = load({ location: { hostname: 'www.chorono.com', pathname: '/agent-skills' }, gtag })
+    assert.doesNotThrow(() => analytics.trackExampleAction('ideas-in-motion', 'play'))
+  }
+  const calls = []
+  load({ location: { hostname: 'localhost', pathname: '/agent-skills' }, gtag: (...args) => calls.push(args) }).trackExampleAction('ideas-in-motion', 'download')
+  assert.equal(calls.length, 0)
+  assert.doesNotThrow(() => load().trackExampleAction('ideas-in-motion', 'play'))
+})

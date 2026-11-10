@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import type { ChronoPlayer } from '@chorono/runtime'
 import { ANIMATION_EXAMPLES } from '@/lib/animation-example'
+import { trackExampleAction } from '@/lib/analytics'
 
 type Scene = Parameters<ChronoPlayer['load']>[0]
 
@@ -63,8 +64,10 @@ export default function InteractiveAnimationExample({ exampleId }: { exampleId: 
       instance.fireEvent({ type: 'click', layerId: menu ? 'rect_9' : 'path_2' })
       instance.tick(0) // The click queues the saved trigger's named event.
       instance.tick(0) // Consume the named event and enter the new state.
-      setActive([...instance.smRuntimes.values()][0].activeTimelineId === (menu ? 'open' : 'liked'))
+      const nextActive = [...instance.smRuntimes.values()][0].activeTimelineId === (menu ? 'open' : 'liked')
+      setActive(nextActive)
       setStatus('ready')
+      trackExampleAction(exampleId, menu ? nextActive ? 'open' : 'close' : nextActive ? 'like' : 'unlike')
       const start = performance.now()
       /** Constant state timelines are blended by the runtime's wall clock, not global timeline time. */
       const draw = (now: number) => {
@@ -91,7 +94,7 @@ export default function InteractiveAnimationExample({ exampleId }: { exampleId: 
     {menu && <nav id={`${id}-menu`} aria-label="Example navigation" hidden={!active} className="border-t border-[#e7d8cf] px-5 py-3"><a href="/getting-started" className="inline-flex min-h-[44px] items-center pr-6">Get started</a><a href="/blog" className="inline-flex min-h-[44px] items-center">Explore guides</a></nav>}
     <div className="border-t border-[#e7d8cf] px-5 py-4 text-sm leading-6 text-[#6d5a52]">
       <p role="status">{status === 'error' ? 'Preview unavailable. Download the project to open it in Chorono.' : working ? 'Updating…' : menu ? active ? 'Menu open. Press Escape to close.' : 'Menu closed. Click the canvas or press Enter or Space.' : active ? 'Liked. Click again to unlike.' : 'Not liked. Click the canvas or press Enter or Space.'}</p>
-      <a href={`${base}.chorono.json`} download={`${exampleId}.chorono.json`} className="inline-flex min-h-[44px] items-center font-semibold">Download editable Chorono project · {Math.ceil(example.bytes / 1024)} KB JSON</a>
+      <a href={`${base}.chorono.json`} download={`${exampleId}.chorono.json`} onClick={() => trackExampleAction(exampleId, 'download')} className="inline-flex min-h-[44px] items-center font-semibold">Download editable Chorono project · {Math.ceil(example.bytes / 1024)} KB JSON</a>
     </div>
     <figcaption className="border-t border-[#e7d8cf] bg-[#faf7f4] px-5 py-4 text-sm leading-6 text-[#6d5a52]">Click-driven Chorono state transitions. No autoplay. Reduced-motion preferences skip the blend. {menu ? 'Navigation links belong to this web preview; the project contains the interactive icon.' : 'The like state is local to this preview and resets when you leave.'}</figcaption>
   </figure>

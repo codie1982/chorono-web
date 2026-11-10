@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { Download, Pause, Play, RotateCcw } from 'lucide-react'
 import type { ChronoPlayer } from '@chorono/runtime'
 import { ANIMATION_EXAMPLES, type AnimationExampleId } from '@/lib/animation-example'
+import { trackExampleAction } from '@/lib/analytics'
 
 /**
  * Play one reviewed scene through @chorono/runtime, lazily on user interaction.
@@ -26,6 +27,7 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion', compac
   const pending = useRef<Promise<ChronoPlayer> | null>(null)
   const mounted = useRef(false)
   const started = useRef(false)
+  const playbackPending = useRef(false)
   const position = useRef<number>(posterTime)
   const [status, setStatus] = useState<'poster' | 'loading' | 'ready' | 'error'>('poster')
   const [playing, setPlaying] = useState(false)
@@ -95,6 +97,8 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion', compac
   }
 
   async function togglePlayback(restart = false) {
+    if (playbackPending.current) return
+    playbackPending.current = true
     try {
       const instance = await getPlayer()
       if (playing && !restart) {
@@ -109,7 +113,9 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion', compac
       }
       started.current = true
       setPlaying(true)
+      trackExampleAction(exampleId, restart ? 'replay' : 'play')
     } catch { /* The poster and project download remain available. */ }
+    finally { playbackPending.current = false }
   }
 
   async function seek(value: number) {
@@ -160,7 +166,7 @@ export default function AnimationExample({ exampleId = 'ideas-in-motion', compac
       </label>
       <div className="mt-1 flex flex-wrap gap-2" aria-label="Inspect animation moments">{example.cues.map(cue => <button key={cue.timeMs} type="button" onClick={() => void seek(cue.timeMs)} disabled={status === 'loading'} className="min-h-[44px] rounded-lg border border-[#e7d8cf] px-3 text-left text-xs leading-5 text-[#6d5a52] hover:bg-[#f7f1ed] disabled:opacity-60">{(cue.timeMs / 1000).toFixed(2).replace(/0$/, '')} s · {cue.label}</button>)}</div>
       {status === 'error' && <div role="status" className="mt-3 text-sm text-[#8F3D27]">The preview could not load. Download the project below to open it in Chorono.</div>}
-      <a href={`${BASE}.chorono.json`} download={`${exampleId}.chorono.json`} className="mt-3 inline-flex min-h-[44px] flex-wrap items-center gap-2 text-sm font-semibold"><Download size={17} aria-hidden="true" />Download editable Chorono project <span className="whitespace-nowrap font-normal">· {Math.ceil(example.bytes / 1024)} KB JSON</span></a>
+      <a href={`${BASE}.chorono.json`} download={`${exampleId}.chorono.json`} onClick={() => trackExampleAction(exampleId, 'download')} className="mt-3 inline-flex min-h-[44px] flex-wrap items-center gap-2 text-sm font-semibold"><Download size={17} aria-hidden="true" />Download editable Chorono project <span className="whitespace-nowrap font-normal">· {Math.ceil(example.bytes / 1024)} KB JSON</span></a>
     </div>
     <figcaption className="border-t border-[#e7d8cf] bg-[#faf7f4] px-5 py-4 text-sm leading-6 text-[#6d5a52]">A real Chorono scene, played with @chorono/runtime. Playback starts when you choose Play. {loop && 'This preview repeats until paused. '}Text, shapes and keyframes remain editable in the downloaded project.</figcaption>
   </figure>

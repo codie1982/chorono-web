@@ -11,6 +11,7 @@ import {
 import { TableOfContents } from "@/components/documentation/TableOfContents";
 import ScenePreview from "@/components/player/ScenePreview";
 import InteractiveCrewPreview from './InteractiveCrewPreview';
+import ExampleDownload from '@/components/ExampleDownload';
 
 const headings = [
   {
@@ -55,16 +56,17 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
           initialTimeMs={entry.initialTimeMs}
         /> : <InteractiveCrewPreview />}
         <div className="al-download-row">
-          <a
+          <ExampleDownload
+            exampleId={entry.preview.kind === 'example' ? entry.preview.exampleId : 'motion-crew'}
             className="al-button"
             href={`${animationHref(entry.slug)}/download`}
             download
           >
             Download editable project <span aria-hidden="true">↓</span>
-          </a>
+          </ExampleDownload>
           <span>.chorono.json · {(stats.bytes / 1024).toFixed(1)} KB</span>
         </div>
-        {downloads.length > 0 && <div className="al-extra-downloads" aria-label="Additional project downloads">{downloads.map(asset=><a key={asset.href} className="al-download-asset" href={asset.href} download={asset.fileName}><span>{asset.label} <span aria-hidden="true">↓</span></span><small>{(asset.bytes/1024).toFixed(1)} KB</small></a>)}</div>}
+        {downloads.length > 0 && <div className="al-extra-downloads" aria-label="Additional project downloads">{downloads.map(asset=><ExampleDownload key={asset.href} exampleId={entry.preview.kind === 'example' ? entry.preview.exampleId : 'motion-crew'} className="al-download-asset" href={asset.href} download={asset.fileName}><span>{asset.label} <span aria-hidden="true">↓</span></span><small>{(asset.bytes/1024).toFixed(1)} KB</small></ExampleDownload>)}</div>}
         <dl className="al-specs">
           <div>
             <dt>Composition</dt>

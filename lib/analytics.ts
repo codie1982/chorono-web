@@ -53,6 +53,18 @@ export function trackCodeCopy(snippetName: string) {
   trackInteraction(events.codeCopy, { snippet_name: snippetName }, snippetName)
 }
 
+/** Only reviewed public example labels and paths are sent, never query strings or projects. */
+export function trackExampleAction(exampleId: string, action: 'play' | 'replay' | 'download' | 'like' | 'unlike' | 'open' | 'close', assetPath = `/examples/${exampleId}.chorono.json`) {
+  if (typeof window === 'undefined' || !['www.chorono.com', 'chorono.com'].includes(window.location.hostname)) return
+  const eventName = action === 'download' ? 'example_download_click' : action === 'play' || action === 'replay' ? 'example_play' : 'example_interaction'
+  trackEvent(eventName, {
+    example_id: exampleId,
+    example_action: action,
+    page_path: window.location.pathname,
+    ...(action === 'download' ? { asset_path: assetPath.split(/[?#]/)[0] } : {}),
+  })
+}
+
 /** Sends bounded animation milestones to the existing tag and a local integration event.
  * No queue/storage is created when the Google tag is absent. DOM listeners may inspect
  * the same payload via chorono:animation. Transport/listener failures do not block input.

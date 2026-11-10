@@ -31,6 +31,15 @@ export default function AgentSkills() {
         <p>In the editor menu, choose <strong>Open Scene JSON</strong> and select the downloaded <code>.chorono.json</code> file. Use a separate editor tab if you already have a project open. Connect that tab through MCP before asking an agent to revise it.</p>
         <p>Follow the <Link href="/blog/make-animations-with-claude#first-prompt">Claude Code text animation tutorial and example prompt</Link>, or use the <Link href="/blog/make-animations-with-codex">Codex setup guide</Link> with the same two skills.</p>
       </section>
+      <section id="agent-setup-guides">
+        <h2>Set up Chorono with your agent</h2>
+        <p>Get the editor running locally, connect your agent through MCP, then install the Chorono skills for your workflow. Keep the editable project in the editor while you review and revise the animation.</p>
+        <ul>
+          <li><Link href="/docs/installation">Install Chorono</Link></li>
+          <li><Link href="/docs/ai/mcp">Connect an agent with MCP</Link></li>
+          <li><Link href="/docs/ai/skills">Install and use Chorono skills</Link></li>
+        </ul>
+      </section>
       <section>
         <h2>Install the bundled skills</h2>
         <p>The <Link href="/getting-started">editor setup</Link> already installs both skills for the selected Codex and Claude Code clients. From an existing editor checkout, you can also manage only the skills:</p>

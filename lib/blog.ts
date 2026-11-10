@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { editorialSiteEntities, GUIDE_AUTHOR, pageMetadata, SITE_URL } from './site'
-import { animationExampleEntities, INTERACTIVE_EXAMPLES_PUBLISHED, UI_EXAMPLES_PUBLISHED, CODEX_EXAMPLE_MODIFIED, EXAMPLE_MODIFIED, type AnimationExampleId } from './animation-example'
+import { editorialSiteEntities, GUIDE_AUTHOR, pageMetadata, SITE_URL, DOCS_LINKS_UPDATED } from './site'
+import { animationExampleEntities, INTERACTIVE_EXAMPLES_PUBLISHED, UI_EXAMPLES_PUBLISHED, EXAMPLE_MODIFIED, type AnimationExampleId } from './animation-example'
 
 export type ContentBlock =
   | { type: 'text'; text: string }
@@ -167,7 +167,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description: 'Create animations with Codex and Chorono. Play a three-dot loading loop, download its editable project and copy the creation and revision prompts.',
     category: 'Codex',
     published: '2026-11-04T12:50:46Z',
-    modified: CODEX_EXAMPLE_MODIFIED,
+    modified: DOCS_LINKS_UPDATED,
     image: '/blog/make-animations-with-codex.png',
     imageAlt: 'Codex animation workflow: install Chorono skills, connect MCP and revise a saved editable scene.',
     intro: 'Codex can create and revise 2D animations in a connected Chorono editor. Set up the local tools once, give Codex a clear motion brief and keep the resulting objects and keyframes available for editing in your browser.',
@@ -189,6 +189,10 @@ export const BLOG_POSTS: BlogPost[] = [
         text('The Chorono setup command configures the MCP entry for Codex and places the bundled skills in the project’s .agents/skills directory. Its Codex integration uses the user configuration at ~/.codex/config.toml. Open this project in Codex and reload the MCP tools or start a new session after setup so the new configuration is available.'),
         text('Codex supports MCP configuration in its configuration file. Use the Chorono setup command for this integration so the local server command and skill locations are installed together. Review a stale entry reported by setup before replacing an existing configuration.'),
         links({ label: 'Official Codex MCP documentation', href: 'https://developers.openai.com/codex/mcp' }, { label: 'Chorono setup guide', href: '/getting-started' }),
+      ] },
+      { id: 'setup-help', heading: 'Need help connecting Codex?', blocks: [
+        text('Use the setup guides to install the local editor, connect Codex through MCP and add the Chorono skills. Then return to the example, open its editable project and try the revision prompt.'),
+        links({ label: 'MCP connection guide', href: '/docs/ai/mcp' }, { label: 'Chorono skills guide', href: '/docs/ai/skills' }, { label: 'Installation guide', href: '/docs/installation' }),
       ] },
       { id: 'check', heading: '2. Check that Codex can reach the scene', blocks: [
         text('In the browser editor, open MCP and select “Connect this editor”. Keep that tab open while you work. Run doctor from the editor checkout to check configuration and connection status.'),

@@ -152,4 +152,5 @@ be stopped or built for website-only changes; preserve the existing docs/library
 ## Interaction measurements
 
 See [hero analytics](hero-analytics.md) for event names, duration semantics, local inspection
-and integration through the existing Google tag. Native signature playback is also measured.
+and integration through the existing Google tag. Engagement is reported once at each
+10/20/30-second threshold; rendered pose counts share those snapshots, without separate idle events.

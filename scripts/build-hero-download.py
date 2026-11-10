@@ -53,7 +53,8 @@ transparent canvas is ready, so it does not remain underneath moving characters.
 The reference hook sends fixed events through lib/analytics.ts to an existing Google tag
 (if configured) and dispatches chorono:animation for local listeners. No tag ID or visitor
 identity is bundled. ?crewDebug=1 shows a bounded in-memory event inspector. See the website
-repository docs/plans/hero-analytics.md for metric semantics and additive duration aggregation.
+repository docs/plans/hero-analytics.md for the three-event 10/20/30-second engagement budget
+and cumulative motion/control snapshot semantics. Rapid duplicate CTA/copy telemetry is limited.
 
 ## Native authoring recipes
 

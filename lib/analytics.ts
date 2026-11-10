@@ -21,17 +21,39 @@ function trackEvent(eventName: string, params: Record<string, string | number>) 
   }
 }
 
-/** Records activation at the named placement, not visibility or completion. */
+const recentInteractions = new Map<string, number>()
+const interactionCooldownMs = 2000
+
+/**
+ * Limit rapid duplicate CTA/copy telemetry without delaying the actual action.
+ * Keys contain only internal event/placement/snippet labels. Memory is bounded
+ * to 64 entries per module lifetime; no storage, queue or retry is introduced.
+ * Different actions/placements remain independent and a later repeat is allowed.
+ */
+function trackInteraction(eventName: string, params: Record<string, string | number>, context: string) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
+  const key = JSON.stringify([eventName, context])
+  const now = Date.now()
+  const previous = recentInteractions.get(key)
+  if (previous !== undefined && now >= previous && now - previous < interactionCooldownMs) return
+  if (!recentInteractions.has(key) && recentInteractions.size >= 64) {
+    recentInteractions.delete(recentInteractions.keys().next().value!)
+  }
+  recentInteractions.set(key, now)
+  trackEvent(eventName, params)
+}
+
+/** Records activation at the named placement, suppressing identical repeats within two seconds. */
 export function trackAction(action: Exclude<keyof typeof events, 'codeCopy'>, location: string) {
-  trackEvent(events[action], { cta_location: location })
+  trackInteraction(events[action], { cta_location: location }, location)
 }
 
-/** Records a successful clipboard write; the parameter is the snippet label only. */
+/** Records successful clipboard writes, at most once per snippet every two seconds. */
 export function trackCodeCopy(snippetName: string) {
-  trackEvent(events.codeCopy, { snippet_name: snippetName })
+  trackInteraction(events.codeCopy, { snippet_name: snippetName }, snippetName)
 }
 
-/** Sends fixed animation metrics to the existing tag and a local integration event.
+/** Sends bounded animation milestones to the existing tag and a local integration event.
  * No queue/storage is created when the Google tag is absent. DOM listeners may inspect
  * the same payload via chorono:animation. Transport/listener failures do not block input.
  */

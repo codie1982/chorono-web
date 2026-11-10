@@ -7,8 +7,8 @@ import ts from 'typescript'
 const source = readFileSync(new URL('../lib/analytics.ts', import.meta.url), 'utf8')
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText
 
-function load(window) {
-  const context = { exports: {}, ...(window === undefined ? {} : { window }) }
+function load(window, clock = () => 0) {
+  const context = { exports: {}, Date: { now: clock }, ...(window === undefined ? {} : { window }) }
   vm.runInNewContext(compiled, context)
   return context.exports
 }
@@ -41,12 +41,39 @@ test('SSR, missing tag and failed transport cannot break user actions', () => {
     const analytics = load(window)
     assert.doesNotThrow(() => analytics.trackAction('githubStar', 'header'))
     assert.doesNotThrow(() => analytics.trackCodeCopy('terminal'))
-    assert.doesNotThrow(() => analytics.trackAnimationEvent({name:'animation_engagement',params:{hover_ms:1250}}))
+    assert.doesNotThrow(() => analytics.trackAnimationEvent({name:'animation_engagement_10s',params:{engagement_seconds:10}}))
   }
 })
 
 test('animation metrics keep numeric durations on the existing Google tag', () => {
   const calls=[]
-  load({gtag:(...args)=>calls.push(args)}).trackAnimationEvent({name:'animation_engagement',params:{hover_ms:1250,placement:'hero'}})
-  assert.equal(JSON.stringify(calls),JSON.stringify([['event','animation_engagement',{hover_ms:1250,placement:'hero'}]]))
+  load({gtag:(...args)=>calls.push(args)}).trackAnimationEvent({name:'animation_engagement_10s',params:{engagement_seconds:10,interaction_ms:10000,placement:'hero'}})
+  assert.equal(JSON.stringify(calls),JSON.stringify([['event','animation_engagement_10s',{engagement_seconds:10,interaction_ms:10000,placement:'hero'}]]))
+})
+
+
+test('rapid duplicate CTA events are suppressed while placements and actions stay independent', () => {
+  let now = 0
+  const calls = []
+  const analytics = load({ gtag: (...args) => calls.push(args) }, () => now)
+  for (let index = 0; index < 100; index++) analytics.trackAction('editorSetup', 'hero')
+  assert.equal(calls.length, 1)
+  analytics.trackAction('editorSetup', 'header')
+  analytics.trackAction('agentSkills', 'hero')
+  assert.equal(calls.length, 3)
+  now = 1999; analytics.trackAction('editorSetup', 'hero')
+  assert.equal(calls.length, 3)
+  now = 2000; analytics.trackAction('editorSetup', 'hero')
+  assert.equal(calls.length, 4)
+})
+
+test('successful copy telemetry is limited per snippet, without exposing contents', () => {
+  let now = 0
+  const calls = []
+  const analytics = load({ gtag: (...args) => calls.push(args) }, () => now)
+  analytics.trackCodeCopy('install'); analytics.trackCodeCopy('install'); analytics.trackCodeCopy('player')
+  assert.equal(calls.length, 2)
+  now = 2000; analytics.trackCodeCopy('install')
+  assert.equal(calls.length, 3)
+  assert.deepEqual(JSON.parse(JSON.stringify(calls[0])), ['event', 'code_copy', {snippet_name: 'install'}])
 })

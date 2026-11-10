@@ -41,7 +41,6 @@ export function useHeroCrew({ autoPlay = true, followScroll = true, placement = 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
     let disposed = false, inView = false, pageActive = true, userPaused = reduced.matches || !autoPlay
     let raf = 0, last = 0, elapsed = 0, renderedPose: CrewPose = 'idle'
-    let cause = 'automatic'
     let bounds = surface.getBoundingClientRect()
     const pointer = { x: .5, y: .5 }, gaze = { x: .5, y: .5 }
     setPaused(userPaused)
@@ -52,7 +51,7 @@ export function useHeroCrew({ autoPlay = true, followScroll = true, placement = 
     function schedule() {
       const visible = !disposed && !!runtime.current && inView && !document.hidden && pageActive
       active.current = visible && !userPaused
-      metrics.availability(visible, active.current, document.hidden ? 'hidden' : !inView ? 'offscreen' : userPaused ? 'pause' : 'pagehide')
+      metrics.availability(visible, active.current)
       if (active.current && !raf) raf = requestAnimationFrame(draw)
       if (!active.current) { cancelAnimationFrame(raf); raf = 0; last = 0 }
     }
@@ -74,7 +73,7 @@ export function useHeroCrew({ autoPlay = true, followScroll = true, placement = 
       runtime.current.setParam('pointerX', gaze.x)
       runtime.current.setParam('pointerY', gaze.y)
       runtime.current.tick(elapsed)
-      metrics.rendered(next, elapsed, next === 'celebrate' || next === 'highfive' ? 'click' : next === 'idle' ? 'automatic' : cause)
+      metrics.rendered(next)
       raf = requestAnimationFrame(draw)
     }
     function move(event: PointerEvent) {
@@ -84,14 +83,14 @@ export function useHeroCrew({ autoPlay = true, followScroll = true, placement = 
     }
     function leave() { pointer.x = .5; pointer.y = .5 }
     /** Updates the scroll pose and cached bounds; no frame-level layout measurements. */
-    function scroll() { if (followScroll) { model.current.setScroll(window.scrollY); cause = 'scroll' }; measure() }
+    function scroll() { if (followScroll) model.current.setScroll(window.scrollY); measure() }
     /** Opens canvas pointer dwell, including gaps between characters. */
     function enter() { metrics.hover(true) }
     /** Closes canvas dwell without clearing a separately focused character. */
     function exit() { metrics.hover(false) }
-    /** Suspends and flushes before navigation/BFCache; unmount cannot duplicate these deltas. */
-    function pagehide() { pageActive = false; schedule(); metrics.flush('pagehide') }
-    /** Restores eligibility after BFCache without replaying old duration counters. */
+    /** Suspends before navigation/BFCache; reached milestones cannot be sent twice. */
+    function pagehide() { pageActive = false; schedule() }
+    /** Restores BFCache eligibility while preserving the three-milestone budget. */
     function pageshow() { pageActive = true; schedule() }
     function preference() {
       userPaused = reduced.matches || !autoPlay; setPaused(userPaused); schedule()
@@ -105,7 +104,9 @@ export function useHeroCrew({ autoPlay = true, followScroll = true, placement = 
     surface.addEventListener('pointerleave', exit)
     window.addEventListener('pagehide', pagehide)
     window.addEventListener('pageshow', pageshow)
-    const heartbeat = setInterval(() => metrics.flush('checkpoint'), 15000)
+    const heartbeat = setInterval(() => {
+      if (!metrics.checkpoint()) clearInterval(heartbeat)
+    }, 1000)
     root.addEventListener('pointermove', move, { passive: true })
     root.addEventListener('pointerleave', leave)
     window.addEventListener('scroll', scroll, { passive: true })
@@ -114,7 +115,7 @@ export function useHeroCrew({ autoPlay = true, followScroll = true, placement = 
     reduced.addEventListener('change', preference)
     scroll()
     input.current = (source, next) => {
-      model.current.setIntent(source, next); cause = source.endsWith('Focus') ? 'focus' : 'pointer'
+      model.current.setIntent(source, next)
       const target = next?.startsWith('shy-') ? next.slice(4) : next === 'excited' ? 'install' : next === 'curious' ? 'skills' : next
       metrics.input(source, target)
     }

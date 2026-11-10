@@ -1,127 +1,132 @@
 import type { CrewPose } from './interaction'
 
 export type CrewEvent = { name: string; params: Record<string, string | number> }
-type Input = { target: string; input: 'pointer' | 'focus'; ms: number }
-const idleBeats = [
-  { time: 600, character: 'pip', motion: 'wave' },
-  { time: 2400, character: 'milo', motion: 'stretch' },
-  { time: 4300, character: 'fig', motion: 'jelly-breath' },
-  { time: 6000, character: 'dot', motion: 'scan' },
-] as const
+type CrewControl = 'play' | 'pause' | 'celebrate' | 'highfive'
+const milestonesMs = [10000, 20000, 30000] as const
 
-/** Measures one mounted scene using a supplied monotonic millisecond clock and event sink.
- * Owns mutable counters, never DOM/player objects. Visible time requires a loaded foreground
- * scene; playback additionally requires the player to run. Interaction is the UNION of active
- * pointer/focus channels, so overlapping inputs never double-count overall engagement.
- * Flushes emit additive deltas and reset counters; suspension/unmount cannot resend them.
- * Per-target pointer/focus durations are separate dimensions and must not be summed as users.
- * No storage, visitor identifiers, coordinates, URLs or per-frame event transport is used.
+/**
+ * Measure one mounted scene with a monotonic millisecond clock and optional sink.
+ * Owns cumulative counters, never DOM/player resources, storage or visitor IDs.
+ * Engagement is the union of canvas hover and character/CTA pointer/focus while
+ * the loaded scene is visible in a foreground document. Paused hover still counts;
+ * hidden/offscreen intervals do not. Playback additionally requires a running player.
+ *
+ * Each 10/20/30-second engagement threshold emits once, at most three events per
+ * instance. Rendered pose entries and explicit controls are cumulative counters in
+ * those snapshots, never separate events. Leaving, pausing or disposal emits only
+ * thresholds actually reached, never a partial report. All work ends after 30 s.
+ * A new mount starts a new budget; suspension/BFCache restoration does not reset it.
  */
 export class CrewAnalytics {
   private at: number
   private visible = false
   private playing = false
   private hovered = false
-  private inputs = new Map<string, Input>()
+  private inputs = new Map<string, string>()
   private totals = { visible_ms: 0, playback_ms: 0, hover_ms: 0, interaction_ms: 0 }
   private pose: CrewPose | null = null
-  private poseMs = 0
-  private previousElapsed = -1
+  private motions: Partial<Record<CrewPose, number>> = {}
+  private controls: Partial<Record<CrewControl, number>> = {}
+  private nextMilestone = 0
   private disposed = false
 
-  /** Clock must be monotonic; sink failures are isolated from animation/input handling. */
+  /** The supplied clock is monotonic milliseconds; sink failures never interrupt input. */
   constructor(private placement: 'hero' | 'library', private clock: () => number, private sink: (event: CrewEvent) => void) {
     this.at = clock()
   }
 
-  /** Settles elapsed time before changing eligibility. Hidden/offscreen inputs are released. */
-  availability(visible: boolean, playing: boolean, reason = 'visibility'): void {
-    if (this.disposed) return
+  /** Settles the preceding interval, then changes eligibility and releases hidden inputs. */
+  availability(visible: boolean, playing: boolean): void {
+    if (this.finished) return
     this.settle()
-    const suspended = this.visible && !visible || this.playing && !playing
-    this.visible = visible; this.playing = visible && playing
-    if (suspended) this.flush(reason)
+    this.visible = visible
+    this.playing = visible && playing
     if (!visible) { this.inputs.clear(); this.hovered = false }
   }
 
-  /** Tracks time over the entire canvas, including spaces between the characters. */
-  hover(value: boolean): void { if (!this.disposed) { this.settle(); this.hovered = value } }
-
-  /** Replaces/releases one independent input channel, closing its previous duration first. */
-  input(channel: string, target?: string): void {
-    if (this.disposed) return
+  /** Opens/closes whole-canvas pointer dwell, including spaces between characters. */
+  hover(value: boolean): void {
+    if (this.finished) return
     this.settle()
-    if (this.inputs.get(channel)?.target === target) return
-    this.closeInput(channel, 'leave')
-    if (target) this.inputs.set(channel, { target, input: channel.endsWith('Focus') ? 'focus' : 'pointer', ms: 0 })
+    this.hovered = value
   }
 
-  /** Called AFTER native tick. Counts only motions actually rendered, not requests while paused.
-   * elapsedMs is native pose-relative playback time, including completed 8000 ms idle loops.
-   * Signature events are emitted once when their authored beat is crossed, not per frame.
+  /** Updates an independent pointer/focus channel without emitting target/leave events. */
+  input(channel: string, target?: string): void {
+    if (this.finished) return
+    this.settle()
+    if (target) this.inputs.set(channel, target)
+    else this.inputs.delete(channel)
+  }
+
+  /** Called after native tick; counts actual pose entries, never frames or idle-loop beats. */
+  rendered(pose: CrewPose): void {
+    if (this.finished || !this.playing || pose === this.pose) return
+    this.settle()
+    if (this.finished) return
+    this.pose = pose
+    this.motions[pose] = (this.motions[pose] ?? 0) + 1
+  }
+
+  /** Accumulates explicit requests in the next milestone, without a separate GA4 event. */
+  control(action: CrewControl): void {
+    if (this.finished) return
+    this.settle()
+    if (!this.finished) this.controls[action] = (this.controls[action] ?? 0) + 1
+  }
+
+  /** Checks due milestones; false tells the owner to stop its polling timer. */
+  checkpoint(): boolean {
+    if (!this.finished) this.settle()
+    return !this.finished
+  }
+
+  /** Final accounting is idempotent and sends no partial or duplicate snapshot. */
+  dispose(): void {
+    if (this.disposed) return
+    if (!this.finished) this.settle()
+    this.disposed = true
+    this.inputs.clear()
+  }
+
+  /** A completed budget or disposed owner cannot emit or accumulate more work. */
+  private get finished(): boolean { return this.disposed || this.nextMilestone === milestonesMs.length }
+
+  /**
+   * Account wall time once, splitting a delayed callback at exact engagement
+   * thresholds. Overlapping inputs count once; eligibility changes settle first.
+   * A monotonic clock is required; negative deltas are defensively ignored.
    */
-  rendered(pose: CrewPose, elapsedMs: number, cause: string): void {
-    if (this.disposed || !this.playing) return
-    if (pose !== this.pose) {
-      this.settle(); this.closePose('transition')
-      this.pose = pose; this.previousElapsed = -1
-      this.emit('animation_motion', { motion: pose, cause })
-    }
-    if (pose === 'idle') {
-      const loop = Math.floor(elapsedMs / 8000)
-      for (const beat of idleBeats) {
-        const time = loop * 8000 + beat.time
-        if (time > this.previousElapsed && time <= elapsedMs) this.emit('animation_idle_action', { character: beat.character, motion: beat.motion })
+  private settle(): void {
+    const now = this.clock()
+    let remaining = Math.max(0, now - this.at)
+    this.at = now
+    if (!this.visible) return
+    const interacting = this.hovered || this.inputs.size > 0
+    while (remaining > 0 && !this.finished) {
+      const threshold = milestonesMs[this.nextMilestone]
+      const step = interacting ? Math.min(remaining, threshold - this.totals.interaction_ms) : remaining
+      this.totals.visible_ms += step
+      if (this.playing) this.totals.playback_ms += step
+      if (this.hovered) this.totals.hover_ms += step
+      if (interacting) this.totals.interaction_ms += step
+      remaining -= step
+      if (this.totals.interaction_ms === threshold) {
+        this.nextMilestone++
+        this.emit(threshold / 1000)
       }
     }
-    this.previousElapsed = elapsedMs
   }
 
-  /** Records explicit playback/reaction controls; motion events independently prove rendering. */
-  control(action: string): void { if (!this.disposed) this.emit('animation_control', { action }) }
-
-  /** Sends non-overlapping deltas, typically every 15 s and on suspension/pagehide/unmount. */
-  flush(reason: string): void {
-    if (this.disposed) return
-    this.settle()
-    if (Object.values(this.totals).some(ms => ms > 0)) this.emit('animation_engagement', { ...this.totals, reason })
-    this.totals = { visible_ms: 0, playback_ms: 0, hover_ms: 0, interaction_ms: 0 }
-    for (const key of this.inputs.keys()) this.closeInput(key, reason, false)
-    this.closePose(reason)
-  }
-
-  /** Final flush is idempotent; subsequent callbacks are ignored. */
-  dispose(): void { if (!this.disposed) { this.flush('unmount'); this.disposed = true } }
-
-  /** Accounts exact wall milliseconds once before each semantic boundary; never called by a timer per frame. */
-  private settle(): void {
-    const now = this.clock(), dt = Math.max(0, now - this.at); this.at = now
-    if (!this.visible) return
-    this.totals.visible_ms += dt
-    if (this.playing) { this.totals.playback_ms += dt; if (this.pose) this.poseMs += dt }
-    if (this.hovered) this.totals.hover_ms += dt
-    if (this.hovered || this.inputs.size) this.totals.interaction_ms += dt
-    for (const input of this.inputs.values()) input.ms += dt
-  }
-
-  /** Emits and optionally releases one channel without counting it twice at a checkpoint. */
-  private closeInput(channel: string, reason: string, remove = true): void {
-    const input = this.inputs.get(channel)
-    if (input?.ms) this.emit('animation_target_time', { target: input.target, input: input.input, duration_ms: input.ms, reason })
-    if (remove) this.inputs.delete(channel)
-    else if (input) input.ms = 0
-  }
-
-  /** Motion residence counts only active playback, excluding paused/hidden intervals. */
-  private closePose(reason: string): void {
-    if (this.pose && this.poseMs > 0) this.emit('animation_motion_time', { motion: this.pose, duration_ms: this.poseMs, reason })
-    this.poseMs = 0
-  }
-
-  /** Fixed low-cardinality context; milliseconds are rounded at transport only. */
-  private emit(name: string, values: Record<string, string | number>): void {
-    const params: CrewEvent['params'] = { animation_id: 'motion-crew', placement: this.placement }
-    for (const [key, value] of Object.entries(values)) params[key] = typeof value === 'number' ? Math.round(value) : value
-    try { this.sink({ name, params }) } catch { /* Optional telemetry never interrupts animation. */ }
+  /** Sends a fixed-name cumulative snapshot; the budget is consumed before optional transport. */
+  private emit(seconds: number): void {
+    const params: CrewEvent['params'] = {
+      animation_id: 'motion-crew', placement: this.placement,
+      engagement_seconds: seconds, ...this.totals,
+    }
+    for (const [pose, count] of Object.entries(this.motions)) params[`motion_${pose.replace(/-/g, '_')}_count`] = count!
+    for (const [action, count] of Object.entries(this.controls)) params[`control_${action}_count`] = count!
+    for (const [key, value] of Object.entries(params)) if (typeof value === 'number') params[key] = Math.round(value)
+    try { this.sink({ name: `animation_engagement_${seconds}s`, params }) } catch { /* Optional telemetry never interrupts animation. */ }
   }
 }

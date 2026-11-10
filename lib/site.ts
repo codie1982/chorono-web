@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { animationExampleEntities, EXAMPLE_ID_PATH, EXAMPLE_MODIFIED } from './animation-example'
+import { animationExampleEntities, EXAMPLE_ID_PATH } from './animation-example'
 
 export const SITE_URL = 'https://www.chorono.com'
+export const DOCS_LINKS_UPDATED = '2026-11-10T07:59:43Z'
 export const REPOSITORY_URL = 'https://github.com/codie1982/chorono-editor'
 export const RUNTIME_URL = 'https://www.npmjs.com/package/@chorono/runtime'
 export const RUNTIME_REPOSITORY_URL = 'https://github.com/codie1982/chorono-runtime'
@@ -68,7 +69,7 @@ export const SITE_PAGES = {
     breadcrumb: 'Agent skills',
     image: '/guides/agent-skills.png',
     imageAlt: 'Chorono agent workflow: use chorono-setup, create with chorono, then save an editable project.',
-    sections: ['Two skills, one workflow', 'Try an editable text animation', 'Install the bundled skills', 'What the agent reads', 'Create, inspect, refine'],
+    sections: ['Two skills, one workflow', 'Try an editable text animation', 'Set up Chorono with your agent', 'Install the bundled skills', 'What the agent reads', 'Create, inspect, refine'],
     dependencies: 'An editor checkout and a Claude Code or Codex client; follow the setup guide to connect MCP.',
   },
 } as const
@@ -213,7 +214,7 @@ export function pageStructuredData(path: PagePath) {
           mainEntityOfPage: { '@id': pageId },
           isPartOf: { '@id': entityIds.website },
           about: { '@id': entityIds.software },
-          ...(path === '/agent-skills' ? { dateModified: EXAMPLE_MODIFIED, hasPart: { '@id': `${SITE_URL}${EXAMPLE_ID_PATH}` } } : {}),
+          ...(path === '/agent-skills' ? { dateModified: DOCS_LINKS_UPDATED, hasPart: { '@id': `${SITE_URL}${EXAMPLE_ID_PATH}` } } : {}),
         },
         {
           '@type': 'BreadcrumbList',

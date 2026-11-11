@@ -5,6 +5,7 @@ import { DocumentationShell } from "@/components/documentation/DocumentationShel
 import { LoadingMetrics } from "@/components/documentation/LoadingMetrics";
 import { contentPublicationMetadata } from "@/lib/site-index/publication";
 import "./docs.css";
+import "./navigation.css";
 
 const geist = localFont({
   src: "../../public/fonts/GeistVF.woff",

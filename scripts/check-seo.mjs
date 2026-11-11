@@ -195,7 +195,7 @@ const existingUrls = pages.map(path => new URL(path, canonicalOrigin).href)
 assert.ok(existingUrls.every(url => publicUrls.includes(url)), 'Existing public URL coverage must survive the feature release')
 const addedUrls = publicUrls.filter(url => !existingUrls.includes(url))
 const featureReleased = sitemapFiles.some(file => file.pathname === '/sitemap-docs-start.xml')
-assert.equal(addedUrls.length, featureReleased ? 15 : 0, 'Only reviewed, released docs/library pages enter the live index')
+assert.equal(addedUrls.length, featureReleased ? 72 : 0, 'Only reviewed, released docs/library pages enter the live index')
 for (const url of addedUrls) {
   const location = new URL(url)
   assert.equal(location.origin, canonicalOrigin)

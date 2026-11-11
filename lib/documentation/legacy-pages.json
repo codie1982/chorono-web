@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "",
+    "source": "docs/en/README.md",
+    "label": "Introduction",
+    "title": "Chorono documentation",
+    "description": "Learn Chorono with editable animation examples. Install the editor, edit keyframes, build loops and connect Claude Code or Codex through MCP.",
+    "group": "Getting started",
+    "sourceHash": "9ea3fe201c13289d878a273273cc6f4bf83b6857c1892fb9817dec052f0bbc87"
+  },
+  {
+    "slug": "installation",
+    "source": "docs/en/installation.md",
+    "label": "Installation",
+    "title": "Install Chorono",
+    "description": "Set up the free, open-source animation editor on your computer and start a local browser session.",
+    "group": "Getting started",
+    "sourceHash": "7e39df5c2170eb2bd3d2cc85e5fdec0676bd27d54dee688b6b2e9460ae0482ec"
+  },
+  {
+    "slug": "first-animation",
+    "source": "docs/en/getting-started.md",
+    "label": "Your first animation",
+    "title": "Create your first editable animation",
+    "description": "Open an editable Chorono example, change its text and colors, inspect the timeline, then save and reopen your first 2D animation.",
+    "group": "Getting started",
+    "sourceHash": "646ed0e5927154fb71973fffe3a9f0acba511fc7cd11dec9312b7a4dceb2ee3a"
+  },
+  {
+    "slug": "editor/keyframes",
+    "source": "docs/en/editor-keyframes.md",
+    "label": "Keyframes",
+    "title": "Edit keyframes in Chorono",
+    "description": "Inspect a property track, change a keyframe value and compare the movement in a real editable project.",
+    "group": "Create animations",
+    "sourceHash": "ad85f8da8b0de0f033c542f8cb1b2791c4f774a5d4717e490db5942e9c8a492f"
+  },
+  {
+    "slug": "editor/timeline",
+    "source": "docs/en/editor-timeline.md",
+    "label": "Timeline & playback",
+    "title": "Work with the animation timeline",
+    "description": "Read animation tracks, scrub the playhead and understand milliseconds, frames and independent timelines.",
+    "group": "Create animations",
+    "sourceHash": "87fc961f9bc9f679ed94292653210f2488db7a02fe543b246b543ecde2fbfbea"
+  },
+  {
+    "slug": "animation/loops",
+    "source": "docs/en/loop-animation.md",
+    "label": "Looping animations",
+    "title": "Make a looping animation",
+    "description": "Make a looping animation in Chorono. Inspect a three-dot example, adjust its keyframes and stagger, and check the loop boundary before saving.",
+    "group": "Create animations",
+    "sourceHash": "c963bee0b10beaeac3e56d212833beeb002c1950ca921ba0b5cc958e088b8615"
+  },
+  {
+    "slug": "ai/mcp",
+    "source": "docs/en/connect-ai-agent.md",
+    "label": "Connect your AI agent",
+    "title": "Connect your AI agent with MCP",
+    "description": "Connect Claude Code or Codex to a real Chorono editor through MCP and check the scene before making changes.",
+    "group": "AI & scripting",
+    "sourceHash": "7a45dfebdda4e57fc1a39bee5590358b2d731380f6ddbcb34be38bfd5a2d36d2"
+  },
+  {
+    "slug": "ai/skills",
+    "source": "docs/en/agent-skills.md",
+    "label": "Agent skills",
+    "title": "Chorono agent skills",
+    "description": "Install, inspect and update the setup and animation-authoring skills for Claude Code and Codex.",
+    "group": "AI & scripting",
+    "sourceHash": "919a608579959941b1fe1e7987c062a77205ca9e9e83cd18c90f2a3a5a8ce428"
+  },
+  {
+    "slug": "scripting",
+    "source": "docs/en/scripting.md",
+    "label": "JavaScript scripting",
+    "title": "JavaScript scene scripting",
+    "description": "Create and edit native layers, timelines and interactions in the isolated MCP scripting bridge.",
+    "group": "AI & scripting",
+    "sourceHash": "15f25e8d17eeea317318cd46bb2bcb3a6187d6f6525fa959d6b15908453f00a8"
+  },
+  {
+    "slug": "troubleshooting",
+    "source": "docs/en/troubleshooting.md",
+    "label": "Troubleshooting",
+    "title": "Chorono setup and MCP troubleshooting",
+    "description": "Diagnose startup, MCP connection and skill problems with explicit readiness checks.",
+    "group": "Resources",
+    "sourceHash": "5af3cc5b3be235197fd5f1d9c5c4c2f6225fd3d84796b7cbb339a3b4ec9f92d3"
+  },
+  {
+    "slug": "releases/0.2.0",
+    "source": "docs/releases/v0.2.0.md",
+    "label": "Release notes",
+    "title": "Chorono 0.2.0",
+    "description": "Read the scope, installation notes and known limitations of the 0.2.0 release.",
+    "group": "Resources",
+    "sourceHash": "fd83e605b945b79c58a49f6fc55128de210d1b9fbc48fa507fed40fad2083de8"
+  }
+]

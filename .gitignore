@@ -35,3 +35,7 @@ next-env.d.ts
 # Local audit evidence and browser captures
 /outputs/
 /test-results/
+
+# Python documentation-check cache
+__pycache__/
+*.py[cod]

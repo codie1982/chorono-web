@@ -1,0 +1,40 @@
+path,parent_path,primary_topic,intent,estimated_us_monthly_searches,data_status,metrics_retrieved_on,source,screenshots
+/docs/editor/projects,/docs/editor,animation project settings,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-projects.md,composition-v1.jpg
+/docs/editor/canvas/tools,/docs/editor/canvas,animation selection tools,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-canvas-tools.md,drawing-tools-v1.jpg
+/docs/editor/canvas/selection,/docs/editor/canvas,animation selection tools,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-canvas-selection.md,selection-panel-v1.jpg
+/docs/editor/canvas/snapping,/docs/editor/canvas,snapping animation,Existing-user task / feature guidance,50,returned,2026-11-11,docs/en/editor-canvas-snapping.md,snap-settings-v1.jpg
+/docs/editor/canvas/splines,/docs/editor/canvas,bezier curve editor,Existing-user task / feature guidance,30,returned,2026-11-11,docs/en/editor-canvas-splines.md,spline-editor-v1.jpg
+/docs/editor/canvas/motion-keys,/docs/editor/canvas,motion path editor,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-canvas-motion-keys.md,motion-keys-v1.jpg
+/docs/editor/layers/basic-shapes,/docs/editor/layers,shape animation,Existing-user task / feature guidance,170,returned,2026-11-11,docs/en/editor-layers-basic-shapes.md,layers-basic-shapes-v1.jpg
+/docs/editor/layers/paths,/docs/editor/layers,vector animation,Existing-user task / feature guidance,590,returned,2026-11-11,docs/en/editor-layers-paths.md,layers-path-vector-v1.jpg
+/docs/editor/layers/text,/docs/editor/layers,text animation tutorial,Existing-user task / feature guidance,10,returned,2026-11-08,docs/en/editor-layers-text.md,layers-text-v1.jpg;text-properties-v1.jpg
+/docs/editor/layers/media,/docs/editor/layers,audio animation timeline,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-layers-media.md,layers-media-v1.jpg
+/docs/editor/layers/spline-objects,/docs/editor/layers,spline editor,Existing-user task / feature guidance,50,returned,2026-11-11,docs/en/editor-layers-spline-objects.md,layers-spline-objects-v1.jpg
+/docs/editor/layers/particles,/docs/editor/layers,particle emitter,Existing-user task / feature guidance,140,returned,2026-11-11,docs/en/editor-layers-particles.md,particle-emitter-v1.jpg
+/docs/editor/layers/scene-explorer,/docs/editor/layers,layer hierarchy,Existing-user task / feature guidance,20,returned,2026-11-11,docs/en/editor-layers-scene-explorer.md,scene-explorer-v1.jpg
+/docs/editor/layers/cloning,/docs/editor/layers,clone animation,Existing-user task / feature guidance,10,returned,2026-11-11,docs/en/editor-layers-cloning.md,clone-dialog-v1.jpg
+/docs/editor/layers/arrays,/docs/editor/layers,radial array,Existing-user task / feature guidance,30,returned,2026-11-11,docs/en/editor-layers-arrays.md,array-radial-v1.jpg
+/docs/editor/properties/transform,/docs/editor/properties,animation properties,Existing-user task / feature guidance,20,returned,2026-11-11,docs/en/editor-properties-transform.md,properties-transform-v1.jpg
+/docs/editor/properties/appearance,/docs/editor/properties,linear gradient editor,Existing-user task / feature guidance,10,returned,2026-11-11,docs/en/editor-properties-appearance.md,properties-appearance-v1.jpg
+/docs/editor/properties/effects,/docs/editor/properties,motion blur animation,Existing-user task / feature guidance,70,returned,2026-11-11,docs/en/editor-properties-effects.md,properties-effects-v1.jpg
+/docs/editor/properties/masks,/docs/editor/properties,mask feather,Existing-user task / feature guidance,170,returned,2026-11-11,docs/en/editor-properties-masks.md,properties-masks-v1.jpg
+/docs/editor/properties/motion,/docs/editor/properties,motion path animation,Existing-user task / feature guidance,70,returned,2026-11-11,docs/en/editor-properties-motion.md,properties-motion-v1.jpg
+/docs/editor/properties/interact,/docs/editor/properties,interactive animation editor,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-properties-interact.md,properties-interact-v1.jpg
+/docs/editor/timeline/dope-sheet,/docs/editor/timeline,dope sheet animation,Existing-user task / feature guidance,50,returned,2026-11-11,docs/en/editor-timeline-dope-sheet.md,dope-sheet-v1.jpg
+/docs/editor/timeline/curves,/docs/editor/timeline,animation curve editor,Existing-user task / feature guidance,10,returned,2026-11-11,docs/en/editor-timeline-curves.md,curve-editor-v1.jpg
+/docs/editor/timeline/controllers,/docs/editor/timeline,procedural animation,Existing-user task / feature guidance,590,returned,2026-11-11,docs/en/editor-timeline-controllers.md,curve-modifiers-v1.jpg
+/docs/editor/timeline/segments,/docs/editor/timeline,animation markers,Existing-user task / feature guidance,140,returned,2026-11-11,docs/en/editor-timeline-segments.md,timeline-segments-v1.jpg
+/docs/editor/timeline/onion-skin,/docs/editor/timeline,animation onion skin,Existing-user task / feature guidance,590,returned,2026-11-11,docs/en/editor-timeline-onion-skin.md,timeline-ghost-v1.jpg
+/docs/editor/keyframes/inspector,/docs/editor/keyframes,keyframe animation editor,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-keyframes-inspector.md,keyframe-inspector-v1.jpg
+/docs/editor/keyframes/spreadsheet,/docs/editor/keyframes,animation keyframes,Existing-user task / feature guidance,880,returned,2026-11-08,docs/en/editor-keyframes-spreadsheet.md,keyframe-spreadsheet-v1.jpg
+/docs/editor/keyframes/timing,/docs/editor/keyframes,animation stagger,Existing-user task / feature guidance,50,returned,2026-11-11,docs/en/editor-keyframes-timing.md,timeline-v1.jpg
+/docs/editor/assets,/docs/editor,animation assets,Existing-user task / feature guidance,70,returned,2026-11-11,docs/en/editor-assets.md,assets-panel-v1.jpg
+/docs/editor/assets/import,/docs/editor/assets,sprite sheet animation,Existing-user task / feature guidance,480,returned,2026-11-11,docs/en/editor-assets-import.md,assets-panel-v1.jpg
+/docs/editor/state-machines/parameters,/docs/editor/state-machines,animation parameters,Existing-user task / feature guidance,10,returned,2026-11-11,docs/en/editor-state-machines-parameters.md,parameters-v1.jpg
+/docs/editor/state-machines/events,/docs/editor/state-machines,animation events,Existing-user task / feature guidance,170,returned,2026-11-11,docs/en/editor-state-machines-events.md,events-v1.jpg
+/docs/editor/state-machines/bindings,/docs/editor/state-machines,parameter binding,Existing-user task / feature guidance,30,returned,2026-11-11,docs/en/editor-state-machines-bindings.md,bindings-v1.jpg
+/docs/editor/state-machines/wires,/docs/editor/state-machines,animation expressions,Existing-user task / feature guidance,110,returned,2026-11-11,docs/en/editor-state-machines-wires.md,wires-v1.jpg
+/docs/editor/preview,/docs/editor,animation preview,Existing-user task / feature guidance,10,returned,2026-11-11,docs/en/editor-preview.md,runtime-preview-v1.jpg
+/docs/editor/shortcuts,/docs/editor,animation keyboard shortcuts,Existing-user task / feature guidance,,not_returned,2026-11-11,docs/en/editor-shortcuts.md,keyboard-shortcuts-v1.jpg
+/docs/export/svg,/docs/export/images,svg animation export,Existing-user task / feature guidance,10,returned,2026-11-11,docs/en/export-svg.md,export-svg-v1.jpg
+/docs/export/sequence,/docs/export/images,png sequence animation,Existing-user task / feature guidance,10,returned,2026-11-11,docs/en/export-sequence.md,export-sequence-v1.jpg

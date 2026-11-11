@@ -20,7 +20,7 @@ describe('curated documentation relationships', () => {
       )
     )
     for (const page of documentationPages.filter((page) => page.slug))
-      expect(incoming.has(page.slug)).toBe(true)
+      expect(incoming.has(page.slug), page.slug).toBe(true)
     expect(getRelatedDocumentation('not-a-doc')).toEqual([])
   })
 })

@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!article) return { title: "Page not found" };
   return {
     ...pageMetadata(article.page.title, article.page.description, documentationHref(article.page.slug)),
-    ...contentPublicationMetadata(documentationHref(article.page.slug)),
+    ...contentPublicationMetadata(documentationHref(article.page.slug), article.page.availability !== 'coming-soon'),
   };
 }
 

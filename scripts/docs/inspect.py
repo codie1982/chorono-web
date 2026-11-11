@@ -1,7 +1,7 @@
 """Audit rendered docs HTML and warm local HTTP timings without browser automation.
 
 Usage: python3 scripts/docs/inspect.py --output outputs/docs-audit.json
-Only the same-origin /docs graph is crawled, with a 40-page safety bound.
+Only the same-origin /docs graph is crawled, with a 128-page safety bound.
 HTTP timings exclude JavaScript, browser rendering and real-world network latency.
 """
 import argparse
@@ -29,7 +29,8 @@ class DocumentationHTML(HTMLParser):
         self._heading = None
         self._title = []
         self._words = []
-        self._data = {'title': '', 'description': '', 'robots': '', 'canonical': None, 'lang': '', 'h1': [], 'ids': [], 'links': [], 'images': []}
+        self._jsonld = None
+        self._data = {'title': '', 'description': '', 'robots': '', 'canonical': None, 'lang': '', 'h1': [], 'ids': [], 'links': [], 'images': [], 'metadata': {}, 'structuredData': [], 'schemaErrors': []}
         self.feed(html)
 
     def handle_starttag(self, tag, attrs):
@@ -48,12 +49,16 @@ class DocumentationHTML(HTMLParser):
             self._stack.append((tag, kind))
         if tag in ['script', 'style']:
             self._hidden += 1
+        if tag == 'script' and attrs.get('type') == 'application/ld+json':
+            self._jsonld = []
         if 'id' in attrs:
             self._data['ids'].append(attrs['id'])
         if tag == 'html':
             self._data['lang'] = attrs.get('lang', '')
         if tag == 'meta' and attrs.get('name') in ['description', 'robots']:
             self._data[attrs['name']] = attrs.get('content', '')
+        if tag == 'meta':
+            self._data['metadata'][attrs.get('name') or attrs.get('property', '')] = attrs.get('content', '')
         if tag == 'link' and attrs.get('rel') == 'canonical':
             self._data['canonical'] = attrs.get('href')
         if tag == 'h1':
@@ -64,6 +69,12 @@ class DocumentationHTML(HTMLParser):
             self._data['images'].append({'src': attrs.get('src'), 'alt': attrs.get('alt')})
 
     def handle_endtag(self, tag):
+        if tag == 'script' and self._jsonld is not None:
+            try:
+                self._data['structuredData'].append(json.loads(''.join(self._jsonld)))
+            except ValueError as error:
+                self._data['schemaErrors'].append(str(error))
+            self._jsonld = None
         if tag == 'a' and self._anchor is not None:
             self._data['links'].append(self._anchor)
             self._anchor = None
@@ -78,6 +89,8 @@ class DocumentationHTML(HTMLParser):
                 break
 
     def handle_data(self, data):
+        if self._jsonld is not None:
+            self._jsonld.append(data)
         if self._hidden:
             return
         if self._stack and self._stack[-1][0] == 'title':
@@ -123,8 +136,8 @@ def audit(base, samples):
         route = queue.popleft()
         if route in pages:
             continue
-        if len(pages) >= 40:
-            raise RuntimeError('Docs crawl exceeded the 40-page bound.')
+        if len(pages) >= 128:
+            raise RuntimeError('Docs crawl exceeded the 128-page bound.')
         status, html, timing = fetch_page(base + route)
         page = {'path': route, 'status': status, **DocumentationHTML(html).result()}
         pages[route] = page

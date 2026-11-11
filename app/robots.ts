@@ -1,9 +1,7 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL } from '@/lib/site'
+import { siteRobots } from '@/lib/site-index/robots'
 
+/** Serve the same crawl policy checked alongside the sitemap inventory. */
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: { userAgent: '*', allow: '/', disallow: '/api/' },
-    sitemap: `${SITE_URL}/sitemap.xml`,
-  }
+  return siteRobots()
 }

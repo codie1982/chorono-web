@@ -1,0 +1,100 @@
+keyword,estimated_us_monthly_searches,organic_keyword_difficulty,provider_intent,country,language,retrieved_on,latest_monthly_trend,data_status
+2d animation tutorial,50,12,informational,US,en,2026-11-08,2026-09,returned
+ai animation tutorial,10,unknown,informational,US,en,2026-11-08,2026-09,returned
+animation anchor point,,,,US,en,2026-11-11,,not_returned
+animation assets,70,12,informational,US,en,2026-11-11,2026-09,returned
+animation canvas size,40,0,informational,US,en,2026-11-11,2026-09,returned
+animation curve editor,10,,transactional,US,en,2026-11-11,2026-09,returned
+animation curves,170,4,informational,US,en,2026-11-08,2026-08,returned
+animation easing tutorial,unknown,unknown,unknown,US,en,2026-11-08,unknown,no recorded row
+animation editor integrations,,,,US,en,2026-11-11,,not_returned
+animation events,170,10,informational,US,en,2026-11-11,2026-09,returned
+animation export,10,0,informational,US,en,2026-11-08,2026-09,returned
+animation export html,,,,US,en,2026-11-11,,not_returned
+animation expressions,110,0,informational,US,en,2026-11-11,2026-09,returned
+animation json,20,0,informational,US,en,2026-11-08,2026-09,returned
+animation keyboard shortcuts,,,,US,en,2026-11-11,,not_returned
+animation keyframe spreadsheet,,,,US,en,2026-11-11,,not_returned
+animation keyframes,880,13,informational,US,en,2026-11-08,2026-09,returned
+animation layers,170,0,informational,US,en,2026-11-11,2026-09,returned
+animation markers,140,0,informational,US,en,2026-11-11,2026-08,returned
+animation masks,,,,US,en,2026-11-11,,not_returned
+animation mcp,unknown,unknown,unknown,US,en,2026-11-08,unknown,no recorded row
+animation modifiers,,,,US,en,2026-11-11,,not_returned
+animation noise,,,,US,en,2026-11-11,,not_returned
+animation onion skin,590,0,transactional,US,en,2026-11-11,2026-09,returned
+animation parameters,10,,informational,US,en,2026-11-11,2026-08,returned
+animation performance,10,,informational,US,en,2026-11-11,2026-09,returned
+animation preview,10,18,informational,US,en,2026-11-11,2026-09,returned
+animation project autosave,,,,US,en,2026-11-11,,not_returned
+animation project settings,,,,US,en,2026-11-11,,not_returned
+animation properties,20,27,informational,US,en,2026-11-11,2026-09,returned
+animation scripting,480,0,informational,US,en,2026-11-08,2026-09,returned
+animation segments,,,,US,en,2026-11-11,,not_returned
+animation selection tools,,,,US,en,2026-11-11,,not_returned
+animation stagger,50,2,transactional,US,en,2026-11-11,2026-09,returned
+animation state machine,30,0,informational,US,en,2026-11-08,2026-09,returned
+animation timeline,390,12,informational,US,en,2026-11-08,2026-09,returned
+animation tutorial,480,5,informational,US,en,2026-11-08,2026-09,returned
+animation workspace,30,0,informational,US,en,2026-11-11,2026-09,returned
+audio animation timeline,,,,US,en,2026-11-11,,not_returned
+bezier curve editor,30,19,transactional,US,en,2026-11-11,2026-08,returned
+bezier easing,10,unknown,informational,US,en,2026-11-08,2026-09,returned
+canvas animation,1900,24,informational,US,en,2026-11-08,2026-09,returned
+canvas animation tutorial,70,10,informational,US,en,2026-11-08,2026-08,returned
+canvas memory usage,,,,US,en,2026-11-11,,not_returned
+chorono,unknown,unknown,unknown,US,en,2026-11-08,unknown,no recorded row
+chorono animation,unknown,unknown,unknown,US,en,2026-11-08,unknown,no recorded row
+clone animation,10,43,informational,US,en,2026-11-11,2026-09,returned
+codex animation,10,4,informational,US,en,2026-11-08,2026-09,returned
+dope sheet animation,50,0,informational,US,en,2026-11-11,2026-09,returned
+draggable animation,,,,US,en,2026-11-11,,not_returned
+easing functions,260,16,informational,US,en,2026-11-08,2026-09,returned
+gif import,20,0,transactional,US,en,2026-11-11,2026-09,returned
+gpu animation performance,,,,US,en,2026-11-11,,not_returned
+gradient animation,260,0,informational,US,en,2026-11-11,2026-09,returned
+interactive animation,320,7,informational,US,en,2026-11-08,2026-09,returned
+interactive animation editor,,,,US,en,2026-11-11,,not_returned
+javascript animation,390,64,informational,US,en,2026-11-08,2026-08,returned
+javascript animation library,390,36,informational,US,en,2026-11-08,2026-09,returned
+javascript animation sdk,,,,US,en,2026-11-11,,not_returned
+keyframe animation editor,,,,US,en,2026-11-11,,not_returned
+keyframe animation tutorial,10,unknown,informational,US,en,2026-11-08,2026-09,returned
+keyframe interpolation,110,0,informational,US,en,2026-11-08,2026-08,returned
+kinetic typography tutorial,20,3,informational,US,en,2026-11-08,2026-09,returned
+layer hierarchy,20,,informational,US,en,2026-11-11,2026-09,returned
+linear gradient editor,10,,transactional,US,en,2026-11-11,2026-08,returned
+looping animation,480,0,informational,US,en,2026-11-08,2026-09,returned
+lottie import,,,,US,en,2026-11-11,,not_returned
+mask feather,170,0,informational,US,en,2026-11-11,2026-09,returned
+mcp animation,unknown,unknown,unknown,US,en,2026-11-08,unknown,no recorded row
+motion blur animation,70,39,informational,US,en,2026-11-11,2026-09,returned
+motion graphics editor,40,33,transactional,US,en,2026-11-08,2026-09,returned
+motion graphics tutorial,90,13,informational,US,en,2026-11-08,2026-09,returned
+motion path animation,70,16,informational,US,en,2026-11-11,2026-09,returned
+motion path editor,,,,US,en,2026-11-11,,not_returned
+open source motion graphics,20,59,informational,US,en,2026-11-08,2026-09,returned
+parameter binding,30,0,informational,US,en,2026-11-11,2026-09,returned
+particle animation,110,3,informational,US,en,2026-11-08,2026-09,returned
+particle effects,880,19,informational,US,en,2026-11-08,2026-09,returned
+particle emitter,140,13,transactional,US,en,2026-11-11,2026-09,returned
+path animation,140,3,informational,US,en,2026-11-11,2026-09,returned
+path array,10,13,informational,US,en,2026-11-11,2026-09,returned
+png sequence animation,10,,informational,US,en,2026-11-11,2026-08,returned
+procedural animation,590,0,informational,US,en,2026-11-11,2026-09,returned
+radial array,30,0,informational,US,en,2026-11-11,2026-09,returned
+react animation library,260,49,informational,US,en,2026-11-11,2026-09,returned
+scale keyframes,,,,US,en,2026-11-11,,not_returned
+shape animation,170,0,informational,US,en,2026-11-11,2026-09,returned
+snapping animation,50,0,informational,US,en,2026-11-11,2026-09,returned
+spline editor,50,0,informational,US,en,2026-11-11,2026-09,returned
+spring animation,260,21,informational,US,en,2026-11-11,2026-09,returned
+sprite sheet animation,480,0,informational,US,en,2026-11-11,2026-09,returned
+svg animation export,10,,informational,US,en,2026-11-11,2026-09,returned
+svg animation tutorial,10,23,informational,US,en,2026-11-08,2026-09,returned
+svg path animation,110,22,informational,US,en,2026-11-11,2026-09,returned
+text animation tutorial,10,unknown,informational,US,en,2026-11-08,2026-09,returned
+text to path,110,5,informational,US,en,2026-11-11,2026-08,returned
+vector animation,590,16,informational,US,en,2026-11-11,2026-08,returned
+vue animation library,10,18,navigational,US,en,2026-11-11,2026-09,returned
+web animation tutorial,10,49,informational,US,en,2026-11-08,2026-09,returned

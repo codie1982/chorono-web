@@ -9,58 +9,9 @@ import {
   documentationPages,
 } from "@/lib/documentation/manifest";
 import { DocumentationIcon as Icon } from "./DocumentationIcon";
+import { DocumentationNavigation } from "./DocumentationNavigation";
+import { documentationSections } from "@/lib/documentation/sections";
 import { DocumentationSearch } from "./DocumentationSearch";
-
-/** Server-renderable route navigation, shared by the desktop rail and mobile dialog. */
-function DocumentationNavigation({ onNavigate }: { onNavigate?: () => void }) {
-  const pathname = usePathname();
-  const groups = Array.from(
-    new Set(documentationPages.map((page) => page.group)),
-  );
-  return (
-    <nav className="cd-navigation" aria-label="Documentation">
-      {groups.map((group) => (
-        <div className="cd-nav-group" key={group}>
-          <h2>{group}</h2>
-          {documentationPages
-            .filter((page) => page.group === group)
-            .map((page) => (
-              <Link
-                key={page.slug}
-                href={documentationHref(page.slug)}
-                aria-current={
-                  pathname === documentationHref(page.slug) ? "page" : undefined
-                }
-                onClick={onNavigate}
-              >
-                <span className="cd-nav-indicator" />
-                {page.label}
-                {page.slug === "animation/loops" && (
-                  <span className="cd-new">NEW</span>
-                )}
-              </Link>
-            ))}
-        </div>
-      ))}
-      <div className="cd-nav-group cd-nav-external">
-        <h2>Keep exploring</h2>
-        <Link
-          href="/animations"
-          onClick={onNavigate}
-          aria-current={pathname.startsWith("/animations") ? "page" : undefined}
-        >
-          Animation library <Icon name="arrow" size={13} />
-        </Link>
-        <a href="https://www.chorono.com/blog">
-          Examples & guides <Icon name="external" size={13} />
-        </a>
-        <a href="https://github.com/codie1982/chorono-editor">
-          GitHub repository <Icon name="external" size={13} />
-        </a>
-      </div>
-    </nav>
-  );
-}
 
 /**
  * Docs-only theme, search hotkeys and responsive navigation. Theme preference
@@ -142,24 +93,13 @@ export function DocumentationShell({
             </span>
             <span className="cd-docs-label">docs</span>
           </Link>
-          <nav className="cd-top-nav" aria-label="Main navigation">
-            <Link
-              href="/docs"
-              className={
-                pathname.startsWith("/docs") ? "cd-top-active" : undefined
-              }
-            >
-              Documentation
-            </Link>
-            <Link href="/docs/scripting">API reference</Link>
-            <Link
-              href="/animations"
-              className={
-                pathname.startsWith("/animations") ? "cd-top-active" : undefined
-              }
-            >
-              Animations
-            </Link>
+          <nav className="cd-top-nav" aria-label="Documentation sections">
+            {documentationSections.filter(section => section.primary).map(section => (
+              <Link key={section.id} href={documentationHref(section.slug)}
+                className={documentationPages.find(page => documentationHref(page.slug) === pathname)?.section === section.id ? "cd-top-active" : undefined}
+                aria-current={documentationHref(section.slug) === pathname ? "page" : undefined}
+              >{section.label}</Link>
+            ))}
           </nav>
           <div className="cd-header-actions">
             <button

@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { documentationSections } from "@/lib/documentation/sections";
+import { documentationBreadcrumbs, documentationChildren } from "@/lib/documentation/hierarchy";
+import { documentationStructuredData } from "@/lib/documentation/structured-data";
+import { DocumentationCategories } from "./DocumentationCategories";
 import {
   documentationHref,
   documentationPages,
@@ -26,23 +30,20 @@ export async function DocumentationArticle({ article }: { article: Article }) {
   const previous = documentationPages[index - 1];
   const next = documentationPages[index + 1];
   const home = !page.slug;
+  const section = documentationSections.find(item => item.id === page.section)!;
+  const hub = section.primary && section.slug === page.slug;
+  const hasGuideCards = (hub || documentationChildren(page).length > 0) && page.section !== 'integrations';
+  const breadcrumbs = documentationBreadcrumbs(page);
   const example = await loadDocumentationExample(page.slug);
   return (
     <div className={`cd-content-grid${home ? " cd-content-home" : ""}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(documentationStructuredData(page, article.headings)).replace(/</g, '\\u003c') }} />
       <main id="docs-main" className="cd-main" tabIndex={-1}>
         <nav aria-label="Breadcrumb" className="cd-breadcrumb">
-          <Link href="/docs">
-            <Icon name="book" size={14} />
-            Docs
-          </Link>
-          <Icon name="chevron" size={12} />
-          <span>{page.group}</span>
-          {!home && (
-            <>
-              <Icon name="chevron" size={12} />
-              <span>{page.label}</span>
-            </>
-          )}
+          {breadcrumbs.map((crumb, index) => <span key={crumb.href} className="cd-breadcrumb-parent">
+            <Icon name={index ? 'chevron' : 'book'} size={index ? 12 : 14} />
+            {index === breadcrumbs.length - 1 ? <span aria-current="page">{crumb.label}</span> : <Link href={crumb.href}>{crumb.label}</Link>}
+          </span>)}
         </nav>
         <header className="cd-article-header">
           <span className="cd-eyebrow">
@@ -78,6 +79,10 @@ export async function DocumentationArticle({ article }: { article: Article }) {
             )}
           </div>
         </header>
+        {hasGuideCards && <section id="in-this-section" className="cd-hub-guides">
+          <h2>In this section</h2>
+          <DocumentationCategories page={page} />
+        </section>}
         {example && (
           <ScenePreview
             key={page.slug}
@@ -137,6 +142,7 @@ export async function DocumentationArticle({ article }: { article: Article }) {
       </main>
       <TableOfContents
         headings={[
+          ...(hasGuideCards ? [{ id: 'in-this-section', text: 'In this section', depth: 2 }] : []),
           ...(home ? overviewHeadings : article.headings),
           relatedGuidesHeading,
         ]}

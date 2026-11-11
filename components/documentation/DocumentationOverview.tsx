@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { DocumentationCategories } from './DocumentationCategories'
 import firstAnimationPreview from '@/public/examples/first-animation.png'
 import type { DocumentationHeading } from '@/lib/documentation/content'
 import {
@@ -8,6 +9,7 @@ import {
 
 /** Curated homepage section IDs, also supplied to its contents rail. */
 export const overviewHeadings: readonly DocumentationHeading[] = [
+  { id: 'explore-the-docs', text: 'Explore the docs', depth: 2 },
   { id: 'start-here', text: 'Start here', depth: 2 },
   { id: 'learn-the-movement', text: 'Learn the movement', depth: 2 },
   { id: 'create-your-way', text: 'Create your way', depth: 2 },
@@ -46,6 +48,10 @@ export function DocumentationOverview() {
   ]
   return (
     <div className="cd-overview">
+      <section id="explore-the-docs">
+        <div className="cd-section-heading"><h2>Explore the docs</h2><span>FROM WORKSPACE TO PLAYBACK</span></div>
+        <DocumentationCategories />
+      </section>
       <section id="start-here" className="cd-start-section">
         <div className="cd-section-heading">
           <h2>Start here</h2>

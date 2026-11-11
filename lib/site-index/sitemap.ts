@@ -3,27 +3,49 @@ import { animationEntries, animationHref } from '@/lib/animation-library/catalog
 import { SITE_URL } from '@/lib/site'
 import { existingSitemapTopics, existingModificationDates } from './existing'
 import { publicContentOrigin } from './publication'
+import { documentationSections } from '@/lib/documentation/sections'
 
 /** One root-level topic, with explicit eligibility for unpublished new content. */
 export interface SitemapTopic {
   readonly file: string
   readonly paths: readonly string[]
+  /** Readable status pages included only in the explicitly noindex inspector. */
+  readonly previewOnlyPaths?: readonly string[]
   readonly unpublished?: boolean
 }
-
-const docGroups = [
-  ['sitemap-docs-start.xml', 'Getting started'],
-  ['sitemap-docs-editor.xml', 'Create animations'],
-  ['sitemap-docs-ai.xml', 'AI & scripting'],
-  ['sitemap-docs-resources.xml', 'Resources'],
-] as const
 
 /** Same inventories drive routes and sitemaps; old public coverage is retained. */
 export const sitemapTopics: readonly SitemapTopic[] = [
   ...existingSitemapTopics,
-  ...docGroups.map(([file, group]) => ({ file, unpublished: true, paths: documentationPages.filter(page => page.group === group).map(page => documentationHref(page.slug)) })),
+  ...documentationSections.map(section => ({
+    file: section.sitemap, unpublished: true,
+    paths: documentationPages.filter(page => page.section === section.id && page.availability !== 'coming-soon').map(page => documentationHref(page.slug)),
+    previewOnlyPaths: documentationPages.filter(page => page.section === section.id && page.availability === 'coming-soon').map(page => documentationHref(page.slug)),
+  })),
   { file: 'sitemap-animations.xml', unpublished: true, paths: ['/animations', ...animationEntries.map(entry => animationHref(entry.slug))] },
 ]
+
+/** Fail authoring checks on duplicate/noncanonical URLs, unsafe topic names or
+ * oversized inventories. Every HTML page belongs to exactly one root-level
+ * sitemap. Download payloads, query variants and fragments are not pages. */
+export function validateSitemapInventory(topics: readonly SitemapTopic[]): void {
+  const files = new Set<string>(), paths = new Set<string>()
+  if (topics.length > 50_000) throw new Error('Sitemap index exceeds 50,000 topics')
+  for (const topic of topics) {
+    if (!/^sitemap-[a-z0-9-]+\.xml$/.test(topic.file) || files.has(topic.file)) throw new Error(`Invalid or duplicate sitemap: ${topic.file}`)
+    files.add(topic.file)
+    const allPaths = [...topic.paths, ...(topic.previewOnlyPaths ?? [])]
+    if (allPaths.length > 50_000) throw new Error(`Sitemap exceeds 50,000 URLs: ${topic.file}`)
+    for (const path of allPaths) {
+      if (!/^\/(?:[a-z0-9][a-z0-9./-]*)?$/.test(path) || (path !== '/' && path.endsWith('/'))
+        || new URL(path, SITE_URL).pathname !== path || path.endsWith('/download') || paths.has(path))
+        throw new Error(`Noncanonical or duplicate sitemap path: ${path}`)
+      paths.add(path)
+    }
+  }
+}
+
+validateSitemapInventory(sitemapTopics)
 
 /** Encode a URL/date as XML text, without trusting origin or query characters. */
 function xmlText(value: string): string {
@@ -42,11 +64,11 @@ export function serializeSitemap(origin: string, file = 'sitemap.xml', preview =
   if (file !== 'sitemap.xml' && !topic) return null
   const index = file === 'sitemap.xml'
   const locations = index
-    ? topics.filter(item => item.paths.length).map(item => ({ url: new URL(preview ? `/sitemap-preview.xml?topic=${item.file}` : `/${item.file}`, origin).href, modified: undefined as string | undefined }))
-    : topic!.paths.map(path => ({ url: new URL(path, origin).href, modified: existingModificationDates.get(path) }))
+    ? topics.filter(item => item.paths.length || preview && item.previewOnlyPaths?.length).map(item => ({ url: new URL(preview ? `/sitemap-preview.xml?topic=${item.file}` : `/${item.file}`, origin).href, modified: undefined as string | undefined }))
+    : [...topic!.paths, ...(preview ? topic!.previewOnlyPaths ?? [] : [])].sort().map(path => ({ url: new URL(path, origin).href, modified: existingModificationDates.get(path) }))
   const root = index ? 'sitemapindex' : 'urlset'
   const tag = index ? 'sitemap' : 'url'
-  return `<?xml version="1.0" encoding="UTF-8"?>\n${preview ? '<!-- Local preview only. Do not submit this endpoint to search engines. -->\n' : ''}<${root} xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${locations.map(item => `  <${tag}><loc>${xmlText(item.url)}</loc>${item.modified ? `<lastmod>${xmlText(item.modified)}</lastmod>` : ''}</${tag}>`).join('\n')}\n</${root}>`
+  return `<?xml version="1.0" encoding="UTF-8"?>\n${preview ? '<!-- Local preview only. Do not submit this endpoint to search engines. -->\n' : ''}<${root} xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${locations.map(item => `  <${tag}>\n    <loc>${xmlText(item.url)}</loc>${item.modified ? `\n    <lastmod>${xmlText(item.modified)}</lastmod>` : ''}\n  </${tag}>`).join('\n')}\n</${root}>\n`
 }
 
 /** Keep existing public sitemap coverage live; gate only the new docs/library. */

@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { pageMetadata, SITE_URL, SITE_TITLE, SITE_DESCRIPTION, THEME_COLOR } from '@/lib/site'
+import { SiteShell } from '@/components/site/SiteShell'
 import './globals.css'
+import './site.css'
 
 export const metadata: Metadata = {
   ...pageMetadata(SITE_TITLE, SITE_DESCRIPTION),
@@ -27,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><SiteShell>{children}</SiteShell></body>
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
       )}

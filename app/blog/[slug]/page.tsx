@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BLOG_POSTS, blogPostMetadata, blogStructuredData, getPost, readingMinutes, type ContentBlock } from '@/lib/blog'
 import { GUIDE_AUTHOR } from '@/lib/site'
-import { BlogFooter, BlogHeader, RelatedPosts } from '@/components/BlogLayout'
+import { RelatedPosts } from '@/components/BlogLayout'
 import AnimationExample from '@/components/AnimationExample'
 import InteractiveAnimationExample from '@/components/InteractiveAnimationExample'
 
@@ -29,7 +29,6 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   if (!post) notFound()
   return <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogStructuredData(post)).replace(/</g, '\\u003c') }} />
-    <BlogHeader />
     <div className="mx-auto max-w-6xl px-6 py-10 md:py-14">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm leading-6 text-[#6d5a52]"><ol className="flex flex-wrap gap-x-3 gap-y-1"><li><Link href="/">Chorono</Link></li><li aria-hidden="true">/</li><li><Link href="/blog">Blog</Link></li><li aria-hidden="true">/</li><li aria-current="page">{post.headline}</li></ol></nav>
       <div className="max-w-3xl">
@@ -51,6 +50,5 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       </div>
       <div className="max-w-3xl"><RelatedPosts current={post} /></div>
     </div>
-    <BlogFooter />
   </main>
 }

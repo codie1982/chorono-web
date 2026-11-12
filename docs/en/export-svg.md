@@ -19,3 +19,11 @@ SVG export covers shapes, paths, text and groups. Images, video, particles and e
 Open the downloaded file in the application or browser where it will be used. Compare dimensions, text, strokes, clipping and effects with the editor. A supported static shape and a filtered or media-rich scene have different conversion needs.
 
 If the visual result matters more than vector editability, use a [still image](export-images.md). For Chorono playback and interaction, export [runtime JSON](export-runtime-json.md). Keep the editable project regardless of which output you share.
+
+## Review SVG export compatibility
+
+SVG export represents supported shapes, paths, text and groups. Unsupported layer types are reported, and masks, effects or blend modes can produce appearance warnings. The exporter does not silently rasterize unsupported content to make it look complete.
+
+Animated SVG does not execute live property expressions. Review the export diagnostics and use a supported conversion or [bake workflow](editor-timeline-controllers.md) where appropriate, then test the actual SVG in the destination browser. Baking a value into keys is not a guarantee that every key type or interpolation mode is supported by SVG.
+
+Choose raster output when the final appearance depends on unsupported SVG features, and retain the editable project so the choice remains reversible.

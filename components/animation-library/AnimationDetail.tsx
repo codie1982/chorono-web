@@ -167,10 +167,7 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
             </Link>
           </div>
         </section>
-        <footer className="cd-page-footer">
-          <span>Chorono · Free & open source</span>
-          <Link href="/docs">Read the documentation ↗</Link>
-        </footer>
+
       </main>
       <TableOfContents headings={headings} />
     </div>

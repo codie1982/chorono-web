@@ -18,7 +18,7 @@ export default async function AnimationLibraryPage() {
   return (
     <main id="docs-main" className="al-index" tabIndex={-1}>
       <nav className="cd-breadcrumb" aria-label="Breadcrumb">
-        <Link href="/docs">Chorono</Link>
+        <Link href="/">Chorono</Link>
         <span>/</span>
         <span>Animation library</span>
       </nav>

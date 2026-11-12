@@ -52,4 +52,18 @@ Surfaces shows the memory reserved for temporary rendering work, including masks
 
 Interaction can record object transforms, guide movement, motion-key edits, shape drawing and panning. Start recording before reproducing a cancelled or reverted drag, then inspect or download the log. Recording is off by default; the panel explains what is retained and provides a clear-log action.
 
+Local interaction recording and remote error sharing are separate choices. Remote sharing requires consent and a configured recipient. Review the disclosed recipient, retention, interval, version and error details before enabling it. Shared summaries contain deduplicated error codes and counts; they do not automatically send scene source, pointer coordinates or raw interaction traces. Version checks and these preferences are available in Resources → Interaction.
+
 ![Interaction diagnostics with recording controls and a bounded event log.](../../public/docs/screenshots/resources-interaction-v1.jpg)
+
+## Interpret memory and draw measurements
+
+Tracked resources, JavaScript heap samples and page memory describe different scopes. Do not add them together as though they were separate parts of one total. The panel does not promise system CPU/GPU percentages or total physical VRAM.
+
+**Last draw** is the duration of a completed draw in milliseconds, not FPS. Heap is the latest available sample. These diagnostic overlays are not exported.
+
+## Understand culling and level of detail
+
+Culling can skip drawing content outside the viewport while preserving mask, shadow and other dependencies. It does not delete source layers. A residency budget limits managed resources; releasing a resource does not guarantee an immediate drop in the operating system's RAM reading.
+
+A level-of-detail proxy can stand in for a static group while its original children remain in the source. Represented, rendered and culled counts answer different questions and are not GPU draw-call counts. Final raster export uses the original sources rather than these viewport proxies.

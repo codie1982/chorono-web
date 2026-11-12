@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { BlogFooter, BlogHeader } from './BlogLayout'
 import { ANIMATION_GUIDES, ANIMATION_GUIDE_DATE, animationGuideStructuredData, type AnimationGuidePath } from '@/lib/animation-guides'
 import { GUIDE_AUTHOR } from '@/lib/site'
 
@@ -7,7 +6,6 @@ export default function AnimationGuideLayout({ path, children }: { path: Animati
   const page = ANIMATION_GUIDES[path]
   return <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(animationGuideStructuredData(path)).replace(/</g, '\\u003c') }} />
-    <BlogHeader section="examples" />
     <div className="mx-auto max-w-5xl px-6 py-10 md:py-14">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm leading-6 text-[#6d5a52]"><ol className="flex flex-wrap gap-2"><li><Link href="/">Chorono</Link></li><li aria-hidden="true">/</li><li aria-current="page">{page.label}</li></ol></nav>
       <div className="max-w-3xl">
@@ -24,6 +22,5 @@ export default function AnimationGuideLayout({ path, children }: { path: Animati
         <Link href="/getting-started" className="mt-5 inline-flex min-h-[44px] items-center rounded-lg bg-[#8F3D27] px-5 py-3 font-semibold text-white hover:bg-[#73301f]">Install the editor <span aria-hidden="true" className="ml-2">→</span></Link>
       </aside>
     </div>
-    <BlogFooter />
   </main>
 }

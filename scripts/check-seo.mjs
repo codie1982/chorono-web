@@ -20,8 +20,20 @@ async function fetchChecked(path, type) {
   return response
 }
 
+/** Check shared landmarks and crawlable library discovery in server HTML.
+ * Footer headings are navigation; articleSection must describe main content. */
+function checkSiteShell(html, path) {
+  assert.equal([...html.matchAll(/<header\b[^>]*data-site-header\b/g)].length, 1, `${path}: one shared header`)
+  assert.equal([...html.matchAll(/<main\b/g)].length, 1, `${path}: one main landmark`)
+  const footers = [...html.matchAll(/<footer\b[^>]*data-site-footer\b[^>]*>(.*?)<\/footer>/gs)]
+  assert.equal(footers.length, 1, `${path}: one shared footer`)
+  assert.ok(footers[0][1].includes('id="footer-animation-library"'), `${path}: dedicated animation library section`)
+  assert.ok(footers[0][1].includes('href="/animations"'), `${path}: canonical library link in footer`)
+}
+
 for (const path of pages) {
   const html = await (await fetchChecked(path, /text\/html/)).text()
+  checkSiteShell(html, path)
   const metas = [...html.matchAll(/<meta\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const expected = new URL(path, canonicalOrigin).href
@@ -115,7 +127,8 @@ for (const path of pages) {
     const article = entities.get(webpage.mainEntity['@id'])
     assert.equal(article['@type'], isPost ? 'BlogPosting' : 'TechArticle')
     assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
-    assert.deepEqual(article.articleSection, [...html.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
+    const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)[1]
+    assert.deepEqual(article.articleSection, [...main.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
     if (isPost) {
       assert.match(article.datePublished, ['/blog/progress-bar-and-success-animation', '/blog/heart-like-and-hamburger-menu-animation'].includes(path) ? /^2026-11-08T\d{2}:\d{2}:\d{2}Z$/ : /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
       assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Publication timestamp must be valid')
@@ -202,6 +215,7 @@ for (const url of addedUrls) {
   assert.ok(location.pathname.startsWith('/docs') || location.pathname.startsWith('/animations'))
   assert.ok(!location.search && !location.pathname.endsWith('/download'))
   const html = await (await fetchChecked(location.pathname, /text\/html/)).text()
+  checkSiteShell(html, location.pathname)
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
   assert.equal(links.find(link => link.rel === 'canonical')?.href, url)
   assert.ok(!/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/.test(html), `${url}: released URL is noindex`)

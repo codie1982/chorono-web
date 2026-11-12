@@ -17,3 +17,11 @@ Rotation is measured in degrees. The anchor is the point around which rotation a
 ## Connect or animate a value
 
 The small connection controls beside supported fields open parameter wiring. Use them when a value should follow another value through a relationship. For a value that changes at specific times, use the [Keyframe Inspector](editor-keyframes-inspector.md).
+
+## Choose an animation pivot point
+
+An anchor point controls the center used by a layer's rotation and scale. In a multiple selection, use the selection center or the active object's pivot to decide how the group should turn. Selecting a parent and child together transforms the selected root once; the child follows through the hierarchy.
+
+The canvas and numeric controls use the same transform rules. Unsupported, singular or lossy conversions are rejected instead of silently distorting the result. A drag remains a preview until release, which commits one Undo step. Escape cancels it.
+
+You can position and edit objects outside the composition. Final output is clipped to the composition, including any visible contribution from effects that extend into it. Canvas handles and other editing overlays are not exported.

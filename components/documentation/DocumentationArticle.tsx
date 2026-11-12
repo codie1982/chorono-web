@@ -135,10 +135,7 @@ export async function DocumentationArticle({ article }: { article: Article }) {
             </Link>
           )}
         </nav>
-        <footer className="cd-page-footer">
-          <span>© {new Date().getFullYear()} Chorono</span>
-          <span>Open source. Open possibilities.</span>
-        </footer>
+
       </main>
       <TableOfContents
         headings={[

@@ -11,7 +11,7 @@ import { prepareDocumentation, resolveDocumentationLink } from './content'
 import { sitemapTopics } from '../site-index/sitemap'
 
 describe('documentation reorganization compatibility', () => {
-  it('preserves every established route, metadata field and original source article', () => {
+  it('preserves every established route, metadata field and reviewed source article', () => {
     for (const { sourceHash, group, ...page } of legacyPages) {
       expect(findDocumentationPage(page.slug)).toMatchObject(page)
       const source = readFileSync(page.source)

@@ -21,3 +21,9 @@ The active tool stays highlighted. If a drag starts panning instead of editing a
 ## Make a precise edit
 
 Select a rectangle, choose **Move**, and drag it along one axis. Then open [Transform](editor-properties-transform.md) to check its X and Y values. Use Undo to compare the result with the starting position. Small numeric adjustments are often easier there than with another drag.
+
+## Place shapes with a drag
+
+With a shape tool active, press to set the start point, drag to choose its dimensions and release to finish. The tool stays active for another shape until you right-click or leave drawing mode. Escape cancels an unfinished gesture.
+
+Off-composition objects remain editable, which is useful for an entrance or exit animation. Output uses the composition boundary, not the portion of the workspace currently visible. See [Transform and anchor](editor-properties-transform.md) for pivots and parented selections.

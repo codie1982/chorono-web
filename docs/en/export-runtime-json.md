@@ -39,3 +39,11 @@ Make referenced assets reachable from the deployed application. Temporary browse
 ## Verify playback
 
 Pin the [runtime version](runtime-downloads.md), then compare the first frame, a middle frame, the end and the loop boundary. Exercise state-machine events and parameters if the scene uses them. Retain both the editable source and the tested runtime export so a later edit can be exported and checked again.
+
+## Check procedural motion on the target runtime
+
+The full-scene web player and simpler or native runtimes have different capabilities. A project that works in the editor is not automatically supported by every runtime package.
+
+Review diagnostics for live expressions, controllers, modifiers and assets. Use an explicit conversion or [bake to keyframes](editor-timeline-controllers.md) only when it fits the target. Numeric, color and point expression bakes produce linear keys; boolean and text bakes produce hold keys. Those editor results do not establish universal support for hold keys or all property types in other formats.
+
+Test the downloaded payload with the exact runtime version and platform you will ship. Check the start, middle, end and any interaction-dependent states, using the runtime's documented installation and capability guide.

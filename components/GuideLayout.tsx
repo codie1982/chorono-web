@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { DOCS_LINKS_UPDATED, GUIDE_AUTHOR, REPOSITORY_URL, SITE_PAGES, type GuidePath } from '@/lib/site'
+import { DOCS_LINKS_UPDATED, GUIDE_AUTHOR, SITE_PAGES, type GuidePath } from '@/lib/site'
 import StructuredData from './StructuredData'
 
 export default function GuideLayout({ path, children }: { path: GuidePath; children: React.ReactNode }) {
@@ -7,23 +7,7 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
   return (
     <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
       <StructuredData path={path} />
-      <header className="border-b border-[#e7d8cf] bg-[#120D0B] text-white">
-        <nav aria-label="Main navigation" className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-6 px-6 py-6">
-          <Link href="/" className="flex items-center gap-3 font-bold tracking-widest">
-            <img src="/icon.svg" width={40} height={40} alt="" />
-            CHORONO
-          </Link>
-          <div className="flex flex-wrap gap-5 text-sm text-[#e8c9ba]">
-            <Link href="/getting-started">Getting started</Link>
-            <Link href="/agent-skills">Agent skills</Link>
-            <Link href="/motion-graphics-software">Examples</Link>
-            <Link href="/docs">Docs</Link>
-            <Link href="/animations">Animations</Link>
-            <Link href="/blog">Blog</Link>
-            <a href={REPOSITORY_URL}>GitHub</a>
-          </div>
-        </nav>
-      </header>
+
       <article className="guide mx-auto max-w-3xl px-6 py-14 md:py-20">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-[#6d5a52]">
           <ol className="flex flex-wrap items-center gap-2">
@@ -39,9 +23,7 @@ export default function GuideLayout({ path, children }: { path: GuidePath; child
         <img src={page.image} alt={page.imageAlt} width={1200} height={675} className="mt-8 h-auto w-full rounded-2xl border border-[#e7d8cf]" />
         <div className="mt-12 space-y-10">{children}</div>
       </article>
-      <footer className="border-t border-[#e7d8cf] px-6 py-8 text-center text-sm text-[#6d5a52]">
-        <Link href="/">Chorono</Link> · <Link href="/docs">Full documentation</Link>
-      </footer>
+
     </main>
   )
 }

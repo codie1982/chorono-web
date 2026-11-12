@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { DocumentationShell } from "@/components/documentation/DocumentationShell";
 import { LoadingMetrics } from "@/components/documentation/LoadingMetrics";
-import { loadDocumentationSearch } from "@/lib/documentation/loader";
 import { contentPublicationMetadata } from "@/lib/site-index/publication";
 import "../docs/docs.css";
 import "./library.css";
-
-const geist = localFont({
-  src: "../../public/fonts/GeistVF.woff",
-  display: "swap",
-  variable: "--cd-font",
-});
 
 /** Local library preview; public canonical URLs and sitemap belong to the website release. */
 export const metadata: Metadata = {
@@ -24,18 +15,8 @@ export const metadata: Metadata = {
   ...contentPublicationMetadata(),
 };
 
-/** Reuse the docs navigation, theme and search without duplicating their lifecycle. */
-export default async function AnimationLibraryLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <div className={geist.variable}>
-      <DocumentationShell search={await loadDocumentationSearch()}>
-        {children}
-        <LoadingMetrics />
-      </DocumentationShell>
-    </div>
-  );
+/** Collection pages share the root site frame and reader tokens. They keep
+ * their own collection navigation, without mounting the documentation sidebar. */
+export default function AnimationLibraryLayout({ children }: { children: React.ReactNode }) {
+  return <div className="cd-site al-site">{children}<LoadingMetrics /></div>;
 }

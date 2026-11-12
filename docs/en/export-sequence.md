@@ -17,3 +17,11 @@ Review the composition duration and the estimated frame count before starting. F
 The download is a ZIP archive with numbered files such as `frame_0001.png`. Extract it and inspect the first, middle and last frames. Keep the filenames in order when importing them into another tool. Use the same frame rate there so the animation does not play faster or slower than intended.
 
 The sequence contains rendered pictures, not editable layers or interactive behavior. Save an [editable project](export-project-json.md) alongside it, or use [runtime JSON](export-runtime-json.md) for a player-driven result.
+
+## Check frame timing and preparation
+
+Frame `i` is evaluated at `i / fps * 1000` milliseconds. This makes sampling independent of how smoothly the editor happens to play in the browser. A sequence is limited to 4096 frames; shorten the duration or lower FPS if the request exceeds that limit.
+
+Every frame uses the full composition and original sources, including content hidden only by workspace isolation or viewport culling. Media, font and video-frame preparation must complete before drawing. A failed preparation is reported rather than silently producing a blank successful frame.
+
+Use PNG or WebP for alpha. JPEG flattens transparent output onto white. Scales above 1× currently upscale the rendered bitmap; use the [image export guidance](export-images.md#match-export-to-the-full-composition) to choose dimensions before producing a long sequence.

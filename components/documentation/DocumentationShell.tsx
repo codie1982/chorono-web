@@ -70,29 +70,9 @@ export function DocumentationShell({
       <a className="cd-skip" href="#docs-main">
         Skip to content
       </a>
-      <header className="cd-header">
-        <div className="cd-header-inner">
-          <Link
-            className="cd-brand"
-            href="/docs"
-            aria-label="Chorono documentation home"
-          >
-            <span className="cd-brand-symbol" aria-hidden="true">
-              <svg viewBox="0 0 36 36" fill="none">
-                <path
-                  d="M25 10a11 11 0 1 0 0 16"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-                <circle cx="25" cy="18" r="3" fill="currentColor" />
-              </svg>
-            </span>
-            <span>
-              chorono<span className="cd-brand-dot">.</span>
-            </span>
-            <span className="cd-docs-label">docs</span>
-          </Link>
+      <div className="cd-toolbar" role="region" aria-label="Documentation tools">
+        <div className="cd-toolbar-inner">
+          <Link className="cd-section-home" href="/docs">Documentation</Link>
           <nav className="cd-top-nav" aria-label="Documentation sections">
             {documentationSections.filter(section => section.primary).map(section => (
               <Link key={section.id} href={documentationHref(section.slug)}
@@ -101,7 +81,7 @@ export function DocumentationShell({
               >{section.label}</Link>
             ))}
           </nav>
-          <div className="cd-header-actions">
+          <div className="cd-toolbar-actions">
             <button
               className="cd-search-trigger"
               onClick={() => setSearchOpen(true)}
@@ -111,13 +91,6 @@ export function DocumentationShell({
               <span>Search documentation</span>
               <kbd>⌘ K</kbd>
             </button>
-            <a
-              className="cd-icon-button cd-github"
-              href="https://github.com/codie1982/chorono-editor"
-              aria-label="Chorono on GitHub"
-            >
-              <Icon name="github" size={20} />
-            </a>
             <button
               className="cd-icon-button"
               onClick={toggleTheme}
@@ -129,9 +102,6 @@ export function DocumentationShell({
             >
               <Icon name={theme === "light" ? "sun" : "moon"} size={19} />
             </button>
-            <a href="/getting-started" className="cd-open-editor">
-              Set up editor <Icon name="arrow" size={14} />
-            </a>
             <button
               className="cd-icon-button cd-mobile-menu-trigger"
               onClick={() => setMenuOpen(true)}
@@ -142,7 +112,7 @@ export function DocumentationShell({
             </button>
           </div>
         </div>
-      </header>
+      </div>
       <div className="cd-frame">
         <aside className="cd-sidebar">
           <div className="cd-sidebar-top">

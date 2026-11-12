@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { loadDocumentationSearch } from "@/lib/documentation/loader";
 import { DocumentationShell } from "@/components/documentation/DocumentationShell";
 import { LoadingMetrics } from "@/components/documentation/LoadingMetrics";
 import { contentPublicationMetadata } from "@/lib/site-index/publication";
 import "./docs.css";
 import "./navigation.css";
-
-const geist = localFont({
-  src: "../../public/fonts/GeistVF.woff",
-  display: "swap",
-  variable: "--cd-font",
-});
 
 /** Local docs preview: public indexing is enabled only in the website release. */
 export const metadata: Metadata = {
@@ -32,11 +25,9 @@ export default async function DocumentationLayout({
 }) {
   const search = await loadDocumentationSearch();
   return (
-    <div className={geist.variable}>
-      <DocumentationShell search={search}>
-        {children}
-        <LoadingMetrics />
-      </DocumentationShell>
-    </div>
+    <DocumentationShell search={search}>
+      {children}
+      <LoadingMetrics />
+    </DocumentationShell>
   );
 }

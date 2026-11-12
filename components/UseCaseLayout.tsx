@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import AnimationExample from './AnimationExample'
-import { BlogFooter, BlogHeader } from './BlogLayout'
 import { ANIMATION_EXAMPLES, USE_CASE_PUBLISHED } from '@/lib/animation-example'
 import { USE_CASES, USE_CASE_CONTENT_UPDATED, useCaseStructuredData, type UseCasePath } from '@/lib/use-cases'
 import { GUIDE_AUTHOR, REPOSITORY_URL } from '@/lib/site'
@@ -12,7 +11,6 @@ export default function UseCaseLayout({ path, children }: { path: UseCasePath; c
   const updatedLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(updated))
   return <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(useCaseStructuredData(path)).replace(/</g, '\\u003c') }} />
-    <BlogHeader section="examples" />
     <div className="mx-auto max-w-5xl px-6 py-10 md:py-14">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm leading-6 text-[#6d5a52]"><ol className="flex flex-wrap gap-2"><li><Link href="/">Chorono</Link></li><li aria-hidden="true">/</li><li aria-current="page">{page.label}</li></ol></nav>
       <div className="max-w-3xl">
@@ -36,7 +34,6 @@ export default function UseCaseLayout({ path, children }: { path: UseCasePath; c
       </article>
       <nav aria-label="Continue learning" className="mt-12 max-w-3xl border-t border-[#d9bca9] pt-7"><p className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#8F3D27]">Continue with a working project</p><div className="grid gap-3 sm:grid-cols-2">{Object.entries(USE_CASES).filter(([href]) => href !== path).map(([href, item]) => <Link key={href} href={href} className="rounded-xl border border-[#e7d8cf] bg-white p-5 font-semibold leading-7 hover:border-[#8F3D27]">{item.label} <span aria-hidden="true">→</span></Link>)}</div></nav>
     </div>
-    <BlogFooter />
   </main>
 }
 

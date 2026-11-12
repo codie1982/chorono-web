@@ -62,10 +62,10 @@
   .cd-search-trigger > span::after { content: 'Search docs'; font-size: 12px; }
 }
 @media (min-width: 901px) and (max-width: 1120px) {
-  .cd-header-inner { gap: 16px; }
+  .cd-toolbar-inner { gap: 16px; }
   .cd-top-nav a:last-child { display: flex; }
-  .cd-search-trigger { width: 38px; justify-content: center; }
-  .cd-search-trigger > span, .cd-search-trigger kbd, .cd-github { display: none; }
+  .cd-search-trigger { width: 44px; justify-content: center; }
+  .cd-search-trigger > span, .cd-search-trigger kbd { display: none; }
 }
 @media (max-width: 720px) {
   .cd-category-grid { grid-template-columns: 1fr; }

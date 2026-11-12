@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import HeroCharacters from '@/components/hero/HeroCharacters';
 import HeroProjectBridge from '@/components/hero/HeroProjectBridge';
 import { useHeroCrew } from '@/components/hero/useHeroCrew';
-import { loadGitHubStars } from '@/lib/github-stars.mjs';
-import { GUIDE_AUTHOR, RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
+import { RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
 import { USE_CASES } from '@/lib/use-cases';
 import { ANIMATION_EXAMPLES } from '@/lib/animation-example';
 import {
@@ -17,12 +16,10 @@ import {
   Copy,
   Github,
   Layers,
-  Package,
   Play,
   Smartphone,
   Terminal,
   Zap,
-  Star,
 } from "lucide-react";
 import {
   trackCodeCopy,
@@ -30,16 +27,10 @@ import {
 } from "@/lib/analytics";
 
 const LINKS = {
-  github: "https://github.com/codie1982/chorono-editor",
-  npm: RUNTIME_URL,
   docs: "/getting-started",
   examples: "/agent-skills",
   androidImplementation: "https://github.com/codie1982/chorono-android-sdk",
 };
-
-const ACCENT = "#B55233";
-const ACCENT_DARK = "#8F3D27";
-const DARK = "#120D0B";
 
 interface CodeBlockProps {
   title: string;
@@ -108,60 +99,6 @@ function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
   );
 }
 
-interface ResourceLinkProps {
-  icon: React.ComponentType<{ className?: string }>;
-  label: string;
-  href: string;
-}
-
-function ResourceLink({ icon: Icon, label, href }: ResourceLinkProps) {
-  return (
-    <a href={href} className="inline-flex items-center gap-2 text-sm font-medium text-[#4a332b] hover:text-[#B55233]">
-      <Icon className="h-4 w-4" />
-      {label}
-    </a>
-  );
-}
-
-/** Links to GitHub; the public count does not confirm a visitor starring. */
-function GitHubStarButton() {
-  const [stars, setStars] = useState<number | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let active = true;
-    loadGitHubStars().then(count => {
-      if (!active) return;
-      setStars(count);
-      setLoading(false);
-    });
-    return () => { active = false; };
-  }, []);
-
-  return (
-    <a
-      href={LINKS.github}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => trackAction('githubStar', 'header')}
-      aria-label="Star Chorono on GitHub (opens in a new tab)"
-      className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 backdrop-blur"
-    >
-      <Github className="h-4 w-4" />
-      <span>Star on GitHub</span>
-      {!loading && stars !== null && (
-        <>
-          <span className="h-4 w-px bg-white/20" />
-          <div className="flex items-center gap-1">
-            <Star className="h-4 w-4 fill-[#FFD700] text-[#FFD700]" />
-            <span className="font-semibold">{stars.toLocaleString()}</span>
-          </div>
-        </>
-      )}
-    </a>
-  );
-}
-
 export default function ChoronoLandingPage() {
   const crew = useHeroCrew();
   return (
@@ -170,28 +107,7 @@ export default function ChoronoLandingPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(181,82,51,0.35),transparent_34%),radial-gradient(circle_at_80%_8%,rgba(217,111,69,0.2),transparent_28%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-6">
-          <nav className="flex flex-wrap items-center justify-between gap-4">
-            <a href="#" className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#B55233] text-xl font-black shadow-[0_0_36px_rgba(181,82,51,0.5)]">
-                C
-              </div>
-              <div>
-                <div className="text-sm font-bold tracking-[0.35em]">CHORONO</div>
-                <div className="text-[10px] uppercase tracking-[0.45em] text-zinc-500">Animator</div>
-              </div>
-            </a>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-zinc-300">
-              <div className="hidden items-center gap-6 md:flex">
-              <a href={LINKS.docs} className="hover:text-white">Getting started</a>
-              <a href={LINKS.examples} className="hover:text-white">Agent skills</a>
-              <a href="/docs" className="hover:text-white">Docs</a>
-              <a href="/animations" className="hover:text-white">Animations</a>
-              <a href="/blog" className="hover:text-white">Blog</a>
-              </div>
-              <GitHubStarButton />
-            </div>
-          </nav>
 
           <div className="grid items-center gap-12 pb-12 pt-20 lg:grid-cols-[0.9fr_1.35fr] lg:pb-16 lg:pt-24">
             <div>
@@ -366,26 +282,7 @@ root.addView(view)`}</CodeBlock>
         </div>
       </section>
 
-      <footer className="border-t border-[#e7d8cf] bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#B55233] text-xl font-black text-white">C</div>
-            <div>
-              <div className="font-bold">Chorono Animator</div>
-              <div className="text-sm text-[#6d5a52]">Editable animation, with your AI agent.</div>
-              <p id="team" className="mt-2 text-sm text-[#6d5a52]">Guides by {GUIDE_AUTHOR.name}</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-5">
-            <ResourceLink icon={Github} label="GitHub" href={LINKS.github} />
-            <ResourceLink icon={Zap} label="Agent skills" href="/agent-skills" />
-            <ResourceLink icon={BookOpen} label="Blog" href="/blog" />
-            <ResourceLink icon={Package} label="NPM" href={LINKS.npm} />
-            <ResourceLink icon={BookOpen} label="Docs" href="/docs" />
-            <ResourceLink icon={Play} label="Animation library" href="/animations" />
-          </div>
-        </div>
-      </footer>
+
     </main>
   );
 }

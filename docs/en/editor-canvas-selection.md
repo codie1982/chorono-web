@@ -15,3 +15,11 @@ In the Select panel, choose a reference layer and open **Select Similar**. Match
 **Select By Transform** lets you build numeric or text rules. Review the selection before applying a shared edit, especially in a scene containing hidden layers.
 
 For a multi-selection, choose **Selection center** or **Active object** as the pivot. That choice changes where a group rotation or scale is centered; it does not create a group in the layer hierarchy.
+
+## Transform a parent and child together
+
+When both a parent and its child are selected, a shared transform moves the selected roots. The child follows its parent instead of receiving the same movement twice. Choose the selection center or active object's pivot for the intended rotation or scale.
+
+Dragging previews the change. Releasing commits one Undo step; Escape or a cancelled gesture leaves the source unchanged. If the selected transforms cannot represent the result without loss, the editor rejects the operation and explains the constraint.
+
+To adjust spacing precisely, click a displayed horizontal or vertical gap and [edit the selection gap](editor-canvas-snapping.md#measure-and-edit-selection-gaps). To focus on a branch, use [temporary isolation](editor-layers-scene-explorer.md#isolate-a-branch-temporarily).

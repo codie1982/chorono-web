@@ -1,0 +1,35 @@
+existing_docs_route,query,estimated_us_monthly_searches,metric_retrieval_date,language,intent,coverage
+/docs/editor/properties,animation expressions,110,2026-11-11,en,informational,measured
+/docs/editor/properties,sine wave animation,110,2026-11-12,en,informational,measured
+/docs/editor/timeline/controllers,procedural animation,590,2026-11-11,en,informational,measured
+/docs/editor/timeline/controllers,bake animation,10,2026-11-12,en,informational,measured
+/docs/editor/timeline/controllers,keyframe interpolation,110,2026-11-12,en,informational,measured
+/docs/editor/timeline,keyframe interpolation,110,2026-11-12,en,informational,measured
+/docs/editor/keyframes/timing,animation stagger,50,2026-11-11,en,informational,measured
+/docs/editor/keyframes/timing,keyframe interpolation,110,2026-11-12,en,informational,measured
+/docs/editor/layers,animation hierarchy,10,2026-11-12,en,informational,measured
+/docs/editor/layers,layer hierarchy,20,2026-11-11,en,informational,measured
+/docs/editor/layers/scene-explorer,layer hierarchy,20,2026-11-11,en,informational,measured
+/docs/editor/canvas/selection,animation pivot point,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/editor/properties/transform,anchor point animation,20,2026-11-12,en,informational,measured
+/docs/editor/canvas/tools,animation pivot point,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/editor/canvas/motion-keys,motion path animation,70,2026-11-11,en,informational,measured
+/docs/editor/canvas/motion-keys,motion path editor,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/editor/layers/cloning,clone animation,10,2026-11-11,en,informational,measured
+/docs/editor/layers/cloning,duplicate animation,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/editor/layers/arrays,radial array,30,2026-11-11,en,informational,measured
+/docs/editor/layers/arrays,path array,10,2026-11-11,en,informational,measured
+/docs/editor/canvas/snapping,snapping animation,50,2026-11-11,en,informational,measured
+/docs/editor/canvas/snapping,rulers and guides,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/editor/projects,animation autosave,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/editor/projects,recover animation project,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/export/project-json,recover animation project,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/editor/resources,animation performance,10,2026-11-11,en,informational,measured
+/docs/editor/resources,animation performance optimization,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/export/images,export transparent animation,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/export/sequence,png sequence animation,10,2026-11-11,en,informational,measured
+/docs/export/sequence,png sequence export,unknown,2026-11-12,en,informational,requested; no metric returned
+/docs/export/svg,svg export,170,2026-11-12,en,informational,measured
+/docs/export/svg,svg animation export,10,2026-11-11,en,informational,measured
+/docs/export/runtime-json,bake animation,10,2026-11-12,en,informational,measured
+/docs/editor/shortcuts,keyframe interpolation,110,2026-11-12,en,informational,measured

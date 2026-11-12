@@ -45,3 +45,24 @@ A repeating timeline must join its end back to its beginning as intended. Inspec
 Follow [Looping animations](loop-animation.md) to inspect a four-second scene with a resting interval at its boundary. Save and reopen your edited project before treating the revision as complete.
 
 ![Chorono timeline showing the Left dot, Middle dot and Right dot vertical-position tracks with staggered keyframes](../../public/docs/screenshots/loop-timeline-v2.jpg "The three-dot loop is a separate, simpler example. Each dot has its own transform.y track. The diamonds show the staggered peaks and the matching resting values at the start and end of the four-second timeline.")
+
+## Set keys for selected layers
+
+**Set Key** (`K`) uses the explicitly selected layers on the active timeline. Selecting a parent does not automatically key every child. A short click uses the current keying set. Long-press, right-click, press Up/Down on the focused button or use Shift+F10 to open its options:
+
+| Keying set | Channels included |
+| --- | --- |
+| All supported channels | Every supported keyable channel on the selection |
+| Transform + opacity | Transform and opacity channels |
+| Existing animated channels | Channels that already have animation |
+| Selected key channels | Channels represented by the selected keys |
+
+Choose **Set keys now** to apply the selected set immediately. Updating an existing key keeps its ID, easing and tangent information; newly created keys start with linear interpolation. If some channels are driven or protected, review the list and choose **Set supported keys** or cancel.
+
+## Navigate frames and keys
+
+The transport has controls for the start/end, previous/next frame, previous/next key and first/last key. Focus matters: Left/Right step through time in the timeline, but move objects when the canvas owns the keyboard. See the [shortcut table](editor-shortcuts.md#canvas-and-timeline-shortcuts).
+
+Use **Find selected** to reveal selected layers and their animation rows. Selecting a layer by itself does not repeatedly scroll the timeline. **Clear all keyframes** on a layer removes that layer's keys on the active timeline; a parameter-row clear affects only that channel. Neither action clears children, other timelines, controllers, modifiers or Wires.
+
+For retiming several keys together, read [collision handling](editor-keyframes-timing.md#retime-keys-without-accidental-collisions) before applying an overwrite.

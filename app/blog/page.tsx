@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import { BLOG_DESCRIPTION, BLOG_POSTS, BLOG_TITLE, blogStructuredData } from '@/lib/blog'
 import { pageMetadata } from '@/lib/site'
-import { BlogFooter, BlogHeader, PostCard } from '@/components/BlogLayout'
+import { PostCard } from '@/components/BlogLayout'
 
 export const metadata = pageMetadata(BLOG_TITLE, BLOG_DESCRIPTION, '/blog')
 
 export default function BlogPage() {
   return <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogStructuredData()).replace(/</g, '\\u003c') }} />
-    <BlogHeader />
     <div className="bg-[#120D0B] text-white">
       <div className="mx-auto max-w-6xl px-6 pb-16 pt-10 md:pb-20">
         <nav aria-label="Breadcrumb" className="mb-12 text-sm text-[#d7bbb0]"><ol className="flex gap-3"><li><Link href="/" className="hover:text-white">Chorono</Link></li><li aria-hidden="true">/</li><li aria-current="page">Blog</li></ol></nav>
@@ -26,6 +25,5 @@ export default function BlogPage() {
         <Link href="/getting-started" className="inline-flex shrink-0 items-center justify-center rounded-xl bg-[#8F3D27] px-6 py-3 font-semibold text-white hover:bg-[#73311f]">Install Chorono <span aria-hidden="true" className="ml-3">→</span></Link>
       </div>
     </section>
-    <BlogFooter />
   </main>
 }

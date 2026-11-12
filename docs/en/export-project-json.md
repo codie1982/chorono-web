@@ -29,3 +29,11 @@ For MCP-authored work, the [agent workflow](connect-ai-agent.md) supports saving
 5. Share the complete project/package needed by the recipient.
 
 Use [Runtime JSON](export-runtime-json.md) to embed playback or [images and sequences](export-images.md) for rendered output. Keep the editable project alongside those delivery files.
+
+## Keep an external backup as well as local recovery
+
+**Saved locally** is a browser recovery status, not proof that a file exists in your downloads or chosen folder. Save Scene JSON when you need to move work, archive a version or protect it from cleared browser data.
+
+The Save Scene JSON flow can include a portable recovery envelope with the project session and bounded history. Inspect / Copy exports source scene data, while MCP save follows its own portable-format contract. Check which flow produced a file before treating its wrapper as interchangeable with another.
+
+Session suffixes and supported `sessions/<sessionId>/` folders keep documents distinct. Reopen the saved file and inspect its media, geometry and animation before relying on it. See [local recovery](editor-projects.md#automatic-local-recovery) for browser origins, history limits and retry behavior.

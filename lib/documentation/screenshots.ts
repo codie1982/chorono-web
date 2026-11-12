@@ -73,6 +73,9 @@ export const documentationScreenshots: readonly DocumentationScreenshot[] = [
   { source: 'public/docs/screenshots/timeline-segments-v1.jpg', href: '/docs/screenshots/timeline-segments-v1.jpg', width: 1120, height: 580 },
   { source: 'public/docs/screenshots/timeline-v1.jpg', href: '/docs/screenshots/timeline-v1.jpg', width: 1120, height: 580 },
   { source: 'public/docs/screenshots/wires-v1.jpg', href: '/docs/screenshots/wires-v1.jpg', width: 820, height: 542 },
+  { source: 'public/docs/screenshots/property-expression-v1.jpg', href: '/docs/screenshots/property-expression-v1.jpg', width: 520, height: 489 },
+  { source: 'public/docs/screenshots/track-bake-v1.jpg', href: '/docs/screenshots/track-bake-v1.jpg', width: 560, height: 516 },
+  { source: 'public/docs/screenshots/ruler-guides-v1.jpg', href: '/docs/screenshots/ruler-guides-v1.jpg', width: 256, height: 245 },
 ]
 
 /** Finds exact reviewed repository paths or public URLs; never reads arbitrary paths or remote assets. */

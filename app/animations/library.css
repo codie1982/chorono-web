@@ -1,3 +1,4 @@
+.al-site { padding-bottom: 56px; }
 .al-index {
   max-width: 1150px;
   margin: 0 auto;
@@ -13,7 +14,7 @@
   line-height: 1.04;
   letter-spacing: -0.055em;
   margin: 20px 0 24px;
-  font-weight: 550;
+  font-weight: 800;
 }
 .al-library-heading h1 > span {
   color: var(--cd-accent);
@@ -72,6 +73,7 @@
   gap: 24px;
 }
 .al-card {
+  background: var(--site-surface);
   border: 1px solid var(--cd-line);
   border-radius: 14px;
   overflow: hidden;
@@ -126,12 +128,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  background: var(--cd-fg);
-  color: var(--cd-bg) !important;
+  background: var(--site-accent);
+  color: #fff !important;
   padding: 13px 20px;
   border-radius: 7px;
   font-size: 12px;
-  font-weight: 550;
+  font-weight: 800;
   min-height: 44px;
 }
 .al-button:hover {
@@ -160,7 +162,7 @@
   line-height: 1.13;
   letter-spacing: -0.05em;
   margin: 14px 0 18px;
-  font-weight: 550;
+  font-weight: 800;
 }
 .al-detail-heading {
   margin-bottom: 30px;

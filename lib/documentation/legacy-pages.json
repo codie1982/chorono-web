@@ -42,7 +42,7 @@
     "title": "Work with the animation timeline",
     "description": "Read animation tracks, scrub the playhead and understand milliseconds, frames and independent timelines.",
     "group": "Create animations",
-    "sourceHash": "87fc961f9bc9f679ed94292653210f2488db7a02fe543b246b543ecde2fbfbea"
+    "sourceHash": "e94236b6142e5ee9074a2aced1c71a521dc5eb320f1ff9bca89f62cc37d1afa6"
   },
   {
     "slug": "animation/loops",

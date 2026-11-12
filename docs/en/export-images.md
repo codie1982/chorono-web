@@ -35,3 +35,11 @@ A frame sequence contains images, not an encoded video or mixed audio track. Imp
 ## Keep the source
 
 An image or SVG is not a substitute for the [editable project](export-project-json.md). Save the source first so you can change text, timing or dimensions later. For application playback, use [runtime JSON](export-runtime-json.md).
+
+## Match export to the full composition
+
+Raster output uses the full composition and original sources, independently of canvas pan, zoom, isolation and level-of-detail previews. Output preparation and drawing use the same parameter snapshot. Pending media, fonts or video frames must finish preparing; a preparation failure is reported instead of being treated as a successful blank frame.
+
+PNG and WebP support transparent output. JPEG has no alpha channel; transparent output is flattened onto white with a warning. Inspect the exported file, especially soft edges and shadows.
+
+Resolution scales above 1× currently upscale the rendered bitmap. They do not rerender vector geometry at a higher resolution or provide an advanced-color/FP16 pipeline. Set suitable composition dimensions before exporting when native pixel detail matters.

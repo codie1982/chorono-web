@@ -25,3 +25,11 @@ When duplicating an animated object, inspect the copy's tracks and targets in th
 ## Continue editing
 
 Use [Properties & effects](editor-properties.md) to edit the selected object, [Keyframes](editor-keyframes.md) to animate it and [Project JSON](export-project-json.md) to keep an editable copy of the hierarchy.
+
+## Keep the animation hierarchy visible
+
+Layers, Scene Explorer and Timeline share the same parent/child hierarchy. Search filters, collapsed branches and rows outside the visible area do not remove layers from the project.
+
+Use **▤ Timeline** in Layers to reveal the selected layers in the timeline, or **Find selected** inside Timeline. Their parent paths and animation rows open as needed. **Restore filters** brings back the earlier filtered view after a reveal. Selection alone does not keep pulling the scroll position away from your work.
+
+For operations on a whole branch and temporary isolation, use the [Scene Explorer guide](editor-layers-scene-explorer.md#work-with-a-branch). For independent copies or instances, see [Clone and Instance](editor-layers-cloning.md).

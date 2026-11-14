@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/next'
 import { pageMetadata, SITE_URL, SITE_TITLE, SITE_DESCRIPTION, THEME_COLOR } from '@/lib/site'
 import { SiteShell } from '@/components/site/SiteShell'
 import './globals.css'
@@ -22,6 +23,7 @@ export const viewport: Viewport = {
   themeColor: THEME_COLOR,
 }
 
+/** Provides the public site shell and production-only page-view collectors. */
 export default function RootLayout({
   children,
 }: {
@@ -29,7 +31,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body><SiteShell>{children}</SiteShell></body>
+      <body>
+        <SiteShell>{children}</SiteShell>
+        {process.env.VERCEL_ENV === 'production' && <Analytics />}
+      </body>
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
       )}

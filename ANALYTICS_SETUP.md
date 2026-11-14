@@ -1,4 +1,16 @@
-# Google Analytics measurement contract
+# Analytics measurement contract
+
+## Vercel Web Analytics page views
+
+The public site's root layout mounts `@vercel/analytics/next` only for
+`VERCEL_ENV=production`. Enable Web Analytics for the `chorono-web` Vercel
+project and redeploy it; adding the package to a different project does not
+measure this site. Preview and local builds do not mount the Vercel script.
+Vercel Web Analytics and the existing Google tag are separate reporting systems;
+do not add their page-view counts together.
+
+The Google tag below remains the owner of the named custom interaction events.
+This change does not migrate those events to Vercel.
 
 Set `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX` for the intended environment. `app/layout.tsx` loads the existing Google tag. Keep this variable unset in local/preview builds unless using a dedicated test property.
 

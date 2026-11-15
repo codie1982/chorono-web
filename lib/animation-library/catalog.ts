@@ -3,7 +3,10 @@ import { ANIMATION_EXAMPLES, type AnimationExampleId } from '@/lib/animation-exa
 /** One reviewed, editable scene. No keyword-only or generated placeholder entries. */
 export interface AnimationEntry {
   readonly slug: string;
-  readonly preview: { readonly kind: 'example'; readonly exampleId: AnimationExampleId } | { readonly kind: 'motion-crew'; readonly poster: string; readonly alt: string };
+  readonly preview:
+    | { readonly kind: 'example'; readonly exampleId: AnimationExampleId }
+    | { readonly kind: 'motion-crew'; readonly poster: string; readonly alt: string }
+    | { readonly kind: 'video'; readonly src: string; readonly poster: string; readonly alt: string };
   readonly title: string;
   readonly description: string;
   readonly category: string;
@@ -15,11 +18,37 @@ export interface AnimationEntry {
   readonly about: string;
   readonly revision: string;
   readonly use: string;
+  readonly promptSource?: string;
   readonly downloads?: readonly { readonly source: string; readonly fileName: string; readonly label: string }[];
 }
 
 /** The curated allowlist drives library pages, previews and attachment downloads. */
 export const animationEntries: readonly AnimationEntry[] = [
+  {
+    slug: 'one-bar-every-beat',
+    preview: {
+      kind: 'video',
+      src: '/examples/one-bar-every-beat.mp4',
+      poster: '/examples/one-bar-every-beat.png',
+      alt: 'CHORONO wordmark with an orange vertical rule to its left on a warm paper background.',
+    },
+    title: 'One bar. Every beat.',
+    description: 'A 15-second, 120 BPM motion design showreel. Watch the finished film, read its production prompt and download the editable Chorono scene.',
+    category: 'Showreels & motion design',
+    source: 'public/examples/one-bar-every-beat.chorono.json',
+    initialTimeMs: 0,
+    guideSlug: 'animation/loops',
+    provenanceUrl: 'https://github.com/codie1982/chorono-editor',
+    sourceLinkLabel: "Explore Chorono's open-source editor →",
+    about: 'An orange rule becomes typography, shapes, spatial forms, a data display and a waveform before returning to the CHORONO end card. The rendered film follows a 120 BPM score, with a visible event on every beat. The first and last video frames match exactly.',
+    revision: 'Select End orange rule to adjust its color or x-position. Compare the opening frame with the frame at 14.5 seconds before changing the closing layout, then play through the loop boundary.',
+    use: 'Study beat-locked transitions, or revise the native layers, keyframes and embedded audio in Chorono to make your own showreel.',
+    promptSource: 'public/examples/one-bar-every-beat.prompt.txt',
+    downloads: [
+      { source: 'public/examples/one-bar-every-beat.mp4', fileName: 'one-bar-every-beat.mp4', label: 'Finished MP4' },
+      { source: 'public/examples/one-bar-every-beat.prompt.txt', fileName: 'one-bar-every-beat.prompt.txt', label: 'Production prompt' },
+    ],
+  },
   {
     slug: "three-dot-loading",
     preview: { kind: 'example', exampleId: 'codex-loading-loop' },

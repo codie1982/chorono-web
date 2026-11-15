@@ -9,7 +9,7 @@ import { ChronoPlayer } from '@chorono/runtime'
 
 describe("reviewed animation library contract", () => {
   it("derives native stats and valid editing handoffs from the unchanged scene sources", async () => {
-    expect(new Set(animationEntries.map((entry) => entry.slug)).size).toBe(3);
+    expect(new Set(animationEntries.map((entry) => entry.slug)).size).toBe(4);
     const loading = await loadAnimation("three-dot-loading");
     const title = await loadAnimation("editable-title-card");
     expect(loading?.stats).toMatchObject({
@@ -63,6 +63,7 @@ describe("reviewed animation library contract", () => {
     for (const entry of animationEntries) {
       const source = await loadAnimation(entry.slug)
       const original = JSON.parse(source!.json)
+      if (entry.preview.kind === 'video') continue
       if (entry.preview.kind === 'motion-crew') {
         const player = new ChronoPlayer(original)
         expect(player.tick(0).overrides.size).toBeGreaterThan(0)
@@ -90,5 +91,24 @@ describe("reviewed animation library contract", () => {
     expect(await response.text()).toBe(await readFile(path.join(process.cwd(),'public/hero/motion-crew.chorono.json'),'utf8'))
     const zip=await readFile(path.join(process.cwd(),'public/hero/motion-crew-project.zip'))
     expect(zip.subarray(0,4).toString('hex')).toBe('504b0304')
+  })
+
+  it('serves the beat-locked showreel with its video, poster and complete prompt', async () => {
+    const animation = await loadAnimation('one-bar-every-beat')
+    expect(animation?.stats).toMatchObject({width:1920,height:1080,durationMs:15000,frameRate:60,layers:124,tracks:410,loop:true})
+    expect(animation?.downloads.map(asset=>asset.href)).toEqual([
+      '/examples/one-bar-every-beat.mp4',
+      '/examples/one-bar-every-beat.prompt.txt',
+    ])
+    const prompt = await readFile(path.join(process.cwd(),'public/examples/one-bar-every-beat.prompt.txt'),'utf8')
+    expect(animation?.prompt).toBe(prompt)
+    expect(prompt).toContain('place the orange rule to the LEFT')
+    const video = await readFile(path.join(process.cwd(),'public/examples/one-bar-every-beat.mp4'))
+    expect(video.subarray(4,8).toString()).toBe('ftyp')
+    const poster = await readFile(path.join(process.cwd(),'public/examples/one-bar-every-beat.png'))
+    expect(poster.subarray(0,8).toString('hex')).toBe('89504e470d0a1a0a')
+    const response = await GET(new Request('http://localhost/animations/one-bar-every-beat/download'),{params:{slug:'one-bar-every-beat'}})
+    expect(response.headers.get('Content-Disposition')).toBe('attachment; filename="one-bar-every-beat.chorono.json"')
+    expect(await response.text()).toBe(animation?.json)
   })
 });

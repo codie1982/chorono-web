@@ -3,9 +3,17 @@ import path from "node:path";
 import type { ChronoPlayer } from "@chorono/runtime";
 import { findAnimation } from "./catalog";
 
+/** Resolve only reviewed public assets; never accept traversal in download or prompt paths. */
+function reviewedPublicPath(source: string): string {
+  if (!source.startsWith('public/') || source.split('/').includes('..')) {
+    throw new Error('Animation assets must be allowlisted public files');
+  }
+  return path.join(process.cwd(), source);
+}
+
 /**
  * Read an allowlisted, reviewed portable project on the server. Original bytes
- * feed downloads; the corresponding reviewed runtime export feeds playback.
+ * feed downloads; reviewed runtime exports or a finished video feed playback.
  * Specifications come from source data rather than duplicated catalogue copy.
  * Unknown slugs return null; I/O/JSON failures propagate to the build/request.
  * Times are milliseconds, dimensions composition pixels. No editor code is
@@ -18,14 +26,17 @@ export async function loadAnimation(slug: string) {
   const json = await readFile(path.join(process.cwd(), entry.source), "utf8");
   const scene: Parameters<ChronoPlayer['load']>[0] = JSON.parse(json);
   const tracks = scene.timelines.flatMap((timeline) => timeline.tracks);
+  const prompt = entry.promptSource
+    ? await readFile(reviewedPublicPath(entry.promptSource), 'utf8')
+    : undefined;
   const downloads = await Promise.all((entry.downloads ?? []).map(async asset => {
-    if (!asset.source.startsWith('public/') || asset.source.split('/').includes('..')) throw new Error('Download assets must be allowlisted public files');
-    const info = await stat(path.join(process.cwd(), asset.source));
+    const info = await stat(reviewedPublicPath(asset.source));
     return { ...asset, href: `/${asset.source.slice('public/'.length)}`, bytes: info.size };
   }));
   return {
     entry,
     json,
+    prompt,
     downloads,
     stats: {
       width: scene.composition.width,

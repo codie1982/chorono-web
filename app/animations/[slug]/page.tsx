@@ -26,7 +26,14 @@ export function generateMetadata({
   const entry = findAnimation(params.slug);
   return entry
     ? {
-        ...pageMetadata(entry.title, entry.description, animationHref(entry.slug)),
+        ...pageMetadata(
+          entry.title,
+          entry.description,
+          animationHref(entry.slug),
+          entry.preview.kind === 'video'
+            ? { image: entry.preview.poster, imageAlt: entry.preview.alt }
+            : undefined,
+        ),
         ...contentPublicationMetadata(animationHref(entry.slug)),
       }
     : { title: "Animation not found" };

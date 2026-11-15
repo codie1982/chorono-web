@@ -12,23 +12,23 @@ import { TableOfContents } from "@/components/documentation/TableOfContents";
 import ScenePreview from "@/components/player/ScenePreview";
 import InteractiveCrewPreview from './InteractiveCrewPreview';
 import ExampleDownload from '@/components/ExampleDownload';
-
-const headings = [
-  {
-    id: "about-the-animation",
-    text: "About this animation",
-    depth: 2 as const,
-  },
-  { id: "make-it-yours", text: "Make it yours", depth: 2 as const },
-  { id: "use-and-license", text: "Use & license", depth: 2 as const },
-  { id: "keep-exploring", text: "Keep exploring", depth: 2 as const },
-];
+import { VideoPreview } from './VideoPreview';
 
 /** Present one distinct asset with verified stats and a complete download/edit handoff. */
 export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
-  const { entry, stats, downloads } = animation;
+  const { entry, stats, downloads, prompt } = animation;
   const guide = findDocumentationPage(entry.guideSlug)!;
   const related = animationEntries.filter((item) => item.slug !== entry.slug);
+  const trackingId = entry.preview.kind === 'example'
+    ? entry.preview.exampleId
+    : entry.preview.kind === 'motion-crew' ? 'motion-crew' : entry.slug;
+  const headings = [
+    { id: 'about-the-animation', text: 'About this animation', depth: 2 as const },
+    ...(prompt ? [{ id: 'production-prompt', text: 'Production prompt', depth: 2 as const }] : []),
+    { id: 'make-it-yours', text: 'Make it yours', depth: 2 as const },
+    { id: 'use-and-license', text: 'Use & license', depth: 2 as const },
+    { id: 'keep-exploring', text: 'Keep exploring', depth: 2 as const },
+  ];
   return (
     <div className="cd-content-grid al-detail">
       <main id="docs-main" className="cd-main" tabIndex={-1}>
@@ -54,10 +54,15 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
           exampleId={entry.preview.exampleId}
           title={entry.title}
           initialTimeMs={entry.initialTimeMs}
+        /> : entry.preview.kind === 'video' ? <VideoPreview
+          src={entry.preview.src}
+          poster={entry.preview.poster}
+          title={entry.title}
+          alt={entry.preview.alt}
         /> : <InteractiveCrewPreview />}
         <div className="al-download-row">
           <ExampleDownload
-            exampleId={entry.preview.kind === 'example' ? entry.preview.exampleId : 'motion-crew'}
+            exampleId={trackingId}
             className="al-button"
             href={`${animationHref(entry.slug)}/download`}
             download
@@ -66,7 +71,7 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
           </ExampleDownload>
           <span>.chorono.json · {(stats.bytes / 1024).toFixed(1)} KB</span>
         </div>
-        {downloads.length > 0 && <div className="al-extra-downloads" aria-label="Additional project downloads">{downloads.map(asset=><ExampleDownload key={asset.href} exampleId={entry.preview.kind === 'example' ? entry.preview.exampleId : 'motion-crew'} className="al-download-asset" href={asset.href} download={asset.fileName}><span>{asset.label} <span aria-hidden="true">↓</span></span><small>{(asset.bytes/1024).toFixed(1)} KB</small></ExampleDownload>)}</div>}
+        {downloads.length > 0 && <div className="al-extra-downloads" aria-label="Additional downloads">{downloads.map(asset=><ExampleDownload key={asset.href} exampleId={trackingId} className="al-download-asset" href={asset.href} download={asset.fileName}><span>{asset.label} <span aria-hidden="true">↓</span></span><small>{(asset.bytes/1024).toFixed(1)} KB</small></ExampleDownload>)}</div>}
         <dl className="al-specs">
           <div>
             <dt>Composition</dt>
@@ -101,11 +106,15 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
           <section id="about-the-animation">
             <h2>About this animation</h2>
             <p>{entry.about}</p>
-            <p>
-              No external image, audio or font files are required. Preview
-              playback uses the native Chorono runtime.
-            </p>
+            <p>{entry.preview.kind === 'video'
+              ? 'The preview is the finished MP4; the editable scene is a separate download. The production prompt refers to a supplied reference video that is not included here.'
+              : 'No external image, audio or font files are required. Preview playback uses the native Chorono runtime.'}</p>
           </section>
+          {prompt && <section id="production-prompt">
+            <h2>Production prompt</h2>
+            <p>This consolidated brief includes the final music and end-card revisions. You can read it here or download the text file above.</p>
+            <pre className="al-prompt"><code>{prompt}</code></pre>
+          </section>}
           <section id="make-it-yours">
             <h2>Make it yours</h2>
             <ol>
@@ -140,7 +149,11 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
               accessible status text when embedding canvas content.
             </p>
             <p>
-              {downloads.length ? 'The main download is the native project. The ZIP also includes the transparent poster, authoring recipes, license and matching web reference source. The web reference requires an existing React/Next.js application.' : 'This download is the editable source project. Runtime exports and video exports are separate steps; this page provides the native JSON file.'}
+              {entry.preview.kind === 'video'
+                ? 'The main download is the editable Chorono project. The finished MP4 and consolidated production prompt are separate downloads. The video uses an additional HTML render pass, so its typography and motion blur may differ from the native editor preview.'
+                : downloads.length
+                  ? 'The main download is the native project. The ZIP also includes the transparent poster, authoring recipes, license and matching web reference source. The web reference requires an existing React/Next.js application.'
+                  : 'This download is the editable source project. Runtime exports and video exports are separate steps; this page provides the native JSON file.'}
             </p>
             <a href={entry.provenanceUrl}>
               {entry.sourceLinkLabel ?? 'View the original example and its source →'}

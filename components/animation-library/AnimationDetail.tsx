@@ -13,6 +13,7 @@ import ScenePreview from "@/components/player/ScenePreview";
 import InteractiveCrewPreview from './InteractiveCrewPreview';
 import ExampleDownload from '@/components/ExampleDownload';
 import { VideoPreview } from './VideoPreview';
+import { animationVideoStructuredData } from '@/lib/animation-library/seo';
 
 /** Present one distinct asset with verified stats and a complete download/edit handoff. */
 export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
@@ -22,8 +23,10 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
   const trackingId = entry.preview.kind === 'example'
     ? entry.preview.exampleId
     : entry.preview.kind === 'motion-crew' ? 'motion-crew' : entry.slug;
+  const videoStructuredData = animationVideoStructuredData(entry, stats.durationMs);
   const headings = [
     { id: 'about-the-animation', text: 'About this animation', depth: 2 as const },
+    ...(entry.breakdown ? [{ id: 'motion-breakdown', text: entry.breakdown.heading, depth: 2 as const }] : []),
     ...(prompt ? [{ id: 'production-prompt', text: 'Production prompt', depth: 2 as const }] : []),
     { id: 'make-it-yours', text: 'Make it yours', depth: 2 as const },
     { id: 'use-and-license', text: 'Use & license', depth: 2 as const },
@@ -31,6 +34,7 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
   ];
   return (
     <div className="cd-content-grid al-detail">
+      {videoStructuredData && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData).replace(/</g, '\\u003c') }} />}
       <main id="docs-main" className="cd-main" tabIndex={-1}>
         <nav className="cd-breadcrumb" aria-label="Breadcrumb">
           <Link href="/animations">Animation library</Link>
@@ -110,6 +114,17 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
               ? 'The preview is the finished MP4; the editable scene is a separate download. The production prompt refers to a supplied reference video that is not included here.'
               : 'No external image, audio or font files are required. Preview playback uses the native Chorono runtime.'}</p>
           </section>
+          {entry.breakdown && <section id="motion-breakdown">
+            <h2>{entry.breakdown.heading}</h2>
+            <p>{entry.breakdown.introduction}</p>
+            <ol className="al-beat-list">
+              {entry.breakdown.beats.map((beat) => <li key={beat.time}>
+                <span>{beat.time}</span>
+                <div><strong>{beat.technique}</strong><p>{beat.detail}</p></div>
+              </li>)}
+            </ol>
+            <p>{entry.breakdown.conclusion}</p>
+          </section>}
           {prompt && <section id="production-prompt">
             <h2>Production prompt</h2>
             <p>This consolidated brief includes the final music and end-card revisions. You can read it here or download the text file above.</p>

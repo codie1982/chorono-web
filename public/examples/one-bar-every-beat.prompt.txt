@@ -1,0 +1,23 @@
+Create a 15-second, 1920×1080 motion design showreel in Chorono, using the attached video as the visual and musical reference.
+
+Concept: “ONE BAR. EVERY BEAT.” An orange vertical rule is the spine of the entire film. It becomes kinetic type, morphing shapes, a 2D-to-3D structure, a data/UI scene, a waveform, and finally the end title. Every scene must grow out of the previous one—no cuts or fades.
+
+Keep the reference video’s background music. Map its 120 BPM beat grid and make something visible happen on every beat. Add subtle transition sounds, but keep the music clearly in front. Do not replace the music or let effects overpower it.
+
+Use Geist throughout. Limit the palette to warm paper, orange, electric blue, black, and white. Keep a consistent, mostly front-facing camera language. Use spring and exponential easing without bouncy motion. Directional motion blur should follow fast movement.
+
+Structure:
+0–2 s: CHORONO logo and orange-rule hook
+2–4 s: kinetic typography
+4–6 s: shape morphing
+6–8 s: 2D-to-3D transformation
+8–10 s: data/UI
+10–12 s: music-driven waveform
+12–14 s: the strongest full-screen typography
+14–15 s: end title returning to the opening composition
+
+On the end card, place the orange rule to the LEFT of “CHORONO,” never through the letters. Make the final frame match the first exactly for a seamless loop.
+
+Avoid particles, glows, lens flares, camera shake, RGB split, crossfades, generic gradients, template-like layouts, and holds longer than half a second.
+
+Build a deterministic HTML renderer controlled entirely by window.seek(t), with no CSS animations, timers, or state carried between frames. Save an editable Chorono project too. Before the full render, inspect one frame per beat and fix clutter, timing, overlap, and readability. Render at 60 fps with three subframes per frame, blend them for motion blur, mux the original music, and deliver the final MP4 and editable project. Do not ask follow-up questions.

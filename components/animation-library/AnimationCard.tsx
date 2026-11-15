@@ -2,6 +2,7 @@ import Link from "next/link";
 import { animationHref } from "@/lib/animation-library/catalog";
 import type { LoadedAnimation } from "@/lib/animation-library/loader";
 import ScenePreview from "@/components/player/ScenePreview";
+import { VideoPreview } from "./VideoPreview";
 
 /** A real native preview and crawlable detail link; playback never starts automatically. */
 export function AnimationCard({ animation }: { animation: LoadedAnimation }) {
@@ -12,6 +13,11 @@ export function AnimationCard({ animation }: { animation: LoadedAnimation }) {
         exampleId={entry.preview.exampleId}
         title={entry.title}
         initialTimeMs={entry.initialTimeMs}
+      /> : entry.preview.kind === 'video' ? <VideoPreview
+        src={entry.preview.src}
+        poster={entry.preview.poster}
+        title={entry.title}
+        alt={entry.preview.alt}
       /> : <Link href={animationHref(entry.slug)} className="al-static-preview"><img src={entry.preview.poster} alt={entry.preview.alt} width={1200} height={800} loading="lazy" /><span>Try the interactive scene <span aria-hidden="true">↗</span></span></Link>}
       <div className="al-card-body">
         <span className="cd-eyebrow">{entry.category}</span>

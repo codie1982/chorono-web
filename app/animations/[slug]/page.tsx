@@ -27,7 +27,7 @@ export function generateMetadata({
   return entry
     ? {
         ...pageMetadata(
-          entry.title,
+          entry.searchTitle ?? entry.title,
           entry.description,
           animationHref(entry.slug),
           entry.preview.kind === 'video'

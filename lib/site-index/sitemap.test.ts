@@ -53,6 +53,9 @@ describe("publication and topic sitemap contract", () => {
     const index = serializeSitemap("https://www.chorono.com", "sitemap.xml", false, true)!;
     expect(index.match(/<sitemap>/g)).toHaveLength(sitemapTopics.length);
     expect(index).toContain("https://www.chorono.com/sitemap-animations.xml");
+    const animationSitemap = serializeSitemap('https://www.chorono.com', 'sitemap-animations.xml', false, true)!;
+    expect(animationSitemap).toContain('<loc>https://www.chorono.com/animations/one-bar-every-beat</loc>');
+    expect(animationSitemap).not.toContain('/examples/one-bar-every-beat.mp4');
     expect(serializeSitemap('https://www.chorono.com', 'sitemap-docs-start.xml', true)).not.toContain('lastmod')
     const previous = existingSitemapEntries.map(entry => new URL(entry.url).pathname)
     expect(sitemapTopics.filter(topic => !topic.unpublished).flatMap(topic => topic.paths).sort()).toEqual(previous.sort())

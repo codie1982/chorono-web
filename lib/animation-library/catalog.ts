@@ -8,6 +8,7 @@ export interface AnimationEntry {
     | { readonly kind: 'motion-crew'; readonly poster: string; readonly alt: string }
     | { readonly kind: 'video'; readonly src: string; readonly poster: string; readonly alt: string };
   readonly title: string;
+  readonly searchTitle?: string;
   readonly description: string;
   readonly category: string;
   readonly source: string;
@@ -19,6 +20,13 @@ export interface AnimationEntry {
   readonly revision: string;
   readonly use: string;
   readonly promptSource?: string;
+  readonly videoPublishedAt?: string;
+  readonly breakdown?: {
+    readonly heading: string;
+    readonly introduction: string;
+    readonly beats: readonly { readonly time: string; readonly technique: string; readonly detail: string }[];
+    readonly conclusion: string;
+  };
   readonly downloads?: readonly { readonly source: string; readonly fileName: string; readonly label: string }[];
 }
 
@@ -33,17 +41,34 @@ export const animationEntries: readonly AnimationEntry[] = [
       alt: 'CHORONO wordmark with an orange vertical rule to its left on a warm paper background.',
     },
     title: 'One bar. Every beat.',
-    description: 'A 15-second, 120 BPM motion design showreel. Watch the finished film, read its production prompt and download the editable Chorono scene.',
+    searchTitle: 'Motion graphics showreel: One bar. Every beat.',
+    description: 'Watch a 15-second motion graphics example with beat-synced kinetic typography, shape morphing, 2D-to-3D forms and a seamless loop. Download the editable Chorono project.',
     category: 'Showreels & motion design',
     source: 'public/examples/one-bar-every-beat.chorono.json',
     initialTimeMs: 0,
     guideSlug: 'animation/loops',
     provenanceUrl: 'https://github.com/codie1982/chorono-editor',
     sourceLinkLabel: "Explore Chorono's open-source editor →",
-    about: 'An orange rule becomes typography, shapes, spatial forms, a data display and a waveform before returning to the CHORONO end card. The rendered film follows a 120 BPM score, with a visible event on every beat. The first and last video frames match exactly.',
+    about: 'This motion design showreel follows one orange rule through seven techniques. At 120 BPM, a beat arrives every half-second: the rule becomes kinetic type, morphing shapes, stacked spatial forms, a data display, a waveform and oversized type. The end card returns it to the left of CHORONO, matching the opening composition for a seamless loop.',
     revision: 'Select End orange rule to adjust its color or x-position. Compare the opening frame with the frame at 14.5 seconds before changing the closing layout, then play through the loop boundary.',
     use: 'Study beat-locked transitions, or revise the native layers, keyframes and embedded audio in Chorono to make your own showreel.',
     promptSource: 'public/examples/one-bar-every-beat.prompt.txt',
+    videoPublishedAt: '2026-11-15T11:49:21+03:00',
+    breakdown: {
+      heading: 'How this motion graphics example moves',
+      introduction: 'Follow the orange rule from one scene to the next. Each two-second passage introduces a technique while keeping a visible connection to the previous image; the final second closes the loop.',
+      beats: [
+        { time: '0–2 s', technique: 'Logo hook', detail: 'The orange rule establishes the visual spine as horizontal strokes grow from it.' },
+        { time: '2–4 s', technique: 'Kinetic typography', detail: 'The strokes resolve into large beat-driven words on an orange field.' },
+        { time: '4–6 s', technique: 'Shape morphing', detail: 'The type gives way to a compact sequence of circles, squares and triangles.' },
+        { time: '6–8 s', technique: '2D-to-3D forms', detail: 'Flat colored shapes stack into a dimensional structure while the camera stays mostly front-facing.' },
+        { time: '8–10 s', technique: 'Data and UI', detail: 'The stacked geometry becomes a small rhythm display with labeled tracks.' },
+        { time: '10–12 s', technique: 'Music waveform', detail: 'The interface lines gather into a waveform that moves with the score.' },
+        { time: '12–14 s', technique: 'Full-screen type', detail: 'The waveform resolves into the strongest oversized typography in the reel.' },
+        { time: '14–15 s', technique: 'End title and loop', detail: 'The orange rule returns to the left of CHORONO; the last frame matches the first.' },
+      ],
+      conclusion: 'Pause the finished MP4 on any half-second beat to study the transitions. The separate Chorono download lets you change native layers, keyframes and timing; the MP4 is the finished render.',
+    },
     downloads: [
       { source: 'public/examples/one-bar-every-beat.mp4', fileName: 'one-bar-every-beat.mp4', label: 'Finished MP4' },
       { source: 'public/examples/one-bar-every-beat.prompt.txt', fileName: 'one-bar-every-beat.prompt.txt', label: 'Production prompt' },

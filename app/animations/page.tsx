@@ -6,7 +6,7 @@ import { AnimationCard } from "@/components/animation-library/AnimationCard";
 import { contentPublicationMetadata } from "@/lib/site-index/publication";
 
 export const metadata = {
-  ...pageMetadata('Editable animation examples | Chorono', 'Preview and download editable Chorono animations, then follow the linked guides to make them yours.', '/animations'),
+  ...pageMetadata('Editable motion graphics examples', 'Explore motion graphics examples you can watch and edit: a 120 BPM showreel, kinetic type, loading motion, a title card and interactive characters. Download free Chorono projects.', '/animations'),
   ...contentPublicationMetadata('/animations'),
 }
 
@@ -25,13 +25,14 @@ export default async function AnimationLibraryPage() {
       <header className="al-library-heading">
         <span className="cd-eyebrow">A STARTING POINT FOR YOUR NEXT IDEA</span>
         <h1>
-          Made to move.
+          Motion graphics examples.
           <br />
           <span>Yours to make.</span>
         </h1>
         <p>
-          A small collection of editable animations. Play a scene, explore its
-          layers and take the source with you.
+          Watch a beat-synced showreel, a loading loop, a title animation and
+          interactive characters. Explore how each scene moves, then download
+          its editable Chorono project.
         </p>
         <div className="al-collection-meta">
           <span>{animations.length} editable scenes</span>

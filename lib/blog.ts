@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { editorialSiteEntities, GUIDE_AUTHOR, pageMetadata, SITE_URL, DOCS_LINKS_UPDATED } from './site'
+import { editorialSiteEntities, GUIDE_AUTHOR, pageMetadata, SITE_URL } from './site'
 import { animationExampleEntities, INTERACTIVE_EXAMPLES_PUBLISHED, UI_EXAMPLES_PUBLISHED, EXAMPLE_MODIFIED, type AnimationExampleId } from './animation-example'
 
 export type ContentBlock =
@@ -20,6 +20,11 @@ export type BlogPost = {
   image: string
   imageAlt: string
   intro: string
+  /** Optional above-the-fold summary and fragment links for a guide with a working example. */
+  quickStart?: {
+    details: { label: string; text: string }[]
+    links: { label: string; href: string }[]
+  }
   sections: { id: string; heading: string; blocks: ContentBlock[] }[]
 }
 
@@ -167,21 +172,33 @@ export const BLOG_POSTS: BlogPost[] = [
     description: 'Create animations with Codex and Chorono. Play a three-dot loading loop, download its editable project and copy the creation and revision prompts.',
     category: 'Codex',
     published: '2026-11-04T12:50:46Z',
-    modified: DOCS_LINKS_UPDATED,
+    modified: '2026-11-16T10:04:44Z',
     image: '/blog/make-animations-with-codex.png',
     imageAlt: 'Codex animation workflow: install Chorono skills, connect MCP and revise a saved editable scene.',
-    intro: 'Codex can create and revise 2D animations in a connected Chorono editor. Set up the local tools once, give Codex a clear motion brief and keep the resulting objects and keyframes available for editing in your browser.',
+    intro: 'Make a four-second 2D animation with Codex in a connected Chorono editor. Codex creates named shapes and keyframes; you can play the result, ask for a timing change and download a project that stays editable. This walkthrough uses a three-dot loading loop so you can inspect the finished scene before setting up your own.',
+    quickStart: {
+      details: [
+        { label: 'What you’ll make', text: 'A four-second loading loop with one headline, three animated circles, four editable layers, three tracks and 24 keyframes.' },
+        { label: 'What you need', text: 'Node.js 20 or later, npm, Git, a browser and a separately installed Codex client. Connect the open Chorono editor tab through MCP.' },
+        { label: 'Your output', text: 'A portable editable Chorono JSON project and browser playback. This walkthrough does not demonstrate an encoded video export.' },
+      ],
+      links: [
+        { label: 'Play the example', href: '#animation-example' },
+        { label: 'Set up Codex', href: '#setup' },
+        { label: 'Copy the creation prompt', href: '#brief' },
+      ],
+    },
     sections: [
-      { id: 'workflow', heading: 'How the Codex animation workflow works', blocks: [
-        text('Codex is the agent you give instructions to. Chorono is the animation editor that holds the canvas, scene objects and timelines. MCP connects the two, while the bundled Chorono skills explain setup and animation authoring. Together they let you move from a written brief to a scene you can inspect and revise.'),
-        text('This workflow suits small interface illustrations, animated titles, loading loops and visual explanations made from text and shapes. Start with one clear motion idea. Keep the editor visible so you can judge the result yourself and use precise follow-up prompts.'),
-        list('Install and register the local editor for Codex.', 'Connect the browser scene and confirm that Codex can read it.', 'Describe the layout, timing and motion in a prompt.', 'Review previews, request a focused revision and save the project.'),
-      ] },
       { id: 'animation-example', heading: 'Play the three-dot loading loop and download the project', blocks: [
         text('This four-second example was created in the connected Chorono editor with Codex. It has four named layers, three animation tracks and 24 keyframes. The headline stays still while the circles rise 40 pixels in two waves, with a 180-millisecond stagger. Every circle returns to its starting position before the loop repeats.'),
         { type: 'animation-example', exampleId: 'codex-loading-loop' },
         text('Download the portable project and choose Open Scene JSON in a separate Chorono editor tab. The 1024 × 768 scene uses Arial and native shapes, with no external media. Change the text, colors or keyframes manually, or use the prompts below. The revision prompt is an optional next step; the download contains the original 40-pixel movement.'),
         links({ label: 'Copy the creation prompt', href: '#brief' }, { label: 'Copy the revision prompt', href: '#iterate' }),
+      ] },
+      { id: 'workflow', heading: 'How the Codex animation workflow works', blocks: [
+        text('Codex is the agent you give instructions to. Chorono is the animation editor that holds the canvas, scene objects and timelines. MCP connects the two, while the bundled Chorono skills explain setup and animation authoring. Together they let you move from a written brief to a scene you can inspect and revise.'),
+        text('This workflow suits small interface illustrations, animated titles, loading loops and visual explanations made from text and shapes. Start with one clear motion idea. Keep the editor visible so you can judge the result yourself and use precise follow-up prompts.'),
+        list('Install and register the local editor for Codex.', 'Connect the browser scene and confirm that Codex can read it.', 'Describe the layout, timing and motion in a prompt.', 'Review previews, request a focused revision and save the project.'),
       ] },
       { id: 'setup', heading: '1. Set up Chorono for Codex', blocks: [
         text('You need Node.js 20 or later, npm, Git, a modern browser and a separately installed Codex client. Run the following commands in a terminal for a fresh editor checkout. If you already have a checkout, use it instead of creating a second copy.'),

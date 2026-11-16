@@ -55,7 +55,7 @@ export default function MotionGraphicsSoftware() {
       <p>Keep the portable project as the source you reopen for editing. Export runtime data for an application that needs playback. The two files serve different jobs, even when their animation tracks match.</p>
       <p>This page uses the published <code>@chorono/runtime</code> package. You can also <a href="/examples/brief-to-motion.runtime.json" download>download the runtime export used by this preview</a> and compare it with the editable project.</p>
       <pre><code>npm install @chorono/runtime</code></pre>
-      <p>For smaller studies, explore <Link href="/text-animation">text animation and reading time</Link> or <Link href="/kinetic-typography">kinetic typography and word emphasis</Link>. To build through an agent, start with the <Link href="/agent-skills">setup and authoring skills</Link> and the <Link href="/blog/make-animations-with-claude">Claude Code installation walkthrough</Link>.</p>
+      <p>For smaller studies, explore <Link href="/text-animation">text animation and reading time</Link> or <Link href="/kinetic-typography">kinetic typography and word emphasis</Link>. To build through an agent, start with the <Link href="/agent-skills">setup and authoring skills</Link>, the <Link href="/blog/make-animations-with-claude">Claude Code installation walkthrough</Link> or the <Link href="/blog/make-animations-with-codex">Codex loading-loop tutorial</Link>.</p>
     </section>
   </UseCaseLayout>
 }

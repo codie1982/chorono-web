@@ -60,7 +60,7 @@
     "title": "Connect your AI agent with MCP",
     "description": "Connect Claude Code or Codex to a real Chorono editor through MCP and check the scene before making changes.",
     "group": "AI & scripting",
-    "sourceHash": "7a45dfebdda4e57fc1a39bee5590358b2d731380f6ddbcb34be38bfd5a2d36d2"
+    "sourceHash": "faa0c06c98199dea97985838e2c2b5671096a64e56a2c8630ed9b14712975dbe"
   },
   {
     "slug": "ai/skills",
@@ -69,7 +69,7 @@
     "title": "Chorono agent skills",
     "description": "Install, inspect and update the setup and animation-authoring skills for Claude Code and Codex.",
     "group": "AI & scripting",
-    "sourceHash": "919a608579959941b1fe1e7987c062a77205ca9e9e83cd18c90f2a3a5a8ce428"
+    "sourceHash": "2c24e74368718b8908ac52afe80e4605a9b66cf7b2128b11feac6fdbca5848e0"
   },
   {
     "slug": "scripting",

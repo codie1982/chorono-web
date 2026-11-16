@@ -13,6 +13,8 @@ A skill is a folder of instructions and references an agent can load for a task.
 
 Install both for the complete workflow. Once an editor is connected, the agent can use the authoring skill directly.
 
+See both skills in a complete task: [create and revise a Chorono animation with Codex](https://www.chorono.com/blog/make-animations-with-codex). The walkthrough shows the editor connection, a precise prompt, preview checks and the saved project.
+
 ## Source structure
 
 ```text

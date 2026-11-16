@@ -24,6 +24,7 @@ function Block({ block }: { block: ContentBlock }) {
   return null
 }
 
+/** Renders a published guide and any optional quick-start links to its existing sections. */
 export default function PostPage({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug)
   if (!post) notFound()
@@ -36,6 +37,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <h1 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">{post.headline}</h1>
         <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm leading-6 text-[#6d5a52]"><span>By <Link href="/#team" rel="author" className="font-medium text-[#8F3D27] underline underline-offset-4">{GUIDE_AUTHOR.name}</Link></span><span aria-hidden="true">·</span><time dateTime={post.published}>{new Date(post.published).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time>{post.modified && <><span aria-hidden="true">·</span><span>Updated <time dateTime={post.modified}>{new Date(post.modified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></span></>}<span aria-hidden="true">·</span><span>{readingMinutes(post)} min read</span></div>
         <p className="mt-6 text-lg leading-8 text-[#6d5a52]">{post.intro}</p>
+        {post.quickStart && <div className="mt-7 rounded-2xl border border-[#d9bca9] bg-white p-5 md:p-6">
+          <dl className="grid gap-4 text-sm leading-6 text-[#6d5a52] md:grid-cols-3">{post.quickStart.details.map(item => <div key={item.label}><dt className="font-bold text-[#211612]">{item.label}</dt><dd className="mt-1">{item.text}</dd></div>)}</dl>
+          <nav aria-label="Quick start" className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-[#e7d8cf] pt-4 text-sm font-semibold text-[#8F3D27]">{post.quickStart.links.map(item => <a key={item.href} href={item.href} className="underline underline-offset-4">{item.label} <span aria-hidden="true">↗</span></a>)}</nav>
+        </div>}
         <img src={post.image} alt={post.imageAlt} width={1200} height={675} className="mt-8 h-auto w-full rounded-2xl border border-[#e7d8cf]" />
       </div>
       <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,48rem)_1fr]">

@@ -4,7 +4,7 @@ Chorono scripts use JavaScript to create and edit native layers, timelines and i
 
 For Claude and Codex, use MCP `run_script`. It executes synchronous code in isolated QuickJS with no Node, DOM, network, imports or filesystem access. Prepare external data with the agent's normal tools, then include JSON in the script or import assets with MCP. The manual Script Console still uses the legacy browser runner and does not have the MCP sandbox's isolation or execution limits.
 
-Start with [Connect your AI agent with MCP](connect-ai-agent.md) and the [Chorono agent skills](agent-skills.md) if the editor is not connected yet. For the underlying editing model, inspect [keyframe values](editor-keyframes.md) and [timeline timing](editor-timeline.md) before scripting a revision.
+Start with [Connect your AI agent with MCP](connect-ai-agent.md) and the [Chorono agent skills](agent-skills.md) if the editor is not connected yet. For the underlying editing model, inspect [keyframe values](editor-keyframes.md) and [timeline timing](editor-timeline.md) before scripting a revision. To create and model editable contours, use the [spline scripting guide](spline-scripting.md).
 
 ## Discover and execute
 

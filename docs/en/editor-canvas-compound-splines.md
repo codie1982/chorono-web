@@ -1,6 +1,6 @@
 # Draw and edit compound Bézier splines
 
-Use a spline when an outline needs editable points. A single Chorono spline layer can contain several independent contours, so a badge, icon or letter shape can stay together while each outline remains editable. This guide covers the controls verified in the current editor. For the broader modeling work under development, see the [spline tools release preview](editor-canvas-spline-modeling.md).
+Use a spline when an outline needs editable points. A single Chorono spline layer can contain several independent contours, so a badge, icon or letter shape can stay together while each outline remains editable. This guide covers drawing and point editing. For parallel contours and corner treatment, see [Spline Modeling](editor-canvas-spline-modeling.md).
 
 ## Add another contour to one spline layer
 
@@ -18,4 +18,4 @@ The editor checks that the document revision and playhead time have not changed 
 
 Select a point to edit its coordinates, type and incoming or outgoing handles in **Spline Point**. **Corner** makes a sharp join; **Smooth**, **Bézier** and **Bézier Corner** control handle behavior. Right-click a segment to insert a point, or right-click a contour to open, close or reverse it. These are geometry edits, so inspect the result at the intended animation time.
 
-Fill and stroke are styled in **Properties** in the inspected editor. For the general point and handle controls, read [Edit Bézier points and spline curves](editor-canvas-splines.md). For the script API that creates contours and splits segments, read [Script editable spline geometry](spline-scripting.md).
+Fill and stroke are styled in **Properties**. For point and handle controls, read [Edit Bézier points and spline curves](editor-canvas-splines.md). To preview Offset, Outline, Chamfer or Fillet, open [Spline Modeling](editor-canvas-spline-modeling.md). For the script API that creates and models contours, read [Script editable spline geometry](spline-scripting.md).

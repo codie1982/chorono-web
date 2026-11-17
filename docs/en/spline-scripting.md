@@ -24,4 +24,20 @@ scene.log(contour.contourIds[0], contour.pointIds);
 
 Read `spline.data`, `spline.bounds` or an element getter before editing. Use `movePoint`, `setPointType`, `setHandle`, `setSegmentType` and `splitSegment(segmentId, t)` for a precise change; `t` must be strictly between 0 and 1. Use `setContourClosed` or `reverseContour` for contour direction and closure. The spline domain validates topology and locks, and deleted elements remove their animation tracks in the same undoable edit. An instance is read-only through its instance handle; edit its source layer explicitly.
 
-The current script handle does **not** expose Connect, Weld, Divide as a dedicated operation, edge deletion, Attach/Detach, Boolean preview, Offset/Outline, Chamfer or Fillet. Those calls should be documented here only after their shared domain commands and MCP behavior are implemented. For current canvas editing, read [compound Bézier splines](editor-canvas-compound-splines.md); for the requested next workflow, read the [release preview](editor-canvas-spline-modeling.md).
+## Model a contour from a script
+
+`offsetContour` and `outlineContour` create a new sibling layer and return its ID. On a closed contour, pass `outward` or `inward`; on an open contour, pass `left` or `right`. Distance is positive layer-local pixels. `chamferCorners` and `filletCorners` edit selected points of the source contour with a distance or radius. The editor rejects geometry that overlaps or conflicts with animation tracks.
+
+```js
+const layer = scene.get('spline_1');
+const spline = layer.spline;
+const contourId = Object.keys(spline.data.contours)[0];
+const pointId = spline.data.contours[contourId].pointIds[0];
+const offsetLayerId = spline.offsetContour(contourId, 12, 'outward');
+spline.chamferCorners(contourId, [pointId], 6);
+scene.log(offsetLayerId);
+```
+
+The script methods apply immediately through native edit commands. For a visual Preview, Apply and Cancel, use the [Spline Modeling panel](editor-canvas-spline-modeling.md). That guide explains distance, approximations and collision checks.
+
+The current script handle does **not** expose dedicated Connect, Weld or Divide operations, edge deletion, Attach/Detach or a Boolean preview that can be reopened. For drawing and continuing a contour on the canvas, read [compound Bézier splines](editor-canvas-compound-splines.md).

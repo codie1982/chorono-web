@@ -78,7 +78,7 @@
     "title": "JavaScript scene scripting",
     "description": "Create and edit native layers, timelines and interactions in the isolated MCP scripting bridge.",
     "group": "AI & scripting",
-    "sourceHash": "15f25e8d17eeea317318cd46bb2bcb3a6187d6f6525fa959d6b15908453f00a8"
+    "sourceHash": "662613ca49ab1e32ee030f45df2c7c40d89e76af5ea1f7ca308e476de4948052"
   },
   {
     "slug": "troubleshooting",

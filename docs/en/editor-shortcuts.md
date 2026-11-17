@@ -1,6 +1,6 @@
 # Find keyboard shortcuts for the editor
 
-Open the keyboard-shortcut reference when you want to speed up a repeated task. Search for the action you need instead of memorizing every command at once.
+Open **File → Show Shortcuts** or press **Cmd/Ctrl+/** to open the separate shortcut window. Search for the action you need instead of memorizing every command at once.
 
 ![Searchable production keyboard-shortcut reference.](../../public/docs/screenshots/keyboard-shortcuts-v1.jpg)
 

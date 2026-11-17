@@ -12,6 +12,6 @@ The tab offers **Circle, Line, Rectangle, Ellipse, Arc, Donut, NGon and Star**. 
 
 Move one point a little, then adjust its handles. Use the point inspector for an exact coordinate or point type. Keep the object selected while switching between Properties and the canvas so you can compare the outline with its fill and stroke.
 
-For a custom badge, start with a rectangle and soften or reshape a few corners. This is usually easier to revise than drawing a complex outline in one pass.
+For a custom badge, start with a rectangle and soften or reshape a few corners. For a measured corner radius or cut, open [Spline Modeling](editor-canvas-spline-modeling.md) and preview Fillet or Chamfer before applying it.
 
 Continue with [Bézier points and splines](editor-canvas-splines.md) for point types, contour closure and appending. A spline's editable shape is separate from the [motion path](editor-properties-motion.md) that can move another object.

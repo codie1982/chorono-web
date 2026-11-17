@@ -16,4 +16,4 @@ Move the point to change the outline. Move a handle to change how the curve appr
 
 ## Extend and finish
 
-Use the spline creation controls to start a new spline or append to a compatible selection. Check whether the contour should be open or closed before adding a fill. Point and segment snapping help join the intended locations without relying on zoom alone.
+Use the spline creation controls to start a new spline or append to a compatible selection. Check whether the contour should be open or closed before adding a fill. See [compound Bézier splines](editor-canvas-compound-splines.md) for appending and continuing a contour. Drawing does not yet acquire actual spline vertices with a zoom-independent tolerance; [Snap settings](editor-canvas-snapping.md) describe the current targets.

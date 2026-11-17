@@ -1,0 +1,15 @@
+keyword,estimated_us_searches_per_month,openseo_kd,intent,decision,source_observed
+bezier curve,8100,34,informational,Use only as context; broad mathematics intent,OpenSEO 2026-11-17
+animation scripting,480,0,informational,Use only in scripting context; SERP mixes screenplay intent,OpenSEO 2026-11-17
+vector drawing software,320,60,commercial,Existing broader product pages; not a spline guide target,OpenSEO 2026-11-17
+fillet corners,260,1,informational,Defer until tool ships,OpenSEO 2026-11-17
+pathfinder tool,260,8,transactional,Reject as target; live results mix unrelated tools,OpenSEO 2026-11-17
+offset path,110,5,informational,Defer until tool ships,OpenSEO 2026-11-17
+outline stroke,70,0,informational,Use in future Offset/Outline guide after release,OpenSEO 2026-11-17
+spline editor,50,0,informational,Use naturally in existing spline guide; mixed brand and 3D intent,OpenSEO and DataForSEO 2026-11-17
+stroke and fill,40,8,informational,Use in existing appearance guide and spline styling section,OpenSEO 2026-11-17
+bezier curve editor,30,19,transactional,Use naturally in practical spline editing guide,OpenSEO 2026-11-17
+connect vertices,10,0,informational,Defer until topology tools ship,OpenSEO 2026-11-17
+spline boolean,10,unknown,informational,Defer until Boolean workflow ships,OpenSEO 2026-11-17
+vector path editor,10,unknown,transactional,Secondary wording only,OpenSEO 2026-11-17
+online spline editor,10,unknown,unknown,Do not imply hosted editing; local browser editor only,DataForSEO 2026-11-17

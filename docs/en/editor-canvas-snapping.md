@@ -12,7 +12,7 @@ Open **Snap** on the canvas for the common switches, or restore the Snap panel f
 | --- | --- |
 | Object Bounds / Points | Alignment to other objects and their reference points. |
 | Guides / Grid / Pixel | Placement against guides, grid lines or whole pixels. |
-| Vertex / Segment | Alignment to spline points or the nearest point along a path. |
+| Vertex / Segment | Target switches exist in the detailed settings; actual spline-vertex collection during drawing is still being implemented. |
 | Snap Radius | How close a drag must get before a target attracts it. |
 | Angle / Scale | Stepped rotation or percentage scaling. |
 

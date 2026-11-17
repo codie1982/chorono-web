@@ -1,5 +1,6 @@
 import type { DocumentationSectionId } from './sections'
 import { editorGuides } from './editor-guides'
+import { splineGuides } from './spline-guides'
 import { runtimeGuides } from './runtime-guides'
 import { documentationSections } from './sections'
 
@@ -311,7 +312,7 @@ function orderDocumentation(pages: readonly DocumentationPage[]): readonly Docum
   return ordered
 }
 
-export const documentationPages = orderDocumentation([...establishedPages, ...editorGuides, ...runtimeGuides])
+export const documentationPages = orderDocumentation([...establishedPages, ...editorGuides, ...splineGuides, ...runtimeGuides])
 
 /** Return the local route for an allowlisted article, with no trailing slash. */
 export function documentationHref(slug: string): string {

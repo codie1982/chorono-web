@@ -279,6 +279,26 @@ const establishedPages: readonly DocumentationPage[] = [
     group: 'Resources',
   },
   {
+    slug: 'releases/0.4.0',
+    source: 'docs/releases/v0.4.0.md',
+    label: 'Release notes 0.4.0',
+    title: 'Chorono 0.4.0',
+    description:
+      'Explore spline modeling, agent handoff, 2D editor improvements and installation notes for Chorono 0.4.0.',
+    section: 'resources',
+    group: 'Resources',
+  },
+  {
+    slug: 'releases/0.3.0',
+    source: 'docs/releases/v0.3.0.md',
+    label: 'Release notes 0.3.0',
+    title: 'Chorono 0.3.0',
+    description:
+      'Read about animation authoring, expressions, recovery and safer MCP collaboration in Chorono 0.3.0.',
+    section: 'resources',
+    group: 'Resources',
+  },
+  {
     slug: 'releases/0.2.0',
     source: 'docs/releases/v0.2.0.md',
     label: 'Release notes',

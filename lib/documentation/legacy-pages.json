@@ -6,7 +6,7 @@
     "title": "Chorono documentation",
     "description": "Learn Chorono with editable animation examples. Install the editor, edit keyframes, build loops and connect Claude Code or Codex through MCP.",
     "group": "Getting started",
-    "sourceHash": "9ea3fe201c13289d878a273273cc6f4bf83b6857c1892fb9817dec052f0bbc87"
+    "sourceHash": "538ea140634d096b4924d9f969eb7e4c73c3cd04a7085726de4261d252bf71a8"
   },
   {
     "slug": "installation",
@@ -87,7 +87,7 @@
     "title": "Chorono setup and MCP troubleshooting",
     "description": "Diagnose startup, MCP connection and skill problems with explicit readiness checks.",
     "group": "Resources",
-    "sourceHash": "5af3cc5b3be235197fd5f1d9c5c4c2f6225fd3d84796b7cbb339a3b4ec9f92d3"
+    "sourceHash": "04ae55807b5fec2f586afad55fd1c6493f52e44234028a25fba1218c6d75831d"
   },
   {
     "slug": "releases/0.2.0",

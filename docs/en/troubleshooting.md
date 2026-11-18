@@ -53,7 +53,7 @@ A changed port can make an existing client entry stale. Review it against the re
 
 ## Rebuild after a source change
 
-Check the [release notes](../releases/v0.2.0.md) when comparing versions and requirements. After the server is ready, follow [Connect your AI agent with MCP](connect-ai-agent.md) to confirm that the browser tab is visible to the client.
+Check the [latest release notes](../releases/v0.4.0.md) when comparing versions and requirements. After the server is ready, follow [Connect your AI agent with MCP](connect-ai-agent.md) to confirm that the browser tab is visible to the client.
 
 Stop the running Next server first. For a CLI-managed background server:
 

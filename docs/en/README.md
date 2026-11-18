@@ -47,4 +47,4 @@ MCP connects the agent to a running editor. A skill supplies instructions. Insta
 
 Explore [text animation](https://www.chorono.com/text-animation), [kinetic typography](https://www.chorono.com/kinetic-typography) and [motion graphics projects](https://www.chorono.com/motion-graphics-software). Each guide shows an editable project you can inspect and download.
 
-For software changes, read the [release notes](../releases/v0.2.0.md) and [changelog](../../CHANGELOG.md).
+For software changes, read the release notes for [0.4.0](../releases/v0.4.0.md), [0.3.0](../releases/v0.3.0.md) and [0.2.0](../releases/v0.2.0.md), or see the [changelog](../../CHANGELOG.md).

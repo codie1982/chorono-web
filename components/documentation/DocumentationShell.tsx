@@ -31,6 +31,7 @@ export function DocumentationShell({
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const mobileMenu = useRef<HTMLDialogElement>(null);
+  const latestRelease = documentationPages.find((page) => page.slug.startsWith("releases/"))!;
   useEffect(() => {
     try {
       if (localStorage.getItem("chorono-docs-theme") === "dark")
@@ -117,8 +118,8 @@ export function DocumentationShell({
         <aside className="cd-sidebar">
           <div className="cd-sidebar-top">
             <span className="cd-sidebar-label">THE HANDBOOK</span>
-            <Link href="/docs/releases/0.2.0" className="cd-version">
-              v0.2.0
+            <Link href={documentationHref(latestRelease.slug)} className="cd-version">
+              v{latestRelease.slug.slice("releases/".length)}
             </Link>
           </div>
           <DocumentationNavigation />

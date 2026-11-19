@@ -18,6 +18,10 @@ function Block({ block }: { block: ContentBlock }) {
   if (block.type === 'animation-example' && (block.exampleId === 'heart-like' || block.exampleId === 'hamburger-menu')) return <InteractiveAnimationExample exampleId={block.exampleId} />
   if (block.type === 'animation-example') return <AnimationExample exampleId={block.exampleId} />
   if (block.type === 'text') return <p>{block.text}</p>
+  if (block.type === 'screenshot') return <figure className="my-7 overflow-hidden rounded-2xl border border-[#d9bca9] bg-white">
+    <a href={block.src} target="_blank" rel="noopener" aria-label={`Open full-size screenshot: ${block.alt}`} className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#8F3D27]"><img src={block.src} alt={block.alt} width={block.width} height={block.height} loading="lazy" className="h-auto w-full" /></a>
+    <figcaption className="border-t border-[#e7d8cf] bg-[#faf7f4] px-5 py-4 text-sm leading-6 text-[#6d5a52]">{block.caption} <a href={block.src} target="_blank" rel="noopener" className="font-semibold text-[#8F3D27] underline underline-offset-4">Open full-size screenshot</a></figcaption>
+  </figure>
   if (block.type === 'code' || block.type === 'prompt') return <div className="my-6 min-w-0"><div className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">{block.label}</div><pre className={block.type === 'prompt' ? 'prompt-block' : ''}><code>{block.text}</code></pre></div>
   if (block.type === 'list') return <ul className="mb-5 list-disc space-y-2 pl-6 leading-8 text-[#6d5a52]">{block.items.map(item => <li key={item}>{item}</li>)}</ul>
   if (block.type === 'links') return <ul className="mb-5 flex flex-col gap-3 text-sm leading-7">{block.items.map(item => <li key={item.href}><Link href={item.href}>{item.label} <span aria-hidden="true">↗</span></Link></li>)}</ul>
@@ -41,7 +45,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           <dl className="grid gap-4 text-sm leading-6 text-[#6d5a52] md:grid-cols-3">{post.quickStart.details.map(item => <div key={item.label}><dt className="font-bold text-[#211612]">{item.label}</dt><dd className="mt-1">{item.text}</dd></div>)}</dl>
           <nav aria-label="Quick start" className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-[#e7d8cf] pt-4 text-sm font-semibold text-[#8F3D27]">{post.quickStart.links.map(item => <a key={item.href} href={item.href} className="underline underline-offset-4">{item.label} <span aria-hidden="true">↗</span></a>)}</nav>
         </div>}
-        <img src={post.image} alt={post.imageAlt} width={1200} height={675} className="mt-8 h-auto w-full rounded-2xl border border-[#e7d8cf]" />
+        <img src={post.image} alt={post.imageAlt} width={post.imageWidth ?? 1200} height={post.imageHeight ?? 675} className="mt-8 h-auto w-full rounded-2xl border border-[#e7d8cf]" />
       </div>
       <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,48rem)_1fr]">
         <article className="guide min-w-0">

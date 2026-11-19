@@ -3,7 +3,7 @@ import { BLOG_POSTS, blogPath, type BlogPost, readingMinutes } from '@/lib/blog'
 
 export function PostCard({ post }: { post: BlogPost }) {
   return <Link href={blogPath(post)} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#e7d8cf] bg-white transition-colors hover:border-[#B55233]">
-    <img src={post.image} alt={post.imageAlt} width={1200} height={675} loading="lazy" className="aspect-video w-full object-cover" />
+    <img src={post.image} alt={post.imageAlt} width={post.imageWidth ?? 1200} height={post.imageHeight ?? 675} loading="lazy" className="aspect-video w-full object-cover" />
     <div className="flex flex-1 flex-col p-6">
       <div className="mb-3 flex items-center justify-between gap-3 text-xs font-semibold text-[#8F3D27]"><span>{post.category}</span><span className="font-normal text-[#6d5a52]">{readingMinutes(post)} min read</span></div>
       <h2 className="text-xl font-bold leading-snug tracking-tight text-[#211612] group-hover:text-[#8F3D27]">{post.headline}</h2>

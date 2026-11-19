@@ -7,6 +7,7 @@ export type ContentBlock =
   | { type: 'code' | 'prompt'; text: string; label: string }
   | { type: 'list'; items: string[] }
   | { type: 'links'; items: { label: string; href: string }[] }
+  | { type: 'screenshot'; src: string; alt: string; caption: string; width: number; height: number }
   | { type: 'animation-example'; exampleId?: AnimationExampleId }
 
 export type BlogPost = {
@@ -19,6 +20,8 @@ export type BlogPost = {
   modified?: string
   image: string
   imageAlt: string
+  imageWidth?: number
+  imageHeight?: number
   intro: string
   /** Optional above-the-fold summary and fragment links for a guide with a working example. */
   quickStart?: {
@@ -33,11 +36,147 @@ const code = (label: string, text: string): ContentBlock => ({ type: 'code', lab
 const prompt = (label: string, text: string): ContentBlock => ({ type: 'prompt', label, text })
 const list = (...items: string[]): ContentBlock => ({ type: 'list', items })
 const links = (...items: { label: string; href: string }[]): ContentBlock => ({ type: 'links', items })
+const screenshot = (src: string, alt: string, caption: string, width: number, height: number): ContentBlock => ({ type: 'screenshot', src, alt, caption, width, height })
 
 export const BLOG_TITLE = 'Animation with Claude & Codex | Chorono Blog'
 export const BLOG_DESCRIPTION = 'Learn to make editable 2D animations with Claude Code and Codex. Follow local setup guides, connect Chorono through MCP and try practical animation prompts.'
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'free-2d-animation-software',
+    title: 'Free 2D Animation Software: Choose by Workflow | Chorono',
+    headline: 'Free 2D animation software: choose the right workflow',
+    description: 'Compare free 2D animation software for hand-drawn frames, vector tweening and editable motion graphics. See where Chorono fits and try a real project.',
+    category: 'Free 2D animation software',
+    published: '2026-11-19T00:00:00Z',
+    image: '/examples/brief-to-motion.png',
+    imageAlt: 'An editable Chorono motion graphic with three cards labeled Brief, Build and Refine.',
+    imageWidth: 1200,
+    imageHeight: 675,
+    intro: 'The best free 2D animation software depends on what you need to animate. Drawing a new pose on every frame, moving vector artwork between keyframes and building editable text motion are different jobs. This guide compares four free tools by workflow, then lets you inspect a real Chorono project before choosing one.',
+    sections: [
+      { id: 'choose-by-workflow', heading: 'Start with the animation you need to make', blocks: [
+        text('Ask what must remain editable and how you will deliver the result. A hand-drawn cartoon needs drawing and frame controls. A title or process graphic needs text, shapes and timing. A video clip needs a tested video export path. A free license alone does not answer those questions.'),
+        list('Draw a different pose frame by frame: start with a drawing-focused tool such as Pencil2D.', 'Move vector shapes between poses: inspect Synfig’s tweening and layer workflow.', 'Combine drawn 2D work with a 3D scene: inspect Blender Grease Pencil.', 'Animate editable text, shapes and interface illustrations in a local browser editor: try Chorono.'),
+        text('These are starting points, not a ranking of every animation app. Test one small project in the tool that matches your work, then verify its editable source and required output.'),
+      ] },
+      { id: 'compare-tools', heading: 'Compare four free 2D animation workflows', blocks: [
+        text('Pencil2D is a free, open-source desktop drawing app for traditional hand-drawn animation with bitmap and vector graphics. Its official description makes it the clearest first test when you want to draw new frames, rather than move a prepared title around.'),
+        text('Synfig is a free, open-source desktop 2D animation app built around vector and bitmap artwork. Its vector tweening calculates in-between frames from key positions; it also offers layers and bone controls. Try it when repeated shape or cutout motion is central to your project.'),
+        text('Blender Grease Pencil brings 2D drawing into a 3D environment. Blender documents frame-by-frame drawing, whole-object motion and onion skinning. Choose a small test there when mixing 2D marks with 3D staging matters more than a focused 2D title workflow.'),
+        text('Chorono is a free, open-source 2D editor that runs locally and opens in your browser. It has named layers, keyframes and a timeline for text and shape motion. You can edit manually or connect Codex or Claude Code through MCP. The separate agent account is managed by its provider.'),
+        links(
+          { label: 'Pencil2D: official product overview', href: 'https://www.pencil2d.org/about' },
+          { label: 'Synfig: official features and license', href: 'https://www.synfig.org/' },
+          { label: 'Blender: official Grease Pencil workflow', href: 'https://www.blender.org/features/story-artist/' },
+          { label: 'Chorono: free editor and source', href: '/' },
+        ),
+      ] },
+      { id: 'try-editable-example', heading: 'Try an editable 2D motion graphics project', blocks: [
+        text('Play Brief to motion below. It is an eight-second process graphic with 18 named layers and 26 animation tracks. Download the portable Chorono project and open it in a separate local editor tab with Open Scene JSON. Replace one card title, scrub its entrance and save a new source file.'),
+        { type: 'animation-example', exampleId: 'brief-to-motion' },
+        text('The example demonstrates editable text and shape animation, not a frame-by-frame character drawing workflow. Its browser preview plays exported scene data; the portable JSON is the source you can reopen. If you need MP4 or GIF delivery, verify that path separately before committing to the editor.'),
+        links({ label: 'Install Chorono locally', href: '/getting-started' }, { label: 'Read the motion graphics software guide', href: '/motion-graphics-software' }),
+      ] },
+      { id: 'decision-checklist', heading: 'Choose a free animation tool with one practical test', blocks: [
+        list('Create a five-second sample of the actual work you intend to deliver.', 'Change one word, pose or motion after the first version and check whether the source stays editable.', 'Save, close and reopen the project before judging the workflow.', 'Export the format your destination requires and inspect the result there.', 'Check the license and any separate service costs for the complete workflow.'),
+        text('For a hand-drawn short, compare drawing feel and onion skin controls. For a small web motion graphic, compare text editing, keyframe timing and playback output. If an AI agent helps, ask it to change one named object and verify the rest of the scene afterward.'),
+        links({ label: 'Make a first Chorono animation', href: '/docs/first-animation' }, { label: 'Keep AI animation editable', href: '/blog/ai-animation-generator-manual-editing' }, { label: 'Understand onion skinning in Chorono', href: '/docs/editor/timeline/onion-skin' }),
+      ] },
+    ],
+  },
+  {
+    slug: 'ai-animation-generator-manual-editing',
+    title: 'AI Animation Generator with Manual Editing | Chorono',
+    headline: 'AI animation generator with manual editing',
+    description: 'Generate a 2D animation with Claude Code or Codex, then refine its text, shapes and keyframes by hand in Chorono. Try a real editable project.',
+    category: 'AI animation workflow',
+    published: '2026-11-19T00:00:00Z',
+    image: '/examples/first-animation.png',
+    imageAlt: 'Make it yours: a four-second 2D animation with editable text and three moving circles.',
+    imageWidth: 1280,
+    imageHeight: 720,
+    intro: 'An AI animation generator is most useful when the first result is a starting point. Chorono lets Claude Code or Codex build a 2D scene in a connected local editor. You can then change its text, shapes and keyframes by hand, and ask the agent to revise a specific part of the same scene.',
+    sections: [
+      { id: 'try-the-scene', heading: 'Try an AI-made animation that remains editable', blocks: [
+        text('Play Make it yours, a four-second scene with eight named layers, 13 animation tracks and 51 keyframes. The title and three circles are native editor objects. Download the portable project, then open it in a separate local Chorono editor tab with Open Scene JSON.'),
+        { type: 'animation-example', exampleId: 'first-animation' },
+        text('The preview shows the actual animation. The downloadable project keeps the text, color and motion values available to change. Chorono runs locally in your browser after installation; Claude Code or Codex is a separate agent client connected through MCP. This workflow creates editable 2D animation, not generated video footage.'),
+        links({ label: 'Install the editor and open your first project', href: '/getting-started' }, { label: 'See the first-animation tutorial', href: '/docs/first-animation' }),
+      ] },
+      { id: 'edit-by-hand', heading: 'Edit the AI-generated animation by hand', blocks: [
+        text('Select Editable headline in Layers and change its Content field to your own short phrase. Select Motion dot 1 and choose a new fill color. In the timeline, move the playhead to inspect how the dots travel; change one keyframe only after you have checked the starting and final states.'),
+        screenshot('/docs/screenshots/first-animation-editor.jpg', 'The first-animation project open in Chorono, with Editable headline selected, its text field visible and the timeline below.', 'The same downloadable project in Chorono. The selected text layer, editable Content field and timeline are all visible.', 1280, 720),
+        text('Play the whole four seconds after your edit. Save Scene JSON under a new filename and reopen it to confirm the text, color and timing are still present. Keep this portable project as the editable source for later revisions.'),
+        links({ label: 'Learn how layers and keyframes work', href: '/keyframe-animation' }, { label: 'Read the project saving guide', href: '/docs/editor/projects' }),
+      ] },
+      { id: 'continue-with-agent', heading: 'Ask Codex or Claude to revise the current scene', blocks: [
+        text('Connect the open editor through its MCP control. Ask the agent to inspect the current scene before changing it, name the one layer to revise and state which manual changes to retain. A focused request is easier to inspect than regenerating the whole composition.'),
+        screenshot('/docs/screenshots/mcp-connect-v2.jpg', 'Chorono editor connection dialog with the Connect this editor button for Claude Code and Codex.', 'Connect the editor tab that contains your manually edited project before asking the agent for a revision.', 528, 306),
+        prompt('Follow-up prompt after your manual edit', 'Use the chorono skill and read the currently connected first-animation scene and its revision. I changed the Editable headline text and Motion dot 1 fill color by hand. Keep those values, all layer names, the eight layers and the four-second duration. Change only Motion dot 2 so its first upward movement starts 200 ms later; keep its starting and final positions. Preserve every other layer and animation track. Inspect frames around the changed movement, validate, save a separately named portable project and report what changed.'),
+        text('Compare the saved project with your manual version before using it as the new source. Confirm your title and color stayed as you set them and that only the requested motion changed. If the scene changed after the agent read it, the agent should read the latest revision again before applying an edit.'),
+        links({ label: 'Connect Claude Code or Codex through MCP', href: '/docs/ai/mcp' }, { label: 'Read how targeted scene edits work', href: '/docs/scripting' }),
+      ] },
+      { id: 'verify-the-motion', heading: 'Check what the AI animation actually did', blocks: [
+        text('A good-looking still frame cannot confirm motion. The November 2026 MotionGraphicsBench research from Figma and Stanford tests whether models follow pose, path and timing instructions when animating an existing design. It is a benchmark of model behavior, not a test of this Chorono project.'),
+        list('Pose: compare the object’s starting and final positions with the brief.', 'Path: scrub intermediate frames to catch a wrong direction or an unexpected jump.', 'Timing: check which object moves first and whether linked events stay coordinated.', 'Editability: reopen the saved project and change a named text layer or keyframe.'),
+        text('Use the project above as a small check. A revision should preserve the headline and color you changed by hand while moving only the requested dot. Inspect the saved result before treating the agent’s report as proof.'),
+        links({ label: 'Read the MotionGraphicsBench research', href: 'https://huggingface.co/blog/figma-ai/motion-graphics-bench' }, { label: 'Keep manual edits during Codex revisions', href: '/blog/codex-animation-preserve-manual-edits' }),
+      ] },
+      { id: 'choose-a-generator', heading: 'What kind of AI animation generator do you need?', blocks: [
+        text('If you want AI motion graphics made from editable text and shapes, Chorono gives you a local animation editor with layers, a timeline and keyframes. The agent helps make the first version; you can refine the scene yourself or request another targeted edit.'),
+        list('For animated titles, loading loops and small 2D explainers, start with an editable Chorono project.', 'For generated live-action or cinematic video footage, use a video generation workflow; the Chorono project shown here does not produce footage.', 'For a finished MP4 or GIF, check the export workflow you need before choosing a tool. This example supplies an editable project and a browser playback preview.'),
+        text('A one-prompt result is a draft, not the limit of the workflow. The practical test is whether you can select a layer, change a value, save the source and continue working on that same scene.'),
+      ] },
+      { id: 'questions', heading: 'Questions about editable AI animation', blocks: [
+        text('Can I edit an AI-generated animation after creating it? In this Chorono example, yes: open the portable project and change its native text, shape and keyframe values in the editor.'),
+        text('Will a later Codex or Claude request keep my manual changes? A targeted revision can read the current scene and preserve unrelated values. Check the result before saving it as your next source; a request that replaces entire objects or uses an old scene state needs correction.'),
+        text('Is this an instant online AI video generator? No. Install and run the Chorono editor locally, connect your own Claude Code or Codex client through MCP, and work with editable 2D scene data.'),
+        links({ label: 'Make an animation with Codex', href: '/blog/make-animations-with-codex' }, { label: 'Make an animation with Claude Code', href: '/blog/make-animations-with-claude' }, { label: 'Browse more editable examples', href: '/animations' }),
+      ] },
+    ],
+  },
+  {
+    slug: 'codex-animation-preserve-manual-edits',
+    title: 'Keep Manual Animation Edits During Codex Revisions | Chorono',
+    headline: 'Keep manual edits when Codex revises an animation',
+    description: 'Keep manual animation edits when you ask Codex for another targeted change. Follow a real Chorono scene, timeline screenshot and revision checklist.',
+    category: 'Codex revisions',
+    published: '2026-11-19T00:00:00Z',
+    image: '/examples/codex-loading-loop.png',
+    imageAlt: 'A little progress, every day above three circles in an editable Codex-made animation.',
+    imageWidth: 1024,
+    imageHeight: 768,
+    intro: 'A prompt can make the first version of an animation. The harder part comes after you fix the text, color or timing yourself: can Codex continue without replacing those edits? In Chorono, both you and a connected Codex client work on the same native scene. This guide shows how to request a narrow revision and check what changed.',
+    sections: [
+      { id: 'open-the-project', heading: 'Start with the actual Codex animation project', blocks: [
+        text('Play and download the four-second loading loop below. Codex created one headline and three named circles in Chorono. The portable project contains four layers, three animation tracks and 24 keyframes; the preview is playback of that scene, not a video-generation mockup.'),
+        { type: 'animation-example', exampleId: 'codex-loading-loop' },
+        text('Open the downloaded JSON in a separate local editor tab with Open Scene JSON. Select the Headline layer to change its wording, or select a dot and adjust its fill color. Save Scene JSON under a new name before asking Codex to continue.'),
+        links({ label: 'Install Chorono and connect Codex', href: '/blog/make-animations-with-codex' }, { label: 'Read the project saving guide', href: '/docs/editor/projects' }),
+      ] },
+      { id: 'manual-edit', heading: 'Make one change yourself and inspect its timeline', blocks: [
+        text('For a clear before-and-after check, change the headline to “Still moving forward.” and make the left dot blue. Leave the four-second duration and the dot tracks as they are. Play the scene and confirm the new words fit above the motion.'),
+        screenshot('/docs/screenshots/timeline-panel-v2.jpg', 'The Codex loading-loop timeline in Chorono, showing separate position tracks and keyframes for the left, middle and right dots.', 'The same loading-loop project has separate named tracks for each dot, so a later request can target one motion without rebuilding the scene.', 1280, 489),
+        text('The timeline screenshot shows the original Codex loading-loop project before the manual example changes. Your own saved copy is the baseline to compare with the later agent revision.'),
+      ] },
+      { id: 'codex-revision', heading: 'Tell Codex exactly what to change and keep', blocks: [
+        text('Reconnect the editor tab that contains your saved manual version. Codex should read the current scene and revision, identify the named Middle dot track and change only its timing. The prompt below makes the human edits explicit so the result can be checked.'),
+        prompt('Codex prompt · revise the current scene', 'Use the chorono skill in the connected editor. Read the current loading-loop scene and revision before editing. I changed the Headline text to “Still moving forward.” and the Left dot fill to blue by hand. Keep those changes, every layer name, the four-second loop and all other tracks. Change only the Middle dot position track so its first upward movement starts 150 ms later while it still returns to the original starting position at the loop boundary. Inspect the middle of the loop and both sides of the boundary, validate, then save a separately named portable project. Report the exact layer and track changed.'),
+        text('A later manual change can make a previously read scene revision stale. Chorono’s agent workflow uses the current scene revision for edits; when it changes, Codex should read the scene again and adapt rather than apply an old plan. A narrow request helps, but the saved result still needs your review.'),
+        links({ label: 'Read Chorono scripting and revision checks', href: '/docs/scripting' }, { label: 'See the editor connection step', href: '/docs/ai/mcp' }),
+      ] },
+      { id: 'compare', heading: 'Check that your manual work survived', blocks: [
+        list('Open the revised portable project and confirm the Headline still says “Still moving forward.”', 'Confirm the Left dot is still blue and the named layers are present.', 'Scrub the Middle dot movement and the loop boundary; compare them with the manual baseline.', 'If the agent changed unrelated values, return to the saved manual version and request a smaller correction.'),
+        text('This test distinguishes the one requested timing change from the manual edits you wanted to keep. Save the verified file as the new editable source. The current article provides the exercise and original project; it does not present a completed before-and-after preservation test.'),
+      ] },
+      { id: 'why-this-matters', heading: 'Why a second prompt can overwrite manual animation work', blocks: [
+        text('If an agent generates a replacement scene from an earlier description, it may not include changes you made later in an editor. That is a workflow risk, not a universal Codex behavior. Working on the currently connected native scene, naming the object to change and checking the revision make the next edit more controlled.'),
+        text('Chorono is an animation editor with live text, shapes and keyframes. It is not an instant hosted video generator. If you need generated footage or a finished MP4, evaluate that separate production path. If you need AI motion graphics you can still refine by hand, use the editable project as your source.'),
+        links({ label: 'AI animation generator workflow with manual editing', href: '/blog/ai-animation-generator-manual-editing' }, { label: 'See more editable animation examples', href: '/animations' }),
+      ] },
+    ],
+  },
   {
     slug: 'heart-like-and-hamburger-menu-animation',
     title: 'Heart Like & Hamburger Menu Animation: Interactive Examples | Chorono',
@@ -319,7 +458,7 @@ export function blogStructuredData(post?: BlogPost) {
         ...(post ? [{ '@type': 'ListItem', position: 3, name: post.headline, item: url }] : []),
       ] },
       ...(post ? [
-        { '@type': 'ImageObject', '@id': imageId, url: `${SITE_URL}${post.image}`, contentUrl: `${SITE_URL}${post.image}`, width: 1200, height: 675, caption: post.imageAlt, encodingFormat: 'image/png' },
+        { '@type': 'ImageObject', '@id': imageId, url: `${SITE_URL}${post.image}`, contentUrl: `${SITE_URL}${post.image}`, width: post.imageWidth ?? 1200, height: post.imageHeight ?? 675, caption: post.imageAlt, encodingFormat: post.image.endsWith('.jpg') || post.image.endsWith('.jpeg') ? 'image/jpeg' : 'image/png' },
         { '@type': 'BlogPosting', '@id': `${url}#article`, url, headline: post.headline, description: post.description, image: { '@id': imageId }, author: { '@id': `${SITE_URL}/#team` }, publisher: { '@id': `${SITE_URL}/#team` }, datePublished: post.published, dateModified: post.modified ?? post.published, articleSection: post.sections.map(section => section.heading), inLanguage: 'en', isAccessibleForFree: true, mainEntityOfPage: { '@id': `${url}#webpage` }, isPartOf: { '@id': `${blogUrl}#blog` }, about: { '@id': `${SITE_URL}/#software` }, ...(exampleIds.length ? { hasPart: exampleIds.map(id => ({ '@id': `${SITE_URL}/examples/${id}#work` })) } : {}) },
       ] : [{ '@type': 'ItemList', '@id': `${url}#posts`, name: 'Animation setup and prompt guides', itemListElement: BLOG_POSTS.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.headline, url: `${SITE_URL}${blogPath(item)}` })) }]),
       ...exampleIds.flatMap(id => animationExampleEntities(SITE_URL, id)),

@@ -249,6 +249,16 @@ const establishedPages: readonly DocumentationPage[] = [
     group: 'AI & scripting',
   },
   {
+    slug: 'ai/edit-selection',
+    source: 'docs/en/edit-selection-with-agent.md',
+    label: 'Edit with Claude or Codex',
+    title: 'Edit animations with Claude or Codex',
+    description:
+      'Use Chorono’s Agent menu to explain, troubleshoot or edit selected animation layers with Claude or Codex. Read MCP selection context and review focused revisions.',
+    section: 'ai',
+    group: 'AI & scripting',
+  },
+  {
     slug: 'ai/skills',
     source: 'docs/en/agent-skills.md',
     label: 'Agent skills',

@@ -6,7 +6,7 @@
     "title": "Chorono documentation",
     "description": "Learn Chorono with editable animation examples. Install the editor, edit keyframes, build loops and connect Claude Code or Codex through MCP.",
     "group": "Getting started",
-    "sourceHash": "538ea140634d096b4924d9f969eb7e4c73c3cd04a7085726de4261d252bf71a8"
+    "sourceHash": "bd5ed3a306869d2ea113c419742c5d78942c0f494c4879a4cf12d1a461067ae5"
   },
   {
     "slug": "installation",
@@ -60,7 +60,7 @@
     "title": "Connect your AI agent with MCP",
     "description": "Connect Claude Code or Codex to a real Chorono editor through MCP and check the scene before making changes.",
     "group": "AI & scripting",
-    "sourceHash": "faa0c06c98199dea97985838e2c2b5671096a64e56a2c8630ed9b14712975dbe"
+    "sourceHash": "186259f9e158d11d3254f3fe72147d3b4c3445cc92fbfeffbd4d7c696ebc8e9d"
   },
   {
     "slug": "ai/skills",

@@ -26,6 +26,14 @@ Refreshing the browser tab requires connecting it again. Installing a skill alon
 
 Want to test the connection with a real animation? Follow [Make an editable animation with Codex](https://www.chorono.com/blog/make-animations-with-codex) to create a four-second loop, inspect its motion and download the project.
 
+## Open Agent connections
+
+Open **MCP** in the editor toolbar, or right-click an object on the canvas, in **Layers** or in **Scene Explorer** and choose **Agent → Agent connections…**. Both entry points open the same window. Choose **Connect this editor**, then verify the connection from your agent client.
+
+Claude Code, Claude Desktop, Codex and other MCP-compatible clients share this editor connection. Configure your chosen client's MCP server first using the [installation guide](installation.md); opening this window does not install or launch the client.
+
+To explain, investigate or revise specific objects, continue with [Edit animations with Claude or Codex](edit-selection-with-agent.md#use-the-agent-menu). Those menu actions copy a focused prompt for you to paste into your agent chat.
+
 ## Check the connection
 
 Use the same client selector that you used during setup:

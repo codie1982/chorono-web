@@ -1,0 +1,13 @@
+keyword,location_code,language,estimated_monthly_searches,keyword_difficulty,metric_status,target,role,checked_on
+claude animation,2840,en,170,3,returned,/docs/ai/edit-selection,supporting phrase within selected-object task,2026-11-20
+claude code animation,2840,en,70,0,returned,/docs/ai/edit-selection,supporting phrase; existing creation tutorial retained,2026-11-20
+codex animation,2840,en,10,4,returned,/docs/ai/edit-selection,supporting phrase; existing creation tutorial retained,2026-11-20
+ai animation editor,2840,en,20,,returned,/docs/ai/edit-selection,secondary product context,2026-11-20
+claude mcp,2840,en,5400,5,returned,/docs/ai/mcp,existing Chorono-specific connection guide; broad demand not addressable in full,2026-11-20
+codex mcp,2840,en,1600,5,returned,/docs/ai/mcp,existing Chorono-specific connection guide; broad demand not addressable in full,2026-11-20
+animation mcp,2840,en,,,not returned,/docs/ai/edit-selection,task terminology; volume unknown,2026-11-20
+mcp animation editor,2840,en,,,not returned,/docs/ai/edit-selection,task terminology; volume unknown; SERP failed,2026-11-20
+mcp selected objects,2840,en,,,not returned,/docs/ai/edit-selection#read-selected-objects-through-mcp,technical task; volume unknown,2026-11-20
+edit animation with ai,2840,en,,,not returned,/docs/ai/edit-selection,task terminology; volume unknown,2026-11-20
+codex animation editor,2840,en,,,not returned,/docs/ai/edit-selection,task terminology; volume unknown,2026-11-20
+mcp server animation,2840,en,,,not returned,/docs/ai/mcp,connection terminology; volume unknown,2026-11-20

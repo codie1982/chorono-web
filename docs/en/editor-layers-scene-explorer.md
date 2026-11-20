@@ -18,6 +18,8 @@ Visibility, Lock, Solo and Pin are separate states. Use Exit isolation to leave 
 
 Right-click a row for duplication, deletion, grouping and other available actions. After moving a layer in the hierarchy, check its placement: a parent transform affects its children. Keep [Clone and Instance](editor-layers-cloning.md) separate from ordinary group organization.
 
+The same row menu includes **Agent** for context, explanations, problem investigation and focused edits. It uses the selected set when you right-click a selected member. Read [Edit animations with Claude or Codex](edit-selection-with-agent.md#use-the-agent-menu) before transferring a prompt to your connected agent chat.
+
 ## Isolate a branch temporarily
 
 Use **Isolate** to focus on selected branches while keeping the parent context needed to position them. Children you manually hid stay hidden. Choose **Exit isolation** to return to the full scene; edits made while isolated remain.

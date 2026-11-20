@@ -10,6 +10,8 @@ Select a layer in the panel to inspect it on the canvas. Give it a descriptive n
 
 Use the hierarchy when a small object is difficult to click or another layer covers it. Check that the Properties panel identifies the intended selection before editing.
 
+For a focused AI revision, right-click a layer and choose **Agent**. The menu can copy context, request an explanation or prepare an edit prompt for Claude or Codex. Follow the [selection and Agent guide](edit-selection-with-agent.md#use-the-agent-menu); paste the copied prompt into your connected chat.
+
 ## Groups and drawing order
 
 Group related objects when they should be organized or transformed together. A parent transform affects its children, so a child's position belongs to its parent coordinate space. Ungroup only after checking the resulting placement and animation.

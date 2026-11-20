@@ -2,7 +2,12 @@ import assert from 'node:assert/strict'
 
 const origin = (process.argv[2] ?? 'http://127.0.0.1:3000').replace(/\/$/, '')
 const canonicalOrigin = 'https://www.chorono.com'
-const blogSlugs = ['make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex', 'progress-bar-and-success-animation', 'heart-like-and-hamburger-menu-animation']
+const blogSlugs = ['free-2d-animation-software', 'ai-animation-generator-manual-editing', 'codex-animation-preserve-manual-edits', 'make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex', 'progress-bar-and-success-animation', 'heart-like-and-hamburger-menu-animation']
+const blogImages = {
+  'free-2d-animation-software': { src: '/examples/brief-to-motion.png', sizes: '1200x675' },
+  'ai-animation-generator-manual-editing': { src: '/examples/first-animation.png', sizes: '1280x720' },
+  'codex-animation-preserve-manual-edits': { src: '/examples/codex-loading-loop.png', sizes: '1024x768' },
+}
 const useCases = {
   '/motion-graphics-software': { id: 'brief-to-motion', duration: 8000, layers: 18, tracks: 26 },
   '/text-animation': { id: 'make-it-clear', duration: 6000, layers: 7, tracks: 8 },
@@ -39,7 +44,7 @@ for (const path of pages) {
   const expected = new URL(path, canonicalOrigin).href
   const isPost = path.startsWith('/blog/')
   const isHub = path === '/blog'
-  const guideImage = fundamentals.includes(path) ? '/examples/ideas-in-motion.png' : useCases[path] ? `/examples/${useCases[path].id}.png` : path === '/' || isHub ? '/opengraph-image.png' : isPost ? `${path}.png` : `/guides${path}.png`
+  const guideImage = fundamentals.includes(path) ? '/examples/ideas-in-motion.png' : useCases[path] ? `/examples/${useCases[path].id}.png` : path === '/' || isHub ? '/opengraph-image.png' : isPost ? (blogImages[path.slice('/blog/'.length)]?.src ?? `${path}.png`) : `/guides${path}.png`
   assert.equal(new URL(links.find(link => link.rel === 'canonical')?.href).href, expected, `${path}: canonical`)
   assert.equal(new URL(metas.find(meta => meta.property === 'og:url')?.content).href, expected, `${path}: Open Graph URL`)
   assert.equal(metas.find(meta => meta.property === 'og:image')?.content, `${canonicalOrigin}${guideImage}`)
@@ -130,7 +135,7 @@ for (const path of pages) {
     const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)[1]
     assert.deepEqual(article.articleSection, [...main.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
     if (isPost) {
-      assert.match(article.datePublished, ['/blog/progress-bar-and-success-animation', '/blog/heart-like-and-hamburger-menu-animation'].includes(path) ? /^2026-11-08T\d{2}:\d{2}:\d{2}Z$/ : /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
+      assert.match(article.datePublished, blogImages[path.slice('/blog/'.length)] ? /^2026-11-19T\d{2}:\d{2}:\d{2}Z$/ : ['/blog/progress-bar-and-success-animation', '/blog/heart-like-and-hamburger-menu-animation'].includes(path) ? /^2026-11-08T\d{2}:\d{2}:\d{2}Z$/ : /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
       assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Publication timestamp must be valid')
       assert.ok(Number.isFinite(Date.parse(article.dateModified)) && Date.parse(article.dateModified) >= Date.parse(article.datePublished), 'Modification date must follow publication')
       if (article.dateModified !== article.datePublished) assert.ok(html.includes(`dateTime="${article.dateModified}"`) || html.includes(`datetime="${article.dateModified}"`), 'Updated date must be visible')
@@ -208,7 +213,7 @@ const existingUrls = pages.map(path => new URL(path, canonicalOrigin).href)
 assert.ok(existingUrls.every(url => publicUrls.includes(url)), 'Existing public URL coverage must survive the feature release')
 const addedUrls = publicUrls.filter(url => !existingUrls.includes(url))
 const featureReleased = sitemapFiles.some(file => file.pathname === '/sitemap-docs-start.xml')
-assert.equal(addedUrls.length, featureReleased ? 72 : 0, 'Only reviewed, released docs/library pages enter the live index')
+assert.equal(addedUrls.length, featureReleased ? 76 : 0, 'Only reviewed, released docs/library pages enter the live index')
 for (const url of addedUrls) {
   const location = new URL(url)
   assert.equal(location.origin, canonicalOrigin)
@@ -268,7 +273,7 @@ console.log(`PASS ${expected.id}: portable project, matching runtime timeline, e
 
 const manifest = await (await fetchChecked('/manifest.webmanifest', /(?:manifest\+json|application\/json)/)).json()
 assert.equal(manifest.name, 'Chorono Animator')
-for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, { src: '/examples/codex-loading-loop.png', sizes: '1024x768' }, ...['progress-bar', 'success-confirmation', 'heart-like', 'hamburger-menu'].map(id => ({ src: `/examples/${id}.png`, sizes: '1200x675' })), ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
+for (const item of [...manifest.icons, { src: '/apple-touch-icon.png', sizes: '180x180' }, { src: '/opengraph-image.png', sizes: '1200x630' }, { src: '/guides/getting-started.png', sizes: '1200x675' }, { src: '/guides/agent-skills.png', sizes: '1200x675' }, { src: '/examples/ideas-in-motion.png', sizes: '1200x675' }, { src: '/examples/codex-loading-loop.png', sizes: '1024x768' }, ...['progress-bar', 'success-confirmation', 'heart-like', 'hamburger-menu'].map(id => ({ src: `/examples/${id}.png`, sizes: '1200x675' })), ...Object.values(useCases).map(item => ({ src: `/examples/${item.id}.png`, sizes: '1200x675' })), ...blogSlugs.filter(slug => !blogImages[slug]).map(slug => ({ src: `/blog/${slug}.png`, sizes: '1200x675' }))]) {
   const buffer = Buffer.from(await (await fetchChecked(item.src, /image\/png/)).arrayBuffer())
   assert.equal(buffer.subarray(1, 4).toString(), 'PNG', `${item.src}: PNG signature`)
   assert.equal(`${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}`, item.sizes, `${item.src}: dimensions`)

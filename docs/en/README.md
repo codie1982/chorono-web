@@ -39,6 +39,7 @@ Use the live [keyframe animation guide](https://www.chorono.com/keyframe-animati
 
 - [Agent skills](agent-skills.md): install instructions for connection and scene authoring.
 - [JavaScript scene scripting](scripting.md): create native layers and timelines through the isolated MCP scripting bridge.
+- [Edit with Claude or Codex](edit-selection-with-agent.md): use the Agent menu to explain, investigate or revise selected objects.
 - [Troubleshooting](troubleshooting.md): diagnose missing sessions, stale configuration and startup problems.
 
 MCP connects the agent to a running editor. A skill supplies instructions. Installing a skill alone does not start Chorono or connect an editor tab.

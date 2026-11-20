@@ -23,3 +23,11 @@ When both a parent and its child are selected, a shared transform moves the sele
 Dragging previews the change. Releasing commits one Undo step; Escape or a cancelled gesture leaves the source unchanged. If the selected transforms cannot represent the result without loss, the editor rejects the operation and explains the constraint.
 
 To adjust spacing precisely, click a displayed horizontal or vertical gap and [edit the selection gap](editor-canvas-snapping.md#measure-and-edit-selection-gaps). To focus on a branch, use [temporary isolation](editor-layers-scene-explorer.md#isolate-a-branch-temporarily).
+
+## Explain or edit selected objects with an agent
+
+Right-click an object and open **Agent** to copy its context, request an explanation, investigate a problem or describe a focused edit. When the object belongs to a multi-selection, the menu targets that set. Paste the prepared prompt into your connected agent chat.
+
+For a direct question such as “What is selected?”, MCP's `get_scene.selected` reports the current objects with their IDs, names, types, stable addresses and parent IDs. An empty selection is different from selection information being unavailable.
+
+Follow [Edit animations with Claude or Codex](edit-selection-with-agent.md) for the menu actions, selection response examples and revision checks.

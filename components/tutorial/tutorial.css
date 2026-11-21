@@ -1,0 +1,47 @@
+.tutorial-journey, .tutorial-install, .tutorial-star-dialog { --tutorial-bg: #171b18; --tutorial-text: #f1f0e9; --tutorial-muted: #bdc1bb; --tutorial-line: #41483f; --tutorial-accent: #ffad7d; }
+.tutorial-journey { margin: 32px 0; padding: clamp(22px, 4vw, 36px); border: 1px solid var(--tutorial-line); border-radius: 6px; background: var(--tutorial-bg); color: var(--tutorial-text); }
+.tutorial-journey .tutorial-eyebrow, .tutorial-install .tutorial-eyebrow, .tutorial-star-dialog .tutorial-eyebrow { margin: 0 0 12px; color: var(--tutorial-accent); font-size: 11px; line-height: 1.6; letter-spacing: .12em; font-weight: 600; }
+.tutorial-journey h2 { margin: 0 0 16px; font-size: clamp(24px, 3vw, 34px); line-height: 1.2; letter-spacing: -.035em; color: var(--tutorial-text); text-wrap: balance; }
+.tutorial-journey p { color: var(--tutorial-muted); font-size: 15px; line-height: 1.8; }
+.tutorial-steps { list-style: none; margin: 24px 0 0; padding: 0; }
+.tutorial-steps li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-top: 1px solid var(--tutorial-line); }
+.tutorial-step-number { color: var(--tutorial-accent); font: 12px/44px ui-monospace, monospace; }
+.tutorial-steps li p { margin: 2px 0 0; }
+.tutorial-journey a.tutorial-text-link, .tutorial-install a.tutorial-text-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--tutorial-text); font-size: 15px; font-weight: 600; text-underline-offset: 5px; }
+.tutorial-install { position: relative; isolation: isolate; overflow: hidden; min-height: 380px; margin: 28px 0; border: 1px solid #3e4848; border-radius: 8px; background: #101c24; color: var(--tutorial-text); }
+.tutorial-install-art { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+.tutorial-install::before { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgb(9 19 27 / .98) 0%, rgb(9 19 27 / .92) 27%, rgb(9 19 27 / .65) 44%, rgb(9 19 27 / .12) 66%, transparent 100%); pointer-events: none; }
+.tutorial-install-content { position: relative; width: 54%; padding: clamp(24px, 4vw, 36px); }
+.tutorial-install h3 { max-width: 12ch; margin: 0 0 16px; font-size: clamp(28px, 3.4vw, 36px); font-weight: 650; line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
+.tutorial-install p { color: #e0e4e1; font-size: 14px; line-height: 1.8; }
+.tutorial-install-actions { display: flex; align-items: flex-start; flex-direction: column; gap: 12px; margin-top: 22px; }
+a.tutorial-button { display: inline-flex; min-height: 48px; justify-content: center; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 5px; background: var(--tutorial-accent); color: #191712; font-size: 14px; font-weight: 700; text-decoration: none; text-align: center; }
+a.tutorial-button:hover { background: #ffc09c; }
+.tutorial-journey a:focus-visible, .tutorial-install a:focus-visible, .tutorial-star-dialog :focus-visible { outline: 2px solid var(--tutorial-accent); outline-offset: 4px; }
+.tutorial-snippet { margin: 24px 0; min-width: 0; }
+.tutorial-snippet-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; border-bottom: 1px solid #41483f; border-radius: 5px 5px 0 0; padding: 8px 14px; background: #171b18; color: #f1f0e9; font-size: 12px; line-height: 1.6; }
+.tutorial-snippet-toolbar > span { min-width: 0; overflow-wrap: anywhere; }
+.tutorial-snippet-toolbar button { display: inline-flex; flex-shrink: 0; min-height: 44px; gap: 8px; align-items: center; padding: 0 10px; border: 1px solid #60675d; border-radius: 5px; }
+.tutorial-snippet-toolbar button:hover { background: #30372e; }
+.guide .tutorial-snippet pre { margin: 0; max-width: 100%; border-radius: 0 0 5px 5px; }
+.tutorial-snippet pre:focus-visible { outline: 2px solid #8f3d27; outline-offset: 3px; }
+.tutorial-copy-status { display: block; min-height: 24px; margin-top: 5px; color: #6d5a52; font-size: 12px; line-height: 1.6; }
+.tutorial-video { margin: 24px 0; }
+.tutorial-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #111411; }
+.tutorial-video figcaption { padding: 12px 0; font-size: 13px; }
+.tutorial-video a { color: var(--tutorial-text); text-decoration: underline; }
+.tutorial-star-dialog { width: min(460px, calc(100vw - 40px)); max-height: calc(100dvh - 40px); overflow-y: auto; margin: auto; padding: 36px 28px 24px; border: 1px solid var(--tutorial-line); border-radius: 8px; background: var(--tutorial-bg); color: var(--tutorial-text); }
+.tutorial-star-dialog::backdrop { background: rgb(0 0 0 / .65); }
+.tutorial-star-dialog h2 { margin: 12px 0; font-size: 28px; line-height: 1.2; letter-spacing: -.03em; }
+.tutorial-star-dialog #tutorial-star-description { margin: 0 0 24px; color: var(--tutorial-muted); line-height: 1.8; }
+.tutorial-star-close { position: absolute; right: 10px; top: 10px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 5px; }
+.tutorial-star-icon { margin-bottom: 24px; color: var(--tutorial-accent); }
+.tutorial-star-later { display: block; min-height: 44px; margin: 12px auto 0; padding: 0 16px; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 640px) {
+  .tutorial-install { min-height: 0; padding-top: 176px; }
+  .tutorial-install-art { height: 196px; object-position: right center; }
+  .tutorial-install::before { background: linear-gradient(180deg, transparent 112px, #101c24 196px); }
+  .tutorial-install-content { width: 100%; padding: 16px 24px 28px; }
+  .tutorial-install h3 { max-width: 15ch; font-size: 30px; }
+}
+@media (max-width: 480px) { .tutorial-install-actions > a { width: 100%; } .tutorial-steps li { gap: 10px; } }

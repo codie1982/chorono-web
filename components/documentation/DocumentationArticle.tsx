@@ -20,6 +20,7 @@ import ScenePreview from "@/components/player/ScenePreview";
 import { animationHref } from "@/lib/animation-library/catalog";
 import { RelatedGuides } from "./RelatedGuides";
 import { relatedGuidesHeading } from "@/lib/documentation/related";
+import { InstallEditorBanner } from "@/components/tutorial/InstallEditorBanner";
 
 type Article = NonNullable<Awaited<ReturnType<typeof loadDocumentation>>>;
 
@@ -109,6 +110,9 @@ export async function DocumentationArticle({ article }: { article: Article }) {
           </p>
         )}
         <RelatedGuides slug={page.slug} />
+        <div className="tutorial-docs-banner">
+          <InstallEditorBanner context="documentation" placement={`docs-${page.slug || 'index'}`} />
+        </div>
         <div className="cd-article-footer">
           <a href="https://github.com/codie1982/chorono-web/tree/main/docs">
             <Icon name="code" size={15} />

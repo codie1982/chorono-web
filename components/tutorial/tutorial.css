@@ -17,6 +17,15 @@
 .tutorial-install-actions { display: flex; align-items: flex-start; flex-direction: column; gap: 12px; margin-top: 22px; }
 a.tutorial-button { display: inline-flex; min-height: 48px; justify-content: center; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 5px; background: var(--tutorial-accent); color: #191712; font-size: 14px; font-weight: 700; text-decoration: none; text-align: center; }
 a.tutorial-button:hover { background: #ffc09c; }
+.tutorial-install a.tutorial-button { color: #191712; }
+.tutorial-docs-banner { container: documentation-banner / inline-size; min-width: 0; }
+@container documentation-banner (max-width: 640px) {
+  .tutorial-install { min-height: 0; padding-top: 176px; }
+  .tutorial-install-art { height: 196px; object-position: right center; }
+  .tutorial-install::before { background: linear-gradient(180deg, transparent 112px, #101c24 196px); }
+  .tutorial-install-content { width: 100%; padding: 16px 24px 28px; }
+  .tutorial-install h3 { max-width: 15ch; font-size: 30px; }
+}
 .tutorial-journey a:focus-visible, .tutorial-install a:focus-visible, .tutorial-star-dialog :focus-visible { outline: 2px solid var(--tutorial-accent); outline-offset: 4px; }
 .tutorial-snippet { margin: 24px 0; min-width: 0; }
 .tutorial-snippet-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; border-bottom: 1px solid #41483f; border-radius: 5px 5px 0 0; padding: 8px 14px; background: #171b18; color: #f1f0e9; font-size: 12px; line-height: 1.6; }

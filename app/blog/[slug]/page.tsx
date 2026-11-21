@@ -5,6 +5,7 @@ import { GUIDE_AUTHOR } from '@/lib/site'
 import { RelatedPosts } from '@/components/BlogLayout'
 import AnimationExample from '@/components/AnimationExample'
 import InteractiveAnimationExample from '@/components/InteractiveAnimationExample'
+import { InstallEditorBanner } from '@/components/tutorial/InstallEditorBanner'
 
 export const dynamicParams = false
 export function generateStaticParams() { return BLOG_POSTS.map(post => ({ slug: post.slug })) }
@@ -32,6 +33,8 @@ function Block({ block }: { block: ContentBlock }) {
 export default function PostPage({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug)
   if (!post) notFound()
+  const firstExample = post.sections.findIndex(section => section.blocks.some(block => block.type === 'animation-example'))
+  const bannerSection = post.sections[firstExample < 0 ? 0 : firstExample]?.id
   return <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogStructuredData(post)).replace(/</g, '\\u003c') }} />
     <div className="mx-auto max-w-6xl px-6 py-10 md:py-14">
@@ -50,7 +53,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,48rem)_1fr]">
         <article className="guide min-w-0">
           <nav aria-label="In this article" className="mb-10 rounded-2xl border border-[#e7d8cf] bg-white p-6 lg:hidden"><p className="!mb-3 text-xs font-semibold uppercase tracking-widest">In this guide</p><ol className="space-y-3 text-sm leading-6">{post.sections.map(section => <li key={section.id}><a href={`#${section.id}`}>{section.heading}</a></li>)}</ol></nav>
-          <div className="space-y-12">{post.sections.map(section => <section key={section.id} id={section.id} className="scroll-mt-6"><h2>{section.heading}</h2>{section.blocks.map((block, index) => <Block key={index} block={block} />)}</section>)}</div>
+          <div className="space-y-12">{post.sections.map(section => <section key={section.id} id={section.id} className="scroll-mt-6"><h2>{section.heading}</h2>{section.blocks.map((block, index) => <Block key={index} block={block} />)}{section.id === bannerSection && <InstallEditorBanner placement={`blog-${post.slug}`} />}</section>)}</div>
         </article>
         <aside className="sticky top-8 hidden lg:block">
           <nav aria-label="In this article" className="border-l border-[#d9bca9] pl-5"><p className="mb-5 text-xs font-semibold uppercase tracking-widest text-[#8F3D27]">In this guide</p><ol className="space-y-4 text-sm leading-6 text-[#6d5a52]">{post.sections.map(section => <li key={section.id}><a href={`#${section.id}`} className="hover:text-[#8F3D27]">{section.heading}</a></li>)}</ol></nav>

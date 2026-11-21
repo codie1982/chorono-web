@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import GuideLayout from '@/components/GuideLayout'
 import { pageMetadata, REPOSITORY_URL, SITE_PAGES } from '@/lib/site'
+import { InstallEditorBanner } from '@/components/tutorial/InstallEditorBanner'
+import { GitHubExitPrompt } from '@/components/tutorial/GitHubExitPrompt'
 
 const page = SITE_PAGES['/getting-started']
 export const metadata = pageMetadata(
@@ -33,6 +35,7 @@ npm run chorono -- setup`}</code></pre>
         <h2>3. Ask your agent to animate</h2>
         <blockquote>Use Chorono to create a 1920 × 1080 scene with a title and three shapes. Add separate intro, idle and outro animations. Inspect preview images, validate the scene and save the portable editable project. Report the saved path.</blockquote>
         <p>The agent edits the connected scene through MCP tools. You can continue adjusting layers, timing, keyframes and effects in the editor. The <Link href="/agent-skills">agent skills guide</Link> explains how the setup and authoring instructions work together.</p>
+        <InstallEditorBanner installed placement="getting-started-first-edit" />
       </section>
       <section>
         <h2>Keep and reopen your work</h2>
@@ -43,6 +46,7 @@ npm run chorono -- setup --rebuild
 npm run chorono -- start --background --open`}</code></pre>
         <p>See <a href={`${REPOSITORY_URL}/blob/main/docs/en/installation.md`}>installation details</a> and <a href={`${REPOSITORY_URL}/blob/main/docs/en/troubleshooting.md`}>connection troubleshooting</a>. The external agent’s local MCP workflow needs no provider API key in the editor.</p>
       </section>
+      <GitHubExitPrompt />
     </GuideLayout>
   )
 }

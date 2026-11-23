@@ -6,6 +6,7 @@ export type ContentBlock =
   | { type: 'text'; text: string }
   | { type: 'code' | 'prompt'; text: string; label: string }
   | { type: 'list'; items: string[] }
+  | { type: 'comparison-table'; rows: { tool: string; workflow: string; environment: string; output: string }[] }
   | { type: 'links'; items: { label: string; href: string }[] }
   | { type: 'screenshot'; src: string; alt: string; caption: string; width: number; height: number }
   | { type: 'animation-example'; exampleId?: AnimationExampleId }
@@ -49,34 +50,39 @@ export const BLOG_POSTS: BlogPost[] = [
     description: 'Compare free 2D animation software for hand-drawn frames, vector tweening and editable motion graphics. See where Chorono fits and try a real project.',
     category: 'Free 2D animation software',
     published: '2026-11-19T00:00:00Z',
-    image: '/examples/brief-to-motion.png',
-    imageAlt: 'An editable Chorono motion graphic with three cards labeled Brief, Build and Refine.',
-    imageWidth: 1200,
-    imageHeight: 675,
+    modified: '2026-11-23T06:47:41Z',
+    image: '/examples/first-animation.png',
+    imageAlt: 'The Make it yours starter project with an editable headline and three colored circles.',
+    imageWidth: 1280,
+    imageHeight: 720,
     intro: 'The best free 2D animation software depends on what you need to animate. Drawing a new pose on every frame, moving vector artwork between keyframes and building editable text motion are different jobs. This guide compares four free tools by workflow, then lets you inspect a real Chorono project before choosing one.',
     sections: [
-      { id: 'choose-by-workflow', heading: 'Start with the animation you need to make', blocks: [
-        text('Ask what must remain editable and how you will deliver the result. A hand-drawn cartoon needs drawing and frame controls. A title or process graphic needs text, shapes and timing. A video clip needs a tested video export path. A free license alone does not answer those questions.'),
-        list('Draw a different pose frame by frame: start with a drawing-focused tool such as Pencil2D.', 'Move vector shapes between poses: inspect Synfig’s tweening and layer workflow.', 'Combine drawn 2D work with a 3D scene: inspect Blender Grease Pencil.', 'Animate editable text, shapes and interface illustrations in a local browser editor: try Chorono.'),
-        text('These are starting points, not a ranking of every animation app. Test one small project in the tool that matches your work, then verify its editable source and required output.'),
-      ] },
       { id: 'compare-tools', heading: 'Compare four free 2D animation workflows', blocks: [
-        text('Pencil2D is a free, open-source desktop drawing app for traditional hand-drawn animation with bitmap and vector graphics. Its official description makes it the clearest first test when you want to draw new frames, rather than move a prepared title around.'),
-        text('Synfig is a free, open-source desktop 2D animation app built around vector and bitmap artwork. Its vector tweening calculates in-between frames from key positions; it also offers layers and bone controls. Try it when repeated shape or cutout motion is central to your project.'),
-        text('Blender Grease Pencil brings 2D drawing into a 3D environment. Blender documents frame-by-frame drawing, whole-object motion and onion skinning. Choose a small test there when mixing 2D marks with 3D staging matters more than a focused 2D title workflow.'),
-        text('Chorono is a free, open-source 2D editor that runs locally and opens in your browser. It has named layers, keyframes and a timeline for text and shape motion. You can edit manually or connect Codex or Claude Code through MCP. The separate agent account is managed by its provider.'),
+        text('Choose a tool based on what you need to edit and how you will deliver the result. Try the smallest version of your own project in the closest workflow.'),
+        { type: 'comparison-table', rows: [
+          { tool: 'Pencil2D', workflow: 'Draw new bitmap or vector poses frame by frame.', environment: 'Desktop drawing app', output: 'PNG image sequence or movie export' },
+          { tool: 'Synfig', workflow: 'Tween vector shapes between key poses or animate a cutout rig.', environment: 'Desktop animation app', output: 'PNG image sequence' },
+          { tool: 'Blender Grease Pencil', workflow: 'Draw in 2D and stage the artwork in a 3D scene.', environment: 'Blender desktop app', output: 'Rendered image sequence' },
+          { tool: 'Chorono', workflow: 'Animate editable text, shapes, titles and interface motion with keyframes.', environment: 'Local editor that opens in your browser', output: 'Editable project JSON or web playback JSON' },
+        ] },
+        text('Chorono’s local editor is free and open source. You can edit by hand or connect Codex or Claude Code through MCP. Access to either agent is managed by its provider.'),
         links(
-          { label: 'Pencil2D: official product overview', href: 'https://www.pencil2d.org/about' },
-          { label: 'Synfig: official features and license', href: 'https://www.synfig.org/' },
-          { label: 'Blender: official Grease Pencil workflow', href: 'https://www.blender.org/features/story-artist/' },
-          { label: 'Chorono: free editor and source', href: '/' },
+          { label: 'Pencil2D export guide', href: 'https://www.pencil2d.org/doc/video-export-troubleshooting-guide' },
+          { label: 'Synfig features and documentation', href: 'https://www.synfig.org/' },
+          { label: 'Blender Grease Pencil workflow', href: 'https://www.blender.org/features/story-artist/' },
+          { label: 'Try an editable process graphic in Chorono’s motion graphics software', href: '/motion-graphics-software#example' },
         ),
       ] },
-      { id: 'try-editable-example', heading: 'Try an editable 2D motion graphics project', blocks: [
-        text('Play Brief to motion below. It is an eight-second process graphic with 18 named layers and 26 animation tracks. Download the portable Chorono project and open it in a separate local editor tab with Open Scene JSON. Replace one card title, scrub its entrance and save a new source file.'),
-        { type: 'animation-example', exampleId: 'brief-to-motion' },
-        text('The example demonstrates editable text and shape animation, not a frame-by-frame character drawing workflow. Its browser preview plays exported scene data; the portable JSON is the source you can reopen. If you need MP4 or GIF delivery, verify that path separately before committing to the editor.'),
-        links({ label: 'Install Chorono locally', href: '/getting-started' }, { label: 'Read the motion graphics software guide', href: '/motion-graphics-software' }),
+      { id: 'try-editable-example', heading: 'Free 2D animation software for beginners', blocks: [
+        text('Start with Make it yours, a four-second title animation you can play here. Download the editable starter project and use Open Scene JSON in your local Chorono editor.'),
+        { type: 'animation-example', exampleId: 'first-animation' },
+        text('Select Editable headline in Layers and change the Content field. Select Motion dot 1 to change its fill. Scrub the timeline to check the entrance, then use Save Scene JSON and reopen your copy to confirm the changes.'),
+        screenshot('/docs/screenshots/first-animation-editor.jpg', 'The Make it yours starter project in Chorono with Editable headline selected, its Content field open and the timeline visible.', 'Select Editable headline to change the words, then scrub the timeline to review the motion.', 1280, 720),
+        links({ label: 'Install Chorono locally', href: '/getting-started' }, { label: 'Follow the first animation tutorial', href: '/docs/first-animation' }),
+      ] },
+      { id: 'choose-by-workflow', heading: 'Start with the animation you need to make', blocks: [
+        text('Ask what must remain editable and how you will deliver the result. A hand-drawn cartoon needs drawing and frame controls. A title or process graphic needs text, shapes and timing. A video clip needs a tested video export path. A free license alone does not answer those questions.'),
+        text('Test a pose change, a text edit or a timing adjustment before choosing a tool. Reopen the source and verify the export format your project needs.'),
       ] },
       { id: 'decision-checklist', heading: 'Choose a free animation tool with one practical test', blocks: [
         list('Create a five-second sample of the actual work you intend to deliver.', 'Change one word, pose or motion after the first version and check whether the source stays editable.', 'Save, close and reopen the project before judging the workflow.', 'Export the format your destination requires and inspect the result there.', 'Check the license and any separate service costs for the complete workflow.'),
@@ -432,7 +438,15 @@ export const BLOG_POSTS: BlogPost[] = [
 
 export const blogPath = (post: BlogPost) => `/blog/${post.slug}`
 export const getPost = (slug: string) => BLOG_POSTS.find(post => post.slug === slug)
-export const readingMinutes = (post: BlogPost) => Math.max(1, Math.ceil(post.sections.flatMap(section => section.blocks.map(block => 'text' in block ? block.text : 'items' in block ? block.items.map(item => typeof item === 'string' ? item : item.label).join(' ') : '')).join(' ').split(/\s+/).length / 200))
+export function readingMinutes(post: BlogPost) {
+  const text = post.sections.flatMap(section => section.blocks.flatMap(block => {
+    if ('text' in block) return [block.text]
+    if ('items' in block) return block.items.map(item => typeof item === 'string' ? item : item.label)
+    if (block.type === 'comparison-table') return block.rows.flatMap(row => Object.values(row))
+    return []
+  })).join(' ')
+  return Math.max(1, Math.ceil(text.split(/\s+/).length / 200))
+}
 
 export function blogPostMetadata(post: BlogPost): Metadata {
   const metadata = pageMetadata(post.title, post.description, blogPath(post), post)

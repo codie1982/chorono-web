@@ -4,7 +4,7 @@ const origin = (process.argv[2] ?? 'http://127.0.0.1:3000').replace(/\/$/, '')
 const canonicalOrigin = 'https://www.chorono.com'
 const blogSlugs = ['free-2d-animation-software', 'ai-animation-generator-manual-editing', 'codex-animation-preserve-manual-edits', 'make-animations-with-claude', 'make-animations-with-codex', 'animation-prompts-for-claude-and-codex', 'progress-bar-and-success-animation', 'heart-like-and-hamburger-menu-animation']
 const blogImages = {
-  'free-2d-animation-software': { src: '/examples/brief-to-motion.png', sizes: '1200x675' },
+  'free-2d-animation-software': { src: '/examples/first-animation.png', sizes: '1280x720' },
   'ai-animation-generator-manual-editing': { src: '/examples/first-animation.png', sizes: '1280x720' },
   'codex-animation-preserve-manual-edits': { src: '/examples/codex-loading-loop.png', sizes: '1024x768' },
 }

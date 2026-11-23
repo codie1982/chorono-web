@@ -3,12 +3,12 @@ import { editorialSiteEntities, pageMetadata, SITE_URL } from './site'
 
 export const USE_CASES = {
   '/motion-graphics-software': {
-    title: 'Free Open-Source Motion Graphics Software | Chorono',
-    headline: 'Free, open-source motion graphics software',
+    title: 'Free Motion Graphics Software for 2D Projects | Chorono',
+    headline: 'Free motion graphics software for 2D animation',
     label: 'Motion graphics software', exampleId: 'brief-to-motion',
-    description: 'Explore free, open-source motion graphics software for editable 2D scenes. Compare workflow and output needs, play an example and download its project.',
-    intro: 'Chorono is free, open-source motion graphics software for animated titles, process diagrams and 2D text-and-shape scenes. Run the editor locally in your browser, work with layers and keyframes, or connect Claude Code or Codex through MCP. Inspect a working project and compare the editing and delivery workflow with the motion graphics tools your task needs.',
-    sections: ['A process graphic you can inspect', 'What this project shows about the editor', 'What can you make with these motion graphics tools?', 'Compare motion graphics programs around your delivery needs', 'Build and revise the process graphic', 'Keep an editable source and a playback export'],
+    description: 'Create editable 2D motion graphics with Chorono, a free, open-source editor. Play a working demo, download the project and try your first edit.',
+    intro: 'Create editable animated titles, process diagrams and interface motion with Chorono. The editor runs locally and opens in your browser. Play a real project, then download it and change the text, layers or timing.',
+    sections: ['Play and inspect Brief to motion', 'What this project shows about the editor', 'What can you make with these motion graphics tools?', 'Compare motion graphics programs around your delivery needs', 'Make your first 2D motion graphic', 'Download the editor and try a project'],
     sectionIds: ['example', 'editor-workflow', 'motion-graphics-projects', 'choose-your-workflow', 'build-and-revise', 'source-and-playback'],
   },
   '/text-animation': {
@@ -33,7 +33,7 @@ export type UseCasePath = keyof typeof USE_CASES
 
 // Editorial revisions have their own dates; the downloadable scenes retain theirs.
 export const USE_CASE_CONTENT_UPDATED: Record<UseCasePath, string> = {
-  '/motion-graphics-software': '2026-11-06T20:32:00Z',
+  '/motion-graphics-software': '2026-11-23T06:47:41Z',
   '/text-animation': '2026-11-06T20:32:00Z',
   '/kinetic-typography': USE_CASE_UPDATED,
 }

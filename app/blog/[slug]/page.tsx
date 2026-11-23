@@ -5,6 +5,7 @@ import { GUIDE_AUTHOR } from '@/lib/site'
 import { RelatedPosts } from '@/components/BlogLayout'
 import AnimationExample from '@/components/AnimationExample'
 import InteractiveAnimationExample from '@/components/InteractiveAnimationExample'
+import EditorialScreenshot from '@/components/EditorialScreenshot'
 import { InstallEditorBanner } from '@/components/tutorial/InstallEditorBanner'
 
 export const dynamicParams = false
@@ -19,10 +20,25 @@ function Block({ block }: { block: ContentBlock }) {
   if (block.type === 'animation-example' && (block.exampleId === 'heart-like' || block.exampleId === 'hamburger-menu')) return <InteractiveAnimationExample exampleId={block.exampleId} />
   if (block.type === 'animation-example') return <AnimationExample exampleId={block.exampleId} />
   if (block.type === 'text') return <p>{block.text}</p>
-  if (block.type === 'screenshot') return <figure className="my-7 overflow-hidden rounded-2xl border border-[#d9bca9] bg-white">
-    <a href={block.src} target="_blank" rel="noopener" aria-label={`Open full-size screenshot: ${block.alt}`} className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#8F3D27]"><img src={block.src} alt={block.alt} width={block.width} height={block.height} loading="lazy" className="h-auto w-full" /></a>
-    <figcaption className="border-t border-[#e7d8cf] bg-[#faf7f4] px-5 py-4 text-sm leading-6 text-[#6d5a52]">{block.caption} <a href={block.src} target="_blank" rel="noopener" className="font-semibold text-[#8F3D27] underline underline-offset-4">Open full-size screenshot</a></figcaption>
-  </figure>
+  if (block.type === 'screenshot') return <EditorialScreenshot {...block} />
+  if (block.type === 'comparison-table') return (
+    <div role="region" aria-label="2D animation software comparison" tabIndex={0} className="my-6 overflow-x-auto rounded-xl border border-[#d9bca9] bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F3D27]">
+      <table className="w-full min-w-[36rem] text-left text-sm leading-6">
+        <caption className="px-4 py-3 text-left font-semibold">Free 2D animation tools by workflow</caption>
+        <thead className="bg-[#ede0d7]">
+          <tr><th scope="col" className="p-3">Tool</th><th scope="col" className="p-3">Best for</th><th scope="col" className="p-3">Where you edit</th><th scope="col" className="p-3">Output to test</th></tr>
+        </thead>
+        <tbody className="text-[#6d5a52]">
+          {block.rows.map(row => (
+            <tr key={row.tool} className="border-t border-[#e7d8cf] align-top">
+              <th scope="row" className="p-3 font-semibold text-[#211612]">{row.tool}</th>
+              <td className="p-3">{row.workflow}</td><td className="p-3">{row.environment}</td><td className="p-3">{row.output}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
   if (block.type === 'code' || block.type === 'prompt') return <div className="my-6 min-w-0"><div className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#8F3D27]">{block.label}</div><pre className={block.type === 'prompt' ? 'prompt-block' : ''}><code>{block.text}</code></pre></div>
   if (block.type === 'list') return <ul className="mb-5 list-disc space-y-2 pl-6 leading-8 text-[#6d5a52]">{block.items.map(item => <li key={item}>{item}</li>)}</ul>
   if (block.type === 'links') return <ul className="mb-5 flex flex-col gap-3 text-sm leading-7">{block.items.map(item => <li key={item.href}><Link href={item.href}>{item.label} <span aria-hidden="true">↗</span></Link></li>)}</ul>

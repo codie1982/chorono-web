@@ -43,7 +43,13 @@ export default function MotionGraphicsSoftware() {
       </tbody></table></div>
       <p>For animated titles, process diagrams and interface movement, try a 2D project with editable text and shape layers. For hand-drawn frames or vector tweening, <Link href="/blog/free-2d-animation-software#compare-tools">compare free 2D animation software</Link> by workflow.</p>
     </section>
-    <section id="build-and-revise" className="scroll-mt-6"><h2>{sections[4]}</h2>
+    <section id="procedural-motion" className="scroll-mt-6"><h2>{sections[4]}</h2>
+      <p>For a repeated pulse, shake or spring response, you can use a rule on a numeric property track instead of placing every oscillation by hand. Chorono offers wave and noise controllers, plus ordered modifiers that can alter an existing keyframed motion. Preview the evaluated curve, compare a modifier with it disabled and inspect the beginning and end of the animation.</p>
+      <p>Try this in a copy of <strong>Brief to motion</strong>: select the <strong>Moving process marker</strong> and inspect its X position track. Add a subtle sine modifier, then play the marker’s entrance and final hold. Keep the original keyframes so you can compare the authored path with the added variation. If you need editable sampled keys, preview a track bake and review its reported error before applying it.</p>
+      <p>For programmatic animation authoring, Chorono’s JavaScript scene scripting can create native layers and timelines through the connected editor. Codex or Claude Code can use the same MCP workflow to make a targeted change. The script runs once while authoring; the saved animation plays from its scene data. If your project requires a node graph for real-time compositing, check that requirement against the tool you choose.</p>
+      <p>Read the <Link href="/docs/editor/timeline/controllers">controllers and modifiers guide</Link> for the available rules and bake limits, or the <Link href="/docs/scripting">JavaScript scene scripting guide</Link> for the authoring workflow. The <Link href="/blog/make-animations-with-codex">Codex animation walkthrough</Link> shows how to connect an agent, inspect a real project and save a revision.</p>
+    </section>
+    <section id="build-and-revise" className="scroll-mt-6"><h2>{sections[5]}</h2>
       <ol className="list-decimal space-y-3 pl-6 leading-8 text-[#6d5a52]">
         <li>Download <strong>Brief to motion</strong> and choose <strong>Open Scene JSON</strong> in your local Chorono editor.</li>
         <li>Select <strong>Build title</strong> in Layers and change its Content field from “Build” to “Prototype”.</li>
@@ -67,7 +73,7 @@ export default function MotionGraphicsSoftware() {
       <pre className="prompt-block"><code>Read the current Brief to motion scene with the chorono skill. Change only the Build title to “Prototype” and its explanation to “Test the first idea.” Keep the card positions, fonts, colors and eight-second timing. Preserve unrelated work. Inspect the second card during its entrance and in the final hold, then validate and save a revised portable project.</code></pre>
       <p>After a timing change, inspect the moving state and the finished layout. A final frame can hide a mismatch that occurs while a card and its text are entering. Use the <Link href="/keyframe-animation">keyframe animation guide</Link> to understand the stored values and the <Link href="/animation-easing">easing comparison</Link> to inspect acceleration between those values.</p>
     </section>
-    <section id="source-and-playback" className="scroll-mt-6"><h2>{sections[5]}</h2>
+    <section id="source-and-playback" className="scroll-mt-6"><h2>{sections[6]}</h2>
       <dl className="my-6 divide-y divide-[#e7d8cf] rounded-xl border border-[#d9bca9] bg-white">
         <div className="p-4 sm:grid sm:grid-cols-[1fr_auto] sm:items-center sm:gap-5">
           <div><dt className="font-semibold">Local Chorono editor</dt><dd className="mt-1 text-sm leading-6 text-[#6d5a52]">Install once, then open the editor in your browser. The editor is free under the MIT license.</dd></div>

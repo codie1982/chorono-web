@@ -317,7 +317,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description: 'Create animations with Codex and Chorono. Play a three-dot loading loop, download its editable project and copy the creation and revision prompts.',
     category: 'Codex',
     published: '2026-11-04T12:50:46Z',
-    modified: '2026-11-16T10:04:44Z',
+    modified: '2026-11-23T08:07:26Z',
     image: '/blog/make-animations-with-codex.png',
     imageAlt: 'Codex animation workflow: install Chorono skills, connect MCP and revise a saved editable scene.',
     intro: 'Make a four-second 2D animation with Codex in a connected Chorono editor. Codex creates named shapes and keyframes; you can play the result, ask for a timing change and download a project that stays editable. This walkthrough uses a three-dot loading loop so you can inspect the finished scene before setting up your own.',
@@ -372,6 +372,11 @@ export const BLOG_POSTS: BlogPost[] = [
         text('Make one timing or layout change at a time when the first result is close. Give Codex the exact wording to retain and point to the specific object or timeline that needs attention. This is also useful when your project contains several independent animations: name the one you want to change.'),
         text('Keep the portable project file as the source for later editing. For web playback, install @chorono/runtime in your application and follow its exported-scene playback documentation. The runtime is a separate package from the local editor and its MCP setup.'),
         links({ label: 'Runtime installation and web playback', href: '/#runtime' }, { label: 'More animation prompt recipes', href: '/blog/animation-prompts-for-claude-and-codex' }),
+      ] },
+      { id: 'procedural-motion', heading: 'Can Codex make procedural motion graphics?', blocks: [
+        text('Yes, when the connected Chorono editor supports the motion you want. Codex can revise named keyframe tracks and use supported controllers or modifiers for repeated movement such as a pulse or a small shake. The editor keeps those rules in the scene; JavaScript scene scripts run once during authoring, while the player evaluates the saved animation during playback.'),
+        text('Try one controlled change in a copy of the loading loop. Ask Codex to inspect the current scene and supported modifier schema first, then add a subtle sine variation to the Middle dot’s vertical position track without replacing its original keys. Check the start, middle and four-second loop boundary before saving. This is an optional exercise; the downloadable project above contains the original keyframed loop.'),
+        links({ label: 'Compare keyframed and procedural motion in a real project', href: '/motion-graphics-software#procedural-motion' }, { label: 'Read the controller and modifier guide', href: '/docs/editor/timeline/controllers' }, { label: 'Read the JavaScript scene scripting guide', href: '/docs/scripting' }),
       ] },
       { id: 'troubleshooting', heading: 'Troubleshooting Codex and Chorono', blocks: [
         text('Skills are missing: make sure Codex is working in the project where setup installed .agents/skills. Instructions alone do not register the MCP server, so rerun the documented setup check if the tools are also missing.'),

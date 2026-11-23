@@ -8,8 +8,8 @@ export const USE_CASES = {
     label: 'Motion graphics software', exampleId: 'brief-to-motion',
     description: 'Create editable 2D motion graphics with Chorono, a free, open-source editor. Play a working demo, download the project and try your first edit.',
     intro: 'Create editable animated titles, process diagrams and interface motion with Chorono. The editor runs locally and opens in your browser. Play a real project, then download it and change the text, layers or timing.',
-    sections: ['Play and inspect Brief to motion', 'What this project shows about the editor', 'What can you make with these motion graphics tools?', 'Compare motion graphics programs around your delivery needs', 'Make your first 2D motion graphic', 'Download the editor and try a project'],
-    sectionIds: ['example', 'editor-workflow', 'motion-graphics-projects', 'choose-your-workflow', 'build-and-revise', 'source-and-playback'],
+    sections: ['Play and inspect Brief to motion', 'What this project shows about the editor', 'What can you make with these motion graphics tools?', 'Compare motion graphics programs around your delivery needs', 'Make procedural motion without drawing every keyframe', 'Make your first 2D motion graphic', 'Download the editor and try a project'],
+    sectionIds: ['example', 'editor-workflow', 'motion-graphics-projects', 'choose-your-workflow', 'procedural-motion', 'build-and-revise', 'source-and-playback'],
   },
   '/text-animation': {
     title: 'Free Text Animation Editor: Create Animated Text | Chorono',
@@ -33,7 +33,7 @@ export type UseCasePath = keyof typeof USE_CASES
 
 // Editorial revisions have their own dates; the downloadable scenes retain theirs.
 export const USE_CASE_CONTENT_UPDATED: Record<UseCasePath, string> = {
-  '/motion-graphics-software': '2026-11-23T06:47:41Z',
+  '/motion-graphics-software': '2026-11-23T08:07:26Z',
   '/text-animation': '2026-11-06T20:32:00Z',
   '/kinetic-typography': USE_CASE_UPDATED,
 }

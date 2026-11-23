@@ -13,7 +13,8 @@ export const metadata = pageMetadata(
 
 export default function GettingStarted() {
   return (
-    <GuideLayout path="/getting-started">
+    <>
+      <GuideLayout path="/getting-started">
       <section>
         <h2>1. Install the editor</h2>
         <p>You need Node.js 20 or later, npm, Git and a modern browser. Open Terminal on macOS/Linux or PowerShell on Windows. Install your chosen agent client separately.</p>
@@ -46,7 +47,8 @@ npm run chorono -- setup --rebuild
 npm run chorono -- start --background --open`}</code></pre>
         <p>See <a href={`${REPOSITORY_URL}/blob/main/docs/en/installation.md`}>installation details</a> and <a href={`${REPOSITORY_URL}/blob/main/docs/en/troubleshooting.md`}>connection troubleshooting</a>. The external agent’s local MCP workflow needs no provider API key in the editor.</p>
       </section>
+      </GuideLayout>
       <GitHubExitPrompt />
-    </GuideLayout>
+    </>
   )
 }

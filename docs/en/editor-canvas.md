@@ -12,9 +12,11 @@ Use the select tool to pick an object, then adjust it with its transform handles
 
 ## Draw shapes and splines
 
-Create a shape from the toolbar and place it in the composition. Use the spline tools for editable paths. **New Spline** starts a separate path; **Append** extends an eligible existing spline. Select the intended spline before extending it.
+Create a shape from the toolbar and place it in the composition. Use **Layers → Add → Spline Objects** to start a spline. In v0.4, select a spline before adding a primitive to the same layer. In the newer **Edit** dock, use **Draw new spline elements**.
 
 Keep drawing and selection separate: if a click starts creating another object, return to the select tool. Name new layers in the hierarchy as soon as their role is clear.
+
+Use [Bézier points and spline curves](editor-canvas-splines.md) to edit the source geometry. For shapes with holes and overlapping areas, see [compound paths and Boolean operations](editor-canvas-compound-splines.md). For parallel contours and filled outlines, see [2D spline modeling](editor-canvas-spline-modeling.md).
 
 ## Align and inspect motion
 

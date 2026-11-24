@@ -18,6 +18,15 @@ const pages = ['/', '/getting-started', '/agent-skills', '/blog', ...blogSlugs.m
 const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'")
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, decode(value)]))
 
+/** Match the editorial headings in articleSection. Shared dialogs and the
+ * optional Getting started walkthrough sit alongside the written sections. */
+function articleSectionHeadings(main, path) {
+  const content = main.replace(/<dialog\b[^>]*>[\s\S]*?<\/dialog>/g, '')
+  return [...content.matchAll(/<h2\b([^>]*)>(.*?)<\/h2>/gs)]
+    .filter(([, attrs]) => path !== '/getting-started' || attributes(attrs).id !== 'getting-started-walkthrough-title')
+    .map(([, , heading]) => decode(heading.replace(/<[^>]+>/g, '')))
+}
+
 async function fetchChecked(path, type) {
   const response = await fetch(`${origin}${path}`, { signal: AbortSignal.timeout(20000) })
   assert.equal(response.status, 200, `${path}: HTTP ${response.status}`)
@@ -133,7 +142,7 @@ for (const path of pages) {
     assert.equal(article['@type'], isPost ? 'BlogPosting' : 'TechArticle')
     assert.equal(article.headline, decode(html.match(/<h1\b[^>]*>(.*?)<\/h1>/s)[1].replace(/<[^>]+>/g, '')))
     const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)[1]
-    assert.deepEqual(article.articleSection, [...main.matchAll(/<h2\b[^>]*>(.*?)<\/h2>/gs)].map(match => decode(match[1].replace(/<[^>]+>/g, ''))))
+    assert.deepEqual(article.articleSection, articleSectionHeadings(main, path), `${path}: structured data matches article headings`)
     if (isPost) {
       assert.match(article.datePublished, blogImages[path.slice('/blog/'.length)] ? /^2026-11-19T\d{2}:\d{2}:\d{2}Z$/ : ['/blog/progress-bar-and-success-animation', '/blog/heart-like-and-hamburger-menu-animation'].includes(path) ? /^2026-11-08T\d{2}:\d{2}:\d{2}Z$/ : /^2026-11-04T\d{2}:\d{2}:\d{2}Z$/)
       assert.ok(Number.isFinite(Date.parse(article.datePublished)), 'Publication timestamp must be valid')
@@ -151,7 +160,14 @@ for (const path of pages) {
     assert.equal(author.url, `${canonicalOrigin}/#team`)
     assert.ok(html.includes('rel="author"') && html.includes('Chorono ekibi'), 'Verified author must be visible')
     assert.equal(entities.get(article.image['@id']).url, `${canonicalOrigin}${guideImage}`)
-    assert.ok(html.includes(`src="${guideImage}"`), `${path}: article image must be visible`)
+    if (path === '/getting-started' && main.includes('aria-labelledby="getting-started-walkthrough-title"')) {
+      assert.ok(main.includes('id="getting-started-walkthrough-title"'), 'Getting started walkthrough needs a heading')
+      for (const id of ['install-editor', 'connect-editor', 'first-edit', 'save-project']) {
+        assert.ok(main.includes(`href="#${id}"`) && main.includes(`id="${id}"`), `Getting started walkthrough must link to #${id}`)
+      }
+    } else {
+      assert.ok(html.includes(`src="${guideImage}"`), `${path}: article image must be visible`)
+    }
     assert.equal(article.mainEntityOfPage['@id'], webpage['@id'])
     const breadcrumb = entities.get(webpage.breadcrumb['@id'])
     assert.equal(breadcrumb['@type'], 'BreadcrumbList')
@@ -213,7 +229,7 @@ const existingUrls = pages.map(path => new URL(path, canonicalOrigin).href)
 assert.ok(existingUrls.every(url => publicUrls.includes(url)), 'Existing public URL coverage must survive the feature release')
 const addedUrls = publicUrls.filter(url => !existingUrls.includes(url))
 const featureReleased = sitemapFiles.some(file => file.pathname === '/sitemap-docs-start.xml')
-assert.equal(addedUrls.length, featureReleased ? 76 : 0, 'Only reviewed, released docs/library pages enter the live index')
+assert.equal(addedUrls.length, featureReleased ? 79 : 0, 'Only reviewed, released docs/library pages enter the live index')
 for (const url of addedUrls) {
   const location = new URL(url)
   assert.equal(location.origin, canonicalOrigin)

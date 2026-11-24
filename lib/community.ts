@@ -15,6 +15,7 @@ export const modes = [
 export type CommunityRole = typeof roles[number]['id']
 export type CommunityMode = typeof modes[number]['id']
 export type CommunityInvitation = { kind: 'follow' | 'exit' | 'vote' } | { kind: 'install'; href: string }
+type SubscriptionSource = Exclude<CommunityInvitation['kind'], 'vote'>
 
 const values = new Map<string, string>()
 
@@ -28,16 +29,19 @@ export function writeCommunityValue(key: string, value: string) {
   try { localStorage.setItem(key, value) } catch { /* Keep the current visit usable. */ }
 }
 
-async function request(path: string, method: 'POST' | 'PUT', data: object) {
+function getVisitorId() {
   const key = 'chorono:community-visitor'
   const visitorId = readCommunityValue(key) ?? crypto.randomUUID()
   writeCommunityValue(key, visitorId)
+  return visitorId
+}
 
+async function request(path: string, method: 'POST' | 'PUT', data: object) {
   const response = await fetch(new URL('community/' + path, apiV1), {
     method,
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ...data, visitorId }),
+    body: JSON.stringify(data),
     signal: AbortSignal.timeout(8000),
   })
   if (!response.ok) throw new Error('Community request failed')
@@ -45,11 +49,15 @@ async function request(path: string, method: 'POST' | 'PUT', data: object) {
 }
 
 export async function saveCommunityResponse(data: { role?: CommunityRole; mode?: CommunityMode }) {
-  await request('response', 'PUT', data)
+  await request('response', 'PUT', { ...data, visitorId: getVisitorId() })
 }
 
 export async function claimCommunityExit() {
-  const response = await request('exit-prompt', 'POST', {})
+  const response = await request('exit-prompt', 'POST', { visitorId: getVisitorId() })
   const data = await response.json()
   return data.show === true
+}
+
+export async function subscribeToCommunityUpdates(email: string, source: SubscriptionSource, role?: CommunityRole) {
+  await request('subscribe', 'POST', { email, source, role })
 }

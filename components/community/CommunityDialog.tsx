@@ -1,13 +1,13 @@
 'use client'
 
-import { useRef } from 'react'
+import { useCallback, useEffect, useRef, useState, type FormEvent, type MouseEvent } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Button, Dialog, IconButton, Theme } from '@radix-ui/themes'
-import { ArrowLeft, ArrowRight, ArrowUpRight, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, X } from 'lucide-react'
 import '@radix-ui/themes/styles.css'
-import { trackAction } from '@/lib/analytics'
-import { modes, roles, type CommunityInvitation, type CommunityMode, type CommunityRole } from '@/lib/community'
-import { REPOSITORY_URL } from '@/lib/site'
+import { modes, roles, subscribeToCommunityUpdates, type CommunityInvitation, type CommunityMode, type CommunityRole } from '@/lib/community'
 import styles from './community.module.css'
 
 type Props = {
@@ -31,11 +31,59 @@ export function CommunityDialog({
   invitation, isOpen, survey, role, mode, savedVote, pending, error,
   onOpenChange, onReturnFocus, onSurveyChange, onRoleChange, onModeChange, onVote,
 }: Props) {
+  const router = useRouter()
   const title = useRef<HTMLHeadingElement>(null)
-  const followUrl = role === 'user' ? REPOSITORY_URL + '/releases' : REPOSITORY_URL
-  const followLabel = role === 'user' ? 'See release updates' : 'Follow on GitHub'
+  const subscriptionAttempt = useRef(0)
+  const [email, setEmail] = useState('')
+  const [subscription, setSubscription] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
+  const [countdown, setCountdown] = useState<number | null>(null)
   const hasVoted = Boolean(mode && mode === savedVote)
   const installHref = invitation.kind === 'install' ? invitation.href : null
+  const busy = Boolean(pending) || subscription === 'saving' || countdown !== null
+
+  const changeOpen = useCallback((open: boolean) => {
+    if (!open) {
+      subscriptionAttempt.current += 1
+      setEmail('')
+      setSubscription('idle')
+      setCountdown(null)
+    }
+    onOpenChange(open)
+  }, [onOpenChange])
+
+  useEffect(() => {
+    if (!isOpen || !installHref || countdown === null) return
+    const timer = window.setTimeout(() => {
+      if (countdown > 1) {
+        setCountdown(countdown - 1)
+      } else {
+        changeOpen(false)
+        router.push(installHref)
+      }
+    }, 1000)
+    return () => window.clearTimeout(timer)
+  }, [changeOpen, countdown, installHref, isOpen, router])
+
+  async function subscribe(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    if (invitation.kind === 'vote' || busy) return
+    const attempt = ++subscriptionAttempt.current
+    setSubscription('saving')
+    try {
+      await subscribeToCommunityUpdates(email, invitation.kind, role)
+      if (attempt !== subscriptionAttempt.current) return
+      setSubscription('saved')
+      if (installHref) setCountdown(3)
+    } catch {
+      if (attempt === subscriptionAttempt.current) setSubscription('error')
+    }
+  }
+
+  function continueToInstallation(event: MouseEvent<HTMLAnchorElement>) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+    event.preventDefault()
+    if (countdown === null && subscription !== 'saving') setCountdown(3)
+  }
 
   function switchView(showSurvey: boolean) {
     onSurveyChange(showSurvey)
@@ -44,12 +92,12 @@ export function CommunityDialog({
 
   return <Theme appearance="light" accentColor="bronze" grayColor="sand" radius="medium" hasBackground={false} asChild>
     <div className={styles.theme}>
-      <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
+      <Dialog.Root open={isOpen} onOpenChange={changeOpen}>
         <Dialog.Content className={styles.dialog} maxWidth="456px"
           onCloseAutoFocus={event => { event.preventDefault(); onReturnFocus() }}>
           <div className={styles.heading}>
             <Dialog.Title ref={title} tabIndex={-1} className={styles.title} size="6" mb="0">
-              {survey ? 'What should we build next?' : 'Follow Chorono'}
+              {survey ? 'What should we build next?' : 'Stay in the loop'}
             </Dialog.Title>
             <Dialog.Close>
               <IconButton className={styles.close} color="gray" variant="ghost" type="button" aria-label="Close invitation">
@@ -58,10 +106,13 @@ export function CommunityDialog({
             </Dialog.Close>
           </div>
           <Dialog.Description className={styles.intro} size="2">
-            {survey ? 'Choose one area you’d like us to focus on.' : 'Get release notes and see what we’re working on.'}
+            {survey ? 'Choose one area you’d like us to focus on.' : 'Get new releases, creative examples, and what’s next for Chorono in your inbox.'}
           </Dialog.Description>
 
-          <fieldset className={styles.roles} disabled={Boolean(pending)}>
+          {!survey && <Image src="/community/newsletter-studio.jpg" alt="" width={1080} height={360}
+            sizes="(max-width: 480px) 90vw, 420px" className={styles.newsletterArt} />}
+
+          <fieldset className={styles.roles} disabled={busy}>
             <legend>How do you use Chorono?</legend>
             <div>
               {roles.map(item => <Button key={item.id} type="button" size="2" variant={role === item.id ? 'soft' : 'ghost'}
@@ -72,7 +123,7 @@ export function CommunityDialog({
           </fieldset>
 
           {survey ? <form className={styles.survey} onSubmit={event => { event.preventDefault(); void onVote() }}>
-            <fieldset disabled={Boolean(pending)}>
+            <fieldset disabled={busy}>
               <legend className="sr-only">Choose one feature</legend>
               {modes.map(item => <label key={item.id}>
                 <input type="radio" name="community-mode" value={item.id} checked={mode === item.id}
@@ -81,29 +132,45 @@ export function CommunityDialog({
               </label>)}
             </fieldset>
             <div className={styles.voteActions}>
-              <Button type="submit" size="2" disabled={!mode || Boolean(pending) || hasVoted}>
+              <Button type="submit" size="2" disabled={!mode || busy || hasVoted}>
                 {pending === 'vote' ? 'Saving vote…' : 'Save vote'}
               </Button>
               {hasVoted && <p className={styles.status} role="status">Vote saved. Thank you!</p>}
             </div>
-          </form> : <a href={followUrl} target="_blank" rel="noopener noreferrer" className={styles.textLink}
-            onClick={() => { if (role !== 'user') trackAction('githubStar', `community-${invitation.kind}`) }}>
-            {followLabel} <ArrowUpRight size={16} aria-hidden="true" />
-          </a>}
+          </form> : subscription === 'saved'
+            ? <p className={styles.subscribed} role="status">You’re on the list. Thanks for following Chorono!</p>
+            : <form className={styles.subscription} onSubmit={event => void subscribe(event)}>
+              <label htmlFor="chorono-updates-email">Email address</label>
+              <div className={styles.emailRow}>
+                <input type="email" id="chorono-updates-email" name="email" value={email}
+                  autoComplete="email" inputMode="email" maxLength={254} required disabled={busy}
+                  onChange={event => { setEmail(event.target.value); setSubscription('idle') }} />
+                <Button type="submit" size="2" disabled={busy}>
+                  {subscription === 'saving' ? 'Signing up…' : 'Get updates'}
+                </Button>
+              </div>
+              {subscription === 'error' && <p className={styles.error} role="alert">We couldn’t sign you up. Check your email and try again.</p>}
+            </form>}
 
           {pending === 'role' && <p className={styles.status} role="status">Saving your role…</p>}
           {error && <p className={styles.error} role="alert">{error}</p>}
 
           {invitation.kind !== 'vote' && <div className={styles.footer}>
-            <Button type="button" color="gray" variant="ghost"
+            <Button type="button" color="gray" variant="ghost" disabled={busy}
               onClick={() => switchView(!survey)}>
               {survey ? <><ArrowLeft size={15} aria-hidden="true" /> Back</> : 'Vote for a feature'}
             </Button>
-            {installHref && <Dialog.Close>
+            {installHref &&
               <Button asChild size="3" variant={survey ? 'outline' : 'solid'} className={styles.install}>
-                <Link href={installHref}>Continue to installation <ArrowRight size={16} aria-hidden="true" /></Link>
+                <Link href={installHref} onClick={continueToInstallation}
+                  aria-disabled={countdown !== null || subscription === 'saving'}>
+                  <span aria-live="polite" aria-atomic="true">
+                    {countdown === null ? 'Continue to installation' : `Opening installation in ${countdown}s`}
+                  </span>
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
               </Button>
-            </Dialog.Close>}
+            }
             {invitation.kind === 'exit' && <Dialog.Close>
               <Button type="button" color="gray" variant="soft">Keep browsing</Button>
             </Dialog.Close>}

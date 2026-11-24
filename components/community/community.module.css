@@ -65,18 +65,30 @@
 .dialog .roles button { min-height: 44px; margin: 0; }
 .dialog .roles button[aria-pressed='true'] { background: var(--site-soft); color: var(--site-accent); }
 
-.dialog .textLink {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  gap: 7px;
-  margin-top: 4px;
-  color: var(--site-accent);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.newsletterArt {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3.6;
+  margin-bottom: 13px;
+  border-radius: 8px;
+  background: var(--site-soft);
+  object-fit: cover;
 }
+.subscription { margin-top: 10px; }
+.subscription label { display: block; margin-bottom: 5px; font-size: 14px; font-weight: 650; }
+.emailRow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.emailRow input {
+  width: 100%;
+  min-height: 44px;
+  padding-inline: 11px;
+  border: 1px solid #cdbbb0;
+  border-radius: 6px;
+  background: var(--site-surface);
+  font-size: 16px;
+}
+.emailRow button { min-height: 44px; white-space: nowrap; }
+.dialog .subscribed { margin: 12px 0 0; color: var(--site-accent); font-size: 14px; font-weight: 650; }
 
 .survey { margin-top: 10px; }
 .survey label {
@@ -104,6 +116,7 @@
   border-top: 1px solid var(--site-line);
 }
 .dialog .footer button, .dialog .install { min-height: 44px; margin: 0; }
+.dialog .install[aria-disabled='true'] { cursor: default; }
 .dialog .footer button:only-child { margin-inline-start: auto; }
 .dialog .status, .dialog .error { margin: 6px 0 0; font-size: 14px; }
 .dialog .voteActions .status { margin: 0; }
@@ -118,4 +131,8 @@
 
 @media (max-width: 400px) {
   .dialog .install { width: 100%; }
+}
+
+@media (max-width: 335px) {
+  .emailRow { grid-template-columns: 1fr; }
 }

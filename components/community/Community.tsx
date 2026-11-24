@@ -48,7 +48,7 @@ export function CommunityBanner() {
         <button type="button" className={styles.bannerVote} aria-haspopup="dialog" onClick={() => open({ kind: 'vote' })}>
           Vote for a feature <ArrowRight size={16} aria-hidden="true" />
         </button>
-        <button type="button" className={styles.bannerFollow} aria-haspopup="dialog" onClick={() => open({ kind: 'follow' })}>Follow Chorono</button>
+        <button type="button" className={styles.bannerFollow} aria-haspopup="dialog" onClick={() => open({ kind: 'follow' })}>Get email updates</button>
       </div>
     </div>
   </aside>
@@ -67,10 +67,10 @@ export function CommunityProvider({ children }: { children: ReactNode }) {
   const [pending, setPending] = useState<'role' | 'vote'>()
   const [error, setError] = useState('')
 
-  const updateOpen = (value: boolean) => {
+  const updateOpen = useCallback((value: boolean) => {
     dialogOpen.current = value
     setIsOpen(value)
-  }
+  }, [])
   const open = useCallback((entry: CommunityInvitation) => {
     if (dialogOpen.current) return false
     previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null

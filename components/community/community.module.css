@@ -30,96 +30,82 @@
 .bannerFollow { text-decoration: underline; text-underline-offset: 4px; }
 .bannerActions button:focus-visible { outline: 2px solid var(--site-accent); outline-offset: 3px; }
 
-.dialog {
-  --dialog-bg: #171b18;
-  --dialog-text: #f1f0e9;
-  --dialog-muted: #bdc1bb;
-  --dialog-border: #5e665c;
-  --dialog-accent: #ffad7d;
-  position: fixed;
-  width: min(100% - 32px, 520px);
-  max-height: calc(100dvh - 32px);
-  margin: auto;
-  padding: clamp(22px, 5vw, 34px);
-  overflow: auto;
-  overscroll-behavior: contain;
-  border: 1px solid var(--dialog-border);
-  border-radius: 8px;
-  background: var(--dialog-bg);
-  color: var(--dialog-text);
+.theme:global(.radix-themes) { display: contents; }
+
+.dialog:global(.rt-DialogContent) {
+  --default-font-family: var(--site-font);
+  --accent-9: var(--site-accent);
+  --accent-10: #713022;
+  --accent-contrast: #fff;
+  padding: clamp(20px, 5vw, 28px);
+  border: 1px solid var(--site-line);
+  border-radius: 14px;
+  background: #fffaf7;
+  color: var(--site-ink);
+  box-shadow: 0 14px 42px rgb(48 26 16 / 16%);
 }
 
-.dialog::backdrop { background: rgb(0 0 0 / .65); }
-.dialog :focus-visible { outline: 2px solid var(--dialog-accent); outline-offset: 3px; }
-.dialog h2 {
-  margin: 0 44px 10px 0;
-  font-size: clamp(26px, 6vw, 34px);
-  font-weight: 720;
-  letter-spacing: -.04em;
-  line-height: 1.16;
-}
-.intro { margin: 0 0 18px; color: var(--dialog-muted); line-height: 1.55; }
-.close {
-  position: absolute;
-  inset: 10px 10px auto auto;
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border-radius: 5px;
-}
-.close:hover { background: #282e28; }
-.roles, .survey fieldset { border: 0; min-inline-size: 0; }
-.roles legend, .survey legend { margin-bottom: 8px; font-size: 14px; font-weight: 650; }
-.roles > div, .followActions { display: flex; flex-wrap: wrap; gap: 8px; }
-.roles button, .secondary, .primary, .textButton {
+.heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.dialog .title { color: var(--site-ink); outline: none; }
+.dialog .close { width: 44px; height: 44px; flex: none; margin: -8px -8px 0 0; }
+.dialog .intro { margin: 4px 0 18px; color: var(--site-muted); line-height: 1.55; }
+
+.roles legend { color: var(--site-muted); font-size: 13px; }
+.roles > div { display: flex; flex-wrap: wrap; gap: 2px 6px; }
+.dialog .roles button { min-height: 44px; margin: 0; }
+.dialog .roles button[aria-pressed='true'] { background: var(--site-soft); color: var(--site-accent); }
+
+.dialog .textLink {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
-  justify-content: center;
   gap: 7px;
-  padding: 8px 12px;
-  border-radius: 5px;
+  margin-top: 4px;
+  color: var(--site-accent);
   font-size: 14px;
-  font-weight: 650;
-  text-align: center;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.roles button, .secondary { border: 1px solid var(--dialog-border); }
-.roles button[aria-pressed='true'], .options label[data-selected] {
-  border-color: var(--dialog-accent);
-  background: #302822;
-}
-.followActions { margin-top: 14px; }
-.textButton { color: var(--dialog-accent); text-decoration: underline; text-underline-offset: 4px; }
-.survey { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--dialog-border); }
-.options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.options label {
+
+.survey { margin-top: 10px; }
+.survey label {
   display: flex;
-  min-height: 48px;
+  min-height: 44px;
   align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border: 1px solid var(--dialog-border);
-  border-radius: 5px;
-  font-size: 14px;
+  gap: 10px;
+  border-bottom: 1px solid var(--site-line);
   cursor: pointer;
+  font-size: 14px;
 }
-.options input { flex: none; accent-color: var(--dialog-accent); }
-.options label:focus-within { outline: 2px solid var(--dialog-accent); outline-offset: 2px; }
-.primary { background: var(--dialog-accent); color: #191712; }
-.survey > button { margin-top: 10px; }
-.dialog button:disabled { cursor: default; opacity: .6; }
-.success, .error { margin-top: 8px; font-size: 14px; }
-.success { color: var(--dialog-text); }
-.error { color: #ffb5a3; }
-.continue { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--dialog-border); }
-.continue > a { width: 100%; }
+.survey label:first-of-type { border-top: 1px solid var(--site-line); }
+.survey input { accent-color: var(--site-accent); }
+.voteActions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 12px; }
+.voteActions button { min-height: 44px; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--site-line);
+}
+.dialog .footer button, .dialog .install { min-height: 44px; margin: 0; }
+.dialog .footer button:only-child { margin-inline-start: auto; }
+.dialog .status, .dialog .error { margin: 6px 0 0; font-size: 14px; }
+.dialog .voteActions .status { margin: 0; }
+.dialog .status { color: var(--site-muted); }
+.dialog .error { color: #a02d23; }
+.dialog :is(button, a, input):focus-visible { outline: 2px solid var(--site-accent); outline-offset: 2px; }
 
 @media (max-width: 600px) {
   .bannerInner { padding-inline: 18px; }
   .bannerInner > p { padding-top: 6px; }
 }
 
-@media (max-width: 390px) {
-  .options { grid-template-columns: 1fr; }
+@media (max-width: 400px) {
+  .dialog .install { width: 100%; }
 }

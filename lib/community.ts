@@ -14,6 +14,7 @@ export const modes = [
 
 export type CommunityRole = typeof roles[number]['id']
 export type CommunityMode = typeof modes[number]['id']
+export type CommunityInvitation = { kind: 'follow' | 'exit' | 'vote' } | { kind: 'install'; href: string }
 
 const values = new Map<string, string>()
 

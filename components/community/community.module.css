@@ -16,7 +16,17 @@
   padding: 4px 24px;
 }
 
-.bannerInner > p { font-size: 15px; font-weight: 650; }
+.bannerPrompt { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 650; }
+.bannerStar {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--site-surface);
+  color: var(--site-accent);
+}
 .bannerActions { display: flex; align-items: center; flex-wrap: wrap; gap: 0 16px; }
 .bannerVote, .bannerFollow {
   display: inline-flex;
@@ -103,7 +113,7 @@
 
 @media (max-width: 600px) {
   .bannerInner { padding-inline: 18px; }
-  .bannerInner > p { padding-top: 6px; }
+  .bannerPrompt { padding-top: 6px; }
 }
 
 @media (max-width: 400px) {

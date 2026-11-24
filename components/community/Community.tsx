@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
 import { watchExitIntent } from '@/lib/community-exit'
 import {
   claimCommunityExit, modes, readCommunityValue, roles, saveCommunityResponse, writeCommunityValue,
@@ -40,7 +40,10 @@ export function CommunityBanner() {
 
   return <aside className={styles.banner} aria-label="Chorono community">
     <div className={styles.bannerInner}>
-      <p>What should we build next?</p>
+      <p className={styles.bannerPrompt}>
+        <span className={styles.bannerStar} aria-hidden="true"><Star size={17} fill="currentColor" /></span>
+        What should we build next?
+      </p>
       <div className={styles.bannerActions}>
         <button type="button" className={styles.bannerVote} aria-haspopup="dialog" onClick={() => open({ kind: 'vote' })}>
           Vote for a feature <ArrowRight size={16} aria-hidden="true" />

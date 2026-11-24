@@ -21,8 +21,13 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!project || project.kind === 'native') notFound()
   if (project.kind === 'skill') return skillCatalogMetadata(project.example)
   const path = showcaseProjectHref(project)
+  const film = project.kind === 'film' ? project : undefined
   return {
-    ...pageMetadata(project.title, project.description, path, { image: project.cover.src, imageAlt: project.cover.alt }),
+    ...pageMetadata(film ? `${film.title} – ${film.format}` : project.title, project.description, path, {
+      image: project.cover.src,
+      imageAlt: project.cover.alt,
+      ...(film && { imageWidth: 1280, imageHeight: 720 }),
+    }),
     ...contentPublicationMetadata(path, project.kind !== 'concept'),
   }
 }

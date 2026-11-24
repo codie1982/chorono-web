@@ -19,6 +19,14 @@ interface ProjectSummary {
 type StoryboardBeat = { time: string; title: string; notes: string; image: Image }
 export const upcomingRenderStyles = ['3D render', 'Toon render'] as const
 
+export type ShowcaseFilm = ProjectSummary & {
+  kind: 'film'
+  video: string
+  projectFile: string
+  durationSeconds: number
+  uploadDate: string
+}
+
 type ConceptProject = ProjectSummary & {
   kind: 'concept'
   notes: readonly { label: string; text: string }[]
@@ -32,6 +40,7 @@ export type ShowcaseProject = ProjectSummary & (
   | { kind: 'skill'; example: SkillExample }
   | { kind: 'study'; sample: Sample }
   | { kind: 'video'; src: string }
+  | ShowcaseFilm
   | { kind: 'storyboard'; beats: readonly StoryboardBeat[]; prompt: string }
   | ConceptProject
 )
@@ -40,6 +49,37 @@ const world: Image = { src: '/new-home/studio/world.jpg', alt: 'An explorer robo
 const greenhouse: Image = { src: '/chorono-render/cartoon-greenhouse.png', alt: 'A small robot among plants inside an orbital greenhouse.' }
 const valley: Image = { src: '/new-home/studio/game-valley.jpg', alt: 'A traveler on a rocky path facing a gateway above waterfalls.' }
 const renderCover: Image = { src: '/chorono-render/vfx-hummingbird.png', alt: 'A metallic hummingbird with translucent wings banking through volumetric light.' }
+
+const films: readonly ShowcaseFilm[] = ([
+  {
+    slug: 'prompt-to-playback', title: 'Prompt to Playback', category: 'style-animations', format: 'Product launch animation',
+    description: 'A typed brief becomes a copper ribbon animation, then opens in an editable timeline with layers and playback controls.',
+    alt: 'A copper ribbon draws a spiral in a dark animation preview.',
+    durationSeconds: 19,
+  },
+  {
+    slug: 'atelier-in-eight-styles', title: 'Atelier in Eight Styles', category: 'style-animations', format: 'Art style study',
+    description: 'Hands fold a paper boat, a raven opens its wings, and the boat takes flight as one scene changes through eight art styles.',
+    alt: 'A woman folds a paper boat beside a raven and a moonlit window in a geometric collage.',
+    durationSeconds: 18,
+  },
+  {
+    slug: 'the-lantern-archive', title: 'The Lantern Archive', category: 'long-form', format: 'Narrative short film',
+    description: 'A lantern keeper walks through a dark museum, steps inside a painting, and crosses three painted worlds before returning to the gallery.',
+    alt: 'A little lantern keeper stands on a rock beside a painted sea arch.',
+    durationSeconds: 23,
+  },
+] as const).map(({ alt, ...film }): ShowcaseFilm => {
+  const directory = `/animation-films/${film.slug}`
+  return {
+    ...film,
+    kind: 'film',
+    cover: { src: `${directory}/poster.jpg`, alt },
+    video: `${directory}/${film.slug}.mp4`,
+    projectFile: `${directory}/${film.slug}.chorono.json`,
+    uploadDate: '2026-11-24',
+  }
+})
 
 const concepts: readonly ConceptProject[] = [
   {
@@ -100,6 +140,7 @@ export const showcaseProjects: readonly ShowcaseProject[] = [
     cover: sample.category === 'game' ? gameIllustrations[sample.id] : { src: sample.image, alt: sample.alt },
     format: { game: '2D browser prototype', motion: 'Editable project', 'web-components': 'Interactive demo', render: 'Render concept' }[sample.category],
   })),
+  ...films,
   {
     kind: 'storyboard', slug: 'the-explorers-route', title: 'The Explorer’s Route', category: 'long-form',
     description: 'A 75-second animation storyboard that follows a small explorer from a canyon crossing to an orbital greenhouse.',
@@ -134,7 +175,7 @@ interface ShowcaseCollection {
 const categoryDetails = {
   'style-animations': { title: 'Motion Graphics Examples & Kinetic Typography', description: 'Watch editable typography, interface motion, charts, spline animations, character studies, effects, product demos and explainers made in Chorono.', cover: showcaseArt('motion-style-cover', 'A Swiss-style In Motion poster with black typography and a cobalt square.') },
   'interactive-web': { title: 'Web Animation Examples & Interactive Components', description: 'Try a reversible like button, a keyboard-accessible menu and characters that react to your cursor. Inspect their states and download the editable scenes.', cover: showcaseArt('interactive-web-cover', 'A graphic study of three animated web controls on a warm white canvas.') },
-  'long-form': { title: 'Animation Storyboard Example for Long-Form Projects', description: 'Follow a 75-second storyboard from a canyon crossing to an orbital greenhouse. Review the shot order, timing and sound direction before building an animatic.', cover: showcaseArt('storyboard-cover', 'Three painted storyboard frames of an explorer’s journey.'), upcoming: 'Full-length animation. Explore the storyboard now.' },
+  'long-form': { title: 'Animation Storyboards & Narrative Films', description: 'Watch a narrative short film and follow a 75-second storyboard from a canyon crossing to an orbital greenhouse. Study the shot order, transitions, and sound direction.', cover: showcaseArt('storyboard-cover', 'Three painted storyboard frames of an explorer’s journey.'), upcoming: 'Full-length version of The Explorer’s Route. Explore its storyboard now.' },
   games: { title: '2D Game Prototypes', description: 'Try Valley Gate and the Moonlit Observatory, two browser puzzles with original 2D level art and simple state changes.', cover: showcaseArt('games-cover-2d', 'A top-down pixel-art locomotive crossing a teal estuary.'), upcoming: 'Full game projects. Play the browser prototypes now.' },
   freeform: { title: 'Experimental Animation & Render Studies', description: 'Experiment with the timing of an editable loading loop and inspect concept studies in light, glass, architecture and stylized characters.', cover: { src: '/new-home/studio/motion-filaments.jpg', alt: 'An abstract study of fine curved filaments in motion.' } },
   '2d-3d-compositing': { title: '2D and 3D Compositing Examples', description: 'Explore concept images that combine 3D subjects with 2D callouts, controls and graphics.', cover: showcaseArt('compositing-cover', 'Floating three-dimensional shapes layered with flat circles and an angled cyan grid.'), upcoming: 'Interactive composites. View the concept images now.' },

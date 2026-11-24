@@ -203,6 +203,8 @@
 .al-study-figure figcaption a { display: inline-flex; align-items: center; gap: 6px; }
 .al-study-film { max-width: 960px; }
 .al-study-film video { aspect-ratio: 16 / 9; background: var(--site-dark); }
+.al-film-actions { flex-wrap: wrap; align-items: center; }
+.al-film-actions a { min-height: 44px; }
 .al-project .sample-game > img { aspect-ratio: 16 / 10; object-fit: cover; }
 .al-project .sample-game-controls { padding: 18px; }
 .al-project .sample-game-controls p { margin: 0 0 12px; color: var(--site-muted); }

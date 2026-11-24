@@ -59,12 +59,21 @@ function ProjectGrid({ projects, label, heading: Heading = 'h2' }: { projects: r
     {projects.map(project => <li key={showcaseProjectHref(project)}><Link className="al-gallery-card" href={showcaseProjectHref(project)}>
       <div className="al-cover" data-transparent={project.slug === 'interactive-motion-crew' || undefined}><Image src={project.cover.src} alt="" fill sizes="(max-width: 560px) 90vw, (max-width: 860px) 46vw, 32vw" /></div>
       <div className="al-gallery-card-copy">
-        <div className="al-format-row"><small>{project.format}</small>{(project.kind === 'concept' || project.kind === 'storyboard') && <ComingSoon />}</div>
+        <div className="al-format-row"><small>{project.format}{project.kind === 'film' && ` · ${project.durationSeconds} s`}</small>{(project.kind === 'concept' || project.kind === 'storyboard') && <ComingSoon />}</div>
         <Heading>{project.title}</Heading><p>{project.description}</p>
-        <span className="al-card-link">{project.kind === 'concept' ? 'View concept' : project.kind === 'storyboard' ? 'View storyboard' : 'Open project'} <ArrowUpRight size={17} aria-hidden="true" /></span>
+        <span className="al-card-link">{project.kind === 'film' ? 'Watch film' : project.kind === 'concept' ? 'View concept' : project.kind === 'storyboard' ? 'View storyboard' : 'Open project'} <ArrowUpRight size={17} aria-hidden="true" /></span>
       </div>
     </Link></li>)}
   </ul>
+}
+
+function ShortFilms({ projects }: { projects: readonly ShowcaseProject[] }) {
+  const films = projects.filter(project => project.kind === 'film')
+  if (films.length === 0) return null
+  return <section id="short-films" className="al-gallery-section" aria-labelledby="short-films-title">
+    <h2 id="short-films-title">Short films</h2>
+    <ProjectGrid projects={films} label="Short films" heading="h3" />
+  </section>
 }
 
 const libraryDescription = 'Watch editable motion graphics, try interactive web and 2D game examples, and explore storyboards, render studies and 2D/3D compositing concepts.'
@@ -86,6 +95,7 @@ export function LibraryShowcase() {
         <div><span>{featured.format}</span><strong>{featured.title}</strong><ArrowUpRight size={20} aria-hidden="true" /></div>
       </Link>
     </header>
+    <ShortFilms projects={showcaseProjects} />
     <section className="al-gallery-section" aria-labelledby="editable-examples-title">
       <h2 id="editable-examples-title">Editable animation examples</h2>
       <ProjectGrid projects={showcaseProjects.filter(project => project !== featured && (project.kind === 'native' || project.kind === 'skill'))} label="Editable Chorono examples" heading="h3" />
@@ -145,6 +155,7 @@ export function LibraryCollection({ collection }: { collection: NonNullable<Retu
       {collection.upcoming && <div className="al-upcoming-note"><ComingSoon /><span>{collection.upcoming}</span></div>}
     </header>
     <CollectionsNav current={collection.slug} />
+    <ShortFilms projects={collection.projects} />
     {render ? <>
       <div className="al-render-groups">{upcomingRenderStyles.map((style, index) => <section key={style} aria-labelledby={`al-render-style-${index}`}>
         <h2 id={`al-render-style-${index}`}>{style}</h2>
@@ -153,7 +164,7 @@ export function LibraryCollection({ collection }: { collection: NonNullable<Retu
       <section className="al-gallery-section" aria-labelledby="al-render-gallery"><h2 id="al-render-gallery">Concept gallery and showcase film</h2>
         <ProjectGrid projects={collection.projects.filter(project => project.kind !== 'concept')} label="Render concepts and showcase film" heading="h3" />
       </section>
-    </> : <PromptProjectGroups projects={collection.projects} />}
+    </> : <PromptProjectGroups projects={collection.projects.filter(project => project.kind !== 'film')} />}
     {path === ANIMATION_SKILLS_PATH && <p className="al-library-context"><Link href="/agent-skills">Connect Codex or Claude Code to Chorono</Link> or <Link href="/blog/animation-prompts-for-claude-and-codex">try the six guided animation exercises</Link>.</p>}
     {path === ANIMATION_RENDER_PATH && <p className="al-library-context"><Link href="/docs/export">Read the editor export docs</Link> for available formats and workflows.</p>}
   </main>

@@ -6,8 +6,9 @@ import InteractiveAnimationExample from '@/components/InteractiveAnimationExampl
 import ScenePreview from '@/components/player/ScenePreview'
 import { CopySnippet } from '@/components/tutorial/CopySnippet'
 import { samplePrompt, sampleSkill, type Sample } from '@/lib/animation-library/sample-studies'
+import { SITE_URL } from '@/lib/site'
 import { ANIMATION_RENDER_PATH, ANIMATION_SKILLS_PATH, showcaseCategoryNames, showcaseCollectionHref } from '@/lib/animation-library/routes'
-import type { ShowcaseProject } from '@/lib/animation-library/showcase'
+import { showcaseProjectHref, type ShowcaseFilm, type ShowcaseProject } from '@/lib/animation-library/showcase'
 import { ComingSoon, LibraryBreadcrumb, LibrarySchema, libraryProjectCrumbs } from './LibraryShowcase'
 
 function StudyPreview({ sample, cover }: { sample: Sample; cover: ShowcaseProject['cover'] }) {
@@ -22,7 +23,33 @@ function StudyPreview({ sample, cover }: { sample: Sample; cover: ShowcaseProjec
   }
 }
 
-export function LibraryProject({ project }: { project: Extract<ShowcaseProject, { kind: 'study' | 'video' | 'storyboard' | 'concept' }> }) {
+function FilmPreview({ film }: { film: ShowcaseFilm }) {
+  const absolute = (path: string) => new URL(path, SITE_URL).href
+  const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${absolute(showcaseProjectHref(film))}#video`,
+    name: film.title,
+    description: film.description,
+    thumbnailUrl: absolute(film.cover.src),
+    contentUrl: absolute(film.video),
+    uploadDate: film.uploadDate,
+    duration: `PT${film.durationSeconds}S`,
+  }).replace(/</g, '\\u003c')
+
+  return <figure className="al-study-figure al-study-film">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schema }} />
+    <video controls playsInline preload="none" poster={film.cover.src} src={film.video} width={1280} height={720} aria-label={film.title}>
+      <a href={film.video}>Open MP4</a>
+    </video>
+    <figcaption className="al-film-actions">
+      <span>{film.durationSeconds} seconds</span>
+      <a href={film.projectFile} download={`${film.slug}.chorono.json`}>Download editable Chorono project <Download size={16} aria-hidden="true" /></a>
+    </figcaption>
+  </figure>
+}
+
+export function LibraryProject({ project }: { project: Extract<ShowcaseProject, { kind: 'study' | 'video' | 'film' | 'storyboard' | 'concept' }> }) {
   const crumbs = libraryProjectCrumbs(project)
   const back = showcaseCollectionHref(project.category)
   return <main className="al-gallery al-project">
@@ -32,6 +59,7 @@ export function LibraryProject({ project }: { project: Extract<ShowcaseProject, 
       <div className="al-format-row"><p className="cd-eyebrow">{project.format}</p>{(project.kind === 'concept' || project.kind === 'storyboard') && <ComingSoon />}</div>
       <h1>{project.title}</h1><p>{project.description}</p>
     </header>
+    {project.kind === 'film' && <FilmPreview film={project} />}
     {project.kind === 'study' && <div className="al-study-layout">
       <div><StudyPreview sample={project.sample} cover={project.cover} />
         {project.sample.category === 'motion' && <a className="al-button" href={`/examples/${project.sample.id}.chorono.json`} download>Download editable scene <Download size={16} aria-hidden="true" /></a>}

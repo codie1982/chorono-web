@@ -279,6 +279,17 @@ const establishedPages: readonly DocumentationPage[] = [
     group: 'AI & scripting',
   },
   {
+    slug: 'scripting/splines',
+    source: 'docs/en/scripting-splines.md',
+    label: 'Spline scripting',
+    title: 'Script editable splines with JavaScript',
+    description:
+      'Create native 2D splines with JavaScript, split segments, move points and edit Bézier handles through the Chorono spline API.',
+    section: 'ai',
+    group: 'AI & scripting',
+    parentSlug: 'scripting',
+  },
+  {
     slug: 'troubleshooting',
     source: 'docs/en/troubleshooting.md',
     label: 'Troubleshooting',

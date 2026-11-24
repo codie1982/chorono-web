@@ -67,6 +67,7 @@ export const documentationScreenshots: readonly DocumentationScreenshot[] = [
   { source: 'public/docs/screenshots/selection-panel-v1.jpg', href: '/docs/screenshots/selection-panel-v1.jpg', width: 500, height: 500 },
   { source: 'public/docs/screenshots/snap-settings-v1.jpg', href: '/docs/screenshots/snap-settings-v1.jpg', width: 500, height: 680 },
   { source: 'public/docs/screenshots/spline-editor-v1.jpg', href: '/docs/screenshots/spline-editor-v1.jpg', width: 500, height: 240 },
+  { source: 'public/docs/screenshots/spline-live-outline-v1.png', href: '/docs/screenshots/spline-live-outline-v1.png', width: 640, height: 420 },
   { source: 'public/docs/screenshots/state-machine-v1.jpg', href: '/docs/screenshots/state-machine-v1.jpg', width: 1120, height: 580 },
   { source: 'public/docs/screenshots/text-properties-v1.jpg', href: '/docs/screenshots/text-properties-v1.jpg', width: 500, height: 680 },
   { source: 'public/docs/screenshots/timeline-ghost-v1.jpg', href: '/docs/screenshots/timeline-ghost-v1.jpg', width: 1120, height: 430 },

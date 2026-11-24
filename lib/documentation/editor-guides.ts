@@ -45,11 +45,31 @@ export const editorGuides: readonly DocumentationPage[] = [
     "slug": "editor/canvas/splines",
     "label": "Bézier points & splines",
     "title": "Edit Bézier points and spline curves",
-    "description": "Draw editable paths, adjust points and handles, and extend or close a spline in Chorono.",
+    "description": "Draw 2D spline curves in Chorono. Edit Bézier points and handles, work with segments and contours, and extend or close a vector path.",
     "parentSlug": "editor/canvas",
     "group": "Workspace",
     "section": "editor",
     "source": "docs/en/editor-canvas-splines.md"
+  },
+  {
+    "slug": "editor/canvas/compound-splines",
+    "label": "Compound paths & Boolean",
+    "title": "Compound paths and vector Boolean operations",
+    "description": "Create holes with compound paths, combine vector shapes with Boolean operations, and convert contours to editable splines or a 2D mesh.",
+    "parentSlug": "editor/canvas",
+    "group": "Workspace",
+    "section": "editor",
+    "source": "docs/en/editor-canvas-compound-splines.md"
+  },
+  {
+    "slug": "editor/canvas/spline-modeling",
+    "label": "2D spline modeling",
+    "title": "2D spline modeling, Offset Path and Stroke to Path",
+    "description": "Offset a vector path, round corners, convert a stroke to an editable outline and apply spline modifiers in Chorono's Edit dock.",
+    "parentSlug": "editor/canvas",
+    "group": "Workspace",
+    "section": "editor",
+    "source": "docs/en/editor-canvas-spline-modeling.md"
   },
   {
     "slug": "editor/canvas/motion-keys",

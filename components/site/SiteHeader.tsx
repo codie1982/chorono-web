@@ -12,6 +12,7 @@ const links = [
   { href: '/motion-graphics-software', label: 'Examples' },
   { href: '/docs', label: 'Docs' },
   { href: '/blog', label: 'Blog' },
+  { href: '/account', label: 'Account' },
 ] as const
 
 /** Shared brand and route-aware navigation. The native mobile disclosure is

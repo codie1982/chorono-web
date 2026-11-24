@@ -4,62 +4,109 @@ import { readFileSync } from 'node:fs'
 import vm from 'node:vm'
 import ts from 'typescript'
 
-const source = readFileSync(new URL('../components/tutorial/GitHubExitPrompt.tsx', import.meta.url), 'utf8')
-const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX } }).outputText
+function compile(relativePath) {
+  const source = readFileSync(new URL(relativePath, import.meta.url), 'utf8')
+  return ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText
+}
 
-// Exercise the actual effect/event handler with browser boundaries controlled independently.
-function mount({ elapsed = 31000, desktop = true, scroll = 300, stored = false, storageFails = false } = {}) {
+const communityCode = compile('../lib/community.ts')
+const exitCode = compile('../lib/community-exit.ts')
+const key = 'chorono:community-exit:v1'
+
+function mount({ elapsed = 31000, desktop = true, scroll = 300, stored = false, storageFails = false, claim = async () => true } = {}) {
   let now = 0
-  let showCount = 0
-  let open = false
+  let shown = 0
+  let requests = 0
   let handler
-  let cleanup
-  const storage = new Map(stored ? [['chorono:star-prompt-shown:v1', '1']] : [])
-  const element = { get open() { return open }, showModal() { open = true; showCount++ }, close() { open = false } }
-  const jsx = (type, props) => ({ type, props })
+  const storage = new Map(stored ? [[key, '1']] : [])
+  const withStorage = action => {
+    if (storageFails) throw Error('blocked')
+    return action()
+  }
+  const community = {
+    exports: {},
+    localStorage: {
+      getItem: name => withStorage(() => storage.get(name)),
+      setItem: (name, value) => withStorage(() => storage.set(name, value)),
+    },
+    require: name => {
+      assert.equal(name, './chorono-api')
+      return {}
+    },
+  }
+  vm.runInNewContext(communityCode, community)
   const context = {
     exports: {},
     Date: { now: () => now },
-    HTMLElement: class {},
-    document: { visibilityState: 'visible', activeElement: null, documentElement: {
+    document: { visibilityState: 'visible', documentElement: {
       addEventListener: (name, callback) => { assert.equal(name, 'mouseleave'); handler = callback },
       removeEventListener: (name, callback) => { assert.equal(callback, handler) },
     } },
     window: { scrollY: scroll, matchMedia: () => ({ matches: desktop }) },
-    sessionStorage: {
-      getItem: key => { if (storageFails) throw Error('blocked'); return storage.get(key) },
-      setItem: (key, value) => { if (storageFails) throw Error('blocked'); storage.set(key, value) },
-    },
     require: name => {
-      if (name === 'react') return { useEffect: callback => { cleanup = callback() }, useRef: () => ({ current: element }) }
-      if (name === 'react/jsx-runtime') return { jsx, jsxs: jsx }
-      if (name === 'lucide-react') return { Star: 'star', X: 'x' }
-      if (name === '@/lib/site') return { REPOSITORY_URL: 'https://github.com/codie1982/chorono-editor' }
-      if (name === '@/lib/analytics') return { trackAction: () => {} }
-      throw Error(`Unexpected dependency: ${name}`)
+      assert.equal(name, './community')
+      return community.exports
     },
   }
-  vm.runInNewContext(compiled, context)
-  context.exports.GitHubExitPrompt()
-  now = elapsed
-  return { exit: (event = {}) => handler({ relatedTarget: null, clientY: -1, ...event }), close: () => element.close(), count: () => showCount, stored: () => storage.size, cleanup: () => cleanup(), remount: () => context.exports.GitHubExitPrompt() }
+  vm.runInNewContext(exitCode, context)
+  const start = () => {
+    const stop = context.exports.watchExitIntent(() => true, () => { requests++; return claim() }, () => { shown++ })
+    now += elapsed
+    return stop
+  }
+  const stop = start()
+  return {
+    exit: (event = {}) => handler({ relatedTarget: null, clientY: -1, ...event }),
+    shown: () => shown,
+    requests: () => requests,
+    stored: () => storage.get(key),
+    stop,
+    start,
+  }
 }
 
-test('does not interrupt initial reading, small screens or unengaged visitors', () => {
+test('leaving early, on mobile, or with a recorded invitation does not contact the API', async () => {
   for (const options of [{ elapsed: 1000 }, { desktop: false }, { scroll: 0 }, { stored: true }]) {
-    const page = mount(options); page.exit(); assert.equal(page.count(), 0); page.cleanup()
+    const page = mount(options)
+    await page.exit()
+    assert.equal(page.requests(), 0)
+    page.stop()
   }
 })
 
-test('only leaving through the upper edge opens the star request once', () => {
+test('an eligible top-edge exit is claimed and remembered across visits', async () => {
   const page = mount()
-  page.exit({ clientY: 500 }); page.exit({ relatedTarget: {} }); assert.equal(page.count(), 0)
-  page.exit(); assert.equal(page.count(), 1); assert.equal(page.stored(), 1)
-  page.close(); page.exit(); assert.equal(page.count(), 1); page.cleanup()
+  await page.exit({ clientY: 20 })
+  await page.exit({ relatedTarget: {} })
+  assert.equal(page.requests(), 0)
+  await Promise.all([page.exit(), page.exit()])
+  assert.equal(page.shown(), 1)
+  assert.equal(page.stored(), '1')
+  page.stop()
+  const stop = page.start()
+  await page.exit()
+  assert.equal(page.requests(), 1)
+  stop()
 })
 
-test('blocked session storage never prevents closing or allows repeated prompts across routes', () => {
-  const page = mount({ storageFails: true })
-  page.exit(); assert.equal(page.count(), 1)
-  page.close(); page.cleanup(); page.remount(); page.exit(); assert.equal(page.count(), 1)
+test('an existing server claim suppresses the invitation, and storage failure still guards navigation', async () => {
+  const page = mount({ storageFails: true, claim: async () => false })
+  await page.exit()
+  assert.equal(page.shown(), 0)
+  page.stop()
+  const stop = page.start()
+  await page.exit()
+  assert.equal(page.requests(), 1)
+  stop()
+})
+
+test('an unavailable API does not permanently consume the invitation', async () => {
+  let available = false
+  const page = mount({ claim: async () => { if (!available) throw Error('offline'); return true } })
+  await page.exit()
+  assert.equal(page.stored(), undefined)
+  available = true
+  await page.exit()
+  assert.equal(page.shown(), 1)
+  page.stop()
 })

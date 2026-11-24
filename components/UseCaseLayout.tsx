@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import AnimationExample from './AnimationExample'
+import { InstallEditorLink } from '@/components/community/Community'
 import { ANIMATION_EXAMPLES, USE_CASE_PUBLISHED } from '@/lib/animation-example'
 import { USE_CASES, USE_CASE_CONTENT_UPDATED, useCaseStructuredData, type UseCasePath } from '@/lib/use-cases'
 import { GUIDE_AUTHOR, REPOSITORY_URL } from '@/lib/site'
@@ -25,11 +26,11 @@ export default function UseCaseLayout({ path, children, heroDemoLink, exampleCon
         <p className="mt-6 text-lg leading-8 text-[#6d5a52]">{page.intro}</p>
         <p className="mt-4 text-sm leading-7 text-[#6d5a52]">The local Chorono editor is free to download, run and modify under the MIT license. Access to Claude Code or Codex is managed separately by those providers.</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href={heroDemoLink ? '#example' : '/getting-started'} className="inline-flex min-h-[44px] items-center rounded-lg bg-[#8F3D27] px-5 py-3 text-sm font-semibold text-white hover:bg-[#73301f]">
-            {heroDemoLink ? 'Explore the editable demo' : 'Install the free editor'}
-          </Link>
           {heroDemoLink
-            ? <Link href="/getting-started" className="inline-flex min-h-[44px] items-center rounded-lg border border-[#d9bca9] bg-white px-5 py-3 text-sm font-semibold text-[#8F3D27] hover:border-[#8F3D27]">Install the free editor</Link>
+            ? <Link href="#example" className="inline-flex min-h-[44px] items-center rounded-lg bg-[#8F3D27] px-5 py-3 text-sm font-semibold text-white hover:bg-[#73301f]">Explore the editable demo</Link>
+            : <InstallEditorLink className="inline-flex min-h-[44px] items-center rounded-lg bg-[#8F3D27] px-5 py-3 text-sm font-semibold text-white hover:bg-[#73301f]">Install the free editor</InstallEditorLink>}
+          {heroDemoLink
+            ? <InstallEditorLink className="inline-flex min-h-[44px] items-center rounded-lg border border-[#d9bca9] bg-white px-5 py-3 text-sm font-semibold text-[#8F3D27] hover:border-[#8F3D27]">Install the free editor</InstallEditorLink>
             : <a href={REPOSITORY_URL} className="inline-flex min-h-[44px] items-center rounded-lg border border-[#d9bca9] bg-white px-5 py-3 text-sm font-semibold text-[#8F3D27] hover:border-[#8F3D27]">View source on GitHub <span aria-hidden="true" className="ml-2">↗</span></a>}
         </div>
       </div>

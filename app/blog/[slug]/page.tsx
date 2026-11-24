@@ -7,6 +7,7 @@ import AnimationExample from '@/components/AnimationExample'
 import InteractiveAnimationExample from '@/components/InteractiveAnimationExample'
 import EditorialScreenshot from '@/components/EditorialScreenshot'
 import { InstallEditorBanner } from '@/components/tutorial/InstallEditorBanner'
+import { InstallEditorLink } from '@/components/community/Community'
 
 export const dynamicParams = false
 export function generateStaticParams() { return BLOG_POSTS.map(post => ({ slug: post.slug })) }
@@ -73,7 +74,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         </article>
         <aside className="sticky top-8 hidden lg:block">
           <nav aria-label="In this article" className="border-l border-[#d9bca9] pl-5"><p className="mb-5 text-xs font-semibold uppercase tracking-widest text-[#8F3D27]">In this guide</p><ol className="space-y-4 text-sm leading-6 text-[#6d5a52]">{post.sections.map(section => <li key={section.id}><a href={`#${section.id}`} className="hover:text-[#8F3D27]">{section.heading}</a></li>)}</ol></nav>
-          <Link href="/getting-started" className="mt-7 block rounded-xl bg-[#ede0d7] p-5 text-sm font-semibold leading-6 text-[#8F3D27]">New to Chorono?<br />Install the editor <span aria-hidden="true">→</span></Link>
+          <InstallEditorLink className="mt-7 block rounded-xl bg-[#ede0d7] p-5 text-sm font-semibold leading-6 text-[#8F3D27]">New to Chorono?<br />Install the editor <span aria-hidden="true">→</span></InstallEditorLink>
         </aside>
       </div>
       <div className="max-w-3xl"><RelatedPosts current={post} /></div>

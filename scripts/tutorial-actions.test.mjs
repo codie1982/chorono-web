@@ -20,6 +20,7 @@ function setup(gtag) {
     if (name === 'react/jsx-runtime') return { jsx, jsxs: jsx }
     if (name === 'next/link') return { default: 'a' }
     if (name === '@/lib/analytics') return analyticsContext.exports
+    if (name === '@/components/community/Community') return { useInstallInvitation: () => () => false }
     throw Error(`Unexpected dependency: ${name}`)
   } }
   vm.runInNewContext(actionCode, actionContext)

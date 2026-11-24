@@ -2,7 +2,6 @@ import Link from 'next/link'
 import GuideLayout from '@/components/GuideLayout'
 import { pageMetadata, REPOSITORY_URL, SITE_PAGES } from '@/lib/site'
 import { InstallEditorBanner } from '@/components/tutorial/InstallEditorBanner'
-import { GitHubExitPrompt } from '@/components/tutorial/GitHubExitPrompt'
 
 const page = SITE_PAGES['/getting-started']
 export const metadata = pageMetadata(
@@ -48,7 +47,6 @@ npm run chorono -- start --background --open`}</code></pre>
         <p>See <a href={`${REPOSITORY_URL}/blob/main/docs/en/installation.md`}>installation details</a> and <a href={`${REPOSITORY_URL}/blob/main/docs/en/troubleshooting.md`}>connection troubleshooting</a>. The external agent’s local MCP workflow needs no provider API key in the editor.</p>
       </section>
       </GuideLayout>
-      <GitHubExitPrompt />
     </>
   )
 }

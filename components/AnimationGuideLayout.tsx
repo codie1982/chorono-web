@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { InstallEditorLink } from '@/components/community/Community'
 import { ANIMATION_GUIDES, ANIMATION_GUIDE_DATE, animationGuideStructuredData, type AnimationGuidePath } from '@/lib/animation-guides'
 import { GUIDE_AUTHOR } from '@/lib/site'
 
@@ -19,7 +20,7 @@ export default function AnimationGuideLayout({ path, children }: { path: Animati
       <aside className="mt-12 max-w-3xl rounded-2xl border border-[#d9bca9] bg-white p-6 sm:p-8">
         <p className="text-xl font-bold">Try it in the free Chorono editor</p>
         <p className="mt-3 leading-7 text-[#6d5a52]">Run the open-source editor on your computer. Edit the layers and keyframes yourself, or connect Claude Code or Codex through MCP. Agent access is managed separately by those providers.</p>
-        <Link href="/getting-started" className="mt-5 inline-flex min-h-[44px] items-center rounded-lg bg-[#8F3D27] px-5 py-3 font-semibold text-white hover:bg-[#73301f]">Install the editor <span aria-hidden="true" className="ml-2">→</span></Link>
+        <InstallEditorLink className="mt-5 inline-flex min-h-[44px] items-center rounded-lg bg-[#8F3D27] px-5 py-3 font-semibold text-white hover:bg-[#73301f]">Install the editor <span aria-hidden="true" className="ml-2">→</span></InstallEditorLink>
       </aside>
     </div>
   </main>

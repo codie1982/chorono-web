@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { CommunityBanner, CommunityProvider } from '@/components/community/Community'
 import { SiteHeader } from './SiteHeader'
 import { SiteFooter } from './SiteFooter'
 
@@ -6,10 +7,11 @@ import { SiteFooter } from './SiteFooter'
  * Page layouts own their content/navigation only; branding and footer links
  * belong here. Server children retain their existing metadata and landmarks. */
 export function SiteShell({ children }: { children: ReactNode }) {
-  return <>
+  return <CommunityProvider>
     <a href="#site-content" className="site-skip">Skip to content</a>
     <SiteHeader />
+    <CommunityBanner />
     <div id="site-content" className="site-content" tabIndex={-1}>{children}</div>
     <SiteFooter />
-  </>
+  </CommunityProvider>
 }

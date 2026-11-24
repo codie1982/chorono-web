@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import HeroCharacters from '@/components/hero/HeroCharacters';
 import HeroProjectBridge from '@/components/hero/HeroProjectBridge';
 import { useHeroCrew } from '@/components/hero/useHeroCrew';
+import { useInstallInvitation } from '@/components/community/Community';
 import { RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
 import { USE_CASES } from '@/lib/use-cases';
 import { ANIMATION_EXAMPLES } from '@/lib/animation-example';
@@ -101,6 +102,7 @@ function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
 
 export default function ChoronoLandingPage() {
   const crew = useHeroCrew();
+  const inviteToCommunity = useInstallInvitation();
   return (
     <main className="min-h-screen bg-[#f7f1ed] text-[#211612]">
       <section ref={crew.section} className="relative overflow-hidden bg-[#120D0B] text-white">
@@ -128,8 +130,13 @@ export default function ChoronoLandingPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={LINKS.docs}
+                  aria-haspopup="dialog"
                   {...crew.cta('install')}
-                  onClick={event => { trackAction('editorSetup', 'hero'); crew.navigate(event, 'celebrate'); }}
+                  onClick={event => {
+                    trackAction('editorSetup', 'hero');
+                    if (inviteToCommunity(event, LINKS.docs)) crew.trigger('celebrate');
+                    else crew.navigate(event, 'celebrate');
+                  }}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B55233] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(181,82,51,0.35)] transition hover:bg-[#8F3D27]"
                 >
                   <Github className="h-4 w-4" />

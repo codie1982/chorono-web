@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { apiV1 } from '@/lib/chorono-api'
 import styles from './account.module.css'
 
 type Profile = { email: string; displayName?: string; username?: string }
@@ -10,10 +11,6 @@ type AccountState =
   | { status: 'unavailable' }
   | { status: 'ready'; profile: Profile }
 
-const apiOrigin = process.env.NEXT_PUBLIC_CHORONO_API_URL
-  || (process.env.NODE_ENV === 'development' ? 'http://localhost:6001' : 'https://api.chorono.com')
-const api = new URL('/api/v1/', apiOrigin)
-
 export function AccountSession({ signInFailed }: { signInFailed: boolean }) {
   const [account, setAccount] = useState<AccountState>({ status: 'loading' })
 
@@ -21,7 +18,7 @@ export function AccountSession({ signInFailed }: { signInFailed: boolean }) {
     const controller = new AbortController()
     async function load() {
       try {
-        const response = await fetch(new URL('me', api), {
+        const response = await fetch(new URL('me', apiV1), {
           credentials: 'include',
           cache: 'no-store',
           signal: controller.signal,
@@ -49,7 +46,7 @@ export function AccountSession({ signInFailed }: { signInFailed: boolean }) {
   if (account.status === 'anonymous') {
     return <>
       {signInFailed && <p role="alert">Sign-in could not be completed. Try again.</p>}
-      <a className={styles.primaryAction} href={new URL('session/login', api).href}>Sign in</a>
+      <a className={styles.primaryAction} href={new URL('session/login', apiV1).href}>Sign in</a>
     </>
   }
 
@@ -59,7 +56,7 @@ export function AccountSession({ signInFailed }: { signInFailed: boolean }) {
       {(profile.displayName || profile.username) && <h2>{profile.displayName || profile.username}</h2>}
       <p>{profile.email}</p>
     </div>
-    <form action={new URL('session/logout', api).href} method="post">
+    <form action={new URL('session/logout', apiV1).href} method="post">
       <button className={styles.secondaryAction} type="submit">Sign out</button>
     </form>
   </>

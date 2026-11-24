@@ -1,0 +1,3453 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "small-wins",
+    "width": 1920,
+    "height": 1080,
+    "durationMs": 6000,
+    "frameRate": 30,
+    "backgroundColor": "#F1EADB"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "rect_82",
+      "name": "Editorial rule",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 149,
+        "y": 146,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D8CCB9"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 1622,
+        "height": 2
+      }
+    },
+    {
+      "id": "rect_83",
+      "name": "Footer rule",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 149,
+        "y": 929,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D8CCB9"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 1622,
+        "height": 2
+      }
+    },
+    {
+      "id": "rect_84",
+      "name": "Column separator",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1219,
+        "y": 220,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D8CCB9"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 629
+      }
+    },
+    {
+      "id": "text_85",
+      "name": "Study label",
+      "type": "text",
+      "transform": {
+        "x": 150,
+        "y": 93,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 600,
+        "height": 36
+      },
+      "text": {
+        "value": "KINETIC TYPOGRAPHY",
+        "fontSize": 24,
+        "color": "#5D5348",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "rect_86",
+      "name": "Copper register mark",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1739,
+        "y": 105,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B4462F"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 32,
+        "height": 4
+      }
+    },
+    {
+      "id": "text_87",
+      "name": "SMALL",
+      "type": "text",
+      "transform": {
+        "x": 140,
+        "y": 245,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1090,
+        "height": 266
+      },
+      "text": {
+        "value": "SMALL",
+        "fontSize": 246,
+        "color": "#181A19",
+        "fontFamily": "Arial",
+        "fontWeight": "900",
+        "textAlign": "left"
+      },
+      "masks": [
+        {
+          "id": "small-window",
+          "maskLayerId": "rect_88",
+          "mode": "add",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "rect_88",
+      "name": "SMALL reveal mask",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 132,
+        "y": 227,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 1098,
+        "height": 289
+      },
+      "hidden": true
+    },
+    {
+      "id": "text_89",
+      "name": "WINS",
+      "type": "text",
+      "transform": {
+        "x": 140,
+        "y": 525,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1090,
+        "height": 266
+      },
+      "text": {
+        "value": "WINS",
+        "fontSize": 246,
+        "color": "#181A19",
+        "fontFamily": "Arial",
+        "fontWeight": "900",
+        "textAlign": "left"
+      },
+      "masks": [
+        {
+          "id": "wins-window",
+          "maskLayerId": "rect_90",
+          "mode": "add",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "rect_90",
+      "name": "WINS reveal mask",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 132,
+        "y": 507,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 1098,
+        "height": 289
+      },
+      "hidden": true
+    },
+    {
+      "id": "rect_91",
+      "name": "Copper underline",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 155,
+        "y": 820,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B4462F"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 633,
+        "height": 13
+      }
+    },
+    {
+      "id": "rect_92",
+      "name": "Step 1 guide",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1330,
+        "y": 810,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D8CCB9"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 392,
+        "height": 1
+      }
+    },
+    {
+      "id": "rect_93",
+      "name": "Step 1",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1330,
+        "y": 730,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#E6BBA8"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 96,
+        "height": 75
+      }
+    },
+    {
+      "id": "rect_94",
+      "name": "Step 2 guide",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1330,
+        "y": 689,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D8CCB9"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 392,
+        "height": 1
+      }
+    },
+    {
+      "id": "rect_95",
+      "name": "Step 2",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1330,
+        "y": 609,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D78466"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 181,
+        "height": 75
+      }
+    },
+    {
+      "id": "rect_96",
+      "name": "Step 3 guide",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1330,
+        "y": 568,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D8CCB9"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 392,
+        "height": 1
+      }
+    },
+    {
+      "id": "rect_97",
+      "name": "Step 3",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1330,
+        "y": 488,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B4462F"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 291,
+        "height": 75
+      }
+    },
+    {
+      "id": "text_98",
+      "name": "Study caption",
+      "type": "text",
+      "transform": {
+        "x": 151,
+        "y": 969,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 740,
+        "height": 34
+      },
+      "text": {
+        "value": "ONE MOVE AT A TIME",
+        "fontSize": 22,
+        "color": "#5D5348",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    }
+  ],
+  "timelines": [
+    {
+      "id": "poster",
+      "durationMs": 6000,
+      "loop": false,
+      "autoplay": false,
+      "tracks": [
+        {
+          "target": "layers.rect_86.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1795507394049_1",
+              "timeMs": 0,
+              "value": 0.001,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394049_2",
+              "timeMs": 100,
+              "value": 0.001,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394049_3",
+              "timeMs": 360,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_86.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394050_4",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394050_5",
+              "timeMs": 100,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_85.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394050_6",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394050_7",
+              "timeMs": 260,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_87.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394054_8",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394054_9",
+              "timeMs": 400,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_87.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795507394054_10",
+              "timeMs": 0,
+              "value": 515,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394054_11",
+              "timeMs": 400,
+              "value": 515,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394054_12",
+              "timeMs": 990,
+              "value": 245,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795507394054_13",
+              "timeMs": 1130,
+              "value": 245,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_89.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394060_14",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394060_15",
+              "timeMs": 650,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_89.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795507394060_16",
+              "timeMs": 0,
+              "value": 795,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394061_17",
+              "timeMs": 650,
+              "value": 795,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394061_18",
+              "timeMs": 1210,
+              "value": 512,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795507394061_19",
+              "timeMs": 1530,
+              "value": 525,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_91.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1795507394062_20",
+              "timeMs": 0,
+              "value": 0.001,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394062_21",
+              "timeMs": 1600,
+              "value": 0.001,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394062_22",
+              "timeMs": 2280,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_91.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394062_23",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394063_24",
+              "timeMs": 1600,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_93.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1795507394065_25",
+              "timeMs": 0,
+              "value": 0.001,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394065_26",
+              "timeMs": 930,
+              "value": 0.001,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394065_27",
+              "timeMs": 1640,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_93.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394065_28",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394065_29",
+              "timeMs": 930,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_95.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1795507394068_30",
+              "timeMs": 0,
+              "value": 0.001,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394073_31",
+              "timeMs": 1170,
+              "value": 0.001,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394073_32",
+              "timeMs": 1880,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_95.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394074_33",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394074_34",
+              "timeMs": 1170,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_97.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1795507394075_35",
+              "timeMs": 0,
+              "value": 0.001,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394076_36",
+              "timeMs": 1410,
+              "value": 0.001,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394076_37",
+              "timeMs": 2120,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_97.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394076_38",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394076_39",
+              "timeMs": 1410,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.text_98.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795507394077_40",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795507394077_41",
+              "timeMs": 2320,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795507394077_42",
+              "timeMs": 2840,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "rect_86",
+        "text_85",
+        "text_87",
+        "text_89",
+        "rect_91",
+        "rect_93",
+        "rect_95",
+        "rect_97",
+        "text_98"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {},
+  "parameterWires": [],
+  "stateMachines": [],
+  "authoring": {
+    "version": 1,
+    "records": {
+      "[\"scene\"]": {
+        "address": [
+          "scene"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"composition\",\"id\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Small Wins catalog authoring"
+            },
+            "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+            "requestId": "small-wins-apply-1795507394082"
+          },
+          "[\"composition\",\"width\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Small Wins catalog authoring"
+            },
+            "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+            "requestId": "small-wins-apply-1795507394082"
+          },
+          "[\"composition\",\"height\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Small Wins catalog authoring"
+            },
+            "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+            "requestId": "small-wins-apply-1795507394082"
+          },
+          "[\"composition\",\"backgroundColor\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Small Wins catalog authoring"
+            },
+            "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+            "requestId": "small-wins-apply-1795507394082"
+          }
+        }
+      },
+      "[\"layer\",\"rect_82\"]": {
+        "address": [
+          "layer",
+          "rect_82"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_83\"]": {
+        "address": [
+          "layer",
+          "rect_83"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_84\"]": {
+        "address": [
+          "layer",
+          "rect_84"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_85\"]": {
+        "address": [
+          "layer",
+          "text_85"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_86\"]": {
+        "address": [
+          "layer",
+          "rect_86"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_87\"]": {
+        "address": [
+          "layer",
+          "text_87"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_88\"]": {
+        "address": [
+          "layer",
+          "rect_88"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_89\"]": {
+        "address": [
+          "layer",
+          "text_89"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_90\"]": {
+        "address": [
+          "layer",
+          "rect_90"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_91\"]": {
+        "address": [
+          "layer",
+          "rect_91"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_92\"]": {
+        "address": [
+          "layer",
+          "rect_92"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_93\"]": {
+        "address": [
+          "layer",
+          "rect_93"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_94\"]": {
+        "address": [
+          "layer",
+          "rect_94"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_95\"]": {
+        "address": [
+          "layer",
+          "rect_95"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_96\"]": {
+        "address": [
+          "layer",
+          "rect_96"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_97\"]": {
+        "address": [
+          "layer",
+          "rect_97"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_98\"]": {
+        "address": [
+          "layer",
+          "text_98"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"timeline\",\"poster\"]": {
+        "address": [
+          "timeline",
+          "poster"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_86.transform.scaleX\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_86.transform.scaleX"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_86.transform.scaleX\",\"kf_1795507394049_1\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_86.transform.scaleX",
+          "kf_1795507394049_1"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_86.transform.scaleX\",\"kf_1795507394049_2\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_86.transform.scaleX",
+          "kf_1795507394049_2"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_86.transform.scaleX\",\"kf_1795507394049_3\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_86.transform.scaleX",
+          "kf_1795507394049_3"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_86.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_86.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_86.opacity\",\"kf_1795507394050_4\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_86.opacity",
+          "kf_1795507394050_4"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_86.opacity\",\"kf_1795507394050_5\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_86.opacity",
+          "kf_1795507394050_5"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.text_85.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.text_85.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_85.opacity\",\"kf_1795507394050_6\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_85.opacity",
+          "kf_1795507394050_6"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_85.opacity\",\"kf_1795507394050_7\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_85.opacity",
+          "kf_1795507394050_7"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.text_87.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.text_87.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_87.opacity\",\"kf_1795507394054_8\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_87.opacity",
+          "kf_1795507394054_8"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_87.opacity\",\"kf_1795507394054_9\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_87.opacity",
+          "kf_1795507394054_9"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.text_87.transform.y\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.text_87.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_87.transform.y\",\"kf_1795507394054_10\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_87.transform.y",
+          "kf_1795507394054_10"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_87.transform.y\",\"kf_1795507394054_11\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_87.transform.y",
+          "kf_1795507394054_11"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_87.transform.y\",\"kf_1795507394054_12\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_87.transform.y",
+          "kf_1795507394054_12"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_87.transform.y\",\"kf_1795507394054_13\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_87.transform.y",
+          "kf_1795507394054_13"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.text_89.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.text_89.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_89.opacity\",\"kf_1795507394060_14\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_89.opacity",
+          "kf_1795507394060_14"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_89.opacity\",\"kf_1795507394060_15\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_89.opacity",
+          "kf_1795507394060_15"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.text_89.transform.y\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.text_89.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_89.transform.y\",\"kf_1795507394060_16\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_89.transform.y",
+          "kf_1795507394060_16"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_89.transform.y\",\"kf_1795507394061_17\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_89.transform.y",
+          "kf_1795507394061_17"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_89.transform.y\",\"kf_1795507394061_18\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_89.transform.y",
+          "kf_1795507394061_18"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_89.transform.y\",\"kf_1795507394061_19\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_89.transform.y",
+          "kf_1795507394061_19"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_91.transform.scaleX\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_91.transform.scaleX"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_91.transform.scaleX\",\"kf_1795507394062_20\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_91.transform.scaleX",
+          "kf_1795507394062_20"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_91.transform.scaleX\",\"kf_1795507394062_21\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_91.transform.scaleX",
+          "kf_1795507394062_21"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_91.transform.scaleX\",\"kf_1795507394062_22\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_91.transform.scaleX",
+          "kf_1795507394062_22"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_91.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_91.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_91.opacity\",\"kf_1795507394062_23\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_91.opacity",
+          "kf_1795507394062_23"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_91.opacity\",\"kf_1795507394063_24\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_91.opacity",
+          "kf_1795507394063_24"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_93.transform.scaleX\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_93.transform.scaleX"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_93.transform.scaleX\",\"kf_1795507394065_25\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_93.transform.scaleX",
+          "kf_1795507394065_25"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_93.transform.scaleX\",\"kf_1795507394065_26\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_93.transform.scaleX",
+          "kf_1795507394065_26"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_93.transform.scaleX\",\"kf_1795507394065_27\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_93.transform.scaleX",
+          "kf_1795507394065_27"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_93.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_93.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_93.opacity\",\"kf_1795507394065_28\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_93.opacity",
+          "kf_1795507394065_28"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_93.opacity\",\"kf_1795507394065_29\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_93.opacity",
+          "kf_1795507394065_29"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_95.transform.scaleX\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_95.transform.scaleX"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_95.transform.scaleX\",\"kf_1795507394068_30\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_95.transform.scaleX",
+          "kf_1795507394068_30"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_95.transform.scaleX\",\"kf_1795507394073_31\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_95.transform.scaleX",
+          "kf_1795507394073_31"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_95.transform.scaleX\",\"kf_1795507394073_32\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_95.transform.scaleX",
+          "kf_1795507394073_32"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_95.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_95.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_95.opacity\",\"kf_1795507394074_33\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_95.opacity",
+          "kf_1795507394074_33"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_95.opacity\",\"kf_1795507394074_34\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_95.opacity",
+          "kf_1795507394074_34"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_97.transform.scaleX\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_97.transform.scaleX"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_97.transform.scaleX\",\"kf_1795507394075_35\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_97.transform.scaleX",
+          "kf_1795507394075_35"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_97.transform.scaleX\",\"kf_1795507394076_36\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_97.transform.scaleX",
+          "kf_1795507394076_36"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_97.transform.scaleX\",\"kf_1795507394076_37\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_97.transform.scaleX",
+          "kf_1795507394076_37"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.rect_97.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.rect_97.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_97.opacity\",\"kf_1795507394076_38\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_97.opacity",
+          "kf_1795507394076_38"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.rect_97.opacity\",\"kf_1795507394076_39\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.rect_97.opacity",
+          "kf_1795507394076_39"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"poster\",\"layers.text_98.opacity\"]": {
+        "address": [
+          "track",
+          "poster",
+          "layers.text_98.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_98.opacity\",\"kf_1795507394077_40\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_98.opacity",
+          "kf_1795507394077_40"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_98.opacity\",\"kf_1795507394077_41\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_98.opacity",
+          "kf_1795507394077_41"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"poster\",\"layers.text_98.opacity\",\"kf_1795507394077_42\"]": {
+        "address": [
+          "key",
+          "poster",
+          "layers.text_98.opacity",
+          "kf_1795507394077_42"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Small Wins catalog authoring"
+          },
+          "transactionId": "60fccd19-9463-4aa7-aaa2-e0e79c376e67",
+          "requestId": "small-wins-apply-1795507394082"
+        },
+        "fields": {}
+      }
+    }
+  }
+}

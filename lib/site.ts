@@ -11,7 +11,7 @@ export const SITE_TITLE = 'Chorono | Free, Open-Source 2D Animation Editor'
 export const SITE_DESCRIPTION = 'Create editable 2D animations with Chorono’s free, open-source editor. Use keyframes and timelines, or connect Claude and Codex through MCP to build from prompts.'
 export const THEME_COLOR = '#B55233'
 
-export function pageMetadata(title: string, description: string, path = '/', cover?: { image: string; imageAlt: string }): Metadata {
+export function pageMetadata(title: string, description: string, path = '/', cover?: { image: string; imageAlt: string; imageWidth?: number; imageHeight?: number }): Metadata {
   const url = new URL(path, SITE_URL).href
   const guide = cover ?? (path === '/getting-started' || path === '/agent-skills' ? SITE_PAGES[path] : undefined)
   const image = `${SITE_URL}${guide?.image ?? '/opengraph-image.png'}`
@@ -27,7 +27,7 @@ export function pageMetadata(title: string, description: string, path = '/', cov
       title,
       description,
       url,
-      images: [{ url: image, width: 1200, height: guide ? 675 : 630, alt: imageAlt }],
+      images: [{ url: image, width: cover?.imageWidth ?? 1200, height: cover?.imageHeight ?? (guide ? 675 : 630), alt: imageAlt }],
     },
     twitter: {
       card: 'summary_large_image',

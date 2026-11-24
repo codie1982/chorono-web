@@ -29,7 +29,7 @@ import {
 
 const LINKS = {
   docs: "/getting-started",
-  examples: "/agent-skills",
+  examples: "/animations",
   androidImplementation: "https://github.com/codie1982/chorono-android-sdk",
 };
 
@@ -86,9 +86,10 @@ interface FeatureCardProps {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   text: string;
+  link?: { href: string; label: string };
 }
 
-function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
+function FeatureCard({ icon: Icon, title, text, link }: FeatureCardProps) {
   return (
     <div className="rounded-2xl border border-[#eadbd2] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
       <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#fff0e9] text-[#B55233]">
@@ -96,6 +97,7 @@ function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
       </div>
       <h3 className="text-base font-semibold text-[#211612]">{title}</h3>
       <p className="mt-2 text-sm leading-6 text-[#6d5a52]">{text}</p>
+      {link && <a className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#8F3D27] hover:underline" href={link.href}>{link.label} <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>}
     </div>
   );
 }
@@ -145,11 +147,11 @@ export default function ChoronoLandingPage() {
                 <a
                   href={LINKS.examples}
                   {...crew.cta('skills')}
-                  onClick={event => { trackAction('agentSkills', 'hero'); crew.navigate(event, 'highfive'); }}
+                  onClick={event => { trackAction('animationExamples', 'hero'); crew.navigate(event, 'highfive'); }}
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
                 >
                   <BookOpen className="h-4 w-4" />
-                  Explore agent skills
+                  Explore animations
                 </a>
               </div>
 
@@ -255,9 +257,9 @@ root.addView(view)`}</CodeBlock>
         <h2 id="editor-features-heading" className="mb-3 text-2xl font-bold">Create and refine in the editor</h2>
         <p className="mb-6 max-w-2xl leading-7 text-[#6d5a52]">Use these tools in your local Chorono editor to build and revise your animation before exporting it for an app.</p>
         <div className="grid gap-4 md:grid-cols-4">
-          <FeatureCard icon={Layers} title="Editor-first" text="Timeline, dope sheet, curve editor and modifiers in one animation workflow." />
+          <FeatureCard icon={Layers} title="Editor-first" text="Timeline, dope sheet, curve editor and modifiers in one animation workflow." link={{ href: "/docs", label: "Read the docs" }} />
           <FeatureCard icon={Box} title="Editable Projects" text="Keep layers, keyframes and animation settings available for the next revision." />
-          <FeatureCard icon={Zap} title="Agent Control" text="Connect Claude or Codex through MCP to create, inspect and refine scenes." />
+          <FeatureCard icon={Zap} title="Agent Control" text="Connect Claude or Codex through MCP to create, inspect and refine scenes." link={{ href: "/agent-skills", label: "Explore Agent Skills" }} />
           <FeatureCard icon={Play} title="Preview and Refine" text="Inspect animation frames, adjust timing and save a portable project." />
         </div>
       </section>

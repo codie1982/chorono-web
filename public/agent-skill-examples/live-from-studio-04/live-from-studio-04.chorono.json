@@ -1,0 +1,2505 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "Live from Studio 04",
+    "width": 1920,
+    "height": 1080,
+    "durationMs": 7000,
+    "frameRate": 30,
+    "backgroundColor": "#1A2324"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "rect_82",
+      "name": "Live badge",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 116,
+        "y": 744,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#ED5342"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 108,
+        "height": 42
+      }
+    },
+    {
+      "id": "text_83",
+      "name": "Live label",
+      "type": "text",
+      "transform": {
+        "x": 130,
+        "y": 752,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 84,
+        "height": 32
+      },
+      "text": {
+        "value": "LIVE",
+        "fontSize": 24,
+        "color": "#1B1817",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "text_84",
+      "name": "Studio channel",
+      "type": "text",
+      "transform": {
+        "x": 245,
+        "y": 754,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 440,
+        "height": 30
+      },
+      "text": {
+        "value": "STUDIO 04  /  FIELD FEED",
+        "fontSize": 23,
+        "color": "#D3D8D0",
+        "fontFamily": "Courier New",
+        "fontWeight": "600",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "rect_85",
+      "name": "Red broadcast rule",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 116,
+        "y": 805,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#ED5342"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 703,
+        "height": 5
+      }
+    },
+    {
+      "id": "text_86",
+      "name": "Presenter name",
+      "type": "text",
+      "transform": {
+        "x": 115,
+        "y": 822,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 705,
+        "height": 102
+      },
+      "text": {
+        "value": "LUMA WELLS",
+        "fontSize": 78,
+        "color": "#F8EBD6",
+        "fontFamily": "Arial",
+        "fontWeight": "900",
+        "textAlign": "left"
+      },
+      "masks": [
+        {
+          "id": "presenter-window",
+          "maskLayerId": "rect_89",
+          "mode": "add",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "text_87",
+      "name": "Program title",
+      "type": "text",
+      "transform": {
+        "x": 119,
+        "y": 931,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 46.5,
+        "anchorY": 14.5
+      },
+      "opacity": 1,
+      "size": {
+        "width": 690,
+        "height": 42
+      },
+      "text": {
+        "value": "FIELD NOTES",
+        "fontSize": 32,
+        "color": "#D3D8D0",
+        "fontFamily": "Courier New",
+        "fontWeight": "700",
+        "textAlign": "left"
+      },
+      "masks": [
+        {
+          "id": "program-window",
+          "maskLayerId": "rect_90",
+          "mode": "add",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "rect_88",
+      "name": "Program accent",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 119,
+        "y": 983,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#ED5342"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 40,
+        "height": 3
+      }
+    },
+    {
+      "id": "rect_89",
+      "name": "presenter-window",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 116,
+        "y": 819,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 705,
+        "height": 101
+      },
+      "hidden": true
+    },
+    {
+      "id": "rect_90",
+      "name": "program-window",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 116,
+        "y": 928,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 80,
+        "anchorY": 40
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#FFFFFF"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 705,
+        "height": 47
+      },
+      "hidden": true
+    }
+  ],
+  "timelines": [
+    {
+      "id": "timeline_1",
+      "mode": "2danimation",
+      "durationMs": 7000,
+      "autoplay": true,
+      "loop": false,
+      "tracks": [
+        {
+          "target": "layers.rect_85.transform.scaleX",
+          "keyframes": [
+            {
+              "id": "kf_1795521743185_1",
+              "timeMs": 0,
+              "value": 0.001,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743186_2",
+              "timeMs": 500,
+              "value": 0.001,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795521743186_3",
+              "timeMs": 970,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743187_4",
+              "timeMs": 6100,
+              "value": 1,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "id": "kf_1795521743187_5",
+              "timeMs": 6560,
+              "value": 0.001,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_85.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795521743187_6",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743187_7",
+              "timeMs": 500,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743187_8",
+              "timeMs": 6560,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.text_86.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795521743206_9",
+              "timeMs": 0,
+              "value": 927,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743206_10",
+              "timeMs": 785,
+              "value": 927,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795521743206_11",
+              "timeMs": 1240,
+              "value": 822,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743206_12",
+              "timeMs": 5800,
+              "value": 822,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "id": "kf_1795521743206_13",
+              "timeMs": 6200,
+              "value": 927,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.text_87.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795521743207_14",
+              "timeMs": 0,
+              "value": 982,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743207_15",
+              "timeMs": 1030,
+              "value": 982,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795521743207_16",
+              "timeMs": 1420,
+              "value": 931,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743207_17",
+              "timeMs": 5600,
+              "value": 931,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "id": "kf_1795521743207_18",
+              "timeMs": 5950,
+              "value": 982,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_82.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795521743208_19",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743208_20",
+              "timeMs": 660,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795521743208_21",
+              "timeMs": 840,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743208_22",
+              "timeMs": 5950,
+              "value": 1,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "id": "kf_1795521743208_23",
+              "timeMs": 6070,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.text_83.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795521743208_24",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743208_25",
+              "timeMs": 660,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795521743208_26",
+              "timeMs": 840,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743208_27",
+              "timeMs": 5950,
+              "value": 1,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "id": "kf_1795521743208_28",
+              "timeMs": 6070,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.text_84.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795521743208_29",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743208_30",
+              "timeMs": 685,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795521743208_31",
+              "timeMs": 865,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743208_32",
+              "timeMs": 5950,
+              "value": 1,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "id": "kf_1795521743208_33",
+              "timeMs": 6070,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_88.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795521743208_34",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743209_35",
+              "timeMs": 1140,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795521743209_36",
+              "timeMs": 1320,
+              "value": 1,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795521743209_37",
+              "timeMs": 5610,
+              "value": 1,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "id": "kf_1795521743209_38",
+              "timeMs": 5730,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "rect_85",
+        "text_86",
+        "text_87",
+        "rect_82",
+        "text_83",
+        "text_84",
+        "rect_88"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {},
+  "authoring": {
+    "version": 1,
+    "records": {
+      "[\"scene\"]": {
+        "address": [
+          "scene"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"composition\",\"durationMs\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+            "requestId": "Studio04-apply-001"
+          },
+          "[\"composition\",\"backgroundColor\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+            "requestId": "Studio04-apply-001"
+          }
+        }
+      },
+      "[\"layer\",\"rect_82\"]": {
+        "address": [
+          "layer",
+          "rect_82"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_83\"]": {
+        "address": [
+          "layer",
+          "text_83"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_84\"]": {
+        "address": [
+          "layer",
+          "text_84"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_85\"]": {
+        "address": [
+          "layer",
+          "rect_85"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_86\"]": {
+        "address": [
+          "layer",
+          "text_86"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_87\"]": {
+        "address": [
+          "layer",
+          "text_87"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_88\"]": {
+        "address": [
+          "layer",
+          "rect_88"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_89\"]": {
+        "address": [
+          "layer",
+          "rect_89"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_90\"]": {
+        "address": [
+          "layer",
+          "rect_90"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"timeline\",\"timeline_1\"]": {
+        "address": [
+          "timeline",
+          "timeline_1"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"durationMs\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+            "requestId": "Studio04-apply-001"
+          },
+          "[\"layerIds\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+            "requestId": "Studio04-apply-001"
+          }
+        }
+      },
+      "[\"track\",\"timeline_1\",\"layers.rect_85.transform.scaleX\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.rect_85.transform.scaleX"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.transform.scaleX\",\"kf_1795521743185_1\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.transform.scaleX",
+          "kf_1795521743185_1"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.transform.scaleX\",\"kf_1795521743186_2\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.transform.scaleX",
+          "kf_1795521743186_2"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.transform.scaleX\",\"kf_1795521743186_3\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.transform.scaleX",
+          "kf_1795521743186_3"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.transform.scaleX\",\"kf_1795521743187_4\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.transform.scaleX",
+          "kf_1795521743187_4"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.transform.scaleX\",\"kf_1795521743187_5\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.transform.scaleX",
+          "kf_1795521743187_5"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.rect_85.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.rect_85.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.opacity\",\"kf_1795521743187_6\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.opacity",
+          "kf_1795521743187_6"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.opacity\",\"kf_1795521743187_7\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.opacity",
+          "kf_1795521743187_7"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_85.opacity\",\"kf_1795521743187_8\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_85.opacity",
+          "kf_1795521743187_8"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.text_86.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.text_86.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_86.transform.y\",\"kf_1795521743206_9\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_86.transform.y",
+          "kf_1795521743206_9"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_86.transform.y\",\"kf_1795521743206_10\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_86.transform.y",
+          "kf_1795521743206_10"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_86.transform.y\",\"kf_1795521743206_11\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_86.transform.y",
+          "kf_1795521743206_11"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_86.transform.y\",\"kf_1795521743206_12\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_86.transform.y",
+          "kf_1795521743206_12"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_86.transform.y\",\"kf_1795521743206_13\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_86.transform.y",
+          "kf_1795521743206_13"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.text_87.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.text_87.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_87.transform.y\",\"kf_1795521743207_14\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_87.transform.y",
+          "kf_1795521743207_14"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_87.transform.y\",\"kf_1795521743207_15\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_87.transform.y",
+          "kf_1795521743207_15"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_87.transform.y\",\"kf_1795521743207_16\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_87.transform.y",
+          "kf_1795521743207_16"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_87.transform.y\",\"kf_1795521743207_17\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_87.transform.y",
+          "kf_1795521743207_17"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_87.transform.y\",\"kf_1795521743207_18\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_87.transform.y",
+          "kf_1795521743207_18"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.rect_82.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.rect_82.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_82.opacity\",\"kf_1795521743208_19\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_82.opacity",
+          "kf_1795521743208_19"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_82.opacity\",\"kf_1795521743208_20\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_82.opacity",
+          "kf_1795521743208_20"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_82.opacity\",\"kf_1795521743208_21\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_82.opacity",
+          "kf_1795521743208_21"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_82.opacity\",\"kf_1795521743208_22\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_82.opacity",
+          "kf_1795521743208_22"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_82.opacity\",\"kf_1795521743208_23\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_82.opacity",
+          "kf_1795521743208_23"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.text_83.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.text_83.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_83.opacity\",\"kf_1795521743208_24\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_83.opacity",
+          "kf_1795521743208_24"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_83.opacity\",\"kf_1795521743208_25\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_83.opacity",
+          "kf_1795521743208_25"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_83.opacity\",\"kf_1795521743208_26\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_83.opacity",
+          "kf_1795521743208_26"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_83.opacity\",\"kf_1795521743208_27\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_83.opacity",
+          "kf_1795521743208_27"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_83.opacity\",\"kf_1795521743208_28\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_83.opacity",
+          "kf_1795521743208_28"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.text_84.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.text_84.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_84.opacity\",\"kf_1795521743208_29\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_84.opacity",
+          "kf_1795521743208_29"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_84.opacity\",\"kf_1795521743208_30\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_84.opacity",
+          "kf_1795521743208_30"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_84.opacity\",\"kf_1795521743208_31\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_84.opacity",
+          "kf_1795521743208_31"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_84.opacity\",\"kf_1795521743208_32\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_84.opacity",
+          "kf_1795521743208_32"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.text_84.opacity\",\"kf_1795521743208_33\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.text_84.opacity",
+          "kf_1795521743208_33"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.rect_88.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.rect_88.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_88.opacity\",\"kf_1795521743208_34\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_88.opacity",
+          "kf_1795521743208_34"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_88.opacity\",\"kf_1795521743209_35\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_88.opacity",
+          "kf_1795521743209_35"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_88.opacity\",\"kf_1795521743209_36\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_88.opacity",
+          "kf_1795521743209_36"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_88.opacity\",\"kf_1795521743209_37\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_88.opacity",
+          "kf_1795521743209_37"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_88.opacity\",\"kf_1795521743209_38\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_88.opacity",
+          "kf_1795521743209_38"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "c26123e7-3d82-4495-a34f-181fcbbfaa1b",
+          "requestId": "Studio04-apply-001"
+        },
+        "fields": {}
+      }
+    }
+  }
+}

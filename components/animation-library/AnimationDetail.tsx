@@ -12,6 +12,8 @@ import { TableOfContents } from "@/components/documentation/TableOfContents";
 import ScenePreview from "@/components/player/ScenePreview";
 import InteractiveCrewPreview from './InteractiveCrewPreview';
 import ExampleDownload from '@/components/ExampleDownload';
+import { LibraryBreadcrumb, LibrarySchema, libraryProjectCrumbs } from './LibraryShowcase';
+import { findShowcaseProject } from '@/lib/animation-library/showcase';
 import { VideoPreview } from './VideoPreview';
 import { animationVideoStructuredData } from '@/lib/animation-library/seo';
 
@@ -23,6 +25,8 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
   const trackingId = entry.preview.kind === 'example'
     ? entry.preview.exampleId
     : entry.preview.kind === 'motion-crew' ? 'motion-crew' : entry.slug;
+  const project = findShowcaseProject(entry.libraryCategory, entry.slug);
+  const crumbs = project ? libraryProjectCrumbs(project) : undefined;
   const videoStructuredData = animationVideoStructuredData(entry, stats.durationMs);
   const headings = [
     { id: 'about-the-animation', text: 'About this animation', depth: 2 as const },
@@ -36,11 +40,8 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
     <div className="cd-content-grid al-detail">
       {videoStructuredData && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData).replace(/</g, '\\u003c') }} />}
       <main id="docs-main" className="cd-main" tabIndex={-1}>
-        <nav className="cd-breadcrumb" aria-label="Breadcrumb">
-          <Link href="/animations">Animation library</Link>
-          <span>/</span>
-          <span aria-current="page">{entry.title}</span>
-        </nav>
+        {crumbs && <LibrarySchema items={crumbs} />}
+        <LibraryBreadcrumb items={crumbs} />
         <header className="al-detail-heading">
           <span className="cd-eyebrow">
             {entry.category} · EDITABLE ANIMATION

@@ -1,5 +1,5 @@
 import { documentationPages } from '@/lib/documentation/manifest'
-import { animationEntries } from '@/lib/animation-library/catalog'
+import { collectionIsIndexable, showcaseCollections, showcaseProjects } from '@/lib/animation-library/showcase'
 import { existingSitemapEntries } from './existing'
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -13,6 +13,9 @@ import { GET as previewSitemap } from '@/app/sitemap-preview.xml/route'
 import { contentPublicationMetadata, publicContentOrigin } from "./publication";
 
 afterEach(() => vi.unstubAllEnvs());
+
+const animationPageCount = 1 + showcaseCollections.filter(collectionIsIndexable).length
+  + showcaseProjects.filter(project => project.kind !== 'concept').length;
 
 describe("publication and topic sitemap contract", () => {
   it('rejects duplicated, noncanonical and payload URLs before publishing XML', () => {
@@ -39,7 +42,7 @@ describe("publication and topic sitemap contract", () => {
   })
   it("covers existing and migrated reviewed HTML routes exactly once without downloads or query URLs", () => {
     const paths = sitemapTopics.flatMap((topic) => topic.paths);
-    expect(paths).toHaveLength(existingSitemapEntries.length + documentationPages.filter(page => page.availability !== 'coming-soon').length + animationEntries.length + 1);
+    expect(paths).toHaveLength(existingSitemapEntries.length + documentationPages.filter(page => page.availability !== 'coming-soon').length + animationPageCount);
     expect(paths).toContain('/animations/interactive-motion-crew');
     expect(new Set(paths).size).toBe(paths.length);
     expect(
@@ -56,6 +59,15 @@ describe("publication and topic sitemap contract", () => {
     const animationSitemap = serializeSitemap('https://www.chorono.com', 'sitemap-animations.xml', false, true)!;
     expect(animationSitemap).toContain('<loc>https://www.chorono.com/animations/one-bar-every-beat</loc>');
     expect(animationSitemap).not.toContain('/examples/one-bar-every-beat.mp4');
+    expect(animationSitemap).not.toContain('/animations/style-animations/one-bar-every-beat');
+    for (const path of ['/animations/style-animations', '/animations/style-animations/small-wins', '/animations/style-animations/live-from-studio-04', '/animations/games/valley-gate', '/animations/chorono-render', '/animations/skills']) {
+      expect(animationSitemap).toContain(`<loc>https://www.chorono.com${path}</loc>`);
+    }
+    const previewSitemap = serializeSitemap('http://localhost:3000', 'sitemap-animations.xml', true)!;
+    for (const path of ['/animations/2d-3d-compositing', '/animations/2d-3d-compositing/exploded-camera', '/animations/chorono-render/cobalt-optics']) {
+      expect(animationSitemap).not.toContain(`<loc>https://www.chorono.com${path}</loc>`);
+      expect(previewSitemap).toContain(`<loc>http://localhost:3000${path}</loc>`);
+    }
     expect(serializeSitemap('https://www.chorono.com', 'sitemap-docs-start.xml', true)).not.toContain('lastmod')
     const previous = existingSitemapEntries.map(entry => new URL(entry.url).pathname)
     expect(sitemapTopics.filter(topic => !topic.unpublished).flatMap(topic => topic.paths).sort()).toEqual(previous.sort())
@@ -94,7 +106,7 @@ describe("publication and topic sitemap contract", () => {
     vi.stubEnv("CHORONO_CONTENT_ORIGIN", undefined);
     expect(publicContentOrigin()).toBe("https://www.chorono.com");
     const releasedPaths = sitemapTopics.filter(topic => topic.unpublished).flatMap(topic => topic.paths);
-    expect(releasedPaths).toHaveLength(documentationPages.filter(page => page.availability !== 'coming-soon').length + animationEntries.length + 1);
+    expect(releasedPaths).toHaveLength(documentationPages.filter(page => page.availability !== 'coming-soon').length + animationPageCount);
     for (const path of releasedPaths) {
       expect(contentPublicationMetadata(path)).toMatchObject({
         robots: { index: true, follow: true },

@@ -39,6 +39,10 @@ async function fetchChecked(path, type) {
 function checkSiteShell(html, path) {
   assert.equal([...html.matchAll(/<header\b[^>]*data-site-header\b/g)].length, 1, `${path}: one shared header`)
   assert.equal([...html.matchAll(/<main\b/g)].length, 1, `${path}: one main landmark`)
+  const navigation = html.match(/<nav\b[^>]*aria-label="Main navigation"[^>]*>(.*?)<\/nav>/s)?.[1] ?? ''
+  for (const [target, label] of [['/animations', 'Animations'], ['/agent-skills', 'Agent Skills'], ['/docs', 'Docs']]) {
+    assert.ok(new RegExp(`<a\\b[^>]*href="${target}"[^>]*>${label}</a>`).test(navigation), `${path}: missing ${label} in the main navigation`)
+  }
   const footers = [...html.matchAll(/<footer\b[^>]*data-site-footer\b[^>]*>(.*?)<\/footer>/gs)]
   assert.equal(footers.length, 1, `${path}: one shared footer`)
   assert.ok(footers[0][1].includes('id="footer-animation-library"'), `${path}: dedicated animation library section`)
@@ -48,6 +52,10 @@ function checkSiteShell(html, path) {
 for (const path of pages) {
   const html = await (await fetchChecked(path, /text\/html/)).text()
   checkSiteShell(html, path)
+  if (path === '/') {
+    const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1] ?? ''
+    for (const target of ['/animations', '/agent-skills', '/docs']) assert.ok(main.includes(`href="${target}"`), `Homepage main content links to ${target}`)
+  }
   const metas = [...html.matchAll(/<meta\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const expected = new URL(path, canonicalOrigin).href
@@ -229,7 +237,17 @@ const existingUrls = pages.map(path => new URL(path, canonicalOrigin).href)
 assert.ok(existingUrls.every(url => publicUrls.includes(url)), 'Existing public URL coverage must survive the feature release')
 const addedUrls = publicUrls.filter(url => !existingUrls.includes(url))
 const featureReleased = sitemapFiles.some(file => file.pathname === '/sitemap-docs-start.xml')
-assert.equal(addedUrls.length, featureReleased ? 79 : 0, 'Only reviewed, released docs/library pages enter the live index')
+if (featureReleased) {
+  assert.equal(addedUrls.filter(url => new URL(url).pathname.startsWith('/docs')).length, 74, 'The released documentation inventory remains intact')
+  const library = await (await fetchChecked('/animations', /text\/html/)).text()
+  for (const path of ['style-animations', 'interactive-web', 'long-form', 'games', 'freeform', 'skills', 'chorono-render', 'style-animations/small-wins', 'style-animations/live-from-studio-04', 'one-bar-every-beat', 'three-dot-loading', 'editable-title-card', 'interactive-motion-crew']) {
+    assert.ok(publicUrls.includes(`${canonicalOrigin}/animations/${path}`), `/animations/${path}: missing sitemap entry`)
+    assert.ok(library.includes(`href="/animations/${path}"`), `/animations/${path}: missing library link`)
+  }
+  assert.ok(!publicUrls.some(url => new URL(url).pathname.startsWith('/animations/2d-3d-compositing')), 'Image-only compositing concepts stay out of the public sitemap')
+} else {
+  assert.equal(addedUrls.length, 0, 'Unreleased docs/library pages stay out of the public sitemap')
+}
 for (const url of addedUrls) {
   const location = new URL(url)
   assert.equal(location.origin, canonicalOrigin)

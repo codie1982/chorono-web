@@ -16,6 +16,7 @@ export interface SkillExampleComposition {
   readonly width: number
   readonly height: number
   readonly prompt: string
+  readonly englishCaptions?: boolean
 }
 
 /** One finished example. The same record drives both layouts and the public sitemap. */
@@ -209,6 +210,7 @@ export const skillExamples: readonly SkillExample[] = [
   {
     slug: "four-fridays",
     title: "Four Fridays",
+    englishCaptions: true,
     family: "data",
     category: "Bar chart animation",
     libraryCategory: 'style-animations',
@@ -358,6 +360,7 @@ export const skillExamples: readonly SkillExample[] = [
   {
     slug: "field-recorder",
     title: "Field Recorder",
+    englishCaptions: true,
     family: "product",
     category: "Product assembly animation",
     libraryCategory: 'style-animations',
@@ -396,6 +399,7 @@ export const skillExamples: readonly SkillExample[] = [
   {
     slug: "how-light-gets-in",
     title: "How Light Gets In",
+    englishCaptions: true,
     family: "education",
     category: "Circuit explainer animation",
     libraryCategory: 'style-animations',
@@ -415,6 +419,7 @@ export const skillExamples: readonly SkillExample[] = [
   {
     slug: "same-distance-different-feel",
     title: "Same Distance, Different Feel",
+    englishCaptions: true,
     family: "education",
     category: "Easing comparison animation",
     libraryCategory: 'style-animations',
@@ -469,5 +474,11 @@ export function skillExampleMedia(slug: string, format: 'landscape' | 'portrait'
   const base = `/agent-skill-examples/${slug}`
   const suffix = format === 'portrait' ? '-portrait' : ''
   const fileName = `${slug}${suffix}.chorono.json`
-  return { poster: `${base}/poster${suffix}.jpg`, video: `${base}/${slug}${suffix}.mp4`, project: `${base}/${fileName}`, fileName }
+  return {
+    poster: `${base}/poster${suffix}.jpg`,
+    video: `${base}/${slug}${suffix}.mp4`,
+    captions: `${base}/${slug}${suffix}.en.vtt`,
+    project: `${base}/${fileName}`,
+    fileName,
+  }
 }

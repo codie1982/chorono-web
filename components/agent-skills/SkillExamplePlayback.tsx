@@ -6,7 +6,7 @@ import { CopySnippet } from '@/components/tutorial/CopySnippet'
 import { skillExampleMedia, type SkillExample } from '@/lib/agent-skills/catalog'
 import styles from './skill-catalog.module.css'
 
-type ExamplePlayback = Pick<SkillExample, 'title' | 'slug' | 'width' | 'height' | 'durationSeconds' | 'frameRate' | 'prompt' | 'portrait'>
+type ExamplePlayback = Pick<SkillExample, 'title' | 'slug' | 'width' | 'height' | 'durationSeconds' | 'frameRate' | 'prompt' | 'portrait' | 'englishCaptions'>
 
 const formats = [
   ['landscape', '16:9 Landscape'],
@@ -30,6 +30,7 @@ export function SkillExamplePlayback({ example }: { example: ExamplePlayback }) 
           <video key={media.video} controls playsInline preload="none" poster={media.poster} width={composition.width} height={composition.height}
             aria-label={`${example.title}${portrait ? ' portrait' : ''} animation`}>
             <source src={media.video} type="video/mp4" />
+            {composition.englishCaptions && <track kind="captions" srcLang="en" label="English" src={media.captions} />}
             <a href={media.video}>Open the MP4 preview</a>
           </video>
           <figcaption className={styles.videoCaption}>

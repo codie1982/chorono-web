@@ -2,11 +2,12 @@ import Link from 'next/link'
 import { ArrowUpRight, ChevronRight } from 'lucide-react'
 import {
   SKILL_CATALOG_DESCRIPTION, SKILL_CATALOG_TITLE, skillBreadcrumbs, skillCatalogRoutes,
-  skillExamples, type SkillCatalogSurface, type SkillExample,
+  skillExampleMedia, skillExamples, type SkillCatalogSurface, type SkillExample,
 } from '@/lib/agent-skills/catalog'
 import { skillCatalogStructuredData } from '@/lib/agent-skills/seo'
 import { SkillExampleList } from './SkillExampleList'
 import { SkillExamplePlayback } from './SkillExamplePlayback'
+import { SkillInteractiveDemo } from './SkillInteractiveDemo'
 import styles from './skill-catalog.module.css'
 
 function Breadcrumbs({ example, surface }: { example?: SkillExample; surface: SkillCatalogSurface }) {
@@ -59,6 +60,8 @@ export function SkillExampleDetail({ example, surface = 'public' }: {
     <Breadcrumbs example={example} surface={surface} />
     <Lead eyebrow={example.category} title={example.title} text={example.description} />
     <SkillExamplePlayback key={example.slug} example={example} />
+    {example.interactiveDemo && <SkillInteractiveDemo kind={example.interactiveDemo} project={skillExampleMedia(example.slug).project}
+      poster={skillExampleMedia(example.slug).poster} width={example.width} height={example.height} />}
     <div className={styles.notes}>
       <section aria-labelledby="skill-beats-title">
         <h2 id="skill-beats-title">On the timeline</h2>

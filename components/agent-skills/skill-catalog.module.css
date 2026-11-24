@@ -140,3 +140,13 @@
   .cards { grid-template-columns: minmax(0, 1fr); }
   .beats li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
+
+.interactiveDemo { margin-block: 32px; }
+.interactiveDemo h2 { margin: 0 0 12px; }
+.interactiveCanvas { position: relative; display: grid; overflow: hidden; max-width: 960px; border-radius: 16px; background: var(--site-surface); }
+.interactiveCanvas img, .interactiveCanvas canvas { grid-area: 1 / 1; display: block; width: 100%; height: auto; }
+.interactiveControls { display: flex; flex-wrap: wrap; gap: 10px; padding-block: 12px; }
+.interactiveControls button { min-height: 44px; padding: 7px 17px; border: 1px solid var(--site-line); border-radius: 10px; background: var(--site-surface); color: var(--skill-link); font-weight: 650; }
+.interactiveControls button[aria-pressed='true'] { background: var(--skill-action-bg); color: var(--skill-action-text); }
+.interactiveControls button:focus-visible { outline: 2px solid var(--skill-link); outline-offset: 3px; }
+.interactiveDemo p:empty { display: none; }

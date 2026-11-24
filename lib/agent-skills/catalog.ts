@@ -1,3 +1,4 @@
+import { catalogMotionExamples } from './catalog-motion-examples'
 import { ANIMATION_LIBRARY_PATH, ANIMATION_SKILLS_PATH, showcaseCategoryNames, showcaseCollectionHref, showcaseDetailHref, type ShowcaseCategoryId } from '@/lib/animation-library/routes'
 
 export const SKILL_CATALOG_PATH = ANIMATION_SKILLS_PATH
@@ -44,6 +45,7 @@ export interface SkillExample extends SkillExampleComposition {
   readonly durationSeconds: number
   readonly frameRate: number
   readonly mediaAdded: string
+  readonly interactiveDemo?: 'plant-cards' | 'artifact-card'
   readonly portrait?: SkillExampleComposition
   readonly beats: readonly { readonly time: string; readonly label: string; readonly detail: string }[]
   readonly revision: string
@@ -436,6 +438,7 @@ export const skillExamples: readonly SkillExample[] = [
     revision: "Change the same start and end times in all three lanes, then compare their positions halfway through the pass.",
     guide: { href: "/animation-easing", label: "Animation easing guide" },
   },
+  ...catalogMotionExamples,
 ]
 
 /** Use a collection path supplied by the caller to keep preview navigation in its own shell. */

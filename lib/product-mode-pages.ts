@@ -11,6 +11,7 @@ export const productModePages = {
   modeling: {
     path: productModePaths.modeling, label: '3D Animation & Modeling',
     title: '3D Animation & Modeling Roadmap',
+    seoTitle: '3D Animation & Modeling Software',
     description: 'See the 3D Mode development plan for modeling, materials, rigs and shot animation. Inspect a workspace concept and the orbital greenhouse study.',
     image: { src: '/new-home/studio/3d.jpg', alt: 'Concept for the 3D workspace showing an explorer robot, modeling controls and a UV layout.', caption: '3D Mode workspace concept' },
     example: { href: showcaseDetailHref('freeform', 'orbital-greenhouse'), label: 'Explore the greenhouse concept' },
@@ -25,6 +26,7 @@ export const productModePages = {
   render: {
     path: productModePaths.render, label: 'Chorono Render',
     title: '3D Rendering Workflow & Concept Studies',
+    seoTitle: '3D Rendering Software for Animation',
     description: 'Explore the Chorono Render development plan and its concept studies. Inspect optical glass lighting and learn how a scene is prepared for frame output.',
     image: { src: '/chorono-render/material-chair.png', alt: 'A curved amber glass chair with highlights and refraction on a neutral studio floor.', caption: 'Optical glass lighting concept' },
     example: { href: showcaseDetailHref('freeform', 'optical-glass'), label: 'Inspect the optical glass study' },
@@ -39,6 +41,7 @@ export const productModePages = {
   game: {
     path: productModePaths.game, label: 'Game Engine',
     title: '2D & 3D Game Engine Roadmap',
+    seoTitle: 'Game Engine for 2D & 3D Games',
     description: 'Read the Chorono Game Mode development roadmap for scenes, behavior and playable builds. Try Valley Gate, a browser prototype with input and state feedback.',
     image: { src: '/new-home/studio/game-valley.jpg', alt: 'A traveler facing a stone gate in a rocky valley with waterfalls.', caption: 'Valley Gate environment concept' },
     example: { href: showcaseDetailHref('games', 'valley-gate'), label: 'Play the Valley Gate prototype' },

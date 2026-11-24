@@ -14,6 +14,12 @@ const useCases = {
   '/kinetic-typography': { id: 'pause-then-move', duration: 8000, layers: 8, tracks: 10 },
 }
 const fundamentals = ['/keyframe-animation', '/animation-easing']
+const productModeTitles = {
+  '/motion-graphics-software': 'Free Motion Graphics Software for 2D Projects | Chorono',
+  '/3d-animation-software': '3D Animation & Modeling Software | Chorono',
+  '/3d-rendering-software': '3D Rendering Software for Animation | Chorono',
+  '/game-engine': 'Game Engine for 2D & 3D Games | Chorono',
+}
 const pages = ['/', '/getting-started', '/agent-skills', '/blog', ...blogSlugs.map(slug => `/blog/${slug}`), ...Object.keys(useCases), ...fundamentals]
 const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'")
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, decode(value)]))
@@ -55,6 +61,9 @@ for (const path of pages) {
   if (path === '/') {
     const main = html.match(/<main\b[^>]*>(.*?)<\/main>/s)?.[1] ?? ''
     for (const target of ['/animations', '/agent-skills', '/docs']) assert.ok(main.includes(`href="${target}"`), `Homepage main content links to ${target}`)
+    assert.ok(main.includes('href="#product-modes"'), 'The homepage hero links directly to the product cards')
+    const products = main.match(/<section\b[^>]*id="product-modes"[^>]*>(.*?)<\/section>/s)?.[1] ?? ''
+    for (const target of Object.keys(productModeTitles)) assert.ok(products.includes(`href="${target}"`), `Product card links to ${target}`)
   }
   const metas = [...html.matchAll(/<meta\b[^>]*>/g)].map(([tag]) => attributes(tag))
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
@@ -233,7 +242,18 @@ for (const file of sitemapFiles) {
   publicUrls.push(...[...child.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]))
 }
 assert.equal(new Set(publicUrls).size, publicUrls.length, 'Each public HTML URL occurs once')
-const existingUrls = pages.map(path => new URL(path, canonicalOrigin).href)
+for (const [path, title] of Object.entries(productModeTitles)) {
+  const response = await fetchChecked(path, /text\/html/)
+  const html = await response.text()
+  const location = new URL(path, canonicalOrigin).href
+  const links = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag))
+  const robots = [...html.matchAll(/<meta\b[^>]*>/g)].map(([tag]) => attributes(tag)).find(meta => meta.name === 'robots')
+  assert.equal(decode(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? ''), title, `${path}: product title`)
+  assert.equal(links.find(link => link.rel === 'canonical')?.href, location, `${path}: product canonical`)
+  assert.ok(!robots?.content.includes('noindex') && !response.headers.get('x-robots-tag')?.includes('noindex'), `${path}: product is eligible for indexing`)
+  assert.ok(publicUrls.includes(location), `${path}: product is listed in the sitemap`)
+}
+const existingUrls = [...pages, ...Object.keys(productModeTitles)].map(path => new URL(path, canonicalOrigin).href)
 assert.ok(existingUrls.every(url => publicUrls.includes(url)), 'Existing public URL coverage must survive the feature release')
 const addedUrls = publicUrls.filter(url => !existingUrls.includes(url))
 const featureReleased = sitemapFiles.some(file => file.pathname === '/sitemap-docs-start.xml')

@@ -10,6 +10,7 @@ import { RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
 import { USE_CASES } from '@/lib/use-cases';
 import { ANIMATION_EXAMPLES } from '@/lib/animation-example';
 import {
+  ArrowDown,
   ArrowRight,
   BookOpen,
   Box,
@@ -156,7 +157,11 @@ export default function ChoronoLandingPage() {
                 </a>
               </div>
 
-              <div className="mt-9 grid grid-cols-2 gap-4 text-sm text-zinc-400 sm:grid-cols-4">
+              <a href="#product-modes" className="mt-3 inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-[#f2c6b7] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                Browse product modes <ArrowDown className="h-4 w-4" aria-hidden="true" />
+              </a>
+
+              <div className="mt-5 grid grid-cols-2 gap-4 text-sm text-zinc-400 sm:grid-cols-4">
                 {['Free & Open Source', 'Editable Projects', 'Agent Control', 'Local Setup'].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-[#d96f45]" />

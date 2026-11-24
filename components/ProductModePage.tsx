@@ -3,12 +3,10 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { productModePages, productModePaths, type ProductModePageData } from '@/lib/product-mode-pages'
 import { pageMetadata, SITE_URL } from '@/lib/site'
-import { contentPublicationMetadata } from '@/lib/site-index/publication'
 
 export function productModeMetadata(mode: ProductModePageData) {
   return {
-    ...pageMetadata(`${mode.title} | Chorono`, mode.description, mode.path, { image: mode.image.src, imageAlt: mode.image.alt }),
-    ...contentPublicationMetadata(mode.path, false),
+    ...pageMetadata(`${mode.seoTitle} | Chorono`, mode.description, mode.path, { image: mode.image.src, imageAlt: mode.image.alt }),
   }
 }
 
@@ -43,6 +41,7 @@ export function ProductModePage({ mode }: { mode: ProductModePageData }) {
       </section>
     </article>
     <nav className="mt-10 flex flex-wrap gap-x-5 border-t border-[#e7d8cf] pt-4 text-sm" aria-label="Chorono product modes">
+      <Link className={bodyLink} href="/#product-modes">All product modes</Link>
       <Link className={bodyLink} href={productModePaths.motion}>2D Motion Graphics</Link>
       {Object.values(productModePages).map(item => <Link className={bodyLink} key={item.path} href={item.path} aria-current={item.path === mode.path ? 'page' : undefined}>{item.label}</Link>)}
     </nav>

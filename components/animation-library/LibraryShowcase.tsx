@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { skillExampleFamilies } from '@/lib/agent-skills/catalog'
 import Link from 'next/link'
 import { ArrowDown, ArrowUpRight, ChevronRight } from 'lucide-react'
 import { SITE_URL } from '@/lib/site'
@@ -111,6 +112,28 @@ export function LibraryShowcase() {
   </main>
 }
 
+function PromptProjectGroups({ projects }: { projects: readonly ShowcaseProject[] }) {
+  const remaining = projects.filter(project => project.kind !== 'skill')
+  const groups = Object.entries(skillExampleFamilies)
+    .map(([id, title]) => ({ id, title, projects: projects.filter(project => project.kind === 'skill' && project.example.family === id) }))
+    .filter(group => group.projects.length > 0)
+  if (groups.length === 0) return <ProjectGrid projects={projects} label="Collection examples" />
+
+  return <>
+    <nav className="al-collections-nav" aria-label="Animation example categories">
+      {groups.map(group => <a key={group.id} href={`#examples-${group.id}`}>{group.title}</a>)}
+    </nav>
+    {groups.map(group => <section key={group.id} id={`examples-${group.id}`} className="al-gallery-section" aria-labelledby={`heading-${group.id}`}>
+      <h2 id={`heading-${group.id}`}>{group.title}</h2>
+      <ProjectGrid projects={group.projects} label={group.title} heading="h3" />
+    </section>)}
+    {remaining.length > 0 && <section className="al-gallery-section" aria-labelledby="more-library-examples">
+      <h2 id="more-library-examples">More examples</h2>
+      <ProjectGrid projects={remaining} label="More examples" heading="h3" />
+    </section>}
+  </>
+}
+
 export function LibraryCollection({ collection }: { collection: NonNullable<ReturnType<typeof findShowcaseCollection>> }) {
   const path = showcaseCollectionHref(collection.slug)
   const crumbs = [...rootCrumbs, { label: collection.name, path }]
@@ -130,7 +153,7 @@ export function LibraryCollection({ collection }: { collection: NonNullable<Retu
       <section className="al-gallery-section" aria-labelledby="al-render-gallery"><h2 id="al-render-gallery">Concept gallery and showcase film</h2>
         <ProjectGrid projects={collection.projects.filter(project => project.kind !== 'concept')} label="Render concepts and showcase film" heading="h3" />
       </section>
-    </> : <ProjectGrid projects={collection.projects} label={`${collection.name} examples`} />}
+    </> : <PromptProjectGroups projects={collection.projects} />}
     {path === ANIMATION_SKILLS_PATH && <p className="al-library-context"><Link href="/agent-skills">Connect Codex or Claude Code to Chorono</Link> or <Link href="/blog/animation-prompts-for-claude-and-codex">try the six guided animation exercises</Link>.</p>}
     {path === ANIMATION_RENDER_PATH && <p className="al-library-context"><Link href="/docs/export">Read the editor export docs</Link> for available formats and workflows.</p>}
   </main>

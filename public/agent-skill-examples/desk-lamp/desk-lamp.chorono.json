@@ -1,0 +1,2548 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "Desk Lamp",
+    "width": 1920,
+    "height": 1080,
+    "durationMs": 10000,
+    "frameRate": 30,
+    "backgroundColor": "#262322"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "text_1350",
+      "name": "Title",
+      "type": "text",
+      "transform": {
+        "x": 123,
+        "y": 87,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1120,
+        "height": 132.6
+      },
+      "text": {
+        "value": "Desk Lamp",
+        "fontSize": 102,
+        "color": "#F5E6D1",
+        "fontFamily": "Georgia",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "text_1351",
+      "name": "Subtitle",
+      "type": "text",
+      "transform": {
+        "x": 128,
+        "y": 217,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 1250,
+        "height": 35.1
+      },
+      "text": {
+        "value": "ARTICULATED ARM  /  FOCUSED LIGHT",
+        "fontSize": 27,
+        "color": "#AD9A82",
+        "fontFamily": "Courier New",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "rect_1352",
+      "name": "Header rule",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 126,
+        "y": 277,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#65584A"
+        },
+        "cornerRadius": 0
+      },
+      "size": {
+        "width": 1668,
+        "height": 2
+      }
+    },
+    {
+      "id": "rect_1353",
+      "name": "Desk surface",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 128,
+        "y": 817,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#514132"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 1659,
+        "height": 93
+      }
+    },
+    {
+      "id": "rect_1354",
+      "name": "Desk front edge",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 128,
+        "y": 903,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#302923"
+        },
+        "cornerRadius": 0
+      },
+      "size": {
+        "width": 1659,
+        "height": 13
+      }
+    },
+    {
+      "id": "path_1355",
+      "name": "Editable light cone",
+      "type": "path",
+      "pathRole": "visual",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "stroke": {
+          "color": "#00000000",
+          "width": 0,
+          "lineCap": "round",
+          "lineJoin": "round"
+        },
+        "fill": {
+          "type": "gradient",
+          "gradient": {
+            "type": "linear",
+            "angle": 90,
+            "stops": [
+              {
+                "offset": 0,
+                "color": "#F5C07835"
+              },
+              {
+                "offset": 1,
+                "color": "#EAB26312"
+              }
+            ]
+          }
+        }
+      },
+      "path": {
+        "closed": true,
+        "anchors": [
+          {
+            "x": 783,
+            "y": 414,
+            "pointType": "corner"
+          },
+          {
+            "x": 842,
+            "y": 429,
+            "pointType": "corner"
+          },
+          {
+            "x": 1176,
+            "y": 817,
+            "pointType": "corner"
+          },
+          {
+            "x": 448,
+            "y": 817,
+            "pointType": "corner"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rect_1356",
+      "name": "Warm pool on the desk",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 486,
+        "y": 788,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#AC75413c"
+        },
+        "cornerRadius": 29
+      },
+      "size": {
+        "width": 550,
+        "height": 59
+      }
+    },
+    {
+      "id": "rect_1357",
+      "name": "Base lower plate",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 932,
+        "y": 769,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#8C603F"
+        },
+        "cornerRadius": 25
+      },
+      "size": {
+        "width": 363,
+        "height": 52
+      }
+    },
+    {
+      "id": "rect_1358",
+      "name": "Base top plate",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 954,
+        "y": 744,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D89A5F"
+        },
+        "cornerRadius": 25
+      },
+      "size": {
+        "width": 319,
+        "height": 52
+      }
+    },
+    {
+      "id": "group_113_fkln",
+      "name": "Shoulder joint",
+      "type": "group",
+      "transform": {
+        "x": 1100,
+        "y": 763,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1
+    },
+    {
+      "id": "rect_1359",
+      "name": "Lower arm inner rail",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": -27,
+        "y": -270,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B37E4C"
+        },
+        "cornerRadius": 22
+      },
+      "size": {
+        "width": 46,
+        "height": 270
+      },
+      "parentId": "group_113_fkln"
+    },
+    {
+      "id": "rect_1360",
+      "name": "Lower arm glint",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": -19,
+        "y": -250,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#E2A86D"
+        },
+        "cornerRadius": 5
+      },
+      "size": {
+        "width": 9,
+        "height": 237
+      },
+      "parentId": "group_113_fkln"
+    },
+    {
+      "id": "circle_1361",
+      "name": "Shoulder pin",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#5D4938"
+        }
+      },
+      "size": {
+        "width": 68,
+        "height": 68
+      },
+      "parentId": "group_113_fkln"
+    },
+    {
+      "id": "circle_1362",
+      "name": "Shoulder brass cap",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#D6A46C"
+        }
+      },
+      "size": {
+        "width": 30,
+        "height": 30
+      },
+      "parentId": "group_113_fkln"
+    },
+    {
+      "id": "group_114_fkls",
+      "name": "Elbow joint",
+      "type": "group",
+      "transform": {
+        "x": 0,
+        "y": -255,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "parentId": "group_113_fkln"
+    },
+    {
+      "id": "rect_1363",
+      "name": "Upper arm inner rail",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": -20,
+        "y": -235,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#B37E4C"
+        },
+        "cornerRadius": 19
+      },
+      "size": {
+        "width": 40,
+        "height": 239
+      },
+      "parentId": "group_114_fkls"
+    },
+    {
+      "id": "rect_1364",
+      "name": "Upper arm glint",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": -12,
+        "y": -215,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#E2A86D"
+        },
+        "cornerRadius": 4
+      },
+      "size": {
+        "width": 7,
+        "height": 205
+      },
+      "parentId": "group_114_fkls"
+    },
+    {
+      "id": "circle_1365",
+      "name": "Elbow pin",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#74523B"
+        }
+      },
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "parentId": "group_114_fkls"
+    },
+    {
+      "id": "circle_1366",
+      "name": "Elbow brass cap",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#DCAB72"
+        }
+      },
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "parentId": "group_114_fkls"
+    },
+    {
+      "id": "group_115_fkly",
+      "name": "Adjustable shade",
+      "type": "group",
+      "transform": {
+        "x": 0,
+        "y": -221,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "parentId": "group_114_fkls"
+    },
+    {
+      "id": "rect_1367",
+      "name": "Shade metal shell",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": -94,
+        "y": -36,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#A9754C"
+        },
+        "cornerRadius": 47
+      },
+      "size": {
+        "width": 187,
+        "height": 117
+      },
+      "parentId": "group_115_fkly"
+    },
+    {
+      "id": "rect_1368",
+      "name": "Shade orange face",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": -85,
+        "y": -34,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#CD955E"
+        },
+        "cornerRadius": 45
+      },
+      "size": {
+        "width": 171,
+        "height": 105
+      },
+      "parentId": "group_115_fkly"
+    },
+    {
+      "id": "rect_1369",
+      "name": "Shade aperture",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": -83,
+        "y": 58,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#FFF0A7"
+        },
+        "cornerRadius": 13
+      },
+      "size": {
+        "width": 166,
+        "height": 26
+      },
+      "parentId": "group_115_fkly"
+    },
+    {
+      "id": "text_1370",
+      "name": "Label 1",
+      "type": "text",
+      "transform": {
+        "x": 1321,
+        "y": 406,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 450,
+        "height": 46.800000000000004
+      },
+      "text": {
+        "value": "Dual pivot arm",
+        "fontSize": 36,
+        "color": "#F5E6D1",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "rect_1371",
+      "name": "Label leader 1",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1293,
+        "y": 450,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 158.732939804072,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#AD9A82"
+        },
+        "cornerRadius": 1
+      },
+      "size": {
+        "width": 179.20379460268134,
+        "height": 2
+      }
+    },
+    {
+      "id": "text_1372",
+      "name": "Label 2",
+      "type": "text",
+      "transform": {
+        "x": 302,
+        "y": 623,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 460,
+        "height": 44.2
+      },
+      "text": {
+        "value": "Warm focused beam",
+        "fontSize": 34,
+        "color": "#F5E6D1",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "rect_1373",
+      "name": "Label leader 2",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 429,
+        "y": 686,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 17.306731391110045,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#AD9A82"
+        },
+        "cornerRadius": 1
+      },
+      "size": {
+        "width": 144.5441109142811,
+        "height": 2
+      }
+    },
+    {
+      "id": "text_1374",
+      "name": "Footer label",
+      "type": "text",
+      "transform": {
+        "x": 128,
+        "y": 972,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 680,
+        "height": 37.7
+      },
+      "text": {
+        "value": "FORM STUDY",
+        "fontSize": 29,
+        "color": "#AD9A82",
+        "fontFamily": "Courier New",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    }
+  ],
+  "timelines": [
+    {
+      "id": "timeline_1",
+      "mode": "2danimation",
+      "durationMs": 10000,
+      "autoplay": true,
+      "loop": false,
+      "tracks": [
+        {
+          "target": "layers.path_1355.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795538784007_1253",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795538784007_1254",
+              "timeMs": 4860,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795538784007_1255",
+              "timeMs": 6100,
+              "value": 1,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_1356.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795538784008_1256",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795538784008_1257",
+              "timeMs": 5020,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795538784008_1258",
+              "timeMs": 6440,
+              "value": 1,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_1369.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795538784025_1259",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1260",
+              "timeMs": 4910,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1261",
+              "timeMs": 5580,
+              "value": 1,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_113_fkln.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1795538784025_1262",
+              "timeMs": 0,
+              "value": -77,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1263",
+              "timeMs": 1000,
+              "value": -77,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1264",
+              "timeMs": 3560,
+              "value": -28,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_114_fkls.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1795538784025_1265",
+              "timeMs": 0,
+              "value": 120,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1266",
+              "timeMs": 1810,
+              "value": 120,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1267",
+              "timeMs": 4050,
+              "value": -15,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_115_fkly.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1795538784025_1268",
+              "timeMs": 0,
+              "value": -40,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1269",
+              "timeMs": 3310,
+              "value": -40,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795538784025_1270",
+              "timeMs": 4760,
+              "value": 43,
+              "easing": null
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "path_1355",
+        "rect_1356",
+        "rect_1369",
+        "group_113_fkln",
+        "group_114_fkls",
+        "group_115_fkly"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {},
+  "authoring": {
+    "version": 1,
+    "records": {
+      "[\"scene\"]": {
+        "address": [
+          "scene"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"composition\",\"durationMs\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Chorono editable catalogue production"
+            },
+            "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+          },
+          "[\"composition\",\"backgroundColor\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Chorono editable catalogue production"
+            },
+            "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+          }
+        }
+      },
+      "[\"layer\",\"text_1350\"]": {
+        "address": [
+          "layer",
+          "text_1350"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_1351\"]": {
+        "address": [
+          "layer",
+          "text_1351"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1352\"]": {
+        "address": [
+          "layer",
+          "rect_1352"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1353\"]": {
+        "address": [
+          "layer",
+          "rect_1353"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1354\"]": {
+        "address": [
+          "layer",
+          "rect_1354"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"path_1355\"]": {
+        "address": [
+          "layer",
+          "path_1355"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1356\"]": {
+        "address": [
+          "layer",
+          "rect_1356"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1357\"]": {
+        "address": [
+          "layer",
+          "rect_1357"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1358\"]": {
+        "address": [
+          "layer",
+          "rect_1358"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_113_fkln\"]": {
+        "address": [
+          "layer",
+          "group_113_fkln"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1359\"]": {
+        "address": [
+          "layer",
+          "rect_1359"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1360\"]": {
+        "address": [
+          "layer",
+          "rect_1360"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"circle_1361\"]": {
+        "address": [
+          "layer",
+          "circle_1361"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"circle_1362\"]": {
+        "address": [
+          "layer",
+          "circle_1362"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_114_fkls\"]": {
+        "address": [
+          "layer",
+          "group_114_fkls"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1363\"]": {
+        "address": [
+          "layer",
+          "rect_1363"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1364\"]": {
+        "address": [
+          "layer",
+          "rect_1364"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"circle_1365\"]": {
+        "address": [
+          "layer",
+          "circle_1365"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"circle_1366\"]": {
+        "address": [
+          "layer",
+          "circle_1366"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_115_fkly\"]": {
+        "address": [
+          "layer",
+          "group_115_fkly"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1367\"]": {
+        "address": [
+          "layer",
+          "rect_1367"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1368\"]": {
+        "address": [
+          "layer",
+          "rect_1368"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1369\"]": {
+        "address": [
+          "layer",
+          "rect_1369"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_1370\"]": {
+        "address": [
+          "layer",
+          "text_1370"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1371\"]": {
+        "address": [
+          "layer",
+          "rect_1371"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_1372\"]": {
+        "address": [
+          "layer",
+          "text_1372"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_1373\"]": {
+        "address": [
+          "layer",
+          "rect_1373"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_1374\"]": {
+        "address": [
+          "layer",
+          "text_1374"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"timeline\",\"timeline_1\"]": {
+        "address": [
+          "timeline",
+          "timeline_1"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"durationMs\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Chorono editable catalogue production"
+            },
+            "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+          },
+          "[\"layerIds\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Chorono editable catalogue production"
+            },
+            "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+          }
+        }
+      },
+      "[\"track\",\"timeline_1\",\"layers.path_1355.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.path_1355.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.path_1355.opacity\",\"kf_1795538784007_1253\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.path_1355.opacity",
+          "kf_1795538784007_1253"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.path_1355.opacity\",\"kf_1795538784007_1254\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.path_1355.opacity",
+          "kf_1795538784007_1254"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.path_1355.opacity\",\"kf_1795538784007_1255\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.path_1355.opacity",
+          "kf_1795538784007_1255"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.rect_1356.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.rect_1356.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_1356.opacity\",\"kf_1795538784008_1256\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_1356.opacity",
+          "kf_1795538784008_1256"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_1356.opacity\",\"kf_1795538784008_1257\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_1356.opacity",
+          "kf_1795538784008_1257"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_1356.opacity\",\"kf_1795538784008_1258\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_1356.opacity",
+          "kf_1795538784008_1258"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.rect_1369.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.rect_1369.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_1369.opacity\",\"kf_1795538784025_1259\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_1369.opacity",
+          "kf_1795538784025_1259"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_1369.opacity\",\"kf_1795538784025_1260\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_1369.opacity",
+          "kf_1795538784025_1260"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.rect_1369.opacity\",\"kf_1795538784025_1261\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.rect_1369.opacity",
+          "kf_1795538784025_1261"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_113_fkln.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_113_fkln.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_113_fkln.transform.rotationDeg\",\"kf_1795538784025_1262\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_113_fkln.transform.rotationDeg",
+          "kf_1795538784025_1262"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_113_fkln.transform.rotationDeg\",\"kf_1795538784025_1263\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_113_fkln.transform.rotationDeg",
+          "kf_1795538784025_1263"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_113_fkln.transform.rotationDeg\",\"kf_1795538784025_1264\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_113_fkln.transform.rotationDeg",
+          "kf_1795538784025_1264"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_114_fkls.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_114_fkls.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_114_fkls.transform.rotationDeg\",\"kf_1795538784025_1265\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_114_fkls.transform.rotationDeg",
+          "kf_1795538784025_1265"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_114_fkls.transform.rotationDeg\",\"kf_1795538784025_1266\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_114_fkls.transform.rotationDeg",
+          "kf_1795538784025_1266"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_114_fkls.transform.rotationDeg\",\"kf_1795538784025_1267\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_114_fkls.transform.rotationDeg",
+          "kf_1795538784025_1267"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_115_fkly.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_115_fkly.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_115_fkly.transform.rotationDeg\",\"kf_1795538784025_1268\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_115_fkly.transform.rotationDeg",
+          "kf_1795538784025_1268"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_115_fkly.transform.rotationDeg\",\"kf_1795538784025_1269\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_115_fkly.transform.rotationDeg",
+          "kf_1795538784025_1269"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_115_fkly.transform.rotationDeg\",\"kf_1795538784025_1270\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_115_fkly.transform.rotationDeg",
+          "kf_1795538784025_1270"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "9bc5a049-66a4-4f5c-815b-53eec300d2db"
+        },
+        "fields": {}
+      }
+    }
+  }
+}

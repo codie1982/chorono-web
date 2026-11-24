@@ -8,8 +8,8 @@ import { GitHubStarButton } from './GitHubStarButton'
 
 const links = [
   { href: '/getting-started', label: 'Getting started' },
-  { href: '/agent-skills', label: 'Agent skills' },
-  { href: '/motion-graphics-software', label: 'Examples' },
+  { href: '/animations', label: 'Animations' },
+  { href: '/agent-skills', label: 'Agent Skills' },
   { href: '/docs', label: 'Docs' },
   { href: '/blog', label: 'Blog' },
   { href: '/account', label: 'Account' },
@@ -17,7 +17,7 @@ const links = [
 
 /** Shared brand and route-aware navigation. The native mobile disclosure is
  * keyboard accessible and closes on navigation or Escape without trapping focus.
- * The animation collection is a dedicated destination in the shared footer. */
+ * The header links to the main collections and documentation. */
 export function SiteHeader() {
   const pathname = usePathname()
   const menu = useRef<HTMLDetailsElement>(null)

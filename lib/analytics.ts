@@ -3,6 +3,7 @@ export const events = {
   githubStar: 'github_star_click',
   editorSetup: 'editor_setup_click',
   agentSkills: 'agent_skills_click',
+  animationExamples: 'animation_examples_click',
   androidSdk: 'android_sdk_click',
   codeCopy: 'code_copy',
 } as const

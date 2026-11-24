@@ -1,0 +1,142 @@
+/* The public layout and the design preview share controls and content, with local theme tokens. */
+.publicMain {
+  width: min(1150px, 100%);
+  min-height: 65vh;
+  margin-inline: auto;
+  padding: clamp(18px, 3vw, 38px) clamp(20px, 4.5vw, 54px) clamp(44px, 7vw, 80px);
+}
+
+.page {
+  --skill-ink: var(--site-ink);
+  --skill-muted: var(--site-muted);
+  --skill-line: var(--site-line);
+  --skill-control-line: #a48373;
+  --skill-surface: var(--site-surface);
+  --skill-inset: var(--site-bg);
+  --skill-active: var(--site-soft);
+  --skill-link: var(--site-accent);
+  --skill-accent: var(--site-brand);
+  --skill-focus: var(--site-accent);
+  --skill-small: 14px;
+  --skill-input-radius: 8px;
+  --skill-button-radius: 8px;
+  --skill-panel-radius: var(--site-radius);
+  --skill-action-bg: var(--site-accent);
+  --skill-action-hover: var(--site-dark);
+  --skill-action-text: var(--site-surface);
+  min-width: 0;
+  color: var(--skill-ink);
+  line-height: 1.65;
+}
+
+.page[data-surface='preview'] {
+  --skill-ink: var(--ch-text);
+  --skill-muted: var(--ch-text-secondary);
+  --skill-line: var(--ch-border);
+  --skill-control-line: var(--ch-border-strong);
+  --skill-surface: var(--ch-surface);
+  --skill-inset: var(--ch-canvas-deep);
+  --skill-active: var(--ch-surface-raised);
+  --skill-link: var(--ch-accent-pale);
+  --skill-accent: var(--ch-accent);
+  --skill-focus: var(--ch-accent-pale);
+  --skill-small: var(--ch-type-small);
+  --skill-input-radius: var(--ch-radius-input);
+  --skill-button-radius: var(--ch-radius-button);
+  --skill-panel-radius: var(--ch-radius-panel);
+  --skill-action-bg: var(--ch-accent);
+  --skill-action-hover: var(--ch-accent-hover);
+  --skill-action-text: var(--ch-canvas-deep);
+}
+
+:global(.pv) main:has(> .page[data-surface='preview']) { padding-block-start: clamp(18px, 3vw, 42px); }
+.page h2 { margin: 0; font-weight: 700; letter-spacing: -.036em; line-height: 1.17; }
+.page p { color: var(--skill-muted); }
+.page :is(a, button, pre, select):focus-visible { outline: 2px solid var(--skill-focus); outline-offset: 4px; }
+.lead { display: grid; gap: 12px; margin: 0 0 clamp(24px, 3.4vw, 42px); }
+.page .lead .eyebrow { display: flex; align-items: center; gap: 12px; font: 700 11px/1.5 ui-monospace, monospace; color: var(--skill-link); letter-spacing: .12em; text-transform: uppercase; }
+.page[data-surface='preview'] .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--skill-accent); }
+.page .lead h1 { max-width: 20ch; margin: 0; font-size: clamp(38px, 5.2vw, 70px); font-weight: 800; line-height: 1.04; letter-spacing: -.052em; text-wrap: balance; }
+.page[data-surface='preview'] .lead h1 { font-weight: 670; font-size: clamp(42px, 5.5vw, 80px); }
+.lead p { max-width: 64ch; font-size: clamp(16px, 1.6vw, 20px); }
+
+.page a.action { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 10px 18px; border-radius: var(--skill-button-radius); background: var(--skill-action-bg); color: var(--skill-action-text); font-size: 14px; font-weight: 700; text-decoration: none; }
+.page[data-surface] a.action:hover { background: var(--skill-action-hover); color: var(--skill-action-text); }
+
+.breadcrumb { margin-bottom: clamp(10px, 1.6vw, 22px); }
+.breadcrumb ol, .cards, .beats { list-style: none; margin: 0; padding: 0; }
+.breadcrumb ol, .breadcrumb li { display: flex; align-items: center; flex-wrap: wrap; gap: 0 10px; }
+.breadcrumb li { color: var(--skill-muted); font-size: var(--skill-small); }
+.breadcrumb li [aria-current] { color: var(--skill-ink); }
+.breadcrumb li > :is(a, span) { display: inline-flex; align-items: center; min-height: 44px; }
+.breadcrumb svg { color: var(--skill-muted); }
+
+.collection { border-top: 1px solid var(--skill-line); padding-top: clamp(20px, 3vw, 32px); }
+.collectionHead { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 30px; margin-bottom: 24px; }
+.collectionHead[data-single] { margin: 0; }
+.collectionHead h2, .setup h2, .notes h2 { font-size: clamp(24px, 2.7vw, 34px); }
+.filters, .search { display: flex; gap: 12px; align-items: center; }
+.filters { flex-wrap: wrap; }
+.filters label { display: grid; gap: 4px; color: var(--skill-muted); font-size: var(--skill-small); }
+.search { padding: 0 10px; border: 1px solid var(--skill-control-line); background: var(--skill-surface); border-radius: var(--skill-input-radius); }
+.search:focus-within { outline: 2px solid var(--skill-focus); outline-offset: 3px; }
+.page .search input[type='search'] { min-height: 44px; border: 0; padding-inline: 0; outline: none; width: min(190px, 100%); background: transparent; }
+.filters select { min-height: 46px; max-width: 100%; padding: 0 12px; background: var(--skill-surface); color: var(--skill-ink); border: 1px solid var(--skill-control-line); border-radius: var(--skill-input-radius); }
+.empty { padding-block: 30px; }
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.cards[data-featured] { grid-template-columns: minmax(0, 1fr); }
+.card { display: grid; height: 100%; min-width: 0; overflow: hidden; align-content: start; border: 1px solid var(--skill-line); border-radius: var(--skill-panel-radius); background: var(--skill-surface); }
+.cards[data-featured] .card { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: center; }
+.card:hover { border-color: var(--skill-accent); }
+.card img { display: block; width: 100%; height: auto; background: var(--skill-inset); }
+.cardBody { display: grid; gap: 12px; padding: clamp(22px, 4vw, 60px); }
+.card h3 { margin: 0; font-size: clamp(27px, 3.7vw, 56px); letter-spacing: -.045em; line-height: 1.02; color: var(--skill-ink); }
+.cards:not([data-featured]) .card h3 { font-size: clamp(26px, 2.5vw, 34px); }
+.cardBody .meta { color: var(--skill-link); font: 12px/1.5 ui-monospace, monospace; }
+.cardAction { display: flex; align-items: center; gap: 10px; color: var(--skill-link); font-weight: 650; margin-top: 5px; }
+
+.setup { display: flex; align-items: center; justify-content: space-between; gap: 20px 48px; margin-top: clamp(40px, 6vw, 80px); padding-top: 26px; border-top: 1px solid var(--skill-line); }
+.page .setup p { margin-top: 10px; }
+.setup > a { flex: none; }
+.detail { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); align-items: start; gap: clamp(22px, 4vw, 54px); }
+.formats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.page .formats button { min-height: 44px; padding: 0 13px; border: 1px solid var(--skill-control-line); border-radius: var(--skill-button-radius); color: var(--skill-muted); font-size: var(--skill-small); cursor: pointer; }
+.page .formats button:hover { color: var(--skill-ink); border-color: var(--skill-muted); }
+.page .formats button[aria-pressed='true'] { color: var(--skill-link); border-color: var(--skill-accent); background: var(--skill-active); }
+.playback[data-portrait] { max-width: 334px; margin-inline: auto; }
+.player { overflow: hidden; border: 1px solid var(--skill-line); border-radius: var(--skill-panel-radius); background: var(--skill-surface); }
+.player video { display: block; width: 100%; height: auto; background: var(--skill-inset); }
+.videoCaption { display: flex; flex-wrap: wrap; gap: 10px 20px; padding: 11px 16px; color: var(--skill-muted); font: 12px/1.5 ui-monospace, monospace; }
+.download { margin-top: 16px; }
+.prompt { min-width: 0; padding: clamp(16px, 2.2vw, 25px); background: var(--skill-surface); border: 1px solid var(--skill-line); border-radius: var(--skill-panel-radius); }
+.prompt h2 { font-size: clamp(22px, 2.4vw, 31px); }
+.page .prompt > p { margin: 8px 0 16px; }
+.prompt :global(.tutorial-snippet) { position: relative; margin: 0; border: 1px solid var(--skill-control-line); border-radius: var(--skill-input-radius); background: var(--skill-inset); }
+.prompt :global(.tutorial-snippet-toolbar) { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 56px; padding: 4px 12px; border-bottom: 1px solid var(--skill-line); }
+.prompt :global(.tutorial-snippet-toolbar) > span { color: var(--skill-muted); text-transform: capitalize; }
+.prompt :global(.tutorial-snippet-toolbar) button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding-inline: 12px; border: 1px solid var(--skill-control-line); border-radius: var(--skill-button-radius); color: var(--skill-ink); cursor: pointer; }
+.prompt :global(.tutorial-snippet-toolbar) button:hover { background: var(--skill-active); }
+.prompt pre { margin: 0; padding: 14px; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; font-size: 14px; color: var(--skill-muted); }
+.prompt code { font: inherit; }
+.prompt :global(.tutorial-copy-status) { display: block; padding-inline: 14px; color: var(--skill-link); font-size: 13px; }
+.prompt :global(.tutorial-copy-status):not(:empty) { padding-bottom: 10px; }
+
+.notes { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); align-items: start; gap: clamp(24px, 5vw, 64px); padding-top: 26px; margin-top: clamp(40px, 6vw, 80px); border-top: 1px solid var(--skill-line); }
+.beats { margin-top: 12px; }
+.beats li { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 10px 16px; padding: 13px 0; border-bottom: 1px solid var(--skill-line); }
+.beats li > span { line-height: 24px; font-family: ui-monospace, monospace; font-size: 12px; color: var(--skill-link); }
+.beats h3 { font-size: 16px; line-height: 24px; color: var(--skill-ink); }
+.beats p, .revision p { font-size: 15px; }
+.revision { display: grid; justify-items: start; gap: 10px; }
+.revision a { display: flex; align-items: center; gap: 8px; min-height: 44px; color: var(--skill-link); }
+
+@media (max-width: 1000px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 800px) {
+  .detail, .notes, .cards[data-featured] .card { grid-template-columns: minmax(0, 1fr); }
+  .setup { align-items: start; flex-direction: column; }
+}
+@media (max-width: 560px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .beats li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}

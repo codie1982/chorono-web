@@ -1,5 +1,6 @@
 import { documentationPages, documentationHref } from '@/lib/documentation/manifest'
-import { animationEntries, animationHref } from '@/lib/animation-library/catalog'
+import { collectionIsIndexable, showcaseCollections, showcaseProjectHref, showcaseProjects } from '@/lib/animation-library/showcase'
+import { ANIMATION_LIBRARY_PATH, showcaseCollectionHref } from '@/lib/animation-library/routes'
 import { SITE_URL } from '@/lib/site'
 import { existingSitemapTopics, existingModificationDates } from './existing'
 import { publicContentOrigin } from './publication'
@@ -22,7 +23,19 @@ export const sitemapTopics: readonly SitemapTopic[] = [
     paths: documentationPages.filter(page => page.section === section.id && page.availability !== 'coming-soon').map(page => documentationHref(page.slug)),
     previewOnlyPaths: documentationPages.filter(page => page.section === section.id && page.availability === 'coming-soon').map(page => documentationHref(page.slug)),
   })),
-  { file: 'sitemap-animations.xml', unpublished: true, paths: ['/animations', ...animationEntries.map(entry => animationHref(entry.slug))] },
+  {
+    file: 'sitemap-animations.xml',
+    unpublished: true,
+    paths: [
+      ANIMATION_LIBRARY_PATH,
+      ...showcaseCollections.filter(collectionIsIndexable).map(collection => showcaseCollectionHref(collection.slug)),
+      ...showcaseProjects.filter(project => project.kind !== 'concept').map(showcaseProjectHref),
+    ],
+    previewOnlyPaths: [
+      ...showcaseCollections.filter(collection => !collectionIsIndexable(collection)).map(collection => showcaseCollectionHref(collection.slug)),
+      ...showcaseProjects.filter(project => project.kind === 'concept').map(showcaseProjectHref),
+    ],
+  },
 ]
 
 /** Fail authoring checks on duplicate/noncanonical URLs, unsafe topic names or

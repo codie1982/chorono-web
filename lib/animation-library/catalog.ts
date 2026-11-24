@@ -1,4 +1,5 @@
 import { ANIMATION_EXAMPLES, type AnimationExampleId } from '@/lib/animation-example'
+import type { ShowcaseCategoryId } from './routes'
 
 /** One reviewed, editable scene. No keyword-only or generated placeholder entries. */
 export interface AnimationEntry {
@@ -11,6 +12,7 @@ export interface AnimationEntry {
   readonly searchTitle?: string;
   readonly description: string;
   readonly category: string;
+  readonly libraryCategory: ShowcaseCategoryId;
   readonly source: string;
   readonly initialTimeMs: number;
   readonly guideSlug: string;
@@ -34,6 +36,7 @@ export interface AnimationEntry {
 export const animationEntries: readonly AnimationEntry[] = [
   {
     slug: 'one-bar-every-beat',
+    libraryCategory: 'style-animations',
     preview: {
       kind: 'video',
       src: '/examples/one-bar-every-beat.mp4',
@@ -76,6 +79,7 @@ export const animationEntries: readonly AnimationEntry[] = [
   },
   {
     slug: "three-dot-loading",
+    libraryCategory: 'freeform',
     preview: { kind: 'example', exampleId: 'codex-loading-loop' },
     title: "Three-dot loading animation",
     description:
@@ -93,6 +97,7 @@ export const animationEntries: readonly AnimationEntry[] = [
   },
   {
     slug: "editable-title-card",
+    libraryCategory: 'style-animations',
     preview: { kind: 'example', exampleId: 'first-animation' },
     title: "Editable title card animation",
     description:
@@ -111,6 +116,7 @@ export const animationEntries: readonly AnimationEntry[] = [
   },
   {
     slug: 'interactive-motion-crew',
+    libraryCategory: 'interactive-web',
     preview: { kind: 'motion-crew', poster: '/hero/motion-crew.png', alt: 'Four editable characters: coral teardrop Pip, lilac triangle Milo, sage blob Fig and blue robot Dot.' },
     title: 'Interactive character animation',
     description: 'Meet four editable characters with mouse tracking, peekaboo, celebration and high-five reactions. Preview the scene and download the Chorono project.',

@@ -1,51 +1,42 @@
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { AnimationDetail } from '@/components/animation-library/AnimationDetail'
+import { animationEntries, animationHref, findAnimation } from '@/lib/animation-library/catalog'
+import { loadAnimation } from '@/lib/animation-library/loader'
+import { LibraryCollection } from '@/components/animation-library/LibraryShowcase'
+import { collectionIsIndexable, findShowcaseCollection, showcaseCollections } from '@/lib/animation-library/showcase'
+import { showcaseCollectionHref } from '@/lib/animation-library/routes'
 import { pageMetadata } from '@/lib/site'
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import {
-  animationEntries,
-  animationHref,
-  findAnimation,
-} from "@/lib/animation-library/catalog";
-import { contentPublicationMetadata } from "@/lib/site-index/publication";
-import { loadAnimation } from "@/lib/animation-library/loader";
-import { AnimationDetail } from "@/components/animation-library/AnimationDetail";
+import { contentPublicationMetadata } from '@/lib/site-index/publication'
 
-export const dynamicParams = false;
+type Props = { params: { slug: string } }
 
-/** Generate exactly the reviewed entries; unknown and placeholder slugs are real 404s. */
+export const dynamicParams = false
+
 export function generateStaticParams() {
-  return animationEntries.map(({ slug }) => ({ slug }));
+  return [...showcaseCollections, ...animationEntries].map(({ slug }) => ({ slug }))
 }
 
-/** Keep descriptive search metadata aligned with each animation's actual content. */
-export function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Metadata {
-  const entry = findAnimation(params.slug);
-  return entry
-    ? {
-        ...pageMetadata(
-          entry.searchTitle ?? entry.title,
-          entry.description,
-          animationHref(entry.slug),
-          entry.preview.kind === 'video'
-            ? { image: entry.preview.poster, imageAlt: entry.preview.alt }
-            : undefined,
-        ),
-        ...contentPublicationMetadata(animationHref(entry.slug)),
-      }
-    : { title: "Animation not found" };
+export function generateMetadata({ params }: Props): Metadata {
+  const entry = findAnimation(params.slug)
+  if (entry) {
+    const path = animationHref(entry.slug)
+    const image = entry.preview.kind === 'video' ? { image: entry.preview.poster, imageAlt: entry.preview.alt } : undefined
+    return { ...pageMetadata(entry.searchTitle ?? entry.title, entry.description, path, image), ...contentPublicationMetadata(path) }
+  }
+  const collection = findShowcaseCollection(params.slug)
+  if (!collection) return {}
+  const path = showcaseCollectionHref(collection.slug)
+  return {
+    ...pageMetadata(collection.title, collection.description, path, { image: collection.cover.src, imageAlt: collection.cover.alt }),
+    ...contentPublicationMetadata(path, collectionIsIndexable(collection)),
+  }
 }
 
-/** Resolve one source-backed scene with its download and relevant editing guide. */
-export default async function AnimationPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const animation = await loadAnimation(params.slug);
-  if (!animation) notFound();
-  return <AnimationDetail animation={animation} />;
+export default async function AnimationCollectionPage({ params }: Props) {
+  const animation = findAnimation(params.slug) ? await loadAnimation(params.slug) : null
+  if (animation) return <AnimationDetail animation={animation} />
+  const collection = findShowcaseCollection(params.slug)
+  if (!collection) notFound()
+  return <LibraryCollection collection={collection} />
 }

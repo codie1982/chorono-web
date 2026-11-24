@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { LoadingMetrics } from "@/components/documentation/LoadingMetrics";
 import { contentPublicationMetadata } from "@/lib/site-index/publication";
 import "../docs/docs.css";
+import "@/components/tutorial/tutorial.css";
 import "./library.css";
 
 /** Local library preview; public canonical URLs and sitemap belong to the website release. */
 export const metadata: Metadata = {
   title: {
     default: "Editable animation examples | Chorono",
-    template: "%s | Chorono Animations",
+    template: "%s | Chorono",
   },
   description:
     "Preview and download editable Chorono animations, then follow the linked guides to make them yours.",

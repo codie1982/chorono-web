@@ -17,7 +17,7 @@ export function SiteFooter() {
         <h2>Learn & create</h2>
         <Link href="/getting-started">Getting started</Link>
         <Link href="/docs">Documentation</Link>
-        <Link href="/agent-skills">Agent skills</Link>
+        <Link href="/agent-skills">Agent Skills</Link>
         <Link href="/blog">Blog</Link>
       </nav>
       <nav className="site-footer-links" aria-label="Developer resources">
@@ -31,7 +31,7 @@ export function SiteFooter() {
         <span className="site-footer-kicker"><Play size={14} aria-hidden="true" /> EDITABLE PROJECTS</span>
         <h2 id="footer-animation-library">Animation library</h2>
         <p>Play a scene. Explore the layers.<br />Make the next version yours.</p>
-        <Link href="/animations">Explore the collection <ArrowUpRight size={18} aria-hidden="true" /></Link>
+        <Link href="/animations">Browse animation examples <ArrowUpRight size={18} aria-hidden="true" /></Link>
       </section>
       <nav className="site-footer-topics" aria-label="Animation examples and guides">
         <Link href="/motion-graphics-software">Motion graphics</Link><Link href="/text-animation">Text animation</Link>

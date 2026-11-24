@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import GuideLayout from '@/components/GuideLayout'
 import AnimationExample from '@/components/AnimationExample'
+import { ANIMATION_SKILLS_PATH } from '@/lib/animation-library/routes'
 import { pageMetadata, REPOSITORY_URL, SITE_PAGES } from '@/lib/site'
 
 const page = SITE_PAGES['/agent-skills']
@@ -23,6 +24,7 @@ export default function AgentSkills() {
         </dl>
         <p>A skill provides instructions. MCP, the connection between the agent client and the editor, supplies the tools. Installing instructions alone does not install an editor or load tools into an open chat.</p>
         <p>Chorono is the motion graphics software in this workflow. The agent skills help you build animated titles, kinetic typography, shape transitions and small 2D illustrations while keeping the source editable. A precise prompt describes both the design and its timing.</p>
+        <p><Link href={ANIMATION_SKILLS_PATH}>Browse animation prompt examples</Link> with videos and editable Chorono projects.</p>
       </section>
       <section id="animation-example">
         <h2>Try an editable text animation</h2>

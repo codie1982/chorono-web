@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import HeroCharacters from '@/components/hero/HeroCharacters';
 import HeroProjectBridge from '@/components/hero/HeroProjectBridge';
+import ProductModes from '@/components/ProductModes';
 import { useHeroCrew } from '@/components/hero/useHeroCrew';
 import { useInstallInvitation } from '@/components/community/Community';
 import { RUNTIME_URL, RUNTIME_REPOSITORY_URL } from '@/lib/site';
@@ -170,6 +171,7 @@ export default function ChoronoLandingPage() {
         </div>
       </section>
 
+      <ProductModes />
       <HeroProjectBridge />
 
       <section id="runtime" className="mx-auto max-w-7xl scroll-mt-8 px-6 py-10 sm:py-12">

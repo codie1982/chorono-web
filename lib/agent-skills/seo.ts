@@ -15,9 +15,10 @@ const pageTitle = (example?: SkillExample) => example
 export function skillCatalogMetadata(example?: SkillExample, preview = false): Metadata {
   const path = example ? skillExampleLibraryHref(example) : SKILL_CATALOG_PATH
   const cover = example ?? skillExamples[0]
+  const scale = cover ? Math.min(1, 1200 / Math.max(cover.width, cover.height)) : 1
   return {
     ...pageMetadata(pageTitle(example), example?.description ?? SKILL_CATALOG_DESCRIPTION, path,
-      cover ? { image: skillExampleMedia(cover.slug).poster, imageAlt: cover.posterAlt, imageWidth: 1200, imageHeight: 675 } : undefined),
+      cover ? { image: skillExampleMedia(cover.slug).poster, imageAlt: cover.posterAlt, imageWidth: Math.round(cover.width * scale), imageHeight: Math.round(cover.height * scale) } : undefined),
     title: { absolute: pageTitle(example) },
     ...contentPublicationMetadata(path),
     ...(preview ? { robots: { index: false, follow: false } } : {}),

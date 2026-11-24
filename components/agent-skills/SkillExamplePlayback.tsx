@@ -25,7 +25,7 @@ export function SkillExamplePlayback({ example }: { example: ExamplePlayback }) 
       {example.portrait && <div className={styles.formats} role="group" aria-label="Video format">
         {formats.map(([id, label]) => <button key={id} type="button" aria-pressed={format === id} onClick={() => setFormat(id)}>{label}</button>)}
       </div>}
-      <div className={styles.playback} data-portrait={!!portrait || undefined}>
+      <div className={styles.playback} data-portrait={composition.height > composition.width || undefined}>
         <figure className={styles.player}>
           <video key={media.video} controls playsInline preload="none" poster={media.poster} width={composition.width} height={composition.height}
             aria-label={`${example.title}${portrait ? ' portrait' : ''} animation`}>

@@ -1,0 +1,6040 @@
+{
+  "formatVersion": "1.0.0",
+  "mode": "2danimation",
+  "composition": {
+    "id": "Word in Balance",
+    "width": 1080,
+    "height": 1080,
+    "durationMs": 6000,
+    "frameRate": 30,
+    "backgroundColor": "#EBDDBB"
+  },
+  "assets": [],
+  "layers": [
+    {
+      "id": "rect_82",
+      "name": "Poster header rule",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 74,
+        "y": 69,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 932,
+        "height": 4
+      }
+    },
+    {
+      "id": "text_83",
+      "name": "Title",
+      "type": "text",
+      "transform": {
+        "x": 76,
+        "y": 112,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 900,
+        "height": 83
+      },
+      "text": {
+        "value": "WORD IN BALANCE",
+        "fontSize": 66,
+        "color": "#1C2426",
+        "fontFamily": "Arial",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "text_84",
+      "name": "Subtitle",
+      "type": "text",
+      "transform": {
+        "x": 79,
+        "y": 206,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 930,
+        "height": 28
+      },
+      "text": {
+        "value": "A STUDY IN PIVOT AND FOLLOW-THROUGH",
+        "fontSize": 22,
+        "color": "#1C2426",
+        "fontFamily": "Courier New",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "rect_85",
+      "name": "Registration baseline",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 78,
+        "y": 721,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 924,
+        "height": 3
+      }
+    },
+    {
+      "id": "rect_86",
+      "name": "Baseline tick 1",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 78,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 23
+      }
+    },
+    {
+      "id": "rect_87",
+      "name": "Baseline tick 2",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 135.7,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_88",
+      "name": "Baseline tick 3",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 193.4,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_89",
+      "name": "Baseline tick 4",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 251.10000000000002,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_90",
+      "name": "Baseline tick 5",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 308.8,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 23
+      }
+    },
+    {
+      "id": "rect_91",
+      "name": "Baseline tick 6",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 366.5,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_92",
+      "name": "Baseline tick 7",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 424.20000000000005,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_93",
+      "name": "Baseline tick 8",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 481.90000000000003,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_94",
+      "name": "Baseline tick 9",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 539.6,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 23
+      }
+    },
+    {
+      "id": "rect_95",
+      "name": "Baseline tick 10",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 597.3000000000001,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_96",
+      "name": "Baseline tick 11",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 655,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_97",
+      "name": "Baseline tick 12",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 712.7,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_98",
+      "name": "Baseline tick 13",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 770.4000000000001,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 23
+      }
+    },
+    {
+      "id": "rect_99",
+      "name": "Baseline tick 14",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 828.1,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_100",
+      "name": "Baseline tick 15",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 885.8000000000001,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_101",
+      "name": "Baseline tick 16",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 943.5,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 11
+      }
+    },
+    {
+      "id": "rect_102",
+      "name": "Baseline tick 17",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 1001.2,
+        "y": 724,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 2,
+        "height": 23
+      }
+    },
+    {
+      "id": "circle_103",
+      "name": "Geometric accent",
+      "type": "shape",
+      "shape": "circle",
+      "transform": {
+        "x": 859,
+        "y": 286,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#CF442B"
+        }
+      },
+      "size": {
+        "width": 116,
+        "height": 116
+      }
+    },
+    {
+      "id": "rect_104",
+      "name": "Accent bar",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 858,
+        "y": 409,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 118,
+        "height": 10
+      }
+    },
+    {
+      "id": "rect_105",
+      "name": "Poster footer rule",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 75,
+        "y": 920,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#1C2426"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 930,
+        "height": 3
+      }
+    },
+    {
+      "id": "text_106",
+      "name": "Footer legend",
+      "type": "text",
+      "transform": {
+        "x": 77,
+        "y": 963,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 565,
+        "height": 29
+      },
+      "text": {
+        "value": "ROTATION / 12°",
+        "fontSize": 23,
+        "color": "#1C2426",
+        "fontFamily": "Courier New",
+        "fontWeight": "700",
+        "textAlign": "left"
+      }
+    },
+    {
+      "id": "text_107",
+      "name": "Footer edition",
+      "type": "text",
+      "transform": {
+        "x": 1004,
+        "y": 963,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 318,
+        "height": 29
+      },
+      "text": {
+        "value": "KINETIC TYPE",
+        "fontSize": 23,
+        "color": "#1C2426",
+        "fontFamily": "Courier New",
+        "fontWeight": "700",
+        "textAlign": "right"
+      }
+    },
+    {
+      "id": "group_4_9x35",
+      "name": "Tile 1 / T",
+      "type": "group",
+      "transform": {
+        "x": 107,
+        "y": 514,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 102,
+        "anchorY": 204
+      },
+      "opacity": 1
+    },
+    {
+      "id": "rect_108",
+      "name": "Tile 1 color",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#BD3D2A"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 204,
+        "height": 204
+      },
+      "parentId": "group_4_9x35"
+    },
+    {
+      "id": "text_109",
+      "name": "Editable letter 1",
+      "type": "text",
+      "transform": {
+        "x": 102,
+        "y": 32,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 204,
+        "height": 187
+      },
+      "text": {
+        "value": "T",
+        "fontSize": 149,
+        "color": "#FFF3D1",
+        "fontFamily": "Arial",
+        "fontWeight": "900",
+        "textAlign": "center"
+      },
+      "parentId": "group_4_9x35"
+    },
+    {
+      "id": "group_5_9x3b",
+      "name": "Tile 2 / I",
+      "type": "group",
+      "transform": {
+        "x": 327,
+        "y": 514,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 102,
+        "anchorY": 204
+      },
+      "opacity": 1
+    },
+    {
+      "id": "rect_110",
+      "name": "Tile 2 color",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#274D71"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 204,
+        "height": 204
+      },
+      "parentId": "group_5_9x3b"
+    },
+    {
+      "id": "text_111",
+      "name": "Editable letter 2",
+      "type": "text",
+      "transform": {
+        "x": 102,
+        "y": 32,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 204,
+        "height": 187
+      },
+      "text": {
+        "value": "I",
+        "fontSize": 149,
+        "color": "#FFF3D1",
+        "fontFamily": "Arial",
+        "fontWeight": "900",
+        "textAlign": "center"
+      },
+      "parentId": "group_5_9x3b"
+    },
+    {
+      "id": "group_6_9x3f",
+      "name": "Tile 3 / L",
+      "type": "group",
+      "transform": {
+        "x": 547,
+        "y": 514,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 102,
+        "anchorY": 204
+      },
+      "opacity": 1
+    },
+    {
+      "id": "rect_112",
+      "name": "Tile 3 color",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#EDAC39"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 204,
+        "height": 204
+      },
+      "parentId": "group_6_9x3f"
+    },
+    {
+      "id": "text_113",
+      "name": "Editable letter 3",
+      "type": "text",
+      "transform": {
+        "x": 102,
+        "y": 32,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 204,
+        "height": 187
+      },
+      "text": {
+        "value": "L",
+        "fontSize": 149,
+        "color": "#1C2426",
+        "fontFamily": "Arial",
+        "fontWeight": "900",
+        "textAlign": "center"
+      },
+      "parentId": "group_6_9x3f"
+    },
+    {
+      "id": "group_7_9x3j",
+      "name": "Tile 4 / T",
+      "type": "group",
+      "transform": {
+        "x": 767,
+        "y": 514,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 102,
+        "anchorY": 204
+      },
+      "opacity": 1
+    },
+    {
+      "id": "rect_114",
+      "name": "Tile 4 color",
+      "type": "shape",
+      "shape": "rect",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "style": {
+        "fill": {
+          "type": "solid",
+          "color": "#294B3B"
+        },
+        "cornerRadius": 8
+      },
+      "size": {
+        "width": 204,
+        "height": 204
+      },
+      "parentId": "group_7_9x3j"
+    },
+    {
+      "id": "text_115",
+      "name": "Editable letter 4",
+      "type": "text",
+      "transform": {
+        "x": 102,
+        "y": 32,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotationDeg": 0,
+        "anchorX": 0,
+        "anchorY": 0
+      },
+      "opacity": 1,
+      "size": {
+        "width": 204,
+        "height": 187
+      },
+      "text": {
+        "value": "T",
+        "fontSize": 149,
+        "color": "#FFF3D1",
+        "fontFamily": "Arial",
+        "fontWeight": "900",
+        "textAlign": "center"
+      },
+      "parentId": "group_7_9x3j"
+    }
+  ],
+  "timelines": [
+    {
+      "id": "timeline_1",
+      "mode": "2danimation",
+      "durationMs": 6000,
+      "autoplay": true,
+      "loop": false,
+      "tracks": [
+        {
+          "target": "layers.group_4_9x35.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1795535161028_1",
+              "timeMs": 0,
+              "value": 45,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161029_2",
+              "timeMs": 175,
+              "value": 45,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161029_3",
+              "timeMs": 1410,
+              "value": 107,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_4_9x35.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795535161029_4",
+              "timeMs": 0,
+              "value": 385,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161029_5",
+              "timeMs": 175,
+              "value": 385,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161029_6",
+              "timeMs": 1410,
+              "value": 514,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161029_7",
+              "timeMs": 2090,
+              "value": 514,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161030_8",
+              "timeMs": 2480,
+              "value": 514,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161030_9",
+              "timeMs": 3245,
+              "value": 514,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_4_9x35.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1795535161030_10",
+              "timeMs": 0,
+              "value": -15,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161030_11",
+              "timeMs": 175,
+              "value": -15,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161030_12",
+              "timeMs": 1410,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161030_13",
+              "timeMs": 2090,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161030_14",
+              "timeMs": 2480,
+              "value": 12,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795535161030_15",
+              "timeMs": 2755,
+              "value": -4,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161031_16",
+              "timeMs": 3245,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_4_9x35.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795535161031_17",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161031_18",
+              "timeMs": 175,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161031_19",
+              "timeMs": 395,
+              "value": 1,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_5_9x3b.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1795535161034_20",
+              "timeMs": 0,
+              "value": 385,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161034_21",
+              "timeMs": 301,
+              "value": 385,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161034_22",
+              "timeMs": 1540,
+              "value": 327,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_5_9x3b.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795535161034_23",
+              "timeMs": 0,
+              "value": 264,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161034_24",
+              "timeMs": 301,
+              "value": 264,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161034_25",
+              "timeMs": 1540,
+              "value": 514,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161035_26",
+              "timeMs": 2268,
+              "value": 514,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161035_27",
+              "timeMs": 2658,
+              "value": 509,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161035_28",
+              "timeMs": 3423,
+              "value": 514,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_5_9x3b.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1795535161035_29",
+              "timeMs": 0,
+              "value": 12,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161035_30",
+              "timeMs": 301,
+              "value": 12,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161035_31",
+              "timeMs": 1540,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161035_32",
+              "timeMs": 2268,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161035_33",
+              "timeMs": 2658,
+              "value": 5,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795535161035_34",
+              "timeMs": 2933,
+              "value": -2,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161035_35",
+              "timeMs": 3423,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_5_9x3b.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795535161035_36",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161035_37",
+              "timeMs": 301,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161035_38",
+              "timeMs": 521,
+              "value": 1,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_6_9x3f.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1795535161038_39",
+              "timeMs": 0,
+              "value": 502,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161038_40",
+              "timeMs": 427,
+              "value": 502,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161038_41",
+              "timeMs": 1670,
+              "value": 547,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_6_9x3f.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795535161038_42",
+              "timeMs": 0,
+              "value": 582,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161038_43",
+              "timeMs": 427,
+              "value": 582,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161038_44",
+              "timeMs": 1670,
+              "value": 514,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161038_45",
+              "timeMs": 2446,
+              "value": 514,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161039_46",
+              "timeMs": 2836,
+              "value": 506,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161039_47",
+              "timeMs": 3601,
+              "value": 514,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_6_9x3f.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1795535161039_48",
+              "timeMs": 0,
+              "value": -9,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161039_49",
+              "timeMs": 427,
+              "value": -9,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161039_50",
+              "timeMs": 1670,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161039_51",
+              "timeMs": 2446,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161039_52",
+              "timeMs": 2836,
+              "value": -7,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795535161039_53",
+              "timeMs": 3111,
+              "value": 3,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161039_54",
+              "timeMs": 3601,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_6_9x3f.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795535161039_55",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161039_56",
+              "timeMs": 427,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161039_57",
+              "timeMs": 647,
+              "value": 1,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_7_9x3j.transform.x",
+          "keyframes": [
+            {
+              "id": "kf_1795535161043_58",
+              "timeMs": 0,
+              "value": 866,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161043_59",
+              "timeMs": 553,
+              "value": 866,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161043_60",
+              "timeMs": 1800,
+              "value": 767,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_7_9x3j.transform.y",
+          "keyframes": [
+            {
+              "id": "kf_1795535161043_61",
+              "timeMs": 0,
+              "value": 529,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161043_62",
+              "timeMs": 553,
+              "value": 529,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161043_63",
+              "timeMs": 1800,
+              "value": 514,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161043_64",
+              "timeMs": 2624,
+              "value": 514,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161043_65",
+              "timeMs": 3014,
+              "value": 510,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161043_66",
+              "timeMs": 3779,
+              "value": 514,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_7_9x3j.transform.rotationDeg",
+          "keyframes": [
+            {
+              "id": "kf_1795535161043_67",
+              "timeMs": 0,
+              "value": 18,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161043_68",
+              "timeMs": 553,
+              "value": 18,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161043_69",
+              "timeMs": 1800,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161043_70",
+              "timeMs": 2624,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161043_71",
+              "timeMs": 3014,
+              "value": 4,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "id": "kf_1795535161044_72",
+              "timeMs": 3289,
+              "value": -2,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161044_73",
+              "timeMs": 3779,
+              "value": 0,
+              "easing": null
+            }
+          ]
+        },
+        {
+          "target": "layers.group_7_9x3j.opacity",
+          "keyframes": [
+            {
+              "id": "kf_1795535161044_74",
+              "timeMs": 0,
+              "value": 0,
+              "easing": {
+                "type": "hold"
+              }
+            },
+            {
+              "id": "kf_1795535161044_75",
+              "timeMs": 553,
+              "value": 0,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "id": "kf_1795535161044_76",
+              "timeMs": 773,
+              "value": 1,
+              "easing": null
+            }
+          ]
+        }
+      ],
+      "layerIds": [
+        "group_4_9x35",
+        "group_5_9x3b",
+        "group_6_9x3f",
+        "group_7_9x3j"
+      ]
+    }
+  ],
+  "triggers": [],
+  "bindings": [],
+  "parameters": [],
+  "initialState": {},
+  "authoring": {
+    "version": 1,
+    "records": {
+      "[\"scene\"]": {
+        "address": [
+          "scene"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"composition\",\"durationMs\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+            "requestId": "typography-word-in-balance-apply1"
+          },
+          "[\"composition\",\"backgroundColor\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+            "requestId": "typography-word-in-balance-apply1"
+          }
+        }
+      },
+      "[\"layer\",\"rect_82\"]": {
+        "address": [
+          "layer",
+          "rect_82"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_83\"]": {
+        "address": [
+          "layer",
+          "text_83"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_84\"]": {
+        "address": [
+          "layer",
+          "text_84"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_85\"]": {
+        "address": [
+          "layer",
+          "rect_85"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_86\"]": {
+        "address": [
+          "layer",
+          "rect_86"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_87\"]": {
+        "address": [
+          "layer",
+          "rect_87"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_88\"]": {
+        "address": [
+          "layer",
+          "rect_88"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_89\"]": {
+        "address": [
+          "layer",
+          "rect_89"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_90\"]": {
+        "address": [
+          "layer",
+          "rect_90"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_91\"]": {
+        "address": [
+          "layer",
+          "rect_91"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_92\"]": {
+        "address": [
+          "layer",
+          "rect_92"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_93\"]": {
+        "address": [
+          "layer",
+          "rect_93"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_94\"]": {
+        "address": [
+          "layer",
+          "rect_94"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_95\"]": {
+        "address": [
+          "layer",
+          "rect_95"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_96\"]": {
+        "address": [
+          "layer",
+          "rect_96"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_97\"]": {
+        "address": [
+          "layer",
+          "rect_97"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_98\"]": {
+        "address": [
+          "layer",
+          "rect_98"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_99\"]": {
+        "address": [
+          "layer",
+          "rect_99"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_100\"]": {
+        "address": [
+          "layer",
+          "rect_100"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_101\"]": {
+        "address": [
+          "layer",
+          "rect_101"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_102\"]": {
+        "address": [
+          "layer",
+          "rect_102"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"circle_103\"]": {
+        "address": [
+          "layer",
+          "circle_103"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_104\"]": {
+        "address": [
+          "layer",
+          "rect_104"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_105\"]": {
+        "address": [
+          "layer",
+          "rect_105"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_106\"]": {
+        "address": [
+          "layer",
+          "text_106"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_4_9x35\"]": {
+        "address": [
+          "layer",
+          "group_4_9x35"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_108\"]": {
+        "address": [
+          "layer",
+          "rect_108"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_5_9x3b\"]": {
+        "address": [
+          "layer",
+          "group_5_9x3b"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_110\"]": {
+        "address": [
+          "layer",
+          "rect_110"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_6_9x3f\"]": {
+        "address": [
+          "layer",
+          "group_6_9x3f"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_112\"]": {
+        "address": [
+          "layer",
+          "rect_112"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_7_9x3j\"]": {
+        "address": [
+          "layer",
+          "group_7_9x3j"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"rect_114\"]": {
+        "address": [
+          "layer",
+          "rect_114"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"timeline\",\"timeline_1\"]": {
+        "address": [
+          "timeline",
+          "timeline_1"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"durationMs\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+            "requestId": "typography-word-in-balance-apply1"
+          },
+          "[\"layerIds\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+            "requestId": "typography-word-in-balance-apply1"
+          }
+        }
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_4_9x35.transform.x\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_4_9x35.transform.x"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.x\",\"kf_1795535161028_1\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.x",
+          "kf_1795535161028_1"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.x\",\"kf_1795535161029_2\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.x",
+          "kf_1795535161029_2"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.x\",\"kf_1795535161029_3\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.x",
+          "kf_1795535161029_3"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_4_9x35.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_4_9x35.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.y\",\"kf_1795535161029_4\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.y",
+          "kf_1795535161029_4"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.y\",\"kf_1795535161029_5\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.y",
+          "kf_1795535161029_5"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.y\",\"kf_1795535161029_6\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.y",
+          "kf_1795535161029_6"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.y\",\"kf_1795535161029_7\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.y",
+          "kf_1795535161029_7"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.y\",\"kf_1795535161030_8\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.y",
+          "kf_1795535161030_8"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.y\",\"kf_1795535161030_9\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.y",
+          "kf_1795535161030_9"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\",\"kf_1795535161030_10\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg",
+          "kf_1795535161030_10"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\",\"kf_1795535161030_11\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg",
+          "kf_1795535161030_11"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\",\"kf_1795535161030_12\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg",
+          "kf_1795535161030_12"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\",\"kf_1795535161030_13\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg",
+          "kf_1795535161030_13"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\",\"kf_1795535161030_14\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg",
+          "kf_1795535161030_14"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\",\"kf_1795535161030_15\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg",
+          "kf_1795535161030_15"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.transform.rotationDeg\",\"kf_1795535161031_16\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.transform.rotationDeg",
+          "kf_1795535161031_16"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_4_9x35.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_4_9x35.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.opacity\",\"kf_1795535161031_17\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.opacity",
+          "kf_1795535161031_17"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.opacity\",\"kf_1795535161031_18\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.opacity",
+          "kf_1795535161031_18"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_4_9x35.opacity\",\"kf_1795535161031_19\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_4_9x35.opacity",
+          "kf_1795535161031_19"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_5_9x3b.transform.x\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.x"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.x\",\"kf_1795535161034_20\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.x",
+          "kf_1795535161034_20"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.x\",\"kf_1795535161034_21\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.x",
+          "kf_1795535161034_21"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.x\",\"kf_1795535161034_22\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.x",
+          "kf_1795535161034_22"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_5_9x3b.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.y\",\"kf_1795535161034_23\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.y",
+          "kf_1795535161034_23"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.y\",\"kf_1795535161034_24\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.y",
+          "kf_1795535161034_24"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.y\",\"kf_1795535161034_25\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.y",
+          "kf_1795535161034_25"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.y\",\"kf_1795535161035_26\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.y",
+          "kf_1795535161035_26"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.y\",\"kf_1795535161035_27\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.y",
+          "kf_1795535161035_27"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.y\",\"kf_1795535161035_28\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.y",
+          "kf_1795535161035_28"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\",\"kf_1795535161035_29\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg",
+          "kf_1795535161035_29"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\",\"kf_1795535161035_30\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg",
+          "kf_1795535161035_30"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\",\"kf_1795535161035_31\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg",
+          "kf_1795535161035_31"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\",\"kf_1795535161035_32\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg",
+          "kf_1795535161035_32"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\",\"kf_1795535161035_33\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg",
+          "kf_1795535161035_33"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\",\"kf_1795535161035_34\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg",
+          "kf_1795535161035_34"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.transform.rotationDeg\",\"kf_1795535161035_35\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.transform.rotationDeg",
+          "kf_1795535161035_35"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_5_9x3b.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_5_9x3b.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.opacity\",\"kf_1795535161035_36\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.opacity",
+          "kf_1795535161035_36"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.opacity\",\"kf_1795535161035_37\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.opacity",
+          "kf_1795535161035_37"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_5_9x3b.opacity\",\"kf_1795535161035_38\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_5_9x3b.opacity",
+          "kf_1795535161035_38"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_6_9x3f.transform.x\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.x"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.x\",\"kf_1795535161038_39\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.x",
+          "kf_1795535161038_39"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.x\",\"kf_1795535161038_40\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.x",
+          "kf_1795535161038_40"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.x\",\"kf_1795535161038_41\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.x",
+          "kf_1795535161038_41"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_6_9x3f.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.y\",\"kf_1795535161038_42\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.y",
+          "kf_1795535161038_42"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.y\",\"kf_1795535161038_43\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.y",
+          "kf_1795535161038_43"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.y\",\"kf_1795535161038_44\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.y",
+          "kf_1795535161038_44"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.y\",\"kf_1795535161038_45\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.y",
+          "kf_1795535161038_45"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.y\",\"kf_1795535161039_46\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.y",
+          "kf_1795535161039_46"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.y\",\"kf_1795535161039_47\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.y",
+          "kf_1795535161039_47"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\",\"kf_1795535161039_48\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg",
+          "kf_1795535161039_48"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\",\"kf_1795535161039_49\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg",
+          "kf_1795535161039_49"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\",\"kf_1795535161039_50\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg",
+          "kf_1795535161039_50"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\",\"kf_1795535161039_51\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg",
+          "kf_1795535161039_51"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\",\"kf_1795535161039_52\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg",
+          "kf_1795535161039_52"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\",\"kf_1795535161039_53\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg",
+          "kf_1795535161039_53"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.transform.rotationDeg\",\"kf_1795535161039_54\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.transform.rotationDeg",
+          "kf_1795535161039_54"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_6_9x3f.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_6_9x3f.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.opacity\",\"kf_1795535161039_55\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.opacity",
+          "kf_1795535161039_55"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.opacity\",\"kf_1795535161039_56\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.opacity",
+          "kf_1795535161039_56"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_6_9x3f.opacity\",\"kf_1795535161039_57\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_6_9x3f.opacity",
+          "kf_1795535161039_57"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_7_9x3j.transform.x\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.x"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.x\",\"kf_1795535161043_58\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.x",
+          "kf_1795535161043_58"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.x\",\"kf_1795535161043_59\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.x",
+          "kf_1795535161043_59"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.x\",\"kf_1795535161043_60\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.x",
+          "kf_1795535161043_60"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_7_9x3j.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.y\",\"kf_1795535161043_61\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.y",
+          "kf_1795535161043_61"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.y\",\"kf_1795535161043_62\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.y",
+          "kf_1795535161043_62"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.y\",\"kf_1795535161043_63\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.y",
+          "kf_1795535161043_63"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.y\",\"kf_1795535161043_64\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.y",
+          "kf_1795535161043_64"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.y\",\"kf_1795535161043_65\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.y",
+          "kf_1795535161043_65"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.y\",\"kf_1795535161043_66\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.y",
+          "kf_1795535161043_66"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\",\"kf_1795535161043_67\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg",
+          "kf_1795535161043_67"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\",\"kf_1795535161043_68\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg",
+          "kf_1795535161043_68"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\",\"kf_1795535161043_69\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg",
+          "kf_1795535161043_69"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\",\"kf_1795535161043_70\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg",
+          "kf_1795535161043_70"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\",\"kf_1795535161043_71\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg",
+          "kf_1795535161043_71"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\",\"kf_1795535161044_72\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg",
+          "kf_1795535161044_72"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.transform.rotationDeg\",\"kf_1795535161044_73\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.transform.rotationDeg",
+          "kf_1795535161044_73"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_7_9x3j.opacity\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_7_9x3j.opacity"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.opacity\",\"kf_1795535161044_74\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.opacity",
+          "kf_1795535161044_74"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.opacity\",\"kf_1795535161044_75\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.opacity",
+          "kf_1795535161044_75"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"key\",\"timeline_1\",\"layers.group_7_9x3j.opacity\",\"kf_1795535161044_76\"]": {
+        "address": [
+          "key",
+          "timeline_1",
+          "layers.group_7_9x3j.opacity",
+          "kf_1795535161044_76"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"text_107\"]": {
+        "address": [
+          "layer",
+          "text_107"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+          "requestId": "typography-word-in-balance-apply2"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {
+          "[\"transform\",\"x\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          }
+        }
+      },
+      "[\"layer\",\"text_109\"]": {
+        "address": [
+          "layer",
+          "text_109"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+          "requestId": "typography-word-in-balance-apply2"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {
+          "[\"transform\",\"x\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          },
+          "[\"transform\",\"y\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          }
+        }
+      },
+      "[\"layer\",\"text_111\"]": {
+        "address": [
+          "layer",
+          "text_111"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+          "requestId": "typography-word-in-balance-apply2"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {
+          "[\"transform\",\"x\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          },
+          "[\"transform\",\"y\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          }
+        }
+      },
+      "[\"layer\",\"text_113\"]": {
+        "address": [
+          "layer",
+          "text_113"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+          "requestId": "typography-word-in-balance-apply2"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {
+          "[\"transform\",\"x\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          },
+          "[\"transform\",\"y\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          }
+        }
+      },
+      "[\"layer\",\"text_115\"]": {
+        "address": [
+          "layer",
+          "text_115"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+          "requestId": "typography-word-in-balance-apply2"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "d4301e37-db22-4198-affa-f8b9fddfe86a",
+          "requestId": "typography-word-in-balance-apply1"
+        },
+        "fields": {
+          "[\"transform\",\"x\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          },
+          "[\"transform\",\"y\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "4e964f27-c135-4ae9-915a-4a04e0f0ed27",
+            "requestId": "typography-word-in-balance-apply2"
+          }
+        }
+      }
+    }
+  }
+}

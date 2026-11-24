@@ -260,7 +260,7 @@ const featureReleased = sitemapFiles.some(file => file.pathname === '/sitemap-do
 if (featureReleased) {
   assert.equal(addedUrls.filter(url => new URL(url).pathname.startsWith('/docs')).length, 74, 'The released documentation inventory remains intact')
   const library = await (await fetchChecked('/animations', /text\/html/)).text()
-  for (const path of ['style-animations', 'interactive-web', 'long-form', 'games', 'freeform', 'skills', 'chorono-render', 'style-animations/small-wins', 'style-animations/live-from-studio-04', 'one-bar-every-beat', 'three-dot-loading', 'editable-title-card', 'interactive-motion-crew']) {
+  for (const path of ['style-animations', 'interactive-web', 'long-form', 'games', 'freeform', 'skills', 'chorono-render', 'style-animations/small-wins', 'style-animations/live-from-studio-04', 'style-animations/night-service', 'style-animations/word-in-balance', 'style-animations/price-of-the-everyday', 'one-bar-every-beat', 'three-dot-loading', 'editable-title-card', 'interactive-motion-crew']) {
     assert.ok(publicUrls.includes(`${canonicalOrigin}/animations/${path}`), `/animations/${path}: missing sitemap entry`)
     assert.ok(library.includes(`href="/animations/${path}"`), `/animations/${path}: missing library link`)
   }

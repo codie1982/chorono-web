@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowUpRight, ChevronRight } from 'lucide-react'
 import {
   SKILL_CATALOG_DESCRIPTION, SKILL_CATALOG_TITLE, skillBreadcrumbs, skillCatalogRoutes,
-  skillExampleFamilies, skillExampleMedia, skillExamples, type SkillCatalogSurface, type SkillExample,
+  skillExampleMedia, skillExamples, type SkillCatalogSurface, type SkillExample,
 } from '@/lib/agent-skills/catalog'
 import { exampleEditorial } from '@/lib/animation-library/example-editorial'
 import { ExampleEditorial } from '@/components/animation-library/ExampleEditorial'
@@ -61,7 +61,7 @@ export function SkillExampleDetail({ example, surface = 'public' }: {
   return <article className={styles.page} data-surface={surface}>
     {surface === 'public' && <CatalogSchema example={example} />}
     <Breadcrumbs example={example} surface={surface} />
-    <Lead eyebrow={editorial ? skillExampleFamilies[example.family] : example.category} title={editorial ? `${example.title} · ${editorial.topic}` : example.title} text={editorial?.description ?? example.description} />
+    <Lead eyebrow={editorial ? example.title : example.category} title={editorial?.topic ?? example.title} text={editorial?.description ?? example.description} />
     <SkillExamplePlayback key={example.slug} example={example} />
     {example.interactiveDemo && <SkillInteractiveDemo kind={example.interactiveDemo} project={skillExampleMedia(example.slug).project}
       poster={skillExampleMedia(example.slug).poster} posterAlt={example.posterAlt} width={example.width} height={example.height} />}

@@ -60,8 +60,8 @@ export function LibraryProject({ project }: { project: Extract<ShowcaseProject, 
     <LibrarySchema items={crumbs} />
     <LibraryBreadcrumb items={crumbs} />
     <header className="al-gallery-lead">
-      <div className="al-format-row"><p className="cd-eyebrow">{project.format}</p>{(project.kind === 'concept' || project.kind === 'storyboard') && <ComingSoon />}</div>
-      <h1>{editorial ? `${project.title} · ${editorial.topic}` : project.title}</h1><p>{editorial?.description ?? project.description}</p>
+      <div className="al-format-row"><p className="cd-eyebrow">{editorial ? project.title : project.format}</p>{(project.kind === 'concept' || project.kind === 'storyboard') && <ComingSoon />}</div>
+      <h1>{editorial?.topic ?? project.title}</h1><p>{editorial?.description ?? project.description}</p>
     </header>
     {project.kind === 'film' && <>
       <FilmPreview film={project} />

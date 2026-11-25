@@ -388,7 +388,7 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     related: ['open-inspect-close', 'one-more-reply'],
   },
   'open-inspect-close': {
-    topic: 'Expandable Card Animation with Open and Close States',
+    topic: 'Expandable Card Animation',
     description: 'Open an interactive museum card to inspect three vessel parts, then close it and reset the view. Download the editable panel and state machine.',
     heading: 'Give the panel a clear return path',
     paragraphs: [

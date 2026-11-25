@@ -45,7 +45,7 @@ export interface SkillExample extends SkillExampleComposition {
   readonly durationSeconds: number
   readonly frameRate: number
   readonly mediaAdded: string
-  readonly interactiveDemo?: 'plant-cards' | 'artifact-card'
+  readonly interactiveDemo?: 'plant-cards' | 'artifact-card' | 'coastal-radar'
   readonly portrait?: SkillExampleComposition
   readonly beats: readonly { readonly time: string; readonly label: string; readonly detail: string }[]
   readonly revision: string
@@ -82,6 +82,29 @@ export const skillExamples: readonly SkillExample[] = [
       href: '/kinetic-typography', label: 'Kinetic typography guide',
       preview: { href: '/new-home/docs/editor/keyframes', label: 'Keyframes handbook' },
     },
+  },
+  {
+    slug: 'coastal-radar',
+    title: 'Kıyı Radarı — Gece Vardiyası',
+    family: 'interface',
+    category: 'Interactive 3D turntable',
+    libraryCategory: 'interactive-web',
+    description: 'Turn a 3D coastal radar left and right against a night harbor. The project connects click targets to three angle states, a copper signal light and a readout.',
+    posterAlt: 'A silver radar dish on a wet concrete platform beside two Turkish turn controls in a moonlit coastal scene.',
+    durationSeconds: 4,
+    width: 1440,
+    height: 810,
+    frameRate: 30,
+    mediaAdded: '2026-11-25',
+    interactiveDemo: 'coastal-radar',
+    prompt: 'Use Chorono to create a 1440 × 810 interactive 3D turntable on a 2D coastal landing page. Place an editable GLB radar dish over a coastal photograph and add readable turn controls. Define a neutral state and two states offset by −60° and +60° from the neutral yaw. Route click targets to the states, then wire the state track to the 3D model’s yaw parameter. Blend between turn states over 620 ms. Update the angle label and trigger a 960 ms signal pulse when the direction changes. Keep the model, controls and state machine editable in a portable project.',
+    beats: [
+      { time: '0–0.4 s', label: 'Inspect the starting angle', detail: 'The radar faces the viewer above the wet platform. The readout shows 0° relative to the starting pose.' },
+      { time: '0.4–1.6 s', label: 'Turn left', detail: 'The model turns 60° to the left and the copper signal pulses.' },
+      { time: '1.6–4 s', label: 'Turn right and center', detail: 'The model crosses to the opposite view before the demo returns to its starting angle.' },
+    ],
+    revision: 'Try a narrower inspection range by adjusting the left and right tracks. Keep the readout in sync with the angle offsets and test both button targets after editing.',
+    guide: { href: '/docs/editor/keyframes', label: 'Keyframes handbook' },
   },
   {
     slug: 'night-dispatch',

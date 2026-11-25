@@ -7,6 +7,7 @@ import {
 import { exampleEditorial } from '@/lib/animation-library/example-editorial'
 import { ExampleEditorial } from '@/components/animation-library/ExampleEditorial'
 import { skillCatalogStructuredData } from '@/lib/agent-skills/seo'
+import { CoastalRadarDemo } from './CoastalRadarDemo'
 import { SkillExampleList } from './SkillExampleList'
 import { SkillExamplePlayback } from './SkillExamplePlayback'
 import { SkillInteractiveDemo } from './SkillInteractiveDemo'
@@ -58,13 +59,16 @@ export function SkillExampleDetail({ example, surface = 'public' }: {
 }) {
   const editorial = surface === 'public' ? exampleEditorial[example.slug] : undefined
   const guide = surface === 'preview' ? example.guide.preview : example.guide
+  const media = skillExampleMedia(example.slug)
+  const interactive = example.interactiveDemo
   return <article className={styles.page} data-surface={surface}>
     {surface === 'public' && <CatalogSchema example={example} />}
     <Breadcrumbs example={example} surface={surface} />
     <Lead eyebrow={editorial ? example.title : example.category} title={editorial?.topic ?? example.title} text={editorial?.description ?? example.description} />
+    {interactive === 'coastal-radar' && <CoastalRadarDemo poster={media.poster} posterAlt={example.posterAlt} />}
     <SkillExamplePlayback key={example.slug} example={example} />
-    {example.interactiveDemo && <SkillInteractiveDemo kind={example.interactiveDemo} project={skillExampleMedia(example.slug).project}
-      poster={skillExampleMedia(example.slug).poster} posterAlt={example.posterAlt} width={example.width} height={example.height} />}
+    {interactive && interactive !== 'coastal-radar' && <SkillInteractiveDemo kind={interactive} project={media.project}
+      poster={media.poster} posterAlt={example.posterAlt} width={example.width} height={example.height} />}
     {editorial && <ExampleEditorial slug={example.slug} />}
     <div className={styles.notes}>
       <section aria-labelledby="skill-beats-title">

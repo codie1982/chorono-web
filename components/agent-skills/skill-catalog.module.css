@@ -150,3 +150,8 @@
 .interactiveControls button[aria-pressed='true'] { background: var(--skill-action-bg); color: var(--skill-action-text); }
 .interactiveControls button:focus-visible { outline: 2px solid var(--skill-link); outline-offset: 3px; }
 .interactiveDemo p:empty { display: none; }
+.radarHotspot { position: absolute; top: 81.55%; transform: translateY(-50%); width: 13.06%; height: max(24px, 6.8%); border: 0; border-radius: 6px; background: transparent; cursor: pointer; }
+.radarHotspot[data-turn="left"] { left: 4.1%; }
+.radarHotspot[data-turn="right"] { left: 17.85%; }
+.radarHotspot:hover { background: rgb(255 255 255 / 14%); }
+.radarHotspot:focus-visible { outline: 2px solid white; outline-offset: 3px; }

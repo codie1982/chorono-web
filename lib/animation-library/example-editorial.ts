@@ -17,6 +17,16 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     ],
     related: ['word-in-balance', 'live-from-studio-04'],
   },
+  'coastal-radar': {
+    topic: 'Interactive 3D Radar Turntable',
+    description: 'Turn a 3D radar dish left or right in an interactive coastal scene. Download the Chorono project to inspect its GLB model, angle states and signal animation.',
+    heading: 'Connect each button to a model angle',
+    paragraphs: [
+      'The Chorono project defines three views. A parameter wire carries the active timeline’s value to the radar’s Y-axis rotation, and the readout shows the offset from the neutral view. The left and right controls also trigger a separate pulse on the copper signal lamp.',
+      'The browser demo plays frames rendered from the Chorono scene in response to each turn. Open the editable project to change the model, blend timing, camera or angle range, and preview the state machine alongside the 2D interface.',
+    ],
+    related: ['open-inspect-close', 'choose-your-plant'],
+  },
   'night-dispatch': {
     topic: '2D Motorcycle Animation',
     description: 'Watch a 2D motorcycle cross an uneven harbor road from sunset to moonrise. Download the editable Chorono project and study the rider, suspension and lighting.',

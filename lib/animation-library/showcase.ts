@@ -125,7 +125,7 @@ export const showcaseProjects: readonly ShowcaseProject[] = [
   ...skillExamples.map((example): ShowcaseProject => ({
     kind: 'skill', example, slug: example.slug, title: example.title, description: example.description,
     category: example.libraryCategory, cover: { src: skillExampleMedia(example.slug).poster, alt: example.posterAlt },
-    format: 'Video · Agent prompt',
+    format: example.interactiveDemo === 'coastal-radar' ? 'Interactive demo · Editable project' : 'Video · Agent prompt',
   })),
   ...animationEntries.map((entry): ShowcaseProject => ({
     kind: 'native', entry, slug: entry.slug, title: entry.title, description: entry.description,

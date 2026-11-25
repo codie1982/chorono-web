@@ -89,7 +89,8 @@ describe("publication and topic sitemap contract", () => {
       const row = published.slice(published.indexOf(marker)).split('</url>')[0]
       expect(row).toContain('<video:content_loc>https://www.chorono.com/')
       expect(row).toContain(`<video:thumbnail_loc>https://www.chorono.com${project.cover.src}</video:thumbnail_loc>`)
-      expect(row).toContain('<video:duration>')
+      const seconds = project.kind === 'film' ? project.durationSeconds : project.example.durationSeconds
+      expect(row).toContain(`<video:duration>${Math.round(seconds)}</video:duration>`)
     }
   })
 

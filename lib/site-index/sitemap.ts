@@ -99,7 +99,7 @@ function sitemapVideoXml(video: SitemapVideo, origin: string): string {
       <video:title>${xmlText(video.title)}</video:title>
       <video:description>${xmlText(video.description)}</video:description>
       <video:content_loc>${content}</video:content_loc>
-      <video:duration>${video.seconds}</video:duration>
+      <video:duration>${Math.round(video.seconds)}</video:duration>
     </video:video>`
 }
 

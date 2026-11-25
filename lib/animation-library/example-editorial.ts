@@ -17,6 +17,16 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     ],
     related: ['word-in-balance', 'live-from-studio-04'],
   },
+  'night-dispatch': {
+    topic: '2D Motorcycle Animation',
+    description: 'Watch a 2D motorcycle cross an uneven harbor road from sunset to moonrise. Download the editable Chorono project and study the rider, suspension and lighting.',
+    heading: 'Track the wheels through each bump',
+    paragraphs: [
+      'The courier stays near the center of the frame as the road and harbor scroll at different speeds. Around 2.1 seconds the front wheel reaches a crest, and the rear wheel crosses it around 2.4 seconds. The chassis pitches and settles as the rider’s hand and boot stay in contact with the handlebar and footrest.',
+      'The rider’s helmet, jacket and boots use editable Bézier shapes. The woven scarf bends on a 2D mesh. Scrub through the sunset to see how the last daylight title fades, the night title enters and the headlamp takes over as the sky cools.',
+    ],
+    related: ['wind-up-walker', 'cat-stretch'],
+  },
   'live-from-studio-04': {
     topic: 'Broadcast Lower Third Animation',
     description: 'Study a seven-second animated lower third with two masked text reveals and a staggered exit. Download the editable broadcast title project.',

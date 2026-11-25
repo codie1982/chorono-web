@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import type { ChronoPlayer } from '@chorono/runtime'
+import { makeHeroPanelRenderer } from './heroPanelRenderer'
 import styles from './skill-catalog.module.css'
 
 type Scene = Parameters<ChronoPlayer['load']>[0]
@@ -71,7 +72,7 @@ export function HeroPanelDemo({ poster, posterAlt }: { poster: string; posterAlt
       if (reduced.matches) for (const machine of scene.stateMachines ?? []) {
         for (const change of machine.transitions) change.blendMs = 0
       }
-      const instance = new sdk.ChronoPlayer(scene, new sdk.CanvasRenderAdapter(context), { assets, loop: true })
+      const instance = new sdk.ChronoPlayer(scene, makeHeroPanelRenderer(context, scene, sdk.CanvasRenderAdapter), { assets, loop: true })
       instance.tick(0)
       player.current = instance
       setReady(true)

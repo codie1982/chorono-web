@@ -40,6 +40,7 @@
 .al-button:hover {
   opacity: 0.88;
 }
+.al-install { margin-top: 18px; }
 .al-detail-heading h1 {
   font-size: clamp(35px, 4vw, 51px);
   line-height: 1.13;

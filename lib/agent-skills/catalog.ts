@@ -45,7 +45,7 @@ export interface SkillExample extends SkillExampleComposition {
   readonly durationSeconds: number
   readonly frameRate: number
   readonly mediaAdded: string
-  readonly interactiveDemo?: 'plant-cards' | 'artifact-card' | 'coastal-radar'
+  readonly interactiveDemo?: 'plant-cards' | 'artifact-card' | 'coastal-radar' | 'hero-panels'
   readonly portrait?: SkillExampleComposition
   readonly beats: readonly { readonly time: string; readonly label: string; readonly detail: string }[]
   readonly revision: string
@@ -82,6 +82,29 @@ export const skillExamples: readonly SkillExample[] = [
       href: '/kinetic-typography', label: 'Kinetic typography guide',
       preview: { href: '/new-home/docs/editor/keyframes', label: 'Keyframes handbook' },
     },
+  },
+  {
+    slug: 'interactive-hero-panels',
+    title: 'Chorono Hero Panels',
+    family: 'interface',
+    category: 'Interactive website hero',
+    libraryCategory: 'interactive-web',
+    description: 'Four curved panels expand into focused views for Render, Motion, Model and Game. A 600 ms blend brings in the selected panel’s message while its artwork cycles.',
+    posterAlt: 'Four curved panels showing a sunset explorer, blue motion trails, a sci-fi helmet and a lush game environment.',
+    durationSeconds: 18,
+    width: 1440,
+    height: 520,
+    frameRate: 30,
+    mediaAdded: '2026-11-25',
+    interactiveDemo: 'hero-panels',
+    prompt: 'Use Chorono to build a 1440 × 520 interactive website hero. Draw an S-curve panel boundary and reuse it for four textured Mesh2D panels. Build an overview plus focused states for Render, Motion, Model and Game. In each focus state expand the chosen panel, contract its neighbors, and reveal a headline, description and action. Blend between states over 600 ms. Keep a separate 18-second loop for cycling three images per panel. Save the state machine, artwork and text in one portable Chorono project.',
+    beats: [
+      { time: '0–1.5 s', label: 'Show the overview', detail: 'The curved panels show four different visual directions.' },
+      { time: '1.5–15 s', label: 'Focus each panel', detail: 'The selected panel expands over 600 ms and shows its own headline, description and action.' },
+      { time: '15–18 s', label: 'Return to the overview', detail: 'The four panels return to their original widths as the artwork loop completes.' },
+    ],
+    revision: 'Open the Artwork timeline to swap the three images used by a panel. Then change its focus message and preview the 600 ms transition from Overview.',
+    guide: { href: '/docs/editor/keyframes', label: 'Keyframes handbook' },
   },
   {
     slug: 'coastal-radar',

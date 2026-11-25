@@ -53,6 +53,7 @@ export function AnimationDetail({ animation }: { animation: LoadedAnimation }) {
             <span>MIT license</span>
             <span>Native project</span>
           </div>
+          <Link className="al-button al-install" href="/docs/installation">Install Chorono</Link>
         </header>
         {entry.preview.kind === 'example' ? <ScenePreview
         key={entry.slug}

@@ -17,6 +17,16 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     ],
     related: ['word-in-balance', 'live-from-studio-04'],
   },
+  'interactive-hero-panels': {
+    topic: 'Interactive Website Hero Animation',
+    description: 'Explore four curved hero panels with 600 ms focus transitions, rotating artwork and animated messages. Download the editable Chorono project.',
+    heading: 'Give each hero panel its own focus state',
+    paragraphs: [
+      'The hero uses a shared S-curve profile for four textured panels. Select a category to expand its panel while its neighbors narrow. The focus timeline reveals a headline and an action for that category, and the Artwork timeline cycles the images independently.',
+      'The browser renders the original state changes with textures baked from the Chorono Mesh2D layers. The editable file keeps those layers and their original assets, so you can change the panel shape, swap an image or adjust the 600 ms blend.',
+    ],
+    related: ['open-inspect-close', 'coastal-radar'],
+  },
   'coastal-radar': {
     topic: 'Interactive 3D Radar Turntable',
     description: 'Turn a 3D radar dish left or right in an interactive coastal scene. Download the Chorono project to inspect its GLB model, angle states and signal animation.',

@@ -54,6 +54,7 @@
 .page p { color: var(--skill-muted); }
 .page :is(a, button, pre, select):focus-visible { outline: 2px solid var(--skill-focus); outline-offset: 4px; }
 .lead { display: grid; gap: 12px; margin: 0 0 clamp(24px, 3.4vw, 42px); }
+.lead > a { justify-self: start; }
 .page .lead .eyebrow { display: flex; align-items: center; gap: 12px; font: 700 11px/1.5 ui-monospace, monospace; color: var(--skill-link); letter-spacing: .12em; text-transform: uppercase; }
 .page[data-surface='preview'] .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--skill-accent); }
 .page .lead h1 { max-width: 20ch; margin: 0; font-size: clamp(38px, 5.2vw, 70px); font-weight: 800; line-height: 1.04; letter-spacing: -.052em; text-wrap: balance; }
@@ -155,3 +156,6 @@
 .radarHotspot[data-turn="right"] { left: 17.85%; }
 .radarHotspot:hover { background: rgb(255 255 255 / 14%); }
 .radarHotspot:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+.heroPanelHotspot { position: absolute; top: 67.88%; transform: translateY(-50%); width: 12.78%; height: max(24px, 8.85%); border-radius: 6px; }
+.heroPanelHotspot:hover { background: rgb(255 255 255 / 14%); }
+.heroPanelLink { display: inline-flex; align-items: center; min-height: 44px; color: var(--skill-link); text-decoration: underline; font-weight: 650; }

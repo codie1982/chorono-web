@@ -8,6 +8,7 @@ import { exampleEditorial } from '@/lib/animation-library/example-editorial'
 import { ExampleEditorial } from '@/components/animation-library/ExampleEditorial'
 import { skillCatalogStructuredData } from '@/lib/agent-skills/seo'
 import { CoastalRadarDemo } from './CoastalRadarDemo'
+import { HeroPanelDemo } from './HeroPanelDemo'
 import { SkillExampleList } from './SkillExampleList'
 import { SkillExamplePlayback } from './SkillExamplePlayback'
 import { SkillInteractiveDemo } from './SkillInteractiveDemo'
@@ -23,11 +24,12 @@ function Breadcrumbs({ example, surface }: { example?: SkillExample; surface: Sk
   </ol></nav>
 }
 
-function Lead({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
+function Lead({ eyebrow, title, text, install }: { eyebrow: string; title: string; text: string; install?: boolean }) {
   return <header className={styles.lead}>
     <p className={styles.eyebrow}>{eyebrow}</p>
     <h1>{title}</h1>
     <p>{text}</p>
+    {install && <Link className={styles.action} href="/docs/installation">Install Chorono</Link>}
   </header>
 }
 
@@ -64,10 +66,11 @@ export function SkillExampleDetail({ example, surface = 'public' }: {
   return <article className={styles.page} data-surface={surface}>
     {surface === 'public' && <CatalogSchema example={example} />}
     <Breadcrumbs example={example} surface={surface} />
-    <Lead eyebrow={editorial ? example.title : example.category} title={editorial?.topic ?? example.title} text={editorial?.description ?? example.description} />
+    <Lead eyebrow={editorial ? example.title : example.category} title={editorial?.topic ?? example.title} text={editorial?.description ?? example.description} install />
     {interactive === 'coastal-radar' && <CoastalRadarDemo poster={media.poster} posterAlt={example.posterAlt} />}
+    {interactive === 'hero-panels' && <HeroPanelDemo poster={media.poster} posterAlt={example.posterAlt} />}
     <SkillExamplePlayback key={example.slug} example={example} />
-    {interactive && interactive !== 'coastal-radar' && <SkillInteractiveDemo kind={interactive} project={media.project}
+    {(interactive === 'plant-cards' || interactive === 'artifact-card') && <SkillInteractiveDemo kind={interactive} project={media.project}
       poster={media.poster} posterAlt={example.posterAlt} width={example.width} height={example.height} />}
     {editorial && <ExampleEditorial slug={example.slug} />}
     <div className={styles.notes}>

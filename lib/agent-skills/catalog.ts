@@ -3,8 +3,8 @@ import { ANIMATION_LIBRARY_PATH, ANIMATION_SKILLS_PATH, showcaseCategoryNames, s
 
 export const SKILL_CATALOG_PATH = ANIMATION_SKILLS_PATH
 export const SKILL_CATALOG_PREVIEW_PATH = '/new-home/agent-skills/examples'
-export const SKILL_CATALOG_TITLE = 'Animation prompt examples'
-export const SKILL_CATALOG_DESCRIPTION = 'Watch Chorono animation examples, copy a prompt for Codex or Claude Code, and download the editable scene behind each video.'
+export const SKILL_CATALOG_TITLE = 'Animation Prompt Examples for Claude and Codex'
+export const SKILL_CATALOG_DESCRIPTION = 'Copy animation prompts for Claude Code or Codex. Watch results from real Chorono scenes and download editable projects for typography, charts, and more.'
 
 export const skillCatalogRoutes = {
   public: { home: '/', skills: ANIMATION_LIBRARY_PATH, collection: SKILL_CATALOG_PATH, setup: '/agent-skills#agent-setup-guides', install: '/docs/ai/skills' },

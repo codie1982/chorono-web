@@ -1,10 +1,10 @@
-import { LibraryShowcase, libraryDescription } from '@/components/animation-library/LibraryShowcase'
+import { LibraryShowcase, libraryDescription, libraryTitle } from '@/components/animation-library/LibraryShowcase'
 import { ANIMATION_LIBRARY_PATH } from '@/lib/animation-library/routes'
 import { pageMetadata } from '@/lib/site'
 import { contentPublicationMetadata } from '@/lib/site-index/publication'
 
 export const metadata = {
-  ...pageMetadata('Animation Examples & Editable Motion Graphics', libraryDescription, ANIMATION_LIBRARY_PATH),
+  ...pageMetadata(`${libraryTitle} | Chorono`, libraryDescription, ANIMATION_LIBRARY_PATH),
   ...contentPublicationMetadata(ANIMATION_LIBRARY_PATH),
 }
 

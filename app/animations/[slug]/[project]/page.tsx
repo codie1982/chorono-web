@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { SkillExampleDetail } from '@/components/agent-skills/SkillCatalog'
 import skillStyles from '@/components/agent-skills/skill-catalog.module.css'
 import { LibraryProject } from '@/components/animation-library/LibraryProject'
+import { exampleEditorial } from '@/lib/animation-library/example-editorial'
 import { skillCatalogMetadata } from '@/lib/agent-skills/seo'
 import { findShowcaseProject, showcaseProjectHref, showcaseProjects } from '@/lib/animation-library/showcase'
 import { pageMetadata } from '@/lib/site'
@@ -22,8 +23,9 @@ export function generateMetadata({ params }: Props): Metadata {
   if (project.kind === 'skill') return skillCatalogMetadata(project.example)
   const path = showcaseProjectHref(project)
   const film = project.kind === 'film' ? project : undefined
+  const editorial = film ? exampleEditorial[film.slug] : undefined
   return {
-    ...pageMetadata(film ? `${film.title} – ${film.format}` : project.title, project.description, path, {
+    ...pageMetadata(editorial?.topic ?? project.title, editorial?.description ?? project.description, path, {
       image: project.cover.src,
       imageAlt: project.cover.alt,
       ...(film && { imageWidth: 1280, imageHeight: 720 }),

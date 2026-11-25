@@ -245,3 +245,11 @@
 .al-beat-list li > span { color:var(--cd-accent); font-size:12px; font-weight:700; font-variant-numeric:tabular-nums; }
 .al-beat-list strong { font-size:14px; }
 .al-beat-list p { margin:5px 0 0; font-size:13px; line-height:1.6; }
+
+.al-editorial { max-width: 74ch; margin-block: clamp(30px, 5vw, 60px); }
+.al-editorial h2 { margin: 0 0 12px; font-size: clamp(1.35rem, 2.3vw, 1.9rem); }
+.al-editorial p + p { margin-top: 12px; }
+.al-related-examples { margin-top: 18px; gap: 8px 22px; }
+.al-related-examples a { text-decoration: underline; text-underline-offset: 4px; }
+.al-find-example { margin-top: -10px; }
+.al-group-summary { max-width: 74ch; margin: -6px 0 20px; color: var(--site-muted); }

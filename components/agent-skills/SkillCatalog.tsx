@@ -2,8 +2,10 @@ import Link from 'next/link'
 import { ArrowUpRight, ChevronRight } from 'lucide-react'
 import {
   SKILL_CATALOG_DESCRIPTION, SKILL_CATALOG_TITLE, skillBreadcrumbs, skillCatalogRoutes,
-  skillExampleMedia, skillExamples, type SkillCatalogSurface, type SkillExample,
+  skillExampleFamilies, skillExampleMedia, skillExamples, type SkillCatalogSurface, type SkillExample,
 } from '@/lib/agent-skills/catalog'
+import { exampleEditorial } from '@/lib/animation-library/example-editorial'
+import { ExampleEditorial } from '@/components/animation-library/ExampleEditorial'
 import { skillCatalogStructuredData } from '@/lib/agent-skills/seo'
 import { SkillExampleList } from './SkillExampleList'
 import { SkillExamplePlayback } from './SkillExamplePlayback'
@@ -54,14 +56,16 @@ export function SkillExampleDetail({ example, surface = 'public' }: {
   example: SkillExample
   surface?: SkillCatalogSurface
 }) {
+  const editorial = surface === 'public' ? exampleEditorial[example.slug] : undefined
   const guide = surface === 'preview' ? example.guide.preview : example.guide
   return <article className={styles.page} data-surface={surface}>
     {surface === 'public' && <CatalogSchema example={example} />}
     <Breadcrumbs example={example} surface={surface} />
-    <Lead eyebrow={example.category} title={example.title} text={example.description} />
+    <Lead eyebrow={editorial ? skillExampleFamilies[example.family] : example.category} title={editorial ? `${example.title} · ${editorial.topic}` : example.title} text={editorial?.description ?? example.description} />
     <SkillExamplePlayback key={example.slug} example={example} />
     {example.interactiveDemo && <SkillInteractiveDemo kind={example.interactiveDemo} project={skillExampleMedia(example.slug).project}
       poster={skillExampleMedia(example.slug).poster} width={example.width} height={example.height} />}
+    {editorial && <ExampleEditorial slug={example.slug} />}
     <div className={styles.notes}>
       <section aria-labelledby="skill-beats-title">
         <h2 id="skill-beats-title">On the timeline</h2>

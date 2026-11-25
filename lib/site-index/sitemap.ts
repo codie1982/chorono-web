@@ -1,3 +1,5 @@
+import { skillExampleMedia } from '@/lib/agent-skills/catalog'
+import { exampleEditorial } from '@/lib/animation-library/example-editorial'
 import { documentationPages, documentationHref } from '@/lib/documentation/manifest'
 import { collectionIsIndexable, showcaseCollections, showcaseProjectHref, showcaseProjects } from '@/lib/animation-library/showcase'
 import { ANIMATION_LIBRARY_PATH, showcaseCollectionHref } from '@/lib/animation-library/routes'
@@ -65,6 +67,42 @@ function xmlText(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;')
 }
 
+interface SitemapVideo {
+  title: string
+  description: string
+  thumbnail: string
+  content: string
+  seconds: number
+}
+
+const animationVideos = new Map<string, SitemapVideo>()
+for (const project of showcaseProjects) {
+  if (project.kind !== 'film' && project.kind !== 'skill') continue
+  const editorial = exampleEditorial[project.slug]
+  const description = editorial?.description ?? project.description
+  const title = editorial ? `${project.title} · ${editorial.topic}` : project.title
+  animationVideos.set(showcaseProjectHref(project), {
+    title,
+    description,
+    thumbnail: project.cover.src,
+    content: project.kind === 'film' ? project.video : skillExampleMedia(project.slug).video,
+    seconds: project.kind === 'film' ? project.durationSeconds : project.example.durationSeconds,
+  })
+}
+
+function sitemapVideoXml(video: SitemapVideo, origin: string): string {
+  const thumbnail = xmlText(new URL(video.thumbnail, origin).href)
+  const content = xmlText(new URL(video.content, origin).href)
+  return `
+    <video:video>
+      <video:thumbnail_loc>${thumbnail}</video:thumbnail_loc>
+      <video:title>${xmlText(video.title)}</video:title>
+      <video:description>${xmlText(video.description)}</video:description>
+      <video:content_loc>${content}</video:content_loc>
+      <video:duration>${video.seconds}</video:duration>
+    </video:video>`
+}
+
 /**
  * Serialize the index or one topic using absolute URLs. Existing authoritative
  * modification dates survive the migration; new pages receive no invented date.
@@ -76,12 +114,24 @@ export function serializeSitemap(origin: string, file = 'sitemap.xml', preview =
   const topic = topics.find(item => item.file === file)
   if (file !== 'sitemap.xml' && !topic) return null
   const index = file === 'sitemap.xml'
+  const includeVideo = !preview && file === 'sitemap-animations.xml'
   const locations = index
-    ? topics.filter(item => item.paths.length || preview && item.previewOnlyPaths?.length).map(item => ({ url: new URL(preview ? `/sitemap-preview.xml?topic=${item.file}` : `/${item.file}`, origin).href, modified: undefined as string | undefined }))
-    : [...topic!.paths, ...(preview ? topic!.previewOnlyPaths ?? [] : [])].sort().map(path => ({ url: new URL(path, origin).href, modified: existingModificationDates.get(path) }))
+    ? topics.filter(item => item.paths.length || preview && item.previewOnlyPaths?.length)
+      .map(item => ({ url: new URL(preview ? `/sitemap-preview.xml?topic=${item.file}` : `/${item.file}`, origin).href, modified: undefined, video: undefined }))
+    : [...topic!.paths, ...(preview ? topic!.previewOnlyPaths ?? [] : [])].sort().map(path => ({
+      url: new URL(path, origin).href,
+      modified: existingModificationDates.get(path),
+      video: includeVideo ? animationVideos.get(path) : undefined,
+    }))
   const root = index ? 'sitemapindex' : 'urlset'
   const tag = index ? 'sitemap' : 'url'
-  return `<?xml version="1.0" encoding="UTF-8"?>\n${preview ? '<!-- Local preview only. Do not submit this endpoint to search engines. -->\n' : ''}<${root} xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${locations.map(item => `  <${tag}>\n    <loc>${xmlText(item.url)}</loc>${item.modified ? `\n    <lastmod>${xmlText(item.modified)}</lastmod>` : ''}\n  </${tag}>`).join('\n')}\n</${root}>\n`
+  const videoNamespace = includeVideo ? ' xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"' : ''
+  const rows = locations.map(item => {
+    const modified = item.modified ? `\n    <lastmod>${xmlText(item.modified)}</lastmod>` : ''
+    const video = item.video ? sitemapVideoXml(item.video, origin) : ''
+    return `  <${tag}>\n    <loc>${xmlText(item.url)}</loc>${modified}${video}\n  </${tag}>`
+  })
+  return `<?xml version="1.0" encoding="UTF-8"?>\n${preview ? '<!-- Local preview only. Do not submit this endpoint to search engines. -->\n' : ''}<${root} xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${videoNamespace}>\n${rows.join('\n')}\n</${root}>\n`
 }
 
 /** Keep existing public sitemap coverage live; gate only the new docs/library. */

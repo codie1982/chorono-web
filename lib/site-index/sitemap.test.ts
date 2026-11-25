@@ -1,5 +1,6 @@
 import { documentationPages } from '@/lib/documentation/manifest'
-import { collectionIsIndexable, showcaseCollections, showcaseProjects } from '@/lib/animation-library/showcase'
+import { exampleEditorial } from '@/lib/animation-library/example-editorial'
+import { collectionIsIndexable, showcaseCollections, showcaseProjectHref, showcaseProjects } from '@/lib/animation-library/showcase'
 import { existingSitemapEntries } from './existing'
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -75,6 +76,34 @@ describe("publication and topic sitemap contract", () => {
       serializeSitemap("https://www.chorono.com", "missing.xml"),
     ).toBeNull();
   });
+
+  it('adds video metadata only to editable animation watch pages in the published sitemap', () => {
+    const published = serializeSitemap('https://www.chorono.com', 'sitemap-animations.xml', false, true)!
+    const preview = serializeSitemap('http://localhost:3000', 'sitemap-animations.xml', true)!
+    const projects = showcaseProjects.filter(project => project.kind === 'film' || project.kind === 'skill')
+    expect(published).toContain('xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"')
+    expect(published.match(/<video:video>/g)).toHaveLength(projects.length)
+    expect(preview).not.toContain('video:video')
+    for (const project of projects) {
+      const marker = `<loc>https://www.chorono.com${showcaseProjectHref(project)}</loc>`
+      const row = published.slice(published.indexOf(marker)).split('</url>')[0]
+      expect(row).toContain('<video:content_loc>https://www.chorono.com/')
+      expect(row).toContain(`<video:thumbnail_loc>https://www.chorono.com${project.cover.src}</video:thumbnail_loc>`)
+      expect(row).toContain('<video:duration>')
+    }
+  })
+
+  it('keeps example editorial and related links tied to real catalog pages', () => {
+    const projects = showcaseProjects.filter(project => project.kind === 'film' || project.kind === 'skill')
+    const slugs = projects.map(project => project.slug).sort()
+    expect(Object.keys(exampleEditorial).sort()).toEqual(slugs)
+    const topics = Object.values(exampleEditorial).map(content => content.topic)
+    expect(new Set(topics).size).toBe(projects.length)
+    for (const [slug, content] of Object.entries(exampleEditorial)) {
+      expect(new Set(content.related).size).toBe(content.related.length)
+      expect(content.related.every(related => related !== slug && slugs.includes(related))).toBe(true)
+    }
+  })
 
   it.each([undefined, "development", "preview"])("keeps docs/library noindex outside production (%s), even with legacy release flags", async (environment) => {
     vi.stubEnv("VERCEL_ENV", environment);

@@ -6,6 +6,8 @@ import InteractiveAnimationExample from '@/components/InteractiveAnimationExampl
 import ScenePreview from '@/components/player/ScenePreview'
 import { CopySnippet } from '@/components/tutorial/CopySnippet'
 import { samplePrompt, sampleSkill, type Sample } from '@/lib/animation-library/sample-studies'
+import { exampleEditorial } from '@/lib/animation-library/example-editorial'
+import { ExampleEditorial } from './ExampleEditorial'
 import { SITE_URL } from '@/lib/site'
 import { ANIMATION_RENDER_PATH, ANIMATION_SKILLS_PATH, showcaseCategoryNames, showcaseCollectionHref } from '@/lib/animation-library/routes'
 import { showcaseProjectHref, type ShowcaseFilm, type ShowcaseProject } from '@/lib/animation-library/showcase'
@@ -24,13 +26,14 @@ function StudyPreview({ sample, cover }: { sample: Sample; cover: ShowcaseProjec
 }
 
 function FilmPreview({ film }: { film: ShowcaseFilm }) {
+  const editorial = exampleEditorial[film.slug]
   const absolute = (path: string) => new URL(path, SITE_URL).href
   const schema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     '@id': `${absolute(showcaseProjectHref(film))}#video`,
-    name: film.title,
-    description: film.description,
+    name: editorial ? `${film.title} · ${editorial.topic}` : film.title,
+    description: editorial?.description ?? film.description,
     thumbnailUrl: absolute(film.cover.src),
     contentUrl: absolute(film.video),
     uploadDate: film.uploadDate,
@@ -50,6 +53,7 @@ function FilmPreview({ film }: { film: ShowcaseFilm }) {
 }
 
 export function LibraryProject({ project }: { project: Extract<ShowcaseProject, { kind: 'study' | 'video' | 'film' | 'storyboard' | 'concept' }> }) {
+  const editorial = project.kind === 'film' ? exampleEditorial[project.slug] : undefined
   const crumbs = libraryProjectCrumbs(project)
   const back = showcaseCollectionHref(project.category)
   return <main className="al-gallery al-project">
@@ -57,9 +61,12 @@ export function LibraryProject({ project }: { project: Extract<ShowcaseProject, 
     <LibraryBreadcrumb items={crumbs} />
     <header className="al-gallery-lead">
       <div className="al-format-row"><p className="cd-eyebrow">{project.format}</p>{(project.kind === 'concept' || project.kind === 'storyboard') && <ComingSoon />}</div>
-      <h1>{project.title}</h1><p>{project.description}</p>
+      <h1>{editorial ? `${project.title} · ${editorial.topic}` : project.title}</h1><p>{editorial?.description ?? project.description}</p>
     </header>
-    {project.kind === 'film' && <FilmPreview film={project} />}
+    {project.kind === 'film' && <>
+      <FilmPreview film={project} />
+      <ExampleEditorial slug={project.slug} />
+    </>}
     {project.kind === 'study' && <div className="al-study-layout">
       <div><StudyPreview sample={project.sample} cover={project.cover} />
         {project.sample.category === 'motion' && <a className="al-button" href={`/examples/${project.sample.id}.chorono.json`} download>Download editable scene <Download size={16} aria-hidden="true" /></a>}

@@ -1,4 +1,4 @@
-import { skillExampleMedia, skillExamples, type SkillExample } from '@/lib/agent-skills/catalog'
+import { SKILL_CATALOG_DESCRIPTION, SKILL_CATALOG_TITLE, skillExampleMedia, skillExamples, type SkillExample } from '@/lib/agent-skills/catalog'
 import { ANIMATION_EXAMPLES } from '@/lib/animation-example'
 import { animationEntries, animationHref, type AnimationEntry } from './catalog'
 import { samples, type Sample } from './sample-studies'
@@ -173,9 +173,9 @@ interface ShowcaseCollection {
 }
 
 const categoryDetails = {
-  'style-animations': { title: 'Motion Graphics Examples & Kinetic Typography', description: 'Watch editable typography, interface motion, charts, spline animations, character studies, effects, product demos and explainers made in Chorono.', cover: showcaseArt('motion-style-cover', 'A Swiss-style In Motion poster with black typography and a cobalt square.') },
-  'interactive-web': { title: 'Web Animation Examples & Interactive Components', description: 'Try a reversible like button, a keyboard-accessible menu and characters that react to your cursor. Inspect their states and download the editable scenes.', cover: showcaseArt('interactive-web-cover', 'A graphic study of three animated web controls on a warm white canvas.') },
-  'long-form': { title: 'Animation Storyboards & Narrative Films', description: 'Watch a narrative short film and follow a 75-second storyboard from a canyon crossing to an orbital greenhouse. Study the shot order, transitions, and sound direction.', cover: showcaseArt('storyboard-cover', 'Three painted storyboard frames of an explorer’s journey.'), upcoming: 'Full-length version of The Explorer’s Route. Explore its storyboard now.' },
+  'style-animations': { title: 'Motion Graphics Examples', description: 'Watch motion graphics examples for kinetic typography, UI motion, animated charts, product demos, and visual effects. Download the editable Chorono scenes.', cover: showcaseArt('motion-style-cover', 'A Swiss-style In Motion poster with black typography and a cobalt square.') },
+  'interactive-web': { title: 'Interactive Web Animation Examples', description: 'Try interactive cards, a like button, and a keyboard-accessible menu. Download the Chorono scenes and inspect the events and states behind each demo.', cover: showcaseArt('interactive-web-cover', 'A graphic study of three animated web controls on a warm white canvas.') },
+  'long-form': { title: 'Animation Storyboard & 2D Short Film Examples', description: 'Watch a painted 2D animated short and study a 75-second animation storyboard. Compare shot order, scene transitions, and sound cues.', cover: showcaseArt('storyboard-cover', 'Three painted storyboard frames of an explorer’s journey.'), upcoming: 'Full-length version of The Explorer’s Route. Explore its storyboard now.' },
   games: { title: '2D Game Prototypes', description: 'Try Valley Gate and the Moonlit Observatory, two browser puzzles with original 2D level art and simple state changes.', cover: showcaseArt('games-cover-2d', 'A top-down pixel-art locomotive crossing a teal estuary.'), upcoming: 'Full game projects. Play the browser prototypes now.' },
   freeform: { title: 'Experimental Animation & Render Studies', description: 'Experiment with the timing of an editable loading loop and inspect concept studies in light, glass, architecture and stylized characters.', cover: { src: '/new-home/studio/motion-filaments.jpg', alt: 'An abstract study of fine curved filaments in motion.' } },
   '2d-3d-compositing': { title: '2D and 3D Compositing Examples', description: 'Explore concept images that combine 3D subjects with 2D callouts, controls and graphics.', cover: showcaseArt('compositing-cover', 'Floating three-dimensional shapes layered with flat circles and an angled cyan grid.'), upcoming: 'Interactive composites. View the concept images now.' },
@@ -190,8 +190,8 @@ const renderProjects = showcaseProjects.filter(project => project.category === '
 
 export const showcaseResourceCollections: readonly ShowcaseCollection[] = [
   {
-    slug: 'skills', name: 'Skills & prompts', title: 'Animation Prompts for Editable Chorono Projects',
-    description: 'Copy animation prompts and download skill instructions for Codex or Claude Code. Explore playable demos, editable Chorono scenes and visual studies.',
+    slug: 'skills', name: 'Skills & prompts', title: SKILL_CATALOG_TITLE,
+    description: SKILL_CATALOG_DESCRIPTION,
     cover: showcaseProjects[0].cover, projects: showcaseProjects.filter(project => ['skill', 'study', 'storyboard'].includes(project.kind)),
   },
   {

@@ -28,7 +28,7 @@ export function libraryProjectCrumbs(project: ShowcaseProject): Crumb[] {
   ]
 }
 
-export function LibrarySchema({ items, collection }: { items: readonly Crumb[]; collection?: { description: string; links: readonly Crumb[] } }) {
+export function LibrarySchema({ items, collection }: { items: readonly Crumb[]; collection?: { title: string; description: string; links: readonly Crumb[] } }) {
   const last = items[items.length - 1]
   const url = new URL(last.path, SITE_URL).href
   const breadcrumb = {
@@ -36,7 +36,7 @@ export function LibrarySchema({ items, collection }: { items: readonly Crumb[]; 
     itemListElement: items.map(({ label, path }, index) => ({ '@type': 'ListItem', position: index + 1, name: label, item: new URL(path, SITE_URL).href })),
   }
   const graph = collection ? [breadcrumb, {
-    '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: last.label, description: collection.description, breadcrumb: { '@id': breadcrumb['@id'] },
+    '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: collection.title, description: collection.description, breadcrumb: { '@id': breadcrumb['@id'] },
     mainEntity: { '@type': 'ItemList', itemListElement: collection.links.map(({ label, path }, index) => ({ '@type': 'ListItem', position: index + 1, name: label, url: new URL(path, SITE_URL).href })) },
   }] : [breadcrumb]
   const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')
@@ -76,18 +76,18 @@ function ShortFilms({ projects }: { projects: readonly ShowcaseProject[] }) {
   </section>
 }
 
-const libraryDescription = 'Watch editable motion graphics, try interactive web and 2D game examples, and explore storyboards, render studies and 2D/3D compositing concepts.'
-export { libraryDescription }
+export const libraryTitle = '2D Animation Examples & Editable Projects'
+export const libraryDescription = 'Watch 2D animation examples, try interactive web demos, and download editable Chorono projects for titles, characters, charts, and motion effects.'
 
 export function LibraryShowcase() {
   const featured = showcaseProjects.find(project => project.slug === 'small-wins') ?? showcaseProjects[0]
   return <main className="al-gallery">
-    <LibrarySchema items={rootCrumbs} collection={{ description: libraryDescription, links: showcaseCollections.map(collection => ({ label: collection.name, path: showcaseCollectionHref(collection.slug) })) }} />
+    <LibrarySchema items={rootCrumbs} collection={{ title: libraryTitle, description: libraryDescription, links: showcaseCollections.map(collection => ({ label: collection.name, path: showcaseCollectionHref(collection.slug) })) }} />
     <LibraryBreadcrumb />
     <header className="al-gallery-hero">
       <div className="al-gallery-hero-copy">
-        <h1>Animation examples</h1>
-        <p>Watch motion graphics, try playable scenes and inspect render studies. Download editable Chorono projects or copy a prompt for your next animation.</p>
+        <h1>2D animation examples</h1>
+        <p>{libraryDescription}</p>
         <a className="al-button" href="#collections">Browse collections <ArrowDown size={17} aria-hidden="true" /></a>
       </div>
       <Link href={showcaseProjectHref(featured)} className="al-featured-project">
@@ -95,6 +95,8 @@ export function LibraryShowcase() {
         <div><span>{featured.format}</span><strong>{featured.title}</strong><ArrowUpRight size={20} aria-hidden="true" /></div>
       </Link>
     </header>
+    <CollectionsNav />
+    <p className="al-library-context al-find-example">Start with <Link href="/animations/style-animations">motion graphics examples by technique</Link>, try <Link href="/animations/interactive-web">interactive demos in your browser</Link>, or build your own from the <Link href={ANIMATION_SKILLS_PATH}>animation prompt catalog</Link>.</p>
     <ShortFilms projects={showcaseProjects} />
     <section className="al-gallery-section" aria-labelledby="editable-examples-title">
       <h2 id="editable-examples-title">Editable animation examples</h2>
@@ -122,10 +124,21 @@ export function LibraryShowcase() {
   </main>
 }
 
-function PromptProjectGroups({ projects }: { projects: readonly ShowcaseProject[] }) {
+const motionGroupDescriptions: Record<keyof typeof skillExampleFamilies, string> = {
+  typography: 'Compare masked kinetic typography, a broadcast lower third, and a dot-matrix departure board. Watch how the letters stay legible as they enter and settle.',
+  interface: 'Study motion for upload progress, loading indicators, chat replies, and search results. Each example shows how an interface communicates a state change.',
+  data: 'Compare animated line and bar charts, a progress ring, and a heatmap. Watch how fixed axes and legends help the viewer follow changing values.',
+  'spline-shape': 'Follow a parcel along a motion path, morph a circle into a seed, or compare tiles passing in front of and behind a title. The paths and timing are editable.',
+  character: 'Compare squash and stretch, a robot walk cycle, and a painted cat using a pinned mesh. Look for contact poses and the follow-through of clothes or limbs.',
+  'effects-physics': 'See the difference between a particle emitter, a baked rigid-body drop, and a Voronoi fracture. Watch the first impact and the settled pose.',
+  product: 'Compare product assembly, articulated lighting, and a 3D bottle pouring into a 2D mask. Each scene isolates an action you can adapt.',
+  education: 'Watch an electrical circuit, compare three easing curves, or follow two trains on a map. Visible labels carry the explanation as the scene moves.',
+}
+
+function PromptProjectGroups({ projects, showMotionDescriptions }: { projects: readonly ShowcaseProject[]; showMotionDescriptions: boolean }) {
   const remaining = projects.filter(project => project.kind !== 'skill')
   const groups = Object.entries(skillExampleFamilies)
-    .map(([id, title]) => ({ id, title, projects: projects.filter(project => project.kind === 'skill' && project.example.family === id) }))
+    .map(([id, title]) => ({ id: id as keyof typeof skillExampleFamilies, title, projects: projects.filter(project => project.kind === 'skill' && project.example.family === id) }))
     .filter(group => group.projects.length > 0)
   if (groups.length === 0) return <ProjectGrid projects={projects} label="Collection examples" />
 
@@ -135,6 +148,7 @@ function PromptProjectGroups({ projects }: { projects: readonly ShowcaseProject[
     </nav>
     {groups.map(group => <section key={group.id} id={`examples-${group.id}`} className="al-gallery-section" aria-labelledby={`heading-${group.id}`}>
       <h2 id={`heading-${group.id}`}>{group.title}</h2>
+      {showMotionDescriptions && <p className="al-group-summary">{motionGroupDescriptions[group.id]}</p>}
       <ProjectGrid projects={group.projects} label={group.title} heading="h3" />
     </section>)}
     {remaining.length > 0 && <section className="al-gallery-section" aria-labelledby="more-library-examples">
@@ -149,12 +163,26 @@ export function LibraryCollection({ collection }: { collection: NonNullable<Retu
   const crumbs = [...rootCrumbs, { label: collection.name, path }]
   const render = path === ANIMATION_RENDER_PATH
   return <main className="al-gallery">
-    <LibrarySchema items={crumbs} collection={{ description: collection.description, links: collection.projects.map(project => ({ label: project.title, path: showcaseProjectHref(project) })) }} />
+    <LibrarySchema items={crumbs} collection={{ title: collection.title, description: collection.description, links: collection.projects.map(project => ({ label: project.title, path: showcaseProjectHref(project) })) }} />
     <LibraryBreadcrumb items={crumbs} />
     <header className="al-gallery-lead"><h1>{collection.title}</h1><p>{collection.description}</p>
       {collection.upcoming && <div className="al-upcoming-note"><ComingSoon /><span>{collection.upcoming}</span></div>}
     </header>
     <CollectionsNav current={collection.slug} />
+    {path === ANIMATION_SKILLS_PATH && <section className="al-editorial" aria-labelledby="using-animation-prompts">
+      <h2 id="using-animation-prompts">Use a prompt with Claude Code or Codex</h2>
+      <p>Pick an example, watch the result, and copy the prompt from its detail page. Give the agent the canvas size, duration, and the changes that should happen on the timeline. The examples include those details so you can change a single variable and compare the result.</p>
+      <p>Run the prompt in a connected Chorono editor or open the downloaded project to inspect the original timeline. Follow the <Link href="/agent-skills#agent-setup-guides">Claude Code and Codex setup guides</Link> before running your first prompt.</p>
+    </section>}
+    {collection.slug === 'interactive-web' && <section className="al-editorial" aria-labelledby="interactive-animation-states">
+      <h2 id="interactive-animation-states">Try the interaction before you edit it</h2>
+      <p>Use the on-page controls to see a state change. Select a plant to reveal its care note, open a museum card to inspect its labels, or toggle an interface control. Try Enter or Space on the buttons as well as a mouse or touch.</p>
+      <p>Open the downloaded scene to inspect the transition and the event that triggers it. For recorded interface motion, see the <Link href="/animations/style-animations#examples-interface">UI animation examples</Link>.</p>
+    </section>}
+    {collection.slug === 'long-form' && <section className="al-editorial" aria-labelledby="storyboard-and-film">
+      <h2 id="storyboard-and-film">Compare a shot plan with a finished short</h2>
+      <p>Use the storyboard to review framing, estimated shot lengths and sound cues before animating. In the finished short, watch how one light source carries the character between different locations. Both examples offer a concrete way to study scene continuity.</p>
+    </section>}
     <ShortFilms projects={collection.projects} />
     {render ? <>
       <div className="al-render-groups">{upcomingRenderStyles.map((style, index) => <section key={style} aria-labelledby={`al-render-style-${index}`}>
@@ -164,7 +192,7 @@ export function LibraryCollection({ collection }: { collection: NonNullable<Retu
       <section className="al-gallery-section" aria-labelledby="al-render-gallery"><h2 id="al-render-gallery">Concept gallery and showcase film</h2>
         <ProjectGrid projects={collection.projects.filter(project => project.kind !== 'concept')} label="Render concepts and showcase film" heading="h3" />
       </section>
-    </> : <PromptProjectGroups projects={collection.projects.filter(project => project.kind !== 'film')} />}
+    </> : <PromptProjectGroups projects={collection.projects.filter(project => project.kind !== 'film')} showMotionDescriptions={collection.slug === 'style-animations'} />}
     {path === ANIMATION_SKILLS_PATH && <p className="al-library-context"><Link href="/agent-skills">Connect Codex or Claude Code to Chorono</Link> or <Link href="/blog/animation-prompts-for-claude-and-codex">try the six guided animation exercises</Link>.</p>}
     {path === ANIMATION_RENDER_PATH && <p className="al-library-context"><Link href="/docs/export">Read the editor export docs</Link> for available formats and workflows.</p>}
   </main>

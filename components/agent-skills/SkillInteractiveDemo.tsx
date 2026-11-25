@@ -20,10 +20,11 @@ const actions: Record<'plant-cards' | 'artifact-card', readonly Action[]> = {
   ],
 }
 
-export function SkillInteractiveDemo({ kind, project, poster, width, height }: {
+export function SkillInteractiveDemo({ kind, project, poster, posterAlt, width, height }: {
   kind: keyof typeof actions
   project: string
   poster: string
+  posterAlt: string
   width: number
   height: number
 }) {
@@ -105,7 +106,7 @@ export function SkillInteractiveDemo({ kind, project, poster, width, height }: {
   return <section className={styles.interactiveDemo} aria-label="Interactive Chorono demo">
     <h2>Try the interactive scene</h2>
     <div className={styles.interactiveCanvas} style={{ aspectRatio: `${width} / ${height}` }}>
-      {active === '' && <img src={poster} alt="" width={width} height={height} loading="lazy" />}
+      {active === '' && <img src={poster} alt={posterAlt} width={width} height={height} loading="lazy" />}
       <canvas ref={canvas} width={width} height={height} aria-hidden="true" />
     </div>
     <div className={styles.interactiveControls}>

@@ -56,11 +56,11 @@ export function ComingSoon() {
 
 function ProjectGrid({ projects, label, heading: Heading = 'h2' }: { projects: readonly ShowcaseProject[]; label: string; heading?: 'h2' | 'h3' }) {
   return <ul className="al-project-grid" aria-label={label}>
-    {projects.map(project => <li key={showcaseProjectHref(project)}><Link className="al-gallery-card" href={showcaseProjectHref(project)}>
-      <div className="al-cover" data-transparent={project.slug === 'interactive-motion-crew' || undefined}><Image src={project.cover.src} alt="" fill sizes="(max-width: 560px) 90vw, (max-width: 860px) 46vw, 32vw" /></div>
+    {projects.map(project => <li key={showcaseProjectHref(project)}><Link className="al-gallery-card" href={showcaseProjectHref(project)} aria-labelledby={`project-${project.slug}`}>
+      <div className="al-cover" data-transparent={project.slug === 'interactive-motion-crew' || undefined}><Image src={project.cover.src} alt={project.cover.alt} fill sizes="(max-width: 560px) 90vw, (max-width: 860px) 46vw, 32vw" /></div>
       <div className="al-gallery-card-copy">
         <div className="al-format-row"><small>{project.format}{project.kind === 'film' && ` · ${project.durationSeconds} s`}</small>{(project.kind === 'concept' || project.kind === 'storyboard') && <ComingSoon />}</div>
-        <Heading>{project.title}</Heading><p>{project.description}</p>
+        <Heading id={`project-${project.slug}`}>{project.title}</Heading><p>{project.description}</p>
         <span className="al-card-link">{project.kind === 'film' ? 'Watch film' : project.kind === 'concept' ? 'View concept' : project.kind === 'storyboard' ? 'View storyboard' : 'Open project'} <ArrowUpRight size={17} aria-hidden="true" /></span>
       </div>
     </Link></li>)}
@@ -104,11 +104,11 @@ export function LibraryShowcase() {
     </section>
     <section id="collections" className="al-gallery-section" aria-labelledby="collections-title">
       <h2 id="collections-title">Browse by format</h2>
-      <div className="al-category-grid">{showcaseCategories.map(collection => <Link key={collection.slug} className="al-gallery-card" href={showcaseCollectionHref(collection.slug)}>
-        <div className="al-cover"><Image src={collection.cover.src} alt="" fill sizes="(max-width: 560px) 90vw, (max-width: 860px) 46vw, 32vw" /></div>
+      <div className="al-category-grid">{showcaseCategories.map(collection => <Link key={collection.slug} className="al-gallery-card" href={showcaseCollectionHref(collection.slug)} aria-labelledby={`collection-${collection.slug}`}>
+        <div className="al-cover"><Image src={collection.cover.src} alt={collection.cover.alt} fill sizes="(max-width: 560px) 90vw, (max-width: 860px) 46vw, 32vw" /></div>
         <div className="al-gallery-card-copy">
           {collection.upcoming && <ComingSoon />}
-          <h3>{collection.name}</h3><p>{collection.description}</p>
+          <h3 id={`collection-${collection.slug}`}>{collection.name}</h3><p>{collection.description}</p>
           <span className="al-card-link">{collection.projects.length} {collection.projects.length === 1 ? 'example' : 'examples'} <ArrowUpRight size={17} aria-hidden="true" /></span>
         </div>
       </Link>)}</div>

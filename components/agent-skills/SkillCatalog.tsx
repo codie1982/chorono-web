@@ -64,7 +64,7 @@ export function SkillExampleDetail({ example, surface = 'public' }: {
     <Lead eyebrow={editorial ? skillExampleFamilies[example.family] : example.category} title={editorial ? `${example.title} · ${editorial.topic}` : example.title} text={editorial?.description ?? example.description} />
     <SkillExamplePlayback key={example.slug} example={example} />
     {example.interactiveDemo && <SkillInteractiveDemo kind={example.interactiveDemo} project={skillExampleMedia(example.slug).project}
-      poster={skillExampleMedia(example.slug).poster} width={example.width} height={example.height} />}
+      poster={skillExampleMedia(example.slug).poster} posterAlt={example.posterAlt} width={example.width} height={example.height} />}
     {editorial && <ExampleEditorial slug={example.slug} />}
     <div className={styles.notes}>
       <section aria-labelledby="skill-beats-title">

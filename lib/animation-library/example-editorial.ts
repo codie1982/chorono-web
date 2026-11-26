@@ -42,8 +42,8 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'Watch a 2D talking character with English lip sync, two-bone arm IK and individually articulated fingers. Download the editable Chorono project.',
     heading: 'Let the shoulder lead the wrist',
     paragraphs: [
-      'Mara starts the lift from the shoulder. A two-bone IK chain bends each elbow toward its wrist target while keeping the upper and lower arm lengths fixed. The linked palms turn later, and the fingers open in sequence. Scrub around 6.8 seconds to study how the thumb and index finger close into a pinch.',
-      'The mouth keys follow the timing of the ElevenLabs English recording. Compare the closed mouth on the “m” in “makes” with the open vowel in “alive,” then scrub back to “let your wrist catch up” to see the palm turn. The editable project includes the voice track, the studio artwork and each finger’s joint groups.',
+      'Mara lifts her shoulder first, then turns her palm and opens her fingers in sequence. Each two-bone IK chain keeps both arm segments at fixed lengths as the wrist moves. Scrub to about 6.8 seconds to see the thumb and index finger close into a pinch. The mouth keys and gesture timing follow the ElevenLabs English recording.',
+      'The jacket’s bodice and sleeves share vertices at both shoulders and sample one UV texture. The fitted torso leaves room for the sleeve silhouettes, while a deformation clip follows the solved shoulder, elbow and wrist poses. The texture and deformation clip are embedded in the project.',
     ],
     related: ['quiet-orbit', 'night-dispatch'],
   },

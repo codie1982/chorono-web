@@ -39,11 +39,11 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
   },
   'the-small-delay': {
     topic: 'Talking Character Animation with Hand Gestures',
-    description: 'Watch a 2D talking character with English lip sync, two-bone arm IK and individually articulated fingers. Download the editable Chorono project.',
-    heading: 'Let the shoulder lead the wrist',
+    description: 'Watch a 2D talking character count from one to five in English, with lip sync, hand gestures and an IK-linked jacket. Download the editable Chorono project.',
+    heading: 'Open one finger on each spoken number',
     paragraphs: [
-      'Mara lifts her shoulder first, then turns her palm and opens her fingers in sequence. Each two-bone IK chain keeps both arm segments at fixed lengths as the wrist moves. Scrub to about 6.8 seconds to see the thumb and index finger close into a pinch. The mouth keys and gesture timing follow the ElevenLabs English recording.',
-      'The jacket’s bodice and sleeves share vertices at both shoulders and sample one UV texture. The fitted torso leaves room for the sleeve silhouettes, while a deformation clip follows the solved shoulder, elbow and wrist poses. The texture and deformation clip are embedded in the project.',
+      'Mara raises her index finger on “one” and opens her middle, ring and little fingers in order. The thumb opens on “five,” around 6.8 seconds. The lip shapes and on-screen numerals follow the English ElevenLabs recording. A quick camera move brings her hand into view and returns to the wide shot as she relaxes.',
+      'The bodice, upper sleeves and forearm sleeves share one UV atlas. Each sleeve section is parented to its solved shoulder or elbow group. Move a wrist target in Chorono to see both sleeve sections follow the new pose immediately. The project embeds the voice and the jacket texture.',
     ],
     related: ['quiet-orbit', 'night-dispatch'],
   },

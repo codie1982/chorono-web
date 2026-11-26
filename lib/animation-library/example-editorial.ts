@@ -42,8 +42,8 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'Watch a 2D motorcycle cross an uneven harbor road from sunset to moonrise. Download the editable Chorono project and study the rider, suspension and lighting.',
     heading: 'Track the wheels through each bump',
     paragraphs: [
-      'The courier stays near the center of the frame as the road and harbor scroll at different speeds. Around 2.1 seconds the front wheel reaches a crest, and the rear wheel crosses it around 2.4 seconds. The chassis pitches and settles as the rider’s hand and boot stay in contact with the handlebar and footrest.',
-      'The rider’s helmet, jacket and boots use editable Bézier shapes. The woven scarf bends on a 2D mesh. Scrub through the sunset to see how the last daylight title fades, the night title enters and the headlamp takes over as the sky cools.',
+      'Around 2.1 seconds the front wheel reaches a crest, and the rear wheel follows around 2.4 seconds. The front mudguard follows its axle. The rider’s fixed-length IK chains flex at the elbow and knee while the wrist and ankle targets stay linked to the handlebar and footrest.',
+      'The torso and helmet respond to the chassis with damped motion. Their Bézier shapes and the woven Mesh2D scarf remain editable. Scrub through the sunset to see the daylight title fade before the night title and headlamp take over.',
     ],
     related: ['wind-up-walker', 'cat-stretch'],
   },

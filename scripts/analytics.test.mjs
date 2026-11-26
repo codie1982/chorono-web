@@ -99,3 +99,20 @@ test('example analytics cannot block interactions and never sends from preview h
   assert.equal(calls.length, 0)
   assert.doesNotThrow(() => load().trackExampleAction('ideas-in-motion', 'play'))
 })
+
+test('render research deduplicates actions by topic and choice and suppresses preview traffic', () => {
+  const calls = []
+  const gtag = (...args) => calls.push(args)
+  const live = load({ location: { hostname: 'www.chorono.com', search: '?from=private@example.com' }, gtag })
+  const preview = load({ location: { hostname: 'preview.vercel.app' }, gtag })
+  live.trackRenderResearch('preview_view_selected', 'pixel-streaming-hosting', 'living-room')
+  live.trackRenderResearch('preview_view_selected', 'pixel-streaming-hosting', 'living-room')
+  live.trackRenderResearch('preview_view_selected', 'pixel-streaming-hosting', 'terrace')
+  live.trackRenderResearch('pilot_interest', 'real-estate-virtual-tour', 'property-launch')
+  preview.trackRenderResearch('pilot_interest', 'overview', 'hosting')
+  assert.deepEqual(JSON.parse(JSON.stringify(calls)), [
+    ['event', 'render_research', { render_action: 'preview_view_selected', render_topic: 'pixel-streaming-hosting', render_choice: 'living-room' }],
+    ['event', 'render_research', { render_action: 'preview_view_selected', render_topic: 'pixel-streaming-hosting', render_choice: 'terrace' }],
+    ['event', 'render_research', { render_action: 'pilot_interest', render_topic: 'real-estate-virtual-tour', render_choice: 'property-launch' }],
+  ])
+})

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { productModePages, productModePaths, type ProductModePageData } from '@/lib/product-mode-pages'
 import { pageMetadata, SITE_URL } from '@/lib/site'
+import { renderPath } from '@/lib/render-guides'
 
 export function productModeMetadata(mode: ProductModePageData) {
   return {
@@ -37,7 +38,7 @@ export function ProductModePage({ mode }: { mode: ProductModePageData }) {
     <article className="guide mt-12 max-w-3xl space-y-10">
       {mode.sections.map(section => <section key={section.title}><h2>{section.title}</h2><p>{section.text}</p></section>)}
       <section><h2>Examples and guides</h2>
-        <ul className="grid gap-2 sm:grid-cols-2">{[mode.collection, { href: '/docs/export/images', label: 'Export frames from the 2D editor' }, { href: '/product-modes', label: 'Check product availability' }].map(link => <li key={link.href}><Link className={bodyLink} href={link.href}>{link.label} <ArrowUpRight size={16} aria-hidden="true" /></Link></li>)}</ul>
+        <ul className="grid gap-2 sm:grid-cols-2">{[mode.collection, ...(mode.path === productModePaths.render ? [{ href: renderPath, label: 'Explore architectural visualization and 3D walkthroughs' }] : []), { href: '/docs/export/images', label: 'Export frames from the 2D editor' }, { href: '/product-modes', label: 'Check product availability' }].map(link => <li key={link.href}><Link className={bodyLink} href={link.href}>{link.label} <ArrowUpRight size={16} aria-hidden="true" /></Link></li>)}</ul>
       </section>
     </article>
     <nav className="mt-10 flex flex-wrap gap-x-5 border-t border-[#e7d8cf] pt-4 text-sm" aria-label="Chorono product modes">

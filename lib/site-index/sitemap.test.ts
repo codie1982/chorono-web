@@ -2,6 +2,7 @@ import { documentationPages } from '@/lib/documentation/manifest'
 import { exampleEditorial } from '@/lib/animation-library/example-editorial'
 import { collectionIsIndexable, showcaseCollections, showcaseProjectHref, showcaseProjects } from '@/lib/animation-library/showcase'
 import { existingSitemapEntries } from './existing'
+import { renderGuides, renderGuidePath, renderPath } from '@/lib/render-guides'
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   sitemapTopics,
@@ -19,6 +20,14 @@ const animationPageCount = 1 + showcaseCollections.filter(collectionIsIndexable)
   + showcaseProjects.filter(project => project.kind !== 'concept').length;
 
 describe("publication and topic sitemap contract", () => {
+  it('includes the architecture hub and each article in its canonical sitemap', () => {
+    const site = serializeSitemap('https://www.chorono.com', 'sitemap-site.xml')
+    const blog = serializeSitemap('https://www.chorono.com', 'sitemap-blog.xml')
+    expect(site).toContain('<loc>https://www.chorono.com' + renderPath + '</loc>')
+    for (const guide of renderGuides) {
+      expect(blog).toContain('<loc>https://www.chorono.com' + renderGuidePath(guide) + '</loc>')
+    }
+  })
   it('rejects duplicated, noncanonical and payload URLs before publishing XML', () => {
     for (const paths of [['/docs', '/docs'], ['/docs/'], ['/docs?query=x'], ['/docs#section'], ['//other.example/path'], ['/docs/../hidden'], ['/animations/example/download']]) {
       expect(() => validateSitemapInventory([{ file: 'sitemap-docs.xml', paths }])).toThrow()

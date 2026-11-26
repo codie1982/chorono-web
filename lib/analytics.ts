@@ -1,3 +1,5 @@
+import type { RenderTopic } from './render-guides'
+
 /** Explicit homepage interactions. None confirms a GitHub star or installation. */
 export const events = {
   githubStar: 'github_star_click',
@@ -64,6 +66,19 @@ export function trackExampleAction(exampleId: string, action: 'play' | 'replay' 
     page_path: window.location.pathname,
     ...(action === 'download' ? { asset_path: assetPath.split(/[?#]/)[0] } : {}),
   })
+}
+
+type RenderAction = 'guide_open' | 'preview_open' | 'preview_view_selected' | 'preview_explored' | 'pilot_interest'
+type RenderChoice = 'arrival' | 'living-room' | 'terrace' | 'client-review' | 'property-launch' | 'showroom' | 'hosting'
+
+/** Records only explicit, bounded research actions on the production site. */
+export function trackRenderResearch(action: RenderAction, topic: RenderTopic, choice?: RenderChoice) {
+  if (typeof window === 'undefined' || !['www.chorono.com', 'chorono.com'].includes(window.location.hostname)) return
+  trackInteraction('render_research', {
+    render_action: action,
+    render_topic: topic,
+    ...(choice ? { render_choice: choice } : {}),
+  }, JSON.stringify([action, topic, choice]))
 }
 
 /** Sends bounded animation milestones to the existing tag and a local integration event.

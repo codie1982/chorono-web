@@ -52,6 +52,8 @@ The dedicated Dope Sheet is distinct from Timeline's Dope display button. Captio
 name the actual source example and distinguish current values from proposed edits.
 Do not reuse a capture for a different example, value or connected-state claim.
 
+On 26 November 2026, `properties-link-ik-v1.jpg` (868 × 1744) was captured from the Link & IK tab in an isolated production build of the editor. The selected shoulder in the editable Night Dispatch project shows its pivot driver, wrist target and joint limits.
+
 ## Recapture and maintenance
 
 Use a separate editor tab and preserve unrelated sessions. Load a copy of the

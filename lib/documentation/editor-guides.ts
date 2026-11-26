@@ -182,6 +182,16 @@ export const editorGuides: readonly DocumentationPage[] = [
     "source": "docs/en/editor-properties-transform.md"
   },
   {
+    "slug": "editor/properties/link-ik",
+    "label": "Link & IK",
+    "title": "Link layers and set up two-bone IK",
+    "description": "Link layer pivots, build a two-bone inverse kinematics chain, animate its target and match poses between IK and FK in Chorono.",
+    "parentSlug": "editor/properties",
+    "group": "Workspace",
+    "section": "editor",
+    "source": "docs/en/editor-properties-link-ik.md"
+  },
+  {
     "slug": "editor/properties/appearance",
     "label": "Fill, stroke & opacity",
     "title": "Style a layer with fills, strokes and opacity",

@@ -10,6 +10,8 @@ The transform controls include position, scale, rotation and anchor. Position an
 
 Appearance controls include opacity and blend mode. Inspect overlapping content when changing blending. The panel may show opacity as a percentage while serialized data uses a normalized value.
 
+Use [Link & IK](editor-properties-link-ik.md) to attach one layer to another at a pivot or animate a two-part arm or leg by moving a target.
+
 ## Type-specific controls
 
 Shape controls describe geometry and paint. Text controls describe content and typography. Media layers refer to assets. Select a different layer type to see the controls relevant to that object; avoid assuming that all layers expose the same properties.

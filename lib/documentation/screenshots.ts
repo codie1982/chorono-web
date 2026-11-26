@@ -54,6 +54,7 @@ export const documentationScreenshots: readonly DocumentationScreenshot[] = [
   { source: 'public/docs/screenshots/properties-appearance-v1.jpg', href: '/docs/screenshots/properties-appearance-v1.jpg', width: 500, height: 680 },
   { source: 'public/docs/screenshots/properties-effects-v1.jpg', href: '/docs/screenshots/properties-effects-v1.jpg', width: 500, height: 470 },
   { source: 'public/docs/screenshots/properties-interact-v1.jpg', href: '/docs/screenshots/properties-interact-v1.jpg', width: 500, height: 510 },
+  { source: 'public/docs/screenshots/properties-link-ik-v1.jpg', href: '/docs/screenshots/properties-link-ik-v1.jpg', width: 868, height: 1744 },
   { source: 'public/docs/screenshots/properties-masks-v1.jpg', href: '/docs/screenshots/properties-masks-v1.jpg', width: 500, height: 440 },
   { source: 'public/docs/screenshots/properties-motion-v1.jpg', href: '/docs/screenshots/properties-motion-v1.jpg', width: 500, height: 550 },
   { source: 'public/docs/screenshots/properties-transform-v1.jpg', href: '/docs/screenshots/properties-transform-v1.jpg', width: 500, height: 680 },

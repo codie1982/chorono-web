@@ -28,6 +28,26 @@ These are event counts, not unique people. Other links currently rely on GA's co
 
 `lib/analytics.ts` owns event names and dispatch; `components/LandingPage.tsx` calls it only from activation handlers or after a successful clipboard write. Missing/blocked analytics is a no-op and transport errors do not interrupt navigation or copying.
 
+## Chorono Render architecture experiment
+
+Use page views by landing page and traffic source as the denominator. In GA4, filter
+the `render_research` event by `render_action` and break it down by
+`render_topic` and `render_choice`. These parameters contain fixed content
+labels. The experiment uses the existing Google tag and canonical production hosts.
+
+| Action | Observable behavior |
+| --- | --- |
+| `guide_open` | An internal render guide link was activated |
+| `preview_open` | A walkthrough link was activated |
+| `preview_view_selected` | A visitor selected a new camera stop in this page visit |
+| `preview_explored` | A visitor selected both stops beyond the default view |
+| `pilot_interest` | A visitor shared one workflow preference from the pilot question |
+
+Pilot interest measures an explicit preference. Count paid pilots and confirmed
+leads separately. Compare by guide and channel, then inspect the selected
+workflows. The demo uses rendered stills. It tests navigation and interest in
+browser delivery before a live streaming prototype is available.
+
 ## Migration
 
 - `github_star_view` is retired. Historical values meant successful count loads, not views, clicks or stars. Exclude it from conversion reports; old rows are not rewritten.

@@ -1,15 +1,17 @@
 import { productModePages } from '@/lib/product-mode-pages'
+import { renderGuidePath, renderGuides, renderPath } from '@/lib/render-guides'
 import { SITE_URL, DOCS_LINKS_UPDATED } from '@/lib/site'
 import { BLOG_POSTS, blogPath } from '@/lib/blog'
 import { USE_CASES, USE_CASE_CONTENT_UPDATED, type UseCasePath } from '@/lib/use-cases'
 import { ANIMATION_GUIDES, ANIMATION_GUIDE_DATE } from '@/lib/animation-guides'
 
 const productModePagePaths = Object.values(productModePages).map(mode => mode.path)
+const renderArticlePaths = renderGuides.map(renderGuidePath)
 
 /** Existing public inventory and authoritative dates, preserved from app/sitemap.ts. */
 export const existingSitemapEntries: { url: string; lastModified?: string }[] = [
   ...['/', '/getting-started', '/agent-skills', '/blog'].map(path => ({ url: new URL(path, SITE_URL).href, ...(path === '/agent-skills' ? { lastModified: DOCS_LINKS_UPDATED } : path === '/' ? { lastModified: ANIMATION_GUIDE_DATE } : {}) })),
-  ...productModePagePaths.map(path => ({ url: new URL(path, SITE_URL).href })),
+  ...[...productModePagePaths, renderPath, ...renderArticlePaths].map(path => ({ url: new URL(path, SITE_URL).href })),
   ...BLOG_POSTS.map(post => ({ url: new URL(blogPath(post), SITE_URL).href, lastModified: post.modified ?? post.published })),
   ...Object.keys(USE_CASES).map(path => ({ url: new URL(path, SITE_URL).href, lastModified: USE_CASE_CONTENT_UPDATED[path as UseCasePath] })),
   ...Object.keys(ANIMATION_GUIDES).map(path => ({ url: new URL(path, SITE_URL).href, lastModified: ANIMATION_GUIDE_DATE })),
@@ -17,8 +19,8 @@ export const existingSitemapEntries: { url: string; lastModified?: string }[] = 
 
 /** Keep existing marketing, editorial and technique families independently inspectable. */
 export const existingSitemapTopics = [
-  { file: 'sitemap-site.xml', paths: ['/', '/getting-started', '/agent-skills', ...productModePagePaths] },
-  { file: 'sitemap-blog.xml', paths: ['/blog', ...BLOG_POSTS.map(blogPath)] },
+  { file: 'sitemap-site.xml', paths: ['/', '/getting-started', '/agent-skills', ...productModePagePaths, renderPath] },
+  { file: 'sitemap-blog.xml', paths: ['/blog', ...BLOG_POSTS.map(blogPath), ...renderArticlePaths] },
   { file: 'sitemap-guides.xml', paths: [...Object.keys(USE_CASES), ...Object.keys(ANIMATION_GUIDES)] },
 ]
 

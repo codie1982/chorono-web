@@ -3,6 +3,8 @@ import { BLOG_DESCRIPTION, BLOG_POSTS, BLOG_TITLE, blogStructuredData } from '@/
 import { pageMetadata } from '@/lib/site'
 import { PostCard } from '@/components/BlogLayout'
 import { InstallEditorBanner } from '@/components/tutorial/InstallEditorBanner'
+import { GuideLink } from '@/components/render-research/RenderResearch'
+import { renderGuidePath, renderGuides } from '@/lib/render-guides'
 
 export const metadata = pageMetadata(BLOG_TITLE, BLOG_DESCRIPTION, '/blog')
 
@@ -22,6 +24,17 @@ export default function BlogPage() {
       <div className="mb-7 flex flex-wrap items-center justify-between gap-3"><p className="text-sm font-semibold uppercase tracking-widest text-[#8F3D27]">Start here · {BLOG_POSTS.length} practical guides</p><p className="text-sm text-[#6d5a52]">By Chorono ekibi</p></div>
       <div className="grid gap-6 md:grid-cols-3">{BLOG_POSTS.map(post => <PostCard key={post.slug} post={post} />)}</div>
       <InstallEditorBanner placement="blog-index" />
+    </section>
+    <section className="mx-auto max-w-6xl px-6 pb-14" aria-labelledby="architectural-guides">
+      <h2 id="architectural-guides" className="mb-4 text-2xl font-bold tracking-tight">Architectural visualization and 3D walkthroughs</h2>
+      <ul className="divide-y divide-[#e7d8cf] border-y border-[#e7d8cf]">
+        {renderGuides.map(guide => <li key={guide.slug} className="py-3">
+          <h3 className="text-[#8F3D27] [&>a]:inline-flex [&>a]:min-h-[44px] [&>a]:items-center [&>a]:gap-2 [&>a]:font-semibold [&>a:hover]:underline">
+            <GuideLink topic={guide.slug} href={renderGuidePath(guide)}>{guide.title}</GuideLink>
+          </h3>
+          <p className="text-sm leading-6 text-[#6d5a52]">{guide.description}</p>
+        </li>)}
+      </ul>
     </section>
   </main>
 }

@@ -297,19 +297,19 @@ export const catalogMotionExamples: readonly SkillExample[] = [
     "family": "character",
     "category": "Mesh2D character animation",
     "libraryCategory": "style-animations",
-    "description": "A paper-cutout lantern keeper crosses a night trail. The textured coat deforms as a swinging lantern and a cabin doorway light the scene.",
+    "description": "A paper-cutout keeper crosses a forest trail with planted IK steps, a deforming coat and a lantern that swings from the glove.",
     "posterAlt": "Lantern keeper casting amber light on a forest cabin and trail.",
     "durationSeconds": 10,
     "width": 1280,
     "height": 720,
     "frameRate": 24,
-    "mediaAdded": "2026-11-24",
-    "prompt": "Use the Chorono skill to build a 10-second scene at 1280 × 720 px. Create a silhouette figure holding a lantern next to a cabin. Animate two slow steps with planted feet, swing the lantern from a separate hand pivot, and open the cabin door at 7s. Grow an amber pool of light along the ground as the door opens. Save the editable .chorono.json and render a preview MP4. Keep the original source and the editable Mesh Deformation record in the scene so it can be revised and baked again.",
+    "mediaAdded": "2026-11-26",
+    "prompt": "Build a ten-second lantern keeper scene in Chorono. Use two-bone IK legs and separate foot targets. During each stance, hold the foot in scene coordinates and let the hip travel over it. Suspend the lantern from the glove and give it a damped swing that lags behind the hand. Keep the original pinned Mesh2D coat and its deformation editable. Open the cabin door near seven seconds and animate the amber spill across the ground.",
     "beats": [
       {
         "time": "0.9–6.0 s",
         "label": "Walk through the trees",
-        "detail": "Boots, wrist and lantern swing on separate pivots while the pinned wool coat deforms."
+        "detail": "The legs alternate fixed foot contacts while the pinned coat deforms and the lantern swings behind the hand."
       },
       {
         "time": "7.0–8.1 s",
@@ -329,19 +329,19 @@ export const catalogMotionExamples: readonly SkillExample[] = [
     "family": "character",
     "category": "Mechanical character walk cycle",
     "libraryCategory": "style-animations",
-    "description": "A tin toy marches with opposing arm and leg swings, then lets its winding key spin down on a fixed horizon.",
+    "description": "A tin toy marches with planted IK feet and delayed linked elbows, then lets its winding key spin down.",
     "posterAlt": "A red and mint enamel robot above a terracotta tabletop.",
     "durationSeconds": 8,
     "width": 1280,
     "height": 720,
     "frameRate": 24,
-    "mediaAdded": "2026-11-24",
-    "prompt": "Use the Chorono skill to build a 8-second scene at 1280 × 720 px. Build a tin robot with hips, feet, hands, and winding key in individual groups. Animate two step cycles at 0.8s per cycle with opposing arm swings. Pause the robot at 5s, then continue rotating the key through a short mechanical settle. Keep the horizon fixed. Save the editable .chorono.json and render a preview MP4.",
+    "mediaAdded": "2026-11-26",
+    "prompt": "Build an eight-second wind-up robot in Chorono. Give each leg two fixed-length IK segments and each enamel shoe a target with distinct stance and swing phases. Keep the stance shoe fixed relative to the tabletop as the torso moves. Link the arm segments at each elbow and delay their rotation behind the shoulders. Let the winding key turn briefly after the robot stops.",
     "beats": [
       {
         "time": "0.9–2.8 s",
         "label": "Walk in opposing poses",
-        "detail": "Hip and arm groups articulate separately as the toy moves across the tabletop."
+        "detail": "The stance foot stays put under the moving body. The other foot lifts as the opposite arm swings and the elbow follows."
       },
       {
         "time": "4.8–6.3 s",
@@ -361,19 +361,19 @@ export const catalogMotionExamples: readonly SkillExample[] = [
     "family": "character",
     "category": "Textured cat mesh deformation",
     "libraryCategory": "style-animations",
-    "description": "A painted cat holds its rear paws on the floor while its textured Mesh2D body and front paws extend into a stretch.",
+    "description": "A painted cat holds its hind paw on the floor as its textured Mesh2D body stretches and its linked front paws settle into contact.",
     "posterAlt": "A cream paper cat stretches its paws across a muted blue floor.",
     "durationSeconds": 9,
     "width": 1280,
     "height": 720,
     "frameRate": 24,
-    "mediaAdded": "2026-11-24",
-    "prompt": "Use the Chorono skill to build a 9-second scene at 1280 × 720 px. Build a cream cat against a muted blue floor. Take it from rest to a crouch, then stretch the front paws outward at 3s while keeping the rear feet planted. Follow with a staggered tail curl and an eye blink before the cat returns to rest. Save the editable .chorono.json and render a preview MP4. Keep the original source and the editable Mesh Deformation record in the scene so it can be revised and baked again.",
+    "mediaAdded": "2026-11-26",
+    "prompt": "Build a nine-second painted cat stretch in Chorono. Pin the rear of the textured body mesh. Add two-bone IK at the near foreleg and link the paws to a separate floor target. Let them lift, reach forward and plant before the shoulders finish moving. Add staggered whisker movement, a tail curl and a blink as the cat settles. Keep the mesh deformation and limb layers editable.",
     "beats": [
       {
         "time": "2.0–3.6 s",
         "label": "Stretch past the paws",
-        "detail": "Pinned mesh vertices hold the rear while the textured body, front paws and head extend."
+        "detail": "The rear stays pinned as the front paw target reaches forward and the two-bone foreleg flexes."
       },
       {
         "time": "4.5–7.5 s",

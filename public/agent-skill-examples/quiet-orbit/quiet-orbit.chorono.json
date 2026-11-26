@@ -1262,9 +1262,17 @@
         "scaleY": 1,
         "rotationDeg": 0,
         "anchorX": 0,
-        "anchorY": 0
+        "anchorY": 146
       },
-      "opacity": 1
+      "opacity": 1,
+      "pivotLink2d": {
+        "driverId": "group_98_efft",
+        "bindPivot": {
+          "x": 539,
+          "y": 1122
+        },
+        "bindRotationDeg": 0
+      }
     },
     {
       "id": "circle_1063",
@@ -1454,7 +1462,15 @@
         "width": 34,
         "height": 34
       },
-      "parentId": "group_99_effy"
+      "parentId": "group_99_effy",
+      "pivotLink2d": {
+        "driverId": "rect_1068",
+        "bindPivot": {
+          "x": 101,
+          "y": -204
+        },
+        "bindRotationDeg": -56.70643672915333
+      }
     },
     {
       "id": "group_100_efg4",
@@ -1761,34 +1777,326 @@
           "target": "layers.circle_1071.transform.x",
           "keyframes": [
             {
-              "id": "kf_1795538730678_962",
               "timeMs": 0,
-              "value": 20,
+              "value": 23.2,
               "easing": {
-                "type": "hold"
+                "type": "linear"
               }
             },
             {
-              "id": "kf_1795538730678_963",
-              "timeMs": 1340,
-              "value": 20,
+              "timeMs": 33.333333333333336,
+              "value": 25.375999999999998,
               "easing": {
-                "type": "easeInOut"
+                "type": "linear"
               }
             },
             {
-              "id": "kf_1795538730678_964",
-              "timeMs": 5230,
-              "value": 43,
+              "timeMs": 66.66666666666667,
+              "value": 26.85568,
               "easing": {
-                "type": "easeOut"
+                "type": "linear"
               }
             },
             {
-              "id": "kf_1795538730678_965",
-              "timeMs": 6910,
-              "value": 34,
-              "easing": null
+              "timeMs": 100,
+              "value": 27.8618624,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 133.33333333333334,
+              "value": 28.546066432,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 200,
+              "value": 29.3277011181568,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 400,
+              "value": 29.933531501981236,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1033.3333333333333,
+              "value": 29.929108622996544,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1066.6666666666667,
+              "value": 29.435806597005953,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1100,
+              "value": 28.34618468137551,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1133.3333333333333,
+              "value": 26.658677317284127,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1166.6666666666667,
+              "value": 24.488961879227524,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1266.6666666666667,
+              "value": 17.293465897729565,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1300,
+              "value": 15.602840218417017,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1333.3333333333333,
+              "value": 14.454253073909031,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1366.6666666666667,
+              "value": 13.674347554182699,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1433.3333333333333,
+              "value": 12.78671218813806,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1600,
+              "value": 12.149737856880275,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2133.3333333333335,
+              "value": 12.123839238066212,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2666.6666666666665,
+              "value": 12.369481102177998,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2800,
+              "value": 12.614704031695597,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2900,
+              "value": 13.085314612353269,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2933.3333333333335,
+              "value": 13.693930952597201,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2966.6666666666665,
+              "value": 15.03239425093276,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3000,
+              "value": 16.90104908077064,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3033.3333333333335,
+              "value": 19.16473993384828,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3100,
+              "value": 24.54187221675568,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3266.6666666666665,
+              "value": 39.885546152360334,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3300,
+              "value": 42.05680626979551,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3333.3333333333335,
+              "value": 43.623600181387516,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3400,
+              "value": 45.5634056591604,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3466.6666666666665,
+              "value": 46.57230649036505,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3566.6666666666665,
+              "value": 47.27037463731454,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3766.6666666666665,
+              "value": 47.67995650067485,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 4700,
+              "value": 47.701739941566146,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5333.333333333333,
+              "value": 47.41056151279093,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5433.333333333333,
+              "value": 47.070184855915414,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5533.333333333333,
+              "value": 46.0262425556876,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5633.333333333333,
+              "value": 44.29338484360287,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5733.333333333333,
+              "value": 42.0372205745291,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6000,
+              "value": 35.194557588999345,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6100,
+              "value": 33.01191952666438,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6233.333333333333,
+              "value": 30.97334906299061,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6333.333333333333,
+              "value": 30.308618295212018,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6600,
+              "value": 30.014108893965542,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 8000,
+              "value": 30.00000000130277,
+              "easing": {
+                "type": "linear"
+              }
             }
           ]
         },
@@ -1831,34 +2139,340 @@
           "target": "layers.circle_1073.transform.x",
           "keyframes": [
             {
-              "id": "kf_1795538730680_970",
               "timeMs": 0,
-              "value": 20,
+              "value": 23.2,
               "easing": {
-                "type": "hold"
+                "type": "linear"
               }
             },
             {
-              "id": "kf_1795538730680_971",
-              "timeMs": 1340,
-              "value": 20,
+              "timeMs": 33.333333333333336,
+              "value": 25.375999999999998,
               "easing": {
-                "type": "easeInOut"
+                "type": "linear"
               }
             },
             {
-              "id": "kf_1795538730680_972",
-              "timeMs": 5230,
-              "value": 43,
+              "timeMs": 66.66666666666667,
+              "value": 26.85568,
               "easing": {
-                "type": "easeOut"
+                "type": "linear"
               }
             },
             {
-              "id": "kf_1795538730681_973",
-              "timeMs": 6910,
-              "value": 34,
-              "easing": null
+              "timeMs": 100,
+              "value": 27.8618624,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 133.33333333333334,
+              "value": 28.546066432,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 200,
+              "value": 29.3277011181568,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 400,
+              "value": 29.933531501981236,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1033.3333333333333,
+              "value": 29.99995631974082,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1066.6666666666667,
+              "value": 29.863644042247802,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1100,
+              "value": 29.24781818998784,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1133.3333333333333,
+              "value": 28.022542038052883,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1166.6666666666667,
+              "value": 26.216132146323723,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1266.6666666666667,
+              "value": 19.012449488158175,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1300,
+              "value": 16.86331405583447,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1333.3333333333333,
+              "value": 15.310556475870591,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1366.6666666666667,
+              "value": 14.25574185305653,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1400,
+              "value": 13.539620799048539,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1466.6666666666667,
+              "value": 12.724894414226904,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1633.3333333333333,
+              "value": 12.141622226586886,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1966.6666666666667,
+              "value": 12.090957747550068,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2633.3333333333335,
+              "value": 12.310680403800712,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2900,
+              "value": 12.91509183853182,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2933.3333333333335,
+              "value": 13.143011920552237,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2966.6666666666665,
+              "value": 13.93370086396182,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3000,
+              "value": 15.40337821085004,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3033.3333333333335,
+              "value": 17.368797512103725,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3066.6666666666665,
+              "value": 19.705961364144102,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3133.3333333333335,
+              "value": 25.18808726877856,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3266.6666666666665,
+              "value": 37.57518065557973,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3300,
+              "value": 40.38437824438772,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3333.3333333333335,
+              "value": 42.41904452788627,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3366.6666666666665,
+              "value": 43.885606671833756,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3433.3333333333335,
+              "value": 45.70030178326485,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3500,
+              "value": 46.64456796648134,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3600,
+              "value": 47.29929710502645,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3800,
+              "value": 47.68584656871125,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 4766.666666666667,
+              "value": 47.68664737822032,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5366.666666666667,
+              "value": 47.40251688186706,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5466.666666666667,
+              "value": 47.01394593472129,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5566.666666666667,
+              "value": 45.91148730215466,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5666.666666666667,
+              "value": 44.128114834365284,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5766.666666666667,
+              "value": 41.83616296601456,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6000,
+              "value": 35.80942164254492,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6133.333333333333,
+              "value": 32.86403236770909,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6233.333333333333,
+              "value": 31.271431349852083,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6333.333333333333,
+              "value": 30.415877801970588,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6600,
+              "value": 30.01901240432488,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 8000,
+              "value": 30.00000000175554,
+              "easing": {
+                "type": "linear"
+              }
             }
           ]
         },
@@ -1866,34 +2480,53 @@
           "target": "layers.group_101_efg6.transform.scaleY",
           "keyframes": [
             {
-              "id": "kf_1795538730681_974",
               "timeMs": 0,
               "value": 1,
               "easing": {
-                "type": "hold"
+                "type": "linear"
               }
             },
             {
-              "id": "kf_1795538730681_975",
-              "timeMs": 3700,
+              "timeMs": 3725,
               "value": 1,
               "easing": {
                 "type": "easeIn"
               }
             },
             {
-              "id": "kf_1795538730681_976",
-              "timeMs": 3830,
+              "timeMs": 3832,
               "value": 0.1,
               "easing": {
                 "type": "easeOut"
               }
             },
             {
-              "id": "kf_1795538730681_977",
-              "timeMs": 3990,
+              "timeMs": 3998,
               "value": 1,
-              "easing": null
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 7068,
+              "value": 1,
+              "easing": {
+                "type": "easeIn"
+              }
+            },
+            {
+              "timeMs": 7175,
+              "value": 0.13,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "timeMs": 7320,
+              "value": 1,
+              "easing": {
+                "type": "linear"
+              }
             }
           ]
         },
@@ -2063,6 +2696,397 @@
               "easing": null
             }
           ]
+        },
+        {
+          "target": "layers.group_98_efft.transform.y",
+          "keyframes": [
+            {
+              "timeMs": 0,
+              "value": 1122,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 1530,
+              "value": 1117,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 3080,
+              "value": 1122,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 4610,
+              "value": 1117,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 6180,
+              "value": 1122,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 8000,
+              "value": 1120,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.rect_1068.transform.rotationDeg",
+          "keyframes": [
+            {
+              "timeMs": 0,
+              "value": -56.7,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5180,
+              "value": -56.7,
+              "easing": {
+                "type": "easeOut"
+              }
+            },
+            {
+              "timeMs": 5510,
+              "value": -61.2,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 5920,
+              "value": -54.8,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 6320,
+              "value": -57.7,
+              "easing": {
+                "type": "easeInOut"
+              }
+            },
+            {
+              "timeMs": 6820,
+              "value": -56.7,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_1071.transform.y",
+          "keyframes": [
+            {
+              "timeMs": 0,
+              "value": 16.72,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 100,
+              "value": 16.26873856,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 200,
+              "value": 16.10030613004288,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1133.3333333333333,
+              "value": 15.95253120142609,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1533.3333333333333,
+              "value": 15.278536299446952,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2466.6666666666665,
+              "value": 14.281722740877537,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2766.6666666666665,
+              "value": 13.409975143284028,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3000,
+              "value": 11.629993063979203,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3233.3333333333335,
+              "value": 11.213258915986295,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3300,
+              "value": 11.390984423872183,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3466.6666666666665,
+              "value": 12.716808851977332,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3600,
+              "value": 13.462264537252546,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3733.3333333333335,
+              "value": 13.90195737604765,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3933.3333333333335,
+              "value": 14.233426410370145,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 4466.666666666667,
+              "value": 14.314117634760102,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5166.666666666667,
+              "value": 13.581841818428776,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5433.333333333333,
+              "value": 13.529327626684395,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5733.333333333333,
+              "value": 14.021720426822052,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6200,
+              "value": 15.64594123459037,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6333.333333333333,
+              "value": 15.900866261805366,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 8000,
+              "value": 15.999999992708007,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
+        },
+        {
+          "target": "layers.circle_1073.transform.y",
+          "keyframes": [
+            {
+              "timeMs": 0,
+              "value": 16.72,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 100,
+              "value": 16.26873856,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 200,
+              "value": 16.10030613004288,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1133.3333333333333,
+              "value": 15.974063842794719,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 1533.3333333333333,
+              "value": 15.311002033560799,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2500,
+              "value": 14.269208779126803,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 2800,
+              "value": 13.372066121338735,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3033.3333333333335,
+              "value": 11.598226343849495,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3266.6666666666665,
+              "value": 11.209558471803224,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3333.3333333333335,
+              "value": 11.449430581892301,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3500,
+              "value": 12.76921446984681,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3633.3333333333335,
+              "value": 13.4936088357002,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 3966.6666666666665,
+              "value": 14.240822805392796,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 4500,
+              "value": 14.310548663593206,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5200,
+              "value": 13.575909720556986,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5466.666666666667,
+              "value": 13.524933806347558,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 5766.666666666667,
+              "value": 14.007936624409183,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6200,
+              "value": 15.559798857724644,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 6366.666666666667,
+              "value": 15.906700957190605,
+              "easing": {
+                "type": "linear"
+              }
+            },
+            {
+              "timeMs": 8000,
+              "value": 15.99999999046832,
+              "easing": {
+                "type": "linear"
+              }
+            }
+          ]
         }
       ],
       "layerIds": [
@@ -2071,7 +3095,9 @@
         "circle_1073",
         "group_101_efg6",
         "group_99_effy",
-        "group_102_efg9"
+        "group_102_efg9",
+        "group_98_efft",
+        "rect_1068"
       ]
     }
   ],
@@ -3852,34 +4878,6 @@
         },
         "fields": {}
       },
-      "[\"layer\",\"group_99_effy\"]": {
-        "address": [
-          "layer",
-          "group_99_effy"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
       "[\"layer\",\"circle_1063\"]": {
         "address": [
           "layer",
@@ -4024,34 +5022,6 @@
         "address": [
           "layer",
           "rect_1068"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"layer\",\"circle_1069\"]": {
-        "address": [
-          "layer",
-          "circle_1069"
         ],
         "createdBy": {
           "actor": {
@@ -4412,170 +5382,11 @@
         },
         "fields": {}
       },
-      "[\"timeline\",\"timeline_1\"]": {
-        "address": [
-          "timeline",
-          "timeline_1"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "unknown"
-          }
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "unknown"
-          }
-        },
-        "fields": {
-          "[\"durationMs\"]": {
-            "actor": {
-              "kind": "agent",
-              "name": "Chorono editable catalogue production"
-            },
-            "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-          },
-          "[\"layerIds\"]": {
-            "actor": {
-              "kind": "agent",
-              "name": "Chorono editable catalogue production"
-            },
-            "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-          }
-        }
-      },
       "[\"track\",\"timeline_1\",\"layers.circle_1071.transform.x\"]": {
         "address": [
           "track",
           "timeline_1",
           "layers.circle_1071.transform.x"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.circle_1071.transform.x\",\"kf_1795538730678_962\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1071.transform.x",
-          "kf_1795538730678_962"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.circle_1071.transform.x\",\"kf_1795538730678_963\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1071.transform.x",
-          "kf_1795538730678_963"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.circle_1071.transform.x\",\"kf_1795538730678_964\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1071.transform.x",
-          "kf_1795538730678_964"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.circle_1071.transform.x\",\"kf_1795538730678_965\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1071.transform.x",
-          "kf_1795538730678_965"
         ],
         "createdBy": {
           "actor": {
@@ -4778,251 +5589,11 @@
         },
         "fields": {}
       },
-      "[\"key\",\"timeline_1\",\"layers.circle_1073.transform.x\",\"kf_1795538730680_970\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1073.transform.x",
-          "kf_1795538730680_970"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.circle_1073.transform.x\",\"kf_1795538730680_971\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1073.transform.x",
-          "kf_1795538730680_971"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.circle_1073.transform.x\",\"kf_1795538730680_972\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1073.transform.x",
-          "kf_1795538730680_972"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.circle_1073.transform.x\",\"kf_1795538730681_973\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.circle_1073.transform.x",
-          "kf_1795538730681_973"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
       "[\"track\",\"timeline_1\",\"layers.group_101_efg6.transform.scaleY\"]": {
         "address": [
           "track",
           "timeline_1",
           "layers.group_101_efg6.transform.scaleY"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.group_101_efg6.transform.scaleY\",\"kf_1795538730681_974\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.group_101_efg6.transform.scaleY",
-          "kf_1795538730681_974"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.group_101_efg6.transform.scaleY\",\"kf_1795538730681_975\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.group_101_efg6.transform.scaleY",
-          "kf_1795538730681_975"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.group_101_efg6.transform.scaleY\",\"kf_1795538730681_976\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.group_101_efg6.transform.scaleY",
-          "kf_1795538730681_976"
-        ],
-        "createdBy": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "lastWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "baseWriter": {
-          "actor": {
-            "kind": "agent",
-            "name": "Chorono editable catalogue production"
-          },
-          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
-        },
-        "fields": {}
-      },
-      "[\"key\",\"timeline_1\",\"layers.group_101_efg6.transform.scaleY\",\"kf_1795538730681_977\"]": {
-        "address": [
-          "key",
-          "timeline_1",
-          "layers.group_101_efg6.transform.scaleY",
-          "kf_1795538730681_977"
         ],
         "createdBy": {
           "actor": {
@@ -5759,6 +6330,307 @@
             "name": "Chorono editable catalogue production"
           },
           "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
+        },
+        "fields": {}
+      },
+      "[\"layer\",\"group_99_effy\"]": {
+        "address": [
+          "layer",
+          "group_99_effy"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
+        },
+        "fields": {
+          "[\"transform\",\"anchorY\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          },
+          "[\"pivotLink2d\",\"driverId\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          },
+          "[\"pivotLink2d\",\"bindPivot\",\"x\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          },
+          "[\"pivotLink2d\",\"bindPivot\",\"y\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          },
+          "[\"pivotLink2d\",\"bindRotationDeg\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          }
+        }
+      },
+      "[\"layer\",\"circle_1069\"]": {
+        "address": [
+          "layer",
+          "circle_1069"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "Chorono editable catalogue production"
+          },
+          "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
+        },
+        "fields": {
+          "[\"pivotLink2d\",\"driverId\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          },
+          "[\"pivotLink2d\",\"bindPivot\",\"x\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          },
+          "[\"pivotLink2d\",\"bindPivot\",\"y\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          },
+          "[\"pivotLink2d\",\"bindRotationDeg\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          }
+        }
+      },
+      "[\"timeline\",\"timeline_1\"]": {
+        "address": [
+          "timeline",
+          "timeline_1"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "unknown"
+          }
+        },
+        "fields": {
+          "[\"durationMs\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "Chorono editable catalogue production"
+            },
+            "transactionId": "e3c20ae3-a350-499d-8df2-37faf1a80d95"
+          },
+          "[\"layerIds\"]": {
+            "actor": {
+              "kind": "agent",
+              "name": "codex-mcp-client"
+            },
+            "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+            "requestId": "Quiet-Orbit-easing-v3-apply"
+          }
+        }
+      },
+      "[\"track\",\"timeline_1\",\"layers.group_98_efft.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.group_98_efft.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.rect_1068.transform.rotationDeg\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.rect_1068.transform.rotationDeg"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.circle_1071.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.circle_1071.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "fields": {}
+      },
+      "[\"track\",\"timeline_1\",\"layers.circle_1073.transform.y\"]": {
+        "address": [
+          "track",
+          "timeline_1",
+          "layers.circle_1073.transform.y"
+        ],
+        "createdBy": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "lastWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
+        },
+        "baseWriter": {
+          "actor": {
+            "kind": "agent",
+            "name": "codex-mcp-client"
+          },
+          "transactionId": "fb513cd6-3640-4ba6-991b-04df7d80bb50",
+          "requestId": "Quiet-Orbit-easing-v3-apply"
         },
         "fields": {}
       }

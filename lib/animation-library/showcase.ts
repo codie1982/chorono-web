@@ -55,19 +55,19 @@ const films: readonly ShowcaseFilm[] = ([
     slug: 'prompt-to-playback', title: 'Prompt to Playback', category: 'style-animations', format: 'Product launch animation',
     description: 'A typed brief becomes a copper ribbon animation, then opens in an editable timeline with layers and playback controls.',
     alt: 'A copper ribbon draws a spiral in a dark animation preview.',
-    durationSeconds: 19,
+    durationSeconds: 19, uploadDate: '2026-11-24',
   },
   {
     slug: 'atelier-in-eight-styles', title: 'Atelier in Eight Styles', category: 'style-animations', format: 'Art style study',
     description: 'Hands fold a paper boat, a raven opens its wings, and the boat takes flight as one scene changes through eight art styles.',
     alt: 'A woman folds a paper boat beside a raven and a moonlit window in a geometric collage.',
-    durationSeconds: 18,
+    durationSeconds: 18, uploadDate: '2026-11-24',
   },
   {
     slug: 'the-lantern-archive', title: 'The Lantern Archive', category: 'long-form', format: 'Narrative short film',
-    description: 'A lantern keeper walks through a dark museum, steps inside a painting, and crosses three painted worlds before returning to the gallery.',
+    description: 'A lantern keeper with planted steps and a linked lantern rig crosses three painted worlds before returning to a dark museum.',
     alt: 'A little lantern keeper stands on a rock beside a painted sea arch.',
-    durationSeconds: 23,
+    durationSeconds: 23, uploadDate: '2026-11-26',
   },
 ] as const).map(({ alt, ...film }): ShowcaseFilm => {
   const directory = `/animation-films/${film.slug}`
@@ -77,7 +77,6 @@ const films: readonly ShowcaseFilm[] = ([
     cover: { src: `${directory}/poster.jpg`, alt },
     video: `${directory}/${film.slug}.mp4`,
     projectFile: `${directory}/${film.slug}.chorono.json`,
-    uploadDate: '2026-11-24',
   }
 })
 

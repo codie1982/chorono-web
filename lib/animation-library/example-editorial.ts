@@ -37,6 +37,16 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     ],
     related: ['open-inspect-close', 'choose-your-plant'],
   },
+  'the-small-delay': {
+    topic: 'Talking Character Animation with Hand Gestures',
+    description: 'Watch an English-speaking character demonstrate a shoulder-led hand gesture with phoneme-timed lip sync, linked wrists and individually articulated fingers.',
+    heading: 'Let the shoulder lead the wrist',
+    paragraphs: [
+      'Mara starts the lift from the shoulder. The elbow solves toward the wrist target, the palm turns a little later, and the fingers open in sequence. Each digit has separately editable joint groups, including the thumb used for the small pinch.',
+      'The mouth keys follow the timing of the English recording. Scrub through a closed consonant or round vowel, then compare the wrist movement during the pause after the first sentence. The editable project includes the voice and studio background.',
+    ],
+    related: ['quiet-orbit', 'night-dispatch'],
+  },
   'night-dispatch': {
     topic: '2D Motorcycle Animation',
     description: 'Watch a 2D motorcycle cross an uneven harbor road from sunset to moonrise. Download the editable Chorono project and study the rider, suspension and lighting.',
@@ -152,8 +162,8 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'Watch a rubber character anticipate, jump and squash on landing. Download the editable Chorono animation to study timing and floor contact.',
     heading: 'Put the deepest squash on contact',
     paragraphs: [
-      'The pose before takeoff prepares the viewer for the jump. The body stretches in the air, then compresses briefly once it meets the ground. Keeping the pivot at floor contact lets the silhouette spread sideways while its feet stay planted.',
-      'Check the landing one frame at a time. The strongest compression should come at contact or just after it. If a larger squash makes the eyes hard to read, protect the facial shapes and let the body carry more of the deformation.',
+      'Each flight follows a gravity-shaped arc. The shadow narrows and lightens from the same height samples. When the silhouette meets the floor, its contact pivot stays put while the body squashes outward.',
+      'Check the first landing around 2.49 seconds. A damped response gives the following rebounds less height and compression. During the final hold, the eyes blink a few frames apart.',
     ],
     related: ['cat-stretch', 'drop-and-settle'],
   },
@@ -162,8 +172,8 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'See an astronaut’s eyes track a star with an offset blink and helmet tilt. Download the editable cutout character and gaze timing.',
     heading: 'Lead with the eyes',
     paragraphs: [
-      'The passing star gives the astronaut a visible point to follow. The pupils start the reaction, then the blink and helmet tilt arrive at different times. That separation makes the small character’s attention easier to see than if every part moved together.',
-      'Try moving the star sooner and keep the first glance a little behind it. At the extremes, check that the pupils remain inside the eye shapes. Changing the blink separately lets the expression evolve without rewriting the whole shot.',
+      'The passing star gives the astronaut a point to follow. The pupil targets are calculated in helmet coordinates with a short delay. The helmet pivots at the collar and the linked antenna tip follows the stem as it recoils.',
+      'Watch the gaze near the limits of the eye shapes. Adjust the blink separately from the head turn so the reaction has time to read across both eyes.',
     ],
     related: ['wind-up-walker', 'cat-stretch'],
   },
@@ -322,7 +332,7 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'Watch a cutout lantern keeper walk with a deforming coat and a swinging light. Download the editable character rig and cabin scene.',
     heading: 'Separate the walk, cloth and light',
     paragraphs: [
-      'The boots and wrist move on separate pivots. The coat uses a textured mesh with pinned shoulder vertices, so its hem can follow through while the shoulders stay attached. A separate light pool makes the lantern readable as the character crosses the trail.',
+      'Each boot follows a separate IK foot target, with a grounded phase and a lifted swing. The coat mesh stays pinned at the shoulders. The lantern hangs from the glove and its damped swing trails the hand.',
       'Scrub from a planted step to the cabin door. Watch the point where the hand holds the lantern and the point where the light meets the ground. Those contacts help the cutout feel anchored when you change the walk timing.',
     ],
     related: ['cat-stretch', 'the-lantern-archive'],
@@ -332,8 +342,8 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'Watch a tin robot march with opposing arm and leg swings. Download the editable walk cycle and the winding key’s separate spin-down.',
     heading: 'Stop the feet before the mechanism',
     paragraphs: [
-      'The arms swing opposite the legs while the toy moves across a fixed horizon. The winding key has its own axle timing. It keeps turning after the feet stop, which gives the toy a mechanical follow-through and separates the stop from the final rest.',
-      'To revise the walk cycle, mark the contact frame for each foot. Pause there and check its position against the tabletop. When the stride changes, adjust forward travel and the leg timing together to reduce sliding.',
+      'The arms swing opposite the legs as the toy travels. The linked elbows follow the shoulders with a delay, and each IK leg follows a foot target. The winding key keeps turning briefly after the feet stop.',
+      'Compare a stance frame with the next swing frame. During stance, the foot stays on the tabletop as the body passes over it. In swing, the shoe lifts and rolls before it plants again.',
     ],
     related: ['the-lantern-keeper', 'bounce-study'],
   },
@@ -342,7 +352,7 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'See a painted cat extend its front paws while pinned Mesh2D points hold its rear. Download the editable mesh, texture and tail rig.',
     heading: 'Anchor the rear while the body stretches',
     paragraphs: [
-      'Pinned points on the mesh hold the rear of the cat in place. The painted body stretches toward the head and forepaws, and the applied texture moves with the mesh. The tail and face keep their own timing, allowing the stretch to finish with a curl and a blink.',
+      'Pinned points on the mesh hold the cat’s rear in place. As the textured body and head reach forward, the near foreleg uses two-bone IK and the paws follow a separate floor target. The whiskers and tail finish on their own timing.',
       'Inspect the halfway pose when adjusting the stretch. The feet should remain planted and the texture should follow the body without a visible crease. Compare the return pose with the opening silhouette to spot any unintentional drift.',
     ],
     related: ['dandelion-drift', 'the-lantern-keeper'],
@@ -462,8 +472,8 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
     description: 'Follow a lantern keeper through a museum and three painted worlds. Download the editable short film to inspect its character and scene transitions.',
     heading: 'Use the lantern to connect the painted worlds',
     paragraphs: [
-      'The museum establishes the frame before the lantern keeper steps into a painting. The glowing lantern carries through the different worlds and helps the viewer locate the character. Returning to the gallery gives the journey a recognizable end point.',
-      'When scrubbing the project, look for the position of the light just before and after each cut. The scenery can change substantially while the movement still has a clear direction. The standalone Lantern Keeper study shows the walking and cloth detail at a closer scale.',
+      'The museum establishes the frame before the keeper steps into a painting. The leg IK keeps the boots articulated across the different camera scales. The hand holds a linked target on the lantern’s handle, so the beam follows the prop as the keeper crosses each world.',
+      'Scrub just before a portal cut and follow the keeper’s gaze and the angle of the lantern. The scenery changes while the light keeps the character legible. The standalone Lantern Keeper study shows the walking and cloth detail at a closer scale.',
     ],
     related: ['the-lantern-keeper', 'atelier-in-eight-styles'],
   },

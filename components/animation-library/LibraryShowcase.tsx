@@ -129,7 +129,7 @@ const motionGroupDescriptions: Record<keyof typeof skillExampleFamilies, string>
   interface: 'Study motion for upload progress, loading indicators, chat replies, and search results. Each example shows how an interface communicates a state change.',
   data: 'Compare animated line and bar charts, a progress ring, and a heatmap. Watch how fixed axes and legends help the viewer follow changing values.',
   'spline-shape': 'Follow a parcel along a motion path, morph a circle into a seed, or compare tiles passing in front of and behind a title. The paths and timing are editable.',
-  character: 'Compare squash and stretch, a robot walk cycle, and a painted cat using a pinned mesh. Look for contact poses and the follow-through of clothes or limbs.',
+  character: 'Compare grounded walk cycles, a painted cat stretch and English dialogue with hand gestures. Look for foot contacts, linked joints, and the delay between a shoulder lift and the wrist.',
   'effects-physics': 'See the difference between a particle emitter, a baked rigid-body drop, and a Voronoi fracture. Watch the first impact and the settled pose.',
   product: 'Compare product assembly, articulated lighting, and a 3D bottle pouring into a 2D mask. Each scene isolates an action you can adapt.',
   education: 'Watch an electrical circuit, compare three easing curves, or follow two trains on a map. Visible labels carry the explanation as the scene moves.',

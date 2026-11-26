@@ -39,11 +39,11 @@ export const exampleEditorial: Readonly<Record<string, ExampleEditorial>> = {
   },
   'the-small-delay': {
     topic: 'Talking Character Animation with Hand Gestures',
-    description: 'Watch an English-speaking character demonstrate a shoulder-led hand gesture with phoneme-timed lip sync, linked wrists and individually articulated fingers.',
+    description: 'Watch a 2D talking character with English lip sync, two-bone arm IK and individually articulated fingers. Download the editable Chorono project.',
     heading: 'Let the shoulder lead the wrist',
     paragraphs: [
-      'Mara starts the lift from the shoulder. The elbow solves toward the wrist target, the palm turns a little later, and the fingers open in sequence. Each digit has separately editable joint groups, including the thumb used for the small pinch.',
-      'The mouth keys follow the timing of the English recording. Scrub through a closed consonant or round vowel, then compare the wrist movement during the pause after the first sentence. The editable project includes the voice and studio background.',
+      'Mara starts the lift from the shoulder. A two-bone IK chain bends each elbow toward its wrist target while keeping the upper and lower arm lengths fixed. The linked palms turn later, and the fingers open in sequence. Scrub around 6.8 seconds to study how the thumb and index finger close into a pinch.',
+      'The mouth keys follow the timing of the ElevenLabs English recording. Compare the closed mouth on the “m” in “makes” with the open vowel in “alive,” then scrub back to “let your wrist catch up” to see the palm turn. The editable project includes the voice track, the studio artwork and each finger’s joint groups.',
     ],
     related: ['quiet-orbit', 'night-dispatch'],
   },

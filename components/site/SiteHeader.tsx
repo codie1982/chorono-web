@@ -12,7 +12,6 @@ const links = [
   { href: '/agent-skills', label: 'Agent Skills' },
   { href: '/docs', label: 'Docs' },
   { href: '/blog', label: 'Blog' },
-  { href: '/account', label: 'Account' },
 ] as const
 
 /** Shared brand and route-aware navigation. The native mobile disclosure is

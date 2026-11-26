@@ -35,9 +35,6 @@ export function InstallEditorLink({ children, className }: { children: ReactNode
 
 export function CommunityBanner() {
   const open = useContext(OpenInvitation)
-  const pathname = usePathname()
-  if (pathname === '/account') return null
-
   return <aside className={styles.banner} aria-label="Chorono community">
     <div className={styles.bannerInner}>
       <p className={styles.bannerPrompt}>
@@ -91,7 +88,6 @@ export function CommunityProvider({ children }: { children: ReactNode }) {
   }, [])
 
   useEffect(() => {
-    if (pathname === '/account') return
     return watchExitIntent(
       () => !dialogOpen.current && !document.querySelector('dialog[open], [role="dialog"][data-state="open"]'),
       claimCommunityExit,

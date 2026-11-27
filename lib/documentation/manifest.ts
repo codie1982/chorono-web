@@ -300,6 +300,17 @@ const establishedPages: readonly DocumentationPage[] = [
     group: 'Resources',
   },
   {
+    slug: 'releases/0.5.0',
+    source: 'docs/releases/v0.5.0.md',
+    label: 'Release candidate 0.5.0',
+    title: 'Chorono 0.5.0 release candidate',
+    description:
+      'Preview the Mesh2D, physics baking, fracture and image rendering scope and validation status for the Chorono 0.5.0 release candidate.',
+    section: 'resources',
+    group: 'Resources',
+    availability: 'coming-soon',
+  },
+  {
     slug: 'releases/0.4.0',
     source: 'docs/releases/v0.4.0.md',
     label: 'Release notes 0.4.0',

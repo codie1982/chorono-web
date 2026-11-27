@@ -31,7 +31,7 @@ export function DocumentationShell({
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const mobileMenu = useRef<HTMLDialogElement>(null);
-  const latestRelease = documentationPages.find((page) => page.slug.startsWith("releases/"))!;
+  const latestRelease = documentationPages.find((page) => page.slug.startsWith("releases/") && page.availability !== "coming-soon")!;
   useEffect(() => {
     try {
       if (localStorage.getItem("chorono-docs-theme") === "dark")
